@@ -1,7 +1,7 @@
 
 
 
-const Button = ({title, backgroundColor, handleClick, fontSize}: any) =>
+export const Button = ({title, backgroundColor, handleClick, fontSize}: any) =>
 (
 
     <div className="button_container">
@@ -22,5 +22,3 @@ Button.defaultProps =
 { 
   title: "test title"
 }
-
-export default Button

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Button from "./Button";
+import {Button} from "./Button";
 
 
 
@@ -8,9 +8,9 @@ const ButtonContainer = () =>
 
   return (
 
-    <div>
-      <Button/>
-    </div>
+    
+    <Button/>
+    
 
   )
   

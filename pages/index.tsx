@@ -1,10 +1,15 @@
 import type { NextPage } from 'next'
+import { Navbar } from '../app/components/structure/header/Navbar'
 
 
 const Home: NextPage = () => {
   return (
 
-    <div>HOLAAA</div>
+    <section>
+
+      <Navbar />
+      
+    </section>
     
   )
 }
