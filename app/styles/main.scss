@@ -2,34 +2,37 @@
   'abstracts/breakpoints',
   'abstracts/colors',
   'abstracts/functions',
-  'abstracts/mixins';
+  'abstracts/mixins',
+  'abstracts/type',
+  'abstracts/index';
 
 @import
-  'vendors/bootstrap',
-  'vendors/jquery-ui';
-
-@import
+  'base/base',
+  'base/font-face',
+  'base/index',
   'base/reset',
+  'base/root',
   'base/typography';
 
 @import
-  'layout/navigation',
-  'layout/grid',
-  'layout/header',
-  'layout/footer',
-  'layout/sidebar',
-  'layout/forms';
+  'components/header',
+  'components/link',
+  'components/navbar';
 
 @import
-  'components/buttons',
-  'components/carousel',
-  'components/cover',
-  'components/dropdown';
+  'layouts/footer',
+  'layouts/forms',
+  'layouts/grid',
+  'layouts/header',
+  'layouts/navigation',
+  'layouts/sidebar';
 
 @import
+  'pages/404',
+  'pages/contact',
   'pages/home',
-  'pages/contact';
+  'pages/index';
 
 @import
-  'themes/theme',
-  'themes/admin';
+  'utilities/container',
+  'utilities/index';

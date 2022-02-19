@@ -1,24 +1,29 @@
 
 
 
-export const Button = ({title, backgroundColor, handleClick, fontSize}: any) =>
-(
+export const Button = ({ text, handleClick, style, alignment, size }: any) => {
 
-    <div className="button_container">
+  return (
 
-      <button onClick={handleClick} 
-      style={{backgroundColor: backgroundColor, fontSize: fontSize}}
-      >
+    <div className={`button__container ${style}${alignment}${size}`}>
 
-        {title}
+      <button onClick={handleClick}>
+
+        {text}
 
       </button>  
 
     </div>
+    
+  )
 
-)
+}
+
 
 Button.defaultProps = 
 { 
-  title: "test title"
+  text: "default text",
+  style: "",
+  alignment: "",
+  size: ""
 }

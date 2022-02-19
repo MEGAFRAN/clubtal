@@ -1,15 +1,21 @@
+import { LinkProps } from "../../constants/types/components_props/types"
 
 
 
-export const Link = ( {title, href, target, children}: any ) =>
+export const Link = ( {text, href, target, children, isDownload, isOpenNewWindow, emailAddress, rel, referrerpolicy}: LinkProps ) =>
 {
+
+    let downloadAssetPath = isDownload ? href.substring(href.lastIndexOf("/") + 1) : null
+    isOpenNewWindow ? target = "_blank" : null
+    emailAddress ? href = `mailto:${emailAddress}` : null
 
     return (
 
-        <a href={href} target={target} title={title}> 
+        <a href={href} target={target} download={downloadAssetPath} rel={rel} referrerPolicy={referrerpolicy}> 
 
             {children}
-  
+
+            {text}
         </a>
 
     )
@@ -19,7 +25,11 @@ export const Link = ( {title, href, target, children}: any ) =>
 
 Link.defaultProps = 
 { 
-  href: "",
-  target: "_self",
-  title: ""
+    text: "default text",
+    href: "",
+    target: "_self",
+    isDownload: false,
+    isOpenNewWindow: false,
+    emailAddress: ""
+
 }
