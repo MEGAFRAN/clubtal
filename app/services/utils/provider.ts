@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from 'axios'; 
-import { DataProvider } from '../../constants/types/services/types';
  
 const getAll = async (apiUrl:string, endpoint:string) => 
 { 
@@ -8,10 +7,7 @@ const getAll = async (apiUrl:string, endpoint:string) =>
     let response = await axios.get(`${apiUrl}/${endpoint}`)
     return response
   } 
-  catch (error) 
-  {
-    console.error(error)
-  }
+  catch (error) {console.error(error)}
 }
 
 const getSingle = async (apiUrl:string, endpoint:string, id:AxiosRequestConfig<any>) => 
@@ -21,10 +17,7 @@ const getSingle = async (apiUrl:string, endpoint:string, id:AxiosRequestConfig<a
     let response = await axios.get(`${apiUrl}/${endpoint}/${id}`) 
     return response
   } 
-  catch (error) 
-  {
-    console.error(error)
-  }
+  catch (error) {console.error(error)}
 }
 
 const post = async (apiUrl:string, endpoint:string, model:object) => 
@@ -34,10 +27,7 @@ const post = async (apiUrl:string, endpoint:string, model:object) =>
     let response = await axios.post(`${apiUrl}/${endpoint}`, model)
     return response
   } 
-  catch (error) 
-  {
-    console.error(error)
-  }
+  catch (error) {console.error(error)}
 }
 
 const put = async (apiUrl:string, endpoint:string, model:object) => 
@@ -47,10 +37,7 @@ const put = async (apiUrl:string, endpoint:string, model:object) =>
     let response = await axios.put(`${apiUrl}/${endpoint}`, model)
     return response
   } 
-  catch (error) 
-  {
-    console.error(error)
-  }
+  catch (error) {console.error(error)}
 }
 
 const patch = async (apiUrl:string, endpoint:string, model:object) => 
@@ -60,10 +47,7 @@ const patch = async (apiUrl:string, endpoint:string, model:object) =>
     let response = await axios.patch(`${apiUrl}/${endpoint}`, model) 
     return response
   } 
-  catch (error) 
-  {
-    console.error(error)
-  }
+  catch (error) {console.error(error)}
 }
 
 const remove = async (apiUrl:string, endpoint:string, id:any) => 
@@ -73,10 +57,7 @@ const remove = async (apiUrl:string, endpoint:string, id:any) =>
     let response = await axios.delete(`${apiUrl}/${endpoint}`, id)  
     return response
   } 
-  catch (error) 
-  {
-    console.error(error)
-  }
+  catch (error) {console.error(error)}
 }
 
 export const apiProvider = 

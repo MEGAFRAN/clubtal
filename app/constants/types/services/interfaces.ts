@@ -1,11 +1,19 @@
-export interface ApiCoreInterface {
-    getAll: (() => Promise<any>) | undefined,
-    getSingle: ((id: any) => Promise<any>) | undefined,
-    post: ((model: any) => Promise<any>) | undefined,
-    put: ((model: any) => Promise<any>) | undefined,
-    patch: ((model: any) => Promise<any>) | undefined,
-    remove: ((id: any) => Promise<any>) | undefined,
-    apiUrl: string,
-    endpoint: string
+import { AxiosRequestConfig } from "axios";
 
+export interface ApiCoreConstructorInterface extends DataProviderInterface
+{
+    getAll: boolean,
+    getSingle: boolean,
+    post: boolean,
+    put: boolean,
+    patch: boolean,
+    remove: boolean,
+}
+
+export interface DataProviderInterface 
+{
+    apiUrl: string,
+    endpoint: string,
+    id?: AxiosRequestConfig<any>,
+    model?: object
 }

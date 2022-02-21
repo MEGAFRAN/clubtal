@@ -1,65 +1,31 @@
+import { AxiosRequestConfig } from 'axios';
+import { ApiCoreConstructorInterface } from '../../constants/types/services/interfaces';
 import {apiProvider} from './provider';
 
 export class ApiCore 
 {
-  getAll: (() => Promise<any>) | undefined
-  getSingle: ((id: any) => Promise<any>) | undefined
-  post: ((model: any) => Promise<any>) | undefined
-  put: ((model: any) => Promise<any>) | undefined
-  patch: ((model: any) => Promise<any>) | undefined
-  remove: ((id: any) => Promise<any>) | undefined
+  getAll
+  getSingle
+  post
+  put
+  patch
+  remove
   
-  constructor( {getAll, getSingle, post, put, patch, remove, apiUrl, endpoint}: any) 
+  constructor( {getAll, getSingle, post, put, patch, remove, apiUrl, endpoint}: ApiCoreConstructorInterface) 
   {
     
-    if (getAll) 
-    {
-      this.getAll = () => 
-      {
-        return apiProvider.getAll(apiUrl, endpoint)
-      }
-    }
+    if (getAll) this.getAll = () => apiProvider.getAll(apiUrl, endpoint) 
 
-    if (getSingle) 
-    {
-      this.getSingle = (id) => 
-      {
-        return apiProvider.getSingle(apiUrl, endpoint, id)
-      }
-    }
+    if (getSingle) this.getSingle = (id:AxiosRequestConfig<any>) => apiProvider.getSingle(apiUrl, endpoint, id) 
 
-    if (post) 
-    {
-      this.post = (model) => 
-      {
-        return apiProvider.post(apiUrl, endpoint, model)
-      }
-    }
+    if (post) this.post = (model:object) => apiProvider.post(apiUrl, endpoint, model) 
 
-    if (put) 
-    {
-      this.put = (model) => 
-      {
-        return apiProvider.put(apiUrl, endpoint, model)
-      }
-    }
-
-    if (patch) 
-    {
-      this.patch = (model) => 
-      {
-        return apiProvider.patch(apiUrl, endpoint, model)
-      }
-    }
-
-    if (remove) 
-    {
-      this.remove = (id) => 
-      {
-        return apiProvider.remove(apiUrl, endpoint, id)
-      }
-    }
-    
+    if (put) this.put = (model:object) => apiProvider.put(apiUrl, endpoint, model)
+      
+    if (patch) this.patch = (model:object) => apiProvider.patch(apiUrl, endpoint, model)
+      
+    if (remove) this.remove = (id:AxiosRequestConfig<any>) => apiProvider.remove(apiUrl, endpoint, id)
+      
   }
 
 }

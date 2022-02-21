@@ -1,9 +1,3 @@
-import { AxiosRequestConfig } from "axios";
+import { AxiosResponse } from "axios";
 
-export type DataProvider =
-{
-        apiUrl: string,
-        endpoint: string,
-        id?: AxiosRequestConfig<any>,
-        model?: object
-}
+export type DataFunction = (apiUrl:string, endpoint:string) => AxiosResponse<any, any>;

@@ -1,4 +1,5 @@
-import { API } from "../api/variables"
+
+import { API_TEST } from "../api/variables"
 import { ApiCore } from "../utils/core"
 
 
@@ -9,7 +10,7 @@ export const testService = new ApiCore({
   post: false,
   put: false,
   patch: false,
-  delete: false,
-  apiUrl: API.test.url,
-  endpoint: API.test.endpoint
+  remove: false,
+  apiUrl: API_TEST.url,
+  endpoint: API_TEST.endpoint
 })
