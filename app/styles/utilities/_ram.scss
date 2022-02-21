@@ -1,0 +1,27 @@
+// https://1linelayouts.glitch.me/
+// https://codepen.io/una/pen/oNbvNQv
+
+/*HTML
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+
+*/
+
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  // etc
+  
+  div {
+    display: grid;
+    place-items: center;
+    background: lightpink;
+  }

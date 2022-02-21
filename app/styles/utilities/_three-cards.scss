@@ -1,0 +1,50 @@
+// https://1linelayouts.glitch.me/
+// https://codepen.io/una/pen/ExPYomq
+
+/*HTML
+
+<div class="card">
+  <h1>Title - Card 1</h1>
+  <p>Medium length description. Let's add a few more words here.</p>
+  <div class="visual"></div>
+</div>
+<div class="card">
+  <h1>Title - Card 2</h1>
+  <p>Long Description. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.</p>
+  <div class="visual"></div>
+</div>
+<div class="card">
+  <h1>Title - Card 3</h1>
+  <p>Short Description.</p>
+  <div class="visual"></div>
+</div>
+
+*/
+
+
+body {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  // etc
+  
+  .visual {
+    height: 100px;
+    width: 100%;
+    background: wheat;
+    margin: 0.5rem 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: lightpink;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }

@@ -1,0 +1,36 @@
+// https://1linelayouts.glitch.me/
+// https://codepen.io/una/pen/bGVXPWB
+
+/*HTML
+
+<header><h1>Header.com</h1></header>
+<main>Main Content</main>
+<footer>Footer Content — Header.com 2020</footer>
+
+*/
+
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  // etc
+  
+  header {
+    background: lightpink;
+    padding: 2rem;
+  }
+  
+  main {
+    background: coral;
+  }
+  
+  footer {
+    background: wheat;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  
