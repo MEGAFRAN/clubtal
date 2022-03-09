@@ -19,16 +19,20 @@ const getSingle = async (apiUrl:string, endpoint:string, id:AxiosRequestConfig<a
 
 const post = async (apiUrl:string, endpoint:string, model:object) => 
 { 
+  const headers = {'Content-Type': 'application/json'}
+
   return await axios
-                .post(`${apiUrl}/${endpoint}`, model)
+                .post(`${apiUrl}/${endpoint}`, model, {headers: headers})
                 .then(handleResponse)
                 .catch(handleError)
 }
 
-const put = async (apiUrl:string, endpoint:string, model:object) => 
+const put = async (apiUrl:string, endpoint:string, id: string, model:object) => 
 { 
+  const headers = {'Content-Type': 'application/json'}
+
   return await axios
-                .put(`${apiUrl}/${endpoint}`, model)
+                .put(`${apiUrl}/${endpoint}/${id}`, model, {headers: headers})
                 .then(handleResponse)
                 .catch(handleError)
 }
@@ -44,7 +48,7 @@ const patch = async (apiUrl:string, endpoint:string, model:object) =>
 const remove = async (apiUrl:string, endpoint:string, id:any) => 
 { 
   return await axios
-              .delete(`${apiUrl}/${endpoint}`, id)
+              .delete(`${apiUrl}/${endpoint}/${id}`)
               .then(handleResponse)
               .catch(handleError)
 }

@@ -20,7 +20,7 @@ export class ApiCore
 
     if (post) this.post = (model:object) => apiProvider.post(apiUrl, endpoint, model) 
 
-    if (put) this.put = (model:object) => apiProvider.put(apiUrl, endpoint, model)
+    if (put) this.put = (id: string, model:object) => apiProvider.put(apiUrl, endpoint, id, model)
       
     if (patch) this.patch = (model:object) => apiProvider.patch(apiUrl, endpoint, model)
       
