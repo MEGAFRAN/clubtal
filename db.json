@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Pera",
+      "price": 4000,
+      "quantity": 65
+    },
+    {
+      "id": 2,
+      "product_name": "Limon",
+      "price": 1500,
+      "quantity": 25
+    },
+    {
+      "id": 3,
+      "product_name": "Mora",
+      "price": 2000,
+      "quantity": 30
+    },
+    {
+      "id": 4,
+      "product_name": "Piña",
+      "price": 3000,
+      "quantity": 15
+    },
+    {
+      "id": 5,
+      "product_name": "Tomate",
+      "price": 1000,
+      "quantity": 30
+    },
+    {
+      "id": 6,
+      "product_name": "Fresa",
+      "price": 3000,
+      "quantity": 12
+    },
+    {
+      "id": 7,
+      "product_name": "Fruna",
+      "price": 300,
+      "quantity": 50
+    },
+    {
+      "id": 8,
+      "product_name": "Galleta",
+      "price": 500,
+      "quantity": 400
+    },
+    {
+      "id": 9,
+      "product_name": "Chocolate",
+      "price": 1200,
+      "quantity": 500
+    },
+    {
+      "id": 10,
+      "product_name": "Arroz",
+      "price": 1200,
+      "quantity": 60
+    }
+  ]
+}
