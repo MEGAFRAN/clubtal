@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Navbar } from '../app/components/structure/header/Navbar'
-import { HomeProvider } from '../app/contexts/Home'
+
 
 
 
@@ -10,11 +10,7 @@ const Home: NextPage = () => {
 
     <section>
 
-      <HomeProvider>
-
-        <Navbar />
-
-      </HomeProvider>
+      <Navbar/>
       
     </section>
     

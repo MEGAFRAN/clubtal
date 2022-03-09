@@ -24,7 +24,6 @@ export const HomeProvider = ({children}:any) =>
       {
         let responseData = await serviceObject.getAllData(testService)
           setComponentData(responseData)
-          console.log(responseData)
       }
   
       _getData ()
