@@ -17,3 +17,13 @@ export type LinkProps =
     referrerpolicy?: "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" |
     "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url",
 }
+
+export type CardProps =
+{
+    id?: string,
+    tags?: [],
+    title?: string,
+    imageUrl?: string,
+    description?: string,
+    featured?: boolean
+}    

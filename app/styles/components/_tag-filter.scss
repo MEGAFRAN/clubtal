@@ -1,0 +1,117 @@
+.tag-filter__container {
+    position:relative;
+    display:flex;
+    width: 100%;
+    border: 1px solid black;
+
+    &:after { 
+        display: flex;
+        justify-content: flex-end;
+        content: "˅";
+        width: 100%;
+        color: black;
+        font-size: 2.8rem;
+        padding-right: 12px;
+    }
+
+    &:focus { 
+        pointer-events:none; 
+
+        &:after { 
+            content: "˄";
+        }
+
+        .tag-filter__container--dropdown { 
+            opacity:1; visibility:visible; 
+        }
+    }
+
+    .tag-filter__container--dropdown {
+        display: flex;
+        flex-direction: column;
+        background-color: #fffffff5;
+        width: 100%;
+        padding: 10px;
+        border:1px black solid;
+        pointer-events: auto;
+        position: absolute;
+        margin-top: 43px;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 1s;
+        box-shadow: 0px 5px 5px black;
+
+        .tag-filter__container--dropdown-option{
+            margin-bottom: 10px;
+
+            input.tag {
+                margin-right: 12px;
+            }
+    
+            label {
+                font-size: 1.4rem;
+                font-weight: 600;
+                text-transform: capitalize;
+                padding: 10px;
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 1024px) { 
+
+        border: none;
+
+        &:after { 
+            display: none;
+        }
+
+        .tag-filter__container--dropdown { 
+            display: block;
+            position: relative;
+            border: none;
+            opacity:1; visibility:visible; 
+            margin-top: 0px;
+            padding: 0;
+            box-shadow: none;
+
+            .tag-filter__container--dropdown-option {
+                display: inline-block;
+                margin-bottom: 0;
+
+                input {
+
+                    &.tag  {
+                        display: none;
+                    } 
+    
+                    &:checked + label {
+                        background-color: black;
+                        color: white;
+                    }
+                } 
+    
+                label {
+                    display: inline-block;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    padding: 4px;
+                    border: solid 1px black;
+                    margin: 4px;
+    
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                        cursor: pointer;
+                    }
+        
+                }
+            }
+
+        }
+
+    }
+
+}
