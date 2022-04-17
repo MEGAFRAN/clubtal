@@ -1,11 +1,12 @@
 {
-  "name": "flex",
+  "name": "crypto-crea",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "local-db": "json-server -p 4000 --watch db.json",
     "dev-db": "concurrently \"npm run local-db\" \"npm run dev\"",
     "build": "next build",
+    "build-static": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch"

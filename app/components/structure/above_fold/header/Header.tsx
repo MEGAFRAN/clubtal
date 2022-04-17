@@ -1,13 +1,12 @@
-import styles from '../../../../styles/components/navbar.module.scss'
+import { Button } from '../../../button/Button'
 import { Navbar } from '../navbar/Navbar'
+import styles from '../../../../styles/components/header.module.scss'
 
 export const Header = ({navbarOptions}: any) => {
 
-
-
     return (
 
-        <header>
+        <header className={styles.container}>
 
             <Navbar options={navbarOptions} />
 
@@ -17,6 +16,8 @@ export const Header = ({navbarOptions}: any) => {
                 Solucionamos todo lo que necesitas para la creacion o comercializacion de tus criptomonedas,
                 proteje y valoriza lo que mas te importa.
             </p>
+
+            <Button text="Mas informacion" style='cta'/>
             
         </header>
             

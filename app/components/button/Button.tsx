@@ -1,29 +1,17 @@
+import styles from '../../styles/components/button.module.scss'
 
+export const Button = ({ text= "default text", handleClick, style='regular'}: any) => {
 
-
-export const Button = ({ text, handleClick, style, alignment, size }: any) => {
+  let variant = style === 'cta' ? styles.ctaButton : styles.regularButton
 
   return (
 
-    <div className={`button__container ${style}${alignment}${size}`}>
+    <button className={variant} onClick={handleClick}>
 
-      <button onClick={handleClick}>
+      {text}
 
-        {text}
+    </button>  
 
-      </button>  
-
-    </div>
-    
   )
 
-}
-
-
-Button.defaultProps = 
-{ 
-  text: "default text",
-  style: "",
-  alignment: "",
-  size: ""
 }
