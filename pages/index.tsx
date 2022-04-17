@@ -1,18 +1,16 @@
 import type { NextPage } from 'next'
-import { Navbar } from '../app/components/structure/header/Navbar'
+import { Header } from '../app/components/structure/above_fold/header/Header'
 
 
 
 
 const Home: NextPage = () => {
 
+  const homeNavbarOptions = [{name: 'servicios', link: '/'}, {name: 'precios', link: '/'}]
+
   return (
 
-    <section>
-
-      <Navbar/>
-      
-    </section>
+    <Header navbarOptions={homeNavbarOptions}/>
     
   )
 }

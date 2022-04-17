@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import '../../flex/app/styles/main.scss'
+import '../../cryptocrea/app/styles/base/reset.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
