@@ -1,0 +1,13 @@
+.container {
+    padding: 40px;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: clamp(1.2rem, 5vw, 1.4rem);
+        color:#b2becd;
+        row-gap: 20px;
+        column-gap: 10px;
+    }
+}

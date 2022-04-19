@@ -1,6 +1,6 @@
 import { Button } from '../../../button/Button'
 import { Navbar } from '../navbar/Navbar'
-import styles from '../../../../styles/components/header.module.scss'
+import styles from '../../../../styles/sections/header.module.scss'
 
 export const Header = ({navbarOptions}: any) => {
 
