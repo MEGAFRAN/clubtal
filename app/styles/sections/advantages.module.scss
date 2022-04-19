@@ -1,13 +1,40 @@
+@use '../abstracts/colors';
+
 .container {
+    display: flex;
+    flex-direction: column;
     padding: 40px;
+    border-bottom: 1px gray solid;
+    background-color: colors.$primary-gray;
+
+    h2 {
+        padding-bottom: 30px;
+        color: colors.$primary-black;
+        text-align: center;
+    }
+
+    img {
+        height: clamp(150px, 20vw, 300px);
+        border-radius: 146px;
+        margin: auto;
+        border: 31px colors.$primary-black solid;
+        align-self: center;
+    }
 
     ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        font-size: clamp(1.2rem, 5vw, 1.4rem);
-        color:#b2becd;
         row-gap: 20px;
-        column-gap: 10px;
+        column-gap: 38px;
+        font-family: helvetica, sans serif;
+        font-size: clamp(1.2rem, 4vw, 1.2rem);
+        color:#b2becd;
+        color: colors.$primary-black;
+
     }
+
+    button {
+        align-self: center;
+    }
+
 }

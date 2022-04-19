@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 
   const tokensUseCases = [
     'Darselos a quien quieras: (Pareja, familia, amigos)', 'Venderlos: (Clientes, Fans)', 'Subastarlos',
-    'Darlos como premio: (Concursos)', 'Darlos como recuerdo: (Matrimonios, cumpleaños, aniversarios, bautizos)', 
+    'Como premio: (Concursos)', 'Como recuerdo: (Matrimonios, cumpleaños, aniversarios, bautizos)', 
     'Crear beneficios especiales para poseedores: (Acceso VIP, descuentos)', 
     'Utilizarlos como moneda en tu comunidad', 'Y... Cualquier otra idea que imagines'
   ]
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
   const solanaStats = [
     'Red con un valor mayor a 30 billones de dolares', 'Minimos costos por transaccion', 
-    'Una de las redes blockchain mas rapidas', 'Mas de 1700 nodos asegurando la red'
+    'Gran velocidad', 'Mas de 1700 nodos asegurando la infraestructura'
   ]
 
   return (

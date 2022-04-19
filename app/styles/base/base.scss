@@ -2,11 +2,13 @@
 
 body {
     height: 100%;
-    font-family: monospace, Courier, sans serif;
+    font-family: helvetica, sans serif;
     letter-spacing: 3px;
     font-size: 100%;
-    background-color: colors.$primary-black;
     color: #fff;
+    background-color: colors.$primary-black;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 h1,h2,h3,h4,p {
@@ -15,6 +17,7 @@ h1,h2,h3,h4,p {
 
 h1,h2,h3,h4 {
     font-family: Georgia, serif;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
 }
 
 p {

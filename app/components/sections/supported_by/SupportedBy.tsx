@@ -1,4 +1,5 @@
 import styles from '../../../styles/sections/supported-by.module.scss'
+import { Button } from '../../button/Button'
 import { List } from '../../list/List'
 
 export const SupportedBy = ({listData}: any) => {
@@ -7,8 +8,10 @@ export const SupportedBy = ({listData}: any) => {
 
         <section className={styles.container}>
 
-            <h2>Respaldado por la Red SOLANA</h2>
-            <List listData={listData}/>
+            <h2>Respaldado por la Red</h2>
+            <img src='/images/characters/solanaVerticalLogo.svg' alt="solana logo" loading='lazy' />
+            <List listData={listData} />
+            <Button text="Contactanos aqui" style='cta' />
 
         </section>
             

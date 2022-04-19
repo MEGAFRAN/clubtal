@@ -13,12 +13,12 @@ export const Header = ({navbarOptions}: any) => {
             <h1>Creamos <em>lo que quieras</em> en Crypto</h1>
 
             <p>
-                Creamos criptomonedas y tokens para ti,<em> proteje y valoriza lo que quieras.</em>
+                Creamos criptomonedas y tokens para ti,<em> proteje y valoriza lo que mas te importa.</em>
             </p>
 
             <div className={styles.cta_wrapper}>
                 <img src='/images/crown.svg' alt="crown" />
-                <Button text="Mas informacion" style='cta' />
+                <Button text="Contactanos aqui" style='cta' />
             </div>
             
         </header>

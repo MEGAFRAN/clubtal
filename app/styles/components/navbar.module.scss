@@ -6,7 +6,7 @@
     left: 0;
     display:flex;
     width: 100%;
-    background: colors.$primary-gold;
+    background: colors.$primary-white;
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0px -3px 11px black;
 
@@ -22,7 +22,7 @@
 
     &:focus { 
         pointer-events:none; 
-        background-color: colors.$primary-white;
+        background-color: colors.$primary-gold;
 
         &:after { 
             content: "▴";
@@ -31,6 +31,10 @@
 
         .title {
           color: colors.$primary-black;
+          
+          &::before{
+            color: colors.$primary-white;
+          }
         }
 
         .dropdown { 
@@ -41,7 +45,7 @@
 
     &:hover {
       cursor: pointer;
-      background-color: colors.$primary-white;
+      background-color: colors.$primary-gold;
 
       &:after { 
         color: colors.$primary-black;
@@ -49,6 +53,10 @@
 
       .title {
         color: colors.$primary-black;
+
+        &::before{
+          color: colors.$primary-white;
+        }
       }
     }
 
@@ -61,6 +69,13 @@
       font-size: clamp(1.1rem, 4vw, 1.2rem);
       font-weight: 900;
       text-transform: capitalize;
+
+      &::before {
+        content: "\20B5" "\20B5";
+        margin-right: 20px;
+        color: colors.$primary-gold;
+        font-size: 25px;
+      }
     }
 
     .dropdown {

@@ -11,9 +11,10 @@
     padding-top: clamp(11vh, 13vw, 146px);
     padding-bottom: 15vh;
     text-align: center;
-    border-bottom: 1px gray solid;
+    background-color: colors.$primary-black;
 
     h1 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
 
         em {
             color: colors.$primary-gold;
