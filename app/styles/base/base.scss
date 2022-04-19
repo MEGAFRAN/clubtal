@@ -1,7 +1,23 @@
-html, body {
+@use '../abstracts/colors';
+
+body {
     height: 100%;
+    font-family: monospace, Courier, sans serif;
+    letter-spacing: 3px;
+    font-size: 100%;
+    background-color: colors.$primary-black;
+    color: #fff;
 }
 
 h1,h2,h3,h4,p {
     padding: 0 20px;
+}
+
+h1,h2,h3,h4 {
+    font-family: Georgia, serif;
+}
+
+p {
+    color:#b2becd;
+    font-weight: 400;
 }

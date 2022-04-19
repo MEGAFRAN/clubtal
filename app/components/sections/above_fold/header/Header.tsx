@@ -10,14 +10,16 @@ export const Header = ({navbarOptions}: any) => {
 
             <Navbar options={navbarOptions} />
 
-            <h1>Creamos lo que quieras en Crypto</h1>
+            <h1>Creamos <em>lo que quieras</em> en Crypto</h1>
 
             <p>
-                Solucionamos todo lo que necesitas para la creacion o comercializacion de tus criptomonedas,
-                proteje y valoriza lo que mas te importa.
+                Creamos criptomonedas y tokens para ti,<em> proteje y valoriza lo que quieras.</em>
             </p>
 
-            <Button text="Mas informacion" style='cta'/>
+            <div className={styles.cta_wrapper}>
+                <img src='/images/crown.svg' alt="crown" />
+                <Button text="Mas informacion" style='cta' />
+            </div>
             
         </header>
             

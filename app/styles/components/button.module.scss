@@ -1,7 +1,18 @@
-.ctaButton {
-    background-color: red;
-}
+@use '../abstracts/colors';
 
-.regularButton {
-    background-color: blue;
+.ctaButton {
+    border: solid #695b0d 2px;
+    border-radius: 24px;
+    background: #9e8913;
+    background: linear-gradient(0deg,#af8e3c 0,#af8e3c 25%,colors.$primary-white 80%);
+    color: #111110;
+    font-style: italic;
+    padding: 10px 23px;
+    cursor: pointer;
+
+    &:hover {
+        background: colors.$primary-blue;
+        color: colors.$primary-white;
+        transition: all 0.3s;
+    }
 }

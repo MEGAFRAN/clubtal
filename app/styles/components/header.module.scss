@@ -1,9 +1,51 @@
+@use '../abstracts/colors';
+
 .container {
     min-height: 100%;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
-    row-gap: 20vh;
-    padding-bottom: 30px;
+    row-gap: clamp(3vh, 4vw, 4vh);
+    padding: clamp(4vh, 9vw, 4rem) clamp(5vw, 10vw, 18vw);
+    padding-top: clamp(11vh, 13vw, 170px);
+    padding-bottom: 15vh;
+    text-align: center;
+    border-bottom: 1px gray solid;
+
+    h1 {
+
+        em {
+            color: colors.$primary-gold;
+        } 
+    }
+
+
+    p {
+        font-size: clamp(1.2rem, 5vw, 1.4rem);
+
+        em {
+            color: colors.$primary-white;
+            font-weight: 500;
+            font-size: clamp(1.2rem, 5vw, 1.6rem);
+        }  
+    }
+
+    .cta_wrapper {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            position: absolute;
+            top: 43%;
+        }
+
+        img {
+            height: clamp(280px, 30vw, 440px);
+        }
+    }
+
 
 }

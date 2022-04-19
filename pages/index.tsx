@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import { List } from '../app/components/list/List'
-import { Header } from '../app/components/structure/above_fold/header/Header'
+import { Header } from '../app/components/sections/above_fold/header/Header'
+import { UseCases } from '../app/components/sections/use_cases/UseCase'
 
 
 const Home: NextPage = () => {
@@ -15,13 +15,7 @@ const Home: NextPage = () => {
 
     <>
       <Header navbarOptions={homeNavbarOptions}/>
-
-      <section className=''>
-
-        <h2>¿Que podras hacer con tu crypto / token?</h2>
-        <List listData={tokensUseCases}/>
-
-      </section>
+      <UseCases listData={tokensUseCases}/>
     </>
   )
 }
