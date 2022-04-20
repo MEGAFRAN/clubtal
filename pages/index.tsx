@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   ]
   
   const blockchainAdvantages = [
-    'Segura', 'Verificable', 'Dificil de alterar', 'Descentralizada', 'Accesible', 'Igualitaria'
+    'Segura', 'Verificable', 'Transparente', 'Descentralizada', 'Accesible', 'Igualitaria'
   ]
 
   const solanaStats = [

@@ -10,7 +10,6 @@ export const UseCases = ({listData}: any) => {
 
            
             <h2>¿Que podras hacer con tus tokens?</h2>
-            <img src='/images/characters/character-question.jpg' alt="character with a question" loading='lazy' />
             <List listData={listData} />
             <Button text="Cuentanos tu idea" style='cta' />
 

@@ -4,13 +4,12 @@
     display: flex;
     flex-direction: column;
     padding: 40px;
-    border-bottom: 1px gray solid;
     border-radius: 38px;
-    background-color: colors.$primary-gray;
+    background-color: #f5f5f50a;
 
     h2 {
         padding-bottom: 30px;
-        color: colors.$primary-black;
+        color: colors.$primary-gray;
         text-align: center;
     }
 
@@ -36,14 +35,45 @@
 
         li {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             list-style-type: none;
-            width: 255px;
+            width: 228px;
             height: 106px;
             background-color: colors.$primary-black;
             color: colors.$primary-white;
             border-radius: 19px;
+
+            &:nth-child(1)::after {
+                content: "\2656";
+                font-size: 2rem;
+            }
+
+            &:nth-child(2)::after {
+                content: "\2713";
+                font-size: 2rem;
+            }
+
+            &:nth-child(3)::after {
+                content: "\2600";
+                font-size: 2rem;
+            }
+
+            &:nth-child(4)::after {
+                content: "\267B";
+                font-size: 2rem;
+            }
+
+            &:nth-child(5)::after {
+                content: "\2764";
+                font-size: 2rem;
+            }
+
+            &:nth-child(6)::after {
+                content: "\2696";
+                font-size: 2rem;
+            }
         }
 
     }
