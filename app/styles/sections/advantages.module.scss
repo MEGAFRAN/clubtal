@@ -5,6 +5,7 @@
     flex-direction: column;
     padding: 40px;
     border-bottom: 1px gray solid;
+    border-radius: 38px;
     background-color: colors.$primary-gray;
 
     h2 {
@@ -24,12 +25,26 @@
     ul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
         row-gap: 20px;
         column-gap: 38px;
         font-family: helvetica, sans serif;
         font-size: clamp(1.2rem, 4vw, 1.2rem);
         color:#b2becd;
         color: colors.$primary-black;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style-type: none;
+            width: 255px;
+            height: 106px;
+            background-color: colors.$primary-black;
+            color: colors.$primary-white;
+            border-radius: 19px;
+        }
 
     }
 

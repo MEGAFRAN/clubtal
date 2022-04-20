@@ -9,10 +9,10 @@ export const UseCases = ({listData}: any) => {
         <section className={styles.container}>
 
            
-            <h2>¿Que podras hacer con tu crypto / token?</h2>
+            <h2>¿Que podras hacer con tus tokens?</h2>
             <img src='/images/characters/character-question.jpg' alt="character with a question" loading='lazy' />
             <List listData={listData} />
-            <Button text="Contactanos aqui" style='cta' />
+            <Button text="Cuentanos tu idea" style='cta' />
 
         </section>
             

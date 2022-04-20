@@ -4,8 +4,10 @@
     display: flex;
     flex-direction: column;
     padding: clamp(0px, 5vw, 40px);
-    border-bottom: 1px gray solid;
+    border-radius: 38px;
     background-color: colors.$terciary-black;
+    margin-bottom: 25px;
+
 
     h2 {
         padding-bottom: 30px;
@@ -31,6 +33,11 @@
         color: colors.$primary-white;
         text-align: center;
         padding: 0;
+
+        li:last-child {
+            font-weight: bold;
+            font-size: clamp(1.2rem, 5vw, 1.5rem);
+        }
 
     }
 

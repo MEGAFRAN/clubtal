@@ -9,9 +9,8 @@ export const Advantages = ({listData}: any) => {
         <section className={styles.container}>
 
             <h2>Ventajas de la tecnologia blockchain</h2>
-            <img src='/images/characters/character-check.jpg' alt="character with a checkmark" loading='lazy' />
             <List listData={listData} />
-            <Button text="Contactanos aqui" style='cta' />
+            <Button text="Asesoria gratis" style='cta' />
 
         </section>
             

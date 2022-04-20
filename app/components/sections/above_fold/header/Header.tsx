@@ -13,7 +13,7 @@ export const Header = ({navbarOptions}: any) => {
             <h1>Creamos <em>lo que quieras</em> en Crypto</h1>
 
             <p>
-                Creamos criptomonedas y tokens para ti,<em> proteje y valoriza lo que mas te importa.</em>
+                Desarrollamos tokens de criptomonedas para ti,<em> proteje y valoriza lo que mas te importa.</em>
             </p>
 
             <div className={styles.cta_wrapper}>

@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     'Darselos a quien quieras: (Pareja, familia, amigos)', 'Venderlos: (Clientes, Fans)', 'Subastarlos',
     'Como premio: (Concursos)', 'Como recuerdo: (Matrimonios, cumpleaños, aniversarios, bautizos)', 
     'Crear beneficios especiales para poseedores: (Acceso VIP, descuentos)', 
-    'Utilizarlos como moneda en tu comunidad', 'Y... Cualquier otra idea que imagines'
+    'Utilizarlos como moneda en tu comunidad', 'Cualquier idea que tengas la creamos en crypto'
   ]
   
   const blockchainAdvantages = [
@@ -21,8 +21,9 @@ const Home: NextPage = () => {
   ]
 
   const solanaStats = [
-    'Red con un valor mayor a 30 billones de dolares', 'Minimos costos por transaccion', 
-    'Gran velocidad', 'Mas de 1700 nodos asegurando la infraestructura'
+    'Desarrollamos Tokens SPL en Solana','Red con un valor mayor a 30 billones de dolares', 
+    'Minimos costos por transaccion', 'Gran velocidad', 
+    'Mas de 1700 nodos asegurando la infraestructura'
   ]
 
   return (

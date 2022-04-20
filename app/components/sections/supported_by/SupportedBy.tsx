@@ -8,7 +8,7 @@ export const SupportedBy = ({listData}: any) => {
 
         <section className={styles.container}>
 
-            <h2>Respaldado por la Red</h2>
+            <h2>Respaldados por la Red</h2>
             <img src='/images/characters/solanaVerticalLogo.svg' alt="solana logo" loading='lazy' />
             <List listData={listData} />
             <Button text="Contactanos aqui" style='cta' />
