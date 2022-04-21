@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { Header } from '../app/components/sections/above_fold/header/Header'
 import { Advantages } from '../app/components/sections/advantages/Advantages'
+import { FollowingSteps } from '../app/components/sections/following_steps/FollowingSteps'
 import { SupportedBy } from '../app/components/sections/supported_by/SupportedBy'
 import { UseCases } from '../app/components/sections/use_cases/UseCase'
 
@@ -26,6 +27,16 @@ const Home: NextPage = () => {
     'Mas de 1700 nodos asegurando la infraestructura'
   ]
 
+  const followingSteps = [
+    `Nos contactas: Analizamos contigo lo que necesitas, y definimos la mejor solucion`, 
+    `Creamos tus tokens: Desarrollamos y verificamos tus tokens en la red de pruebas de la blockchain, 
+       Lanzamos tus tokens en la red de principal de la blockchain y 
+       Añadimos la metadata necesaria para identificar tu token en la red (Logo, nombre)`, 
+    `Te entregamos los tokens: Enviamos los tokens desarrollados y probados a tu billetera, 
+        Te enviamos la direccion donde podras verificar la informacion de tu token. 
+       Ahora podras usar tus tokens para todo lo que deseas !`
+  ]
+
   return (
 
     <>
@@ -33,6 +44,7 @@ const Home: NextPage = () => {
       <UseCases listData={tokensUseCases}/>
       <Advantages listData={blockchainAdvantages}/>
       <SupportedBy listData={solanaStats}/>
+      <FollowingSteps listData={followingSteps}/>
     </>
   )
 }

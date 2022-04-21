@@ -1,0 +1,61 @@
+@use '../abstracts/colors';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border-bottom: 1px gray solid;
+    background-color: colors.$primary-black;
+
+    h2 {
+        padding-bottom: 30px;
+        color: colors.$primary-white;
+        text-align: center;
+    }
+
+    img {
+        height: clamp(90px, 20vw, 175px);
+        margin: auto;
+        margin-bottom: 65px;
+        align-self: center;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: clamp(1.2rem, 4vw, 1.2rem);
+        color:#b2becd;
+        row-gap: 20px;
+        column-gap: 10px;
+        list-style: none;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+
+        li {
+            display: flex;
+            flex-direction: column;
+
+            &:nth-child(1)::before {
+                content: "\2780";
+                font-size: 6rem;
+                color: colors.$primary-white;
+            }
+            &:nth-child(2)::before {
+                content: "\2781";
+                font-size: 6rem;
+                color: colors.$primary-white;
+            }
+            &:nth-child(3)::before {
+                content: "\2782";
+                font-size: 6rem;
+                color: colors.$primary-white;
+            }
+        }
+    }
+
+    button {
+        align-self: center;
+    }
+}
