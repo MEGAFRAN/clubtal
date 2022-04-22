@@ -6,11 +6,11 @@ import { useRouter } from 'next/router'
 export const Header = ({navbarOptions, setIsEnglishText, title, text, buttonText}: any) => {
 
     const router = useRouter()
-    const crownImage = router.pathname === 'https://megafran.github.io/crypto-crea/' 
-                                        ? '/crypto-crea/images/crown.svg' 
-                                        : '/images/crown.svg'
+    const GITHUB_PAGES_PATH = '/crypto-crea'
+    const crownImage = router.basePath ===  GITHUB_PAGES_PATH 
+                                            ? '/crypto-crea/images/crown.svg' 
+                                            : '/images/crown.svg'
 
-    console.log(router)
 
     return (
 

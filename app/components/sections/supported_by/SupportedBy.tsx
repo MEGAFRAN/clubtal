@@ -6,9 +6,10 @@ import { useRouter } from 'next/router'
 export const SupportedBy = ({listData, title, buttonText}: any) => {
 
     const router = useRouter()
-    const solanaImage = router.pathname === 'https://megafran.github.io/crypto-crea/' 
-                                        ? '/crypto-crea/images/solanaVerticalLogo.svg' 
-                                        : '/images/solanaVerticalLogo.svg'
+    const GITHUB_PAGES_PATH = '/crypto-crea'
+    const solanaImage = router.basePath === GITHUB_PAGES_PATH 
+                                            ? '/crypto-crea/images/solanaVerticalLogo.svg' 
+                                            : '/images/solanaVerticalLogo.svg'
 
     return (
 
