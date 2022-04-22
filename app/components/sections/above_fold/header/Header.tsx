@@ -2,23 +2,23 @@ import { Button } from '../../../button/Button'
 import { Navbar } from '../navbar/Navbar'
 import styles from '../../../../styles/sections/header.module.scss'
 
-export const Header = ({navbarOptions}: any) => {
+export const Header = ({navbarOptions, setIsEnglishText, title, text, buttonText}: any) => {
 
     return (
 
         <header className={styles.container}>
 
-            <Navbar options={navbarOptions} />
+            <Navbar options={navbarOptions} setIsEnglishText={setIsEnglishText}/>
 
-            <h1>Creamos <em>lo que quieras</em> en Crypto</h1>
+            <h1>{title[0]} <em>{title[1]}</em> {title[2]}</h1>
 
             <p>
-                Desarrollamos tokens de criptomonedas para ti,<em> proteje y valoriza lo que mas te importa.</em>
+                {text[0]},<em> {text[1]}</em>
             </p>
 
             <div className={styles.cta_wrapper}>
                 <img src='/images/crown.svg' alt="crown" />
-                <Button text="Contactanos aqui" style='cta' />
+                <Button text={buttonText[0]} style='cta' />
             </div>
             
         </header>

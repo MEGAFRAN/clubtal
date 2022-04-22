@@ -2,6 +2,8 @@
 
 .container {
     min-height: 100%;
+    max-width: 980px;
+    margin: auto;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -12,6 +14,7 @@
     padding-bottom: 15vh;
     text-align: center;
     background-color: colors.$primary-black;
+    z-index: 0;
 
     h1 {
         font-size: clamp(1.4rem, 5vw, 1.8rem);
@@ -37,6 +40,7 @@
         position: relative;
         flex-direction: column;
         align-items: center;
+        z-index: -1;
 
         button {
             position: absolute;

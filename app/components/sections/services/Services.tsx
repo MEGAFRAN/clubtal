@@ -1,14 +1,13 @@
-import styles from '../../../styles/sections/use-cases.module.scss'
+import styles from '../../../styles/sections/services.module.scss'
 import { Button } from '../../button/Button'
 import { List } from '../../list/List'
 
-export const UseCases = ({listData, title, buttonText}: any) => {
+export const Services = ({listData, title, buttonText}: any) => {
 
     return (
 
-        <section className={styles.container}>
+        <section id='services' className={styles.container}>
 
-           
             <h2>{title}</h2>
             <List listData={listData} />
             <Button text={buttonText} style='cta' />

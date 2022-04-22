@@ -2,15 +2,15 @@ import styles from '../../../styles/sections/following-steps.module.scss'
 import { Button } from '../../button/Button'
 import { List } from '../../list/List'
 
-export const FollowingSteps = ({listData}: any) => {
+export const FollowingSteps = ({listData, title, buttonText}: any) => {
 
     return (
 
-        <section className={styles.container}>
+        <section id='following-steps' className={styles.container}>
 
-            <h2>Pasos a seguir</h2>
+            <h2>{title}</h2>
             <List listData={listData} />
-            <Button text="Iniciemos el proceso" style='cta' />
+            <Button text={buttonText} style='cta' />
 
         </section>
             

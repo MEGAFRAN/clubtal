@@ -1,14 +1,13 @@
 @use '../abstracts/colors';
 
 .ctaButton {
-    border: solid #695b0d 2px;
+    border: solid black 2px;
     border-radius: 24px;
     background: #9e8913;
-    background: linear-gradient(0deg,#af8e3c 0,#af8e3c 25%,colors.$primary-white 80%);
+    background: linear-gradient(0deg, #af8e3c 0, #af8e3c 26%, #fff 96%);
     color: #111110;
-    font-style: italic;
     padding: 10px 23px;
-    cursor: pointer;
+    pointer-events: auto;
 
     &:hover {
         background: colors.$primary-blue;

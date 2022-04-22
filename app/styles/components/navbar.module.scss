@@ -5,35 +5,22 @@
     top: 0;
     left: 0;
     display:flex;
+    justify-content: space-between;
     width: 100%;
-    background: colors.$primary-white;
+    background: colors.$primary-black;
     backdrop-filter: saturate(180%) blur(20px);
     box-shadow: 0px -3px 11px black;
 
-    &:after { 
-        display: flex;
-        justify-content: flex-end;
-        content: "▾";
-        flex: 1;
-        color: colors.$primary-black;
-        font-size: 1.8rem;
-        padding-right: 12px;
-    }
-
     &:focus { 
         pointer-events:none; 
-        background-color: colors.$primary-gold;
-
-        &:after { 
-            content: "▴";
-            color: colors.$primary-black;
-        }
+        background-color: black;
 
         .title {
-          color: colors.$primary-black;
+          color: colors.$primary-white;
           
           &::before{
-            color: colors.$primary-white;
+            color: colors.$primary-gold;
+            content: 'X';
           }
         }
 
@@ -45,66 +32,80 @@
 
     &:hover {
       cursor: pointer;
-      background-color: colors.$primary-gold;
-
-      &:after { 
-        color: colors.$primary-black;
-    }
+      background-color: black;
 
       .title {
-        color: colors.$primary-black;
+        color: colors.$primary-white;
 
         &::before{
-          color: colors.$primary-white;
+          color: colors.$primary-gold;
         }
       }
     }
 
     .title {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      padding-left: 12px;
-      color: colors.$primary-black;
+      color: colors.$primary-white;
       font-family: monospace;
       font-size: clamp(1.1rem, 4vw, 1.2rem);
       font-weight: 900;
       text-transform: capitalize;
+      padding-left: 20px;
 
       &::before {
-        content: "\20B5" "\20B5";
-        margin-right: 20px;
+        content: "\20B5";
         color: colors.$primary-gold;
-        font-size: 25px;
+        font-size: 19px;
       }
+    }
+
+    div:first-of-type {
+      align-self: center;
+      padding-right: 20px;
     }
 
     .dropdown {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background-color: colors.$primary-black;
       width: 100%;
       padding: 10px;
       border: 1px black solid;
-      pointer-events: auto;
       position: absolute;
-      margin-top: 43px;
+      margin-top: 55px;
       z-index: 1;
       opacity: 1;
       visibility: hidden;
       transition: visibility 1s;
       box-shadow: 0px 5px 14px black;
+      height: 100vh;
+
+      ul {
+        padding: 0;
+      }
 
       .dropdown_option{
           margin-bottom: 10px;
           display: flex;
-          justify-content: flex-start;
+          justify-content: center;
           align-items: center;
           border-bottom: 1px solid gray;
+          padding: 14px 0px;
+          font-size: clamp(1.4rem, 4vw, 1.8rem);
 
          a {
              color: colors.$primary-white;
              text-decoration: none;
              text-transform: capitalize;
+             pointer-events: auto;
+
+             &:hover {
+               color: colors.$primary-gold;
+             }
          }
       }
 

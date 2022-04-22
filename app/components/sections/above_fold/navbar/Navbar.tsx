@@ -1,6 +1,8 @@
 import styles from '../../../../styles/components/navbar.module.scss'
+import { Button } from '../../../button/Button'
+import { LanguageToogle } from '../../../language_toogle/LanguageToogle'
 
-export const Navbar = ({ options, dropdownTitle }: any) => {
+export const Navbar = ({ options, setIsEnglishText }: any) => {
 
     let optionsList = options.map(({ name, link }: any) => (
 
@@ -11,20 +13,29 @@ export const Navbar = ({ options, dropdownTitle }: any) => {
         </li>
     ))
 
+
     return (
 
         <nav tabIndex={0} className={styles.container}>
 
-            <span className={styles.title}>{dropdownTitle ? dropdownTitle : 'CryptoCrea'}</span> 
+            <span className={styles.title}>Menu</span> 
 
-            <ul className={styles.dropdown}>
+            <LanguageToogle setIsEnglishText={setIsEnglishText}/>
 
-                {options ? optionsList : null}
+            <div className={styles.dropdown}>
+
+                <ul>
+
+                    {options ? optionsList : null}
+                    
+                </ul>
+
+                <Button text="Contactanos" style='cta' />
                 
-            </ul>
-
-        </nav>
+            </div>
             
+        </nav>
+   
     )
 
 }
