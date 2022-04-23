@@ -3,7 +3,7 @@ import { Button } from '../../../button/Button'
 import { LanguageToogle } from '../../../language_toogle/LanguageToogle'
 import Link from 'next/link'
 
-export const Navbar = ({ options, setIsEnglishText }: any) => {
+export const Navbar = ({ options, setIsEnglishText, buttonText }: any) => {
 
     let optionsList = options.map(({ name, link }: any) => (
 
@@ -33,7 +33,9 @@ export const Navbar = ({ options, setIsEnglishText }: any) => {
                     
                 </ul>
 
-                <Button text="Contactanos" style='cta' />
+                <Button text={buttonText} style='cta' />
+
+                <a className={styles.contact} href="mailto:info@cryptocrea.co">info@cryptocrea.co</a>
                 
             </div>
             

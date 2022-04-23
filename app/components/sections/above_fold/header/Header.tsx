@@ -16,7 +16,7 @@ export const Header = ({navbarOptions, setIsEnglishText, title, text, buttonText
 
         <header className={styles.container}>
 
-            <Navbar options={navbarOptions} setIsEnglishText={setIsEnglishText}/>
+            <Navbar options={navbarOptions} setIsEnglishText={setIsEnglishText} buttonText={buttonText[0]}/>
 
             <h1>{title[0]} <em>{title[1]}</em> {title[2]}</h1>
 

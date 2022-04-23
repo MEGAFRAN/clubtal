@@ -1,6 +1,11 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 
 const nextConfig = {
+
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en"
+  },
   
   reactStrictMode: true,
       

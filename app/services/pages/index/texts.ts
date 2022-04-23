@@ -8,7 +8,7 @@ export const indexTextSpanish =
   
   headerText: ['Desarrollamos tokens de criptomonedas para ti', 'proteje y valoriza lo que mas te importa.'],
   
-  ctaButtonTexts: ['Contactanos aqui', 'Cuentanos tu idea', 'Iniciemos el proceso', 'Asesoria gratis'],
+  ctaButtonTexts: ['Contactanos', 'Cuentanos tu idea', 'Iniciemos el proceso', 'Asesoria gratis', 'Mas informacion'],
 
   sectionsTitles: [
     '¿Que podras hacer con tus tokens?', 'Servicios', 'Ventajas de la tecnologia blockchain',
@@ -55,7 +55,7 @@ export const indexTextEnglish =
   
   headerText: ['We develop cryptocurrency tokens for you', 'protect and value what matters most to you.'],
   
-  ctaButtonTexts: ['Contact us here', 'Tell us your idea', "Let's start the process", 'Free advice'],
+  ctaButtonTexts: ['Contact us', 'Tell us your idea', "Let's start the process", 'Free advice', 'More information'],
 
   sectionsTitles: [
     'What can you do with your tokens', 'Services', 'Advantages of blockchain technology',

@@ -6,14 +6,14 @@ export const LanguageToogle = ({setIsEnglishText}: any) => {
       
         <div className={styles.container}>
 
-            <button onClick={()=> setIsEnglishText(true)}>
-
-                English
-
-            </button>  
             <button onClick={()=> setIsEnglishText(false)}>
 
                 Español
+
+            </button>  
+            <button onClick={()=> setIsEnglishText(true)}>
+
+                English
 
             </button>  
 
