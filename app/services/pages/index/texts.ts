@@ -2,7 +2,7 @@
 
 export const indexTextSpanish =
 {
-  homeNavbarOptions: [{ name: 'Servicios', link: '/' }, { name: 'Pasos a seguir', link: '/#following-steps' }],
+  homeNavbarOptions: [{ name: 'Servicios', link: '/#services' }, { name: 'Pasos a seguir', link: '/#following-steps' }],
   
   headerTitle: ['Creamos', 'lo que quieras', 'en crypto'],
   

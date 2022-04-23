@@ -1,6 +1,7 @@
 import styles from '../../../../styles/components/navbar.module.scss'
 import { Button } from '../../../button/Button'
 import { LanguageToogle } from '../../../language_toogle/LanguageToogle'
+import Link from 'next/link'
 
 export const Navbar = ({ options, setIsEnglishText }: any) => {
 
@@ -8,7 +9,9 @@ export const Navbar = ({ options, setIsEnglishText }: any) => {
 
         <li tabIndex={0} key={name} className={styles.dropdown_option}>
 
-            <a href={link}>{name}</a>
+            <Link href={link}>
+                <a>{name}</a>
+            </Link>
             
         </li>
     ))
