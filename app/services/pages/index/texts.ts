@@ -44,7 +44,13 @@ export const indexTextSpanish =
     `Te entregamos los tokens: Enviamos los tokens desarrollados y probados a tu billetera, 
         Te enviamos la direccion donde podras verificar la informacion de tu token. 
        Ahora podras usar tus tokens para todo lo que deseas !`
+  ],
+
+  formText: [
+    'Queremos escucharte', 'Cuentanos lo que buscas', 'Escribe aqui lo que deseas..',
+    'Mi nombre', 'Escribe aqui tu nombre..', 'Mi email', 'Escribe aqui tu email..', 'Enviar mi mensaje'
   ]
+
 }
 
 export const indexTextEnglish =
@@ -91,5 +97,11 @@ export const indexTextEnglish =
     `We deliver the tokens to you: We send the developed and tested tokens to your wallet, 
         We send you the address where you can verify your token information. 
        Now you can use your tokens for everything you want!`
+  ],
+
+  formText: [
+    'We want to hear from you', 'Tell us what you are looking for', 'Write here what you want...',
+    'My name', 'Type your name here...', 'My email', 'Type your email here...', 'Send my message'
   ]
+
 }
