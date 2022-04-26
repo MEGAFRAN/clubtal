@@ -43,7 +43,7 @@ export const Form = ({text}: any) => {
           
         <h2>{text[0]}</h2>
         <label>{text[1]}</label>
-        <textarea type="text" required placeholder={text[2]} cols="30" rows="3" onChange={event => setFormMessage(event.target.value)}></textarea>
+        <textarea required placeholder={text[2]} cols={30} rows={3} onChange={event => setFormMessage(event.target.value)}></textarea>
         <label>{text[3]}</label>
         <input type="text" required placeholder={text[4]} onChange={event => setFormName(event.target.value)}/>
         <label>{text[5]}</label>
