@@ -12,7 +12,7 @@ export const indexTextSpanish =
 
   sectionsTitles: [
     '¿Que podras hacer con tus tokens?', 'Servicios', 'Ventajas de la tecnologia blockchain',
-    'Respaldados por la Red', 'Pasos a seguir'
+    'Respaldados por la Red', 'Pasos a seguir', 'Contactanos'
   ],
 
   tokensUseCases : [
@@ -55,7 +55,11 @@ export const indexTextSpanish =
 
 export const indexTextEnglish =
 {
-  homeNavbarOptions: [{ name: 'Services', link: '/' }, { name: 'Steps to follow', link: '/#following-steps' }],
+  homeNavbarOptions: [
+    { name: 'Services', link: '/#services' },
+    { name: 'Steps to follow', link: '/#following-steps' },
+    { name: 'Contact us', link: '/#contact' }
+  ],
   
   headerTitle: ['We create', 'whatever you want', 'in crypto'],
   
@@ -65,7 +69,7 @@ export const indexTextEnglish =
 
   sectionsTitles: [
     'What can you do with your tokens', 'Services', 'Advantages of blockchain technology',
-    'Backed by the Network', 'Steps to follow'
+    'Backed by the Network', 'Steps to follow', 'Contact us'
   ],
 
   tokensUseCases : [

@@ -18,7 +18,7 @@ export const SupportedBy = ({listData, title, buttonText}: any) => {
             <h2>{title}</h2>
             <img src={solanaImage} alt="solana logo" loading='lazy' />
             <List listData={listData} />
-            <Button text={buttonText} style='cta' />
+            <Button text={buttonText} style='cta' scrollToSection={'#contact'}/>
 
         </section>
             

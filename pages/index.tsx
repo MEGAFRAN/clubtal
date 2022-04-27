@@ -28,12 +28,12 @@ const Home: NextPage = () => {
       
       <Header navbarOptions={homeNavbarOptions} setIsEnglishText={setIsEnglishText} title={headerTitle}
         text={headerText} buttonText={ctaButtonTexts}/>
-      <UseCases listData={tokensUseCases} title={sectionsTitles[0]} buttonText={ctaButtonTexts[1]}/>
+      <UseCases listData={tokensUseCases} title={sectionsTitles[0]} buttonText={ctaButtonTexts[1]} />
       <Services listData={services} title={sectionsTitles[1]} buttonText={ctaButtonTexts[4]}/>
       <Advantages listData={blockchainAdvantages} title={sectionsTitles[2]} buttonText={ctaButtonTexts[3]}/>
       <SupportedBy listData={solanaStats} title={sectionsTitles[3]} buttonText={ctaButtonTexts[0]}/>
       <FollowingSteps listData={followingSteps} title={sectionsTitles[4]} buttonText={ctaButtonTexts[2]} />
-      <Contact formText={formText}/>
+      <Contact formText={formText} title={sectionsTitles[5]}/>
     </>
   )
 }
