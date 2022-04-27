@@ -23,6 +23,7 @@
         width: 100%;
         border-radius: 10px;
         transition: animations.$regular-transition;
+        padding: 10px;
 
         &:focus {
             border-bottom: 4px solid colors.$primary-gold;

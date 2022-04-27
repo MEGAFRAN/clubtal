@@ -26,7 +26,7 @@ export const Header = ({navbarOptions, setIsEnglishText, title, text, buttonText
 
             <div className={styles.cta_wrapper}>
                 <img src={crownImage} alt="crown" />
-                <Button text={buttonText[0]} style='cta' />
+                <Button text={buttonText[0]} style='cta' scrollToSection={'#contact'}/>
             </div>
             
         </header>

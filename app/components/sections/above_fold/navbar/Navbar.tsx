@@ -1,7 +1,6 @@
 import styles from '../../../../styles/components/navbar.module.scss'
 import { Button } from '../../../button/Button'
 import { LanguageToogle } from '../../../language_toogle/LanguageToogle'
-import Link from 'next/link'
 
 export const Navbar = ({ options, setIsEnglishText, buttonText }: any) => {
 
@@ -9,10 +8,8 @@ export const Navbar = ({ options, setIsEnglishText, buttonText }: any) => {
 
         <li tabIndex={0} key={name} className={styles.dropdown_option}>
 
-            <Link href={link}>
-                <a>{name}</a>
-            </Link>
-            
+            <a href={link}>{name}</a>
+
         </li>
     ))
 
@@ -33,7 +30,7 @@ export const Navbar = ({ options, setIsEnglishText, buttonText }: any) => {
                     
                 </ul>
 
-                <Button text={buttonText} style='cta' />
+                <Button text={buttonText} style='cta' scrollToSection={'#contact'}/>
 
                 <a className={styles.contact} href="mailto:info@cryptocrea.co">info@cryptocrea.co</a>
                 
