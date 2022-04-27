@@ -4,16 +4,22 @@ import styles from '../../styles/components/form.module.scss'
 
 export const Form = ({text}: any) => {
 
-    const [messageResponse, setMessageResponse] = useState<string>('')
-    const [messageResponseStatus, setMessageResponseStatus] = useState<string>('')
-    const [formMessage, setFormMessage] = useState<string>('')
-    const [formName, setFormName] = useState<string>('')
-    const [formEmail, setFormEmail] = useState<string>('')
+  const [messageResponse, setMessageResponse] = useState<string>('')
+  const [messageResponseStatus, setMessageResponseStatus] = useState<string>('')
+  const [formMessage, setFormMessage] = useState<string>('')
+  const [formName, setFormName] = useState<string>('')
+  const [formEmail, setFormEmail] = useState<string>('')
+  
+
+  const onSubmit = (event:any): void => {
+    event.preventDefault()
+    sendFormMessage(formMessage, formName, formEmail, setMessageResponseStatus, setMessageResponse)
+  }
     
 
   return (
 
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={onSubmit}>
           
         <h2>{text[0]}</h2>
         <label>{text[1]}</label>
@@ -23,7 +29,7 @@ export const Form = ({text}: any) => {
         <label>{text[5]}</label>
         <input type="text" required placeholder={text[6]} onChange={event => setFormEmail(event.target.value)} />
         <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
-        <button onClick={()=> sendFormMessage(formMessage, formName, formEmail, setMessageResponseStatus, setMessageResponse)}>{text[7]}</button>
+        <button type="submit">{text[7]}</button>
 
     </form>
 
