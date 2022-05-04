@@ -19,6 +19,9 @@
         padding: 0;
     }
 
+    
+    
+
     textarea {
         width: 100%;
         border-radius: 10px;
@@ -29,27 +32,38 @@
             border-bottom: 4px solid colors.$primary-gold;
         }
     }
+    
 
-    input {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        background-color: colors.$primary-white;
-        outline: 0;
-        resize: none;
-        border: 0;
-        border-radius: 10px;
-        font-family: Montserrat, sans-serif;
-        transition: animations.$regular-transition;
-        border-bottom: 2px solid #bebed2;
-
-        &:focus {
-            border-bottom: 4px solid colors.$primary-gold;
-        }
-    }
-
+    
     label{
         color: colors.$secondary-gray;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+        span{
+            padding-bottom: 10px;
+            
+            
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: colors.$primary-white;
+            outline: 0;
+            resize: none;
+            border: 0;
+            border-radius: 10px;
+            font-family: Montserrat, sans-serif;
+            transition: animations.$regular-transition;
+            border-bottom: 2px solid #bebed2;
+    
+            &:focus {
+                border-bottom: 4px solid colors.$primary-gold;
+            }
+        }
     }
 
     p {
