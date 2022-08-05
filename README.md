@@ -1,10 +1,10 @@
 ## What is this project?
 
-ICREAN is a collaborative platform where beginners of digital careers can get experience by doing features in a living and open project
+CLUBTAL is a collaborative platform where beginners of digital careers can get experience by doing features in a living and open project
 
 ## Que es este proyecto?
 
-ICREAN es una plataforma colaborativa en la que los principiantes de las carreras digitales pueden adquirir experiencia realizando funcionalidades en un proyecto vivo y abierto
+CLUBTAL es una plataforma colaborativa en la que los principiantes de las carreras digitales pueden adquirir experiencia realizando funcionalidades en un proyecto vivo y abierto
 
 ## Tech stack used - Stack tecnologico usado
 
@@ -22,7 +22,7 @@ ICREAN es una plataforma colaborativa en la que los principiantes de las carrera
 ```bash
 npm i
 ```
--un the development server:
+-Run the development server:
 
 ```bash
 npm run dev
