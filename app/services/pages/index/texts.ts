@@ -2,20 +2,35 @@
 
 export const indexTextSpanish =
 {
-  homeNavbarOptions: [{ name: 'Servicios', link: '/#services' }, { name: 'Pasos a seguir', link: '/#following-steps' }],
+  homeNavbarOptions: [
+    { name: 'Casos de uso', link: '/#use-cases' },
+    { name: 'Pasos a seguir', link: '/#following-steps' },
+    { name: 'Contacto', link: '/#contact' }
+  ],
   
-  headerTitle: ['Desarrollo', 'Profesional', 'Colaborativo'],
+  headerTitle: [
+    'Experiencia', 'Profesional', 'Colaborativa'
+  ],
   
-  headerText: ['Pon en practica tu talento digital', 'aprende haciendo'],
+  headerText: [
+    'Gana experiencia en un proyecto real de software', 'aprende haciendo'
+  ],
   
-  ctaButtonTexts: ['Contactanos', 'Cuentanos tu idea', 'Iniciemos el proceso', 'Asesoria gratis', 'Mas informacion'],
+  ctaButtonTexts: [
+    'Contactanos', 'Quiero experiencia', 'Iniciemos el proceso', 'Unete a la comunidad', 'Mas informacion',
+    'Estoy interesado', 'Quiero ser parte'
+  ],
 
   sectionsTitles: [
     '¿Quieres ser?', 'Deseas...', '¿Como es nuestra comunidad?',
-    'Respaldados por la Red', 'Pasos a seguir', 'Contactanos'
+    'Herramientas que usaras', 'Pasos a seguir', 'Contactanos'
   ],
 
-  tokensUseCases : [
+  sectionsSubTitles: [
+    '¿Pero te falta experiencia practica?'
+  ],
+
+  useCases : [
     'Desarrollador de software', 'Marketer digital', 'Diseñador UI/UX',
     'Community manager', 'QA'
   ],
@@ -28,20 +43,16 @@ export const indexTextSpanish =
     'Segura', 'Verificable', 'Abierta', 'Colaborativa', 'Amistosa', 'Igualitaria'
   ],
   
-  solanaStats : [
-    'Desarrollamos Tokens SPL en Solana','Red con un valor mayor a 30 billones de dolares', 
-    'Minimos costos por transaccion', 'Gran velocidad', 
-    'Mas de 1700 nodos asegurando la infraestructura'
+  projectTools : [
+    'Github', 'Jira', 'Confluence', 'Discord', 'Figma', 'Google analytics', 'Google tag manager', 'Azure'
   ],
   
   followingSteps : [
-    `Nos contactas: Analizamos contigo lo que necesitas, y definimos la mejor solucion`, 
-    `Creamos tus tokens: Desarrollamos y verificamos tus tokens en la red de pruebas de la blockchain, 
-       Lanzamos tus tokens en la red de principal de la blockchain y 
-       Añadimos la metadata necesaria para identificar tu token en la red (Logo, nombre)`, 
-    `Te entregamos los tokens: Enviamos los tokens desarrollados y probados a tu billetera, 
-        Te enviamos la direccion donde podras verificar la informacion de tu token. 
-       Ahora podras usar tus tokens para todo lo que deseas !`
+    `Nos contactas: Nos cuentas sobre tu perfil, y lo que deseas conseguir a nivel de experiencia`, 
+    `Te ingresamos a la comunidad: Estarás en un grupo basado en tu carrera digital, 
+    donde tendrás el apoyo de tus compañeros, compartiendo conocimientos y experiencias`, 
+    `Ganaras experiencia con funcionalidades del proyecto : Podrás elegir lo que quieras practicar o aprender, 
+    colaborar en grupo o de forma individual, obtener experiencia practica, y tener retroalimentación`
   ],
 
   formText: [
@@ -54,51 +65,56 @@ export const indexTextSpanish =
 export const indexTextEnglish =
 {
   homeNavbarOptions: [
-    { name: 'Services', link: '/#services' },
+    { name: 'Use cases', link: '/#use-cases' },
     { name: 'Steps to follow', link: '/#following-steps' },
-    { name: 'Contact us', link: '/#contact' }
+    { name: 'Contact', link: '/#contact' }
   ],
   
-  headerTitle: ['We create', 'whatever you want', 'in crypto'],
+  headerTitle: [
+    'Collaborative', 'Professional', 'Experience'
+  ],
   
-  headerText: ['We develop cryptocurrency tokens for you', 'protect and value what matters most to you.'],
+  headerText: [
+    'Gain experience in a real software project', 'learn by doing', 'learn by doing', 'learn by doing'
+  ],
   
-  ctaButtonTexts: ['Contact us', 'Tell us your idea', "Let's start the process", 'Free advice', 'More information'],
+  ctaButtonTexts: [
+    'Contact us', 'I want experience', `Let's start the process`, 'Join the community', 'More information',
+    'I am interested', 'I want to be part', 'I want to be part'
+  ],
 
   sectionsTitles: [
-    'What can you do with your tokens', 'Services', 'Advantages of blockchain technology',
-    'Backed by the Network', 'Steps to follow', 'Contact us'
+    'Do you want to be?', 'Do you want to...', 'What is our community like?', 'Tools you will use', 'Next steps', 'Contact us',
+    'Tools you will use', 'Steps to follow', 'Contact us', 'How to contact us', 'How to find us'
   ],
 
-  tokensUseCases : [
-    'Give them to whomever you want: (Couple, Family, Friends)', 'Sell them: (Customers, Fans)', 'Auction them',
-    'As a prize: (Contests)', 'As a souvenir: (Marriages, birthdays, anniversaries, baptisms)', 
-    'Create special benefits for holders: (VIP access, discounts)', 
-    'Use them as currency in your community', 'Any idea you have we create it in crypto'
+  sectionsSubTitles: [
+    'But you lack practical experience?'
+  ],
+
+  useCases : [
+    'Software developer', 'Digital marketer', 'UI/UX designer',
+    'Community manager', 'QA'
   ],
   
   services : [
-    'Token creation', 'Blockchain wallet creation consultancy', 'General blockchain consultancy' 
+    'Gain experience?', 'Learn by doing?', 'Get closer to your dream job?' 
   ],
   
   blockchainAdvantages : [
-    'Secure', 'Verifiable', 'Transparent', 'Decentralized', 'Accessible', 'Equal'
+    'Safe', 'Verifiable', 'Open', 'Collaborative', 'Friendly', 'Equal'
   ],
   
-  solanaStats : [
-    'We develop SPL tokens in Solana', 'Network worth more than 30 billion dollars', 
-    'Minimal cost per transaction', 'High speed', 
-    'More than 1700 nodes securing the infrastructure'
+  projectTools : [
+    'Github', 'Jira', 'Confluence', 'Discord', 'Figma', 'Google analytics', 'Google tag manager', 'Azure'
   ],
   
   followingSteps : [
-    `You contact us: We analyze with you what you need, and define the best solution`, 
-    `We create your tokens: We develop and verify your tokens on the blockchain test network, 
-       Launch your tokens on the main blockchain network, and 
-       We add the necessary metadata to identify your token on the network (logo, name)`, 
-    `We deliver the tokens to you: We send the developed and tested tokens to your wallet, 
-        We send you the address where you can verify your token information. 
-       Now you can use your tokens for everything you want!`
+    `You contact us: You tell us about your profile, and what you want to achieve in terms of experience`, 
+    `You join the community: You will be in a group based on your digital career, 
+    where you will have the support of your peers, sharing knowledge and experiences`, 
+    `Gain experience with project functionalities: You will be able to choose what you want to practice or learn, 
+    collaborate as a group or individually, get hands-on experience, and get feedback`
   ],
 
   formText: [

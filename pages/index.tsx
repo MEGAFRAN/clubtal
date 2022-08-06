@@ -18,8 +18,8 @@ const Home: NextPage = () => {
   
   const currentLanguage = isSecondaryLanguage ? { ...indexTextEnglish } : { ...indexTextSpanish }
 
-  const { homeNavbarOptions, headerTitle, headerText, ctaButtonTexts, sectionsTitles, tokensUseCases, services,
-          blockchainAdvantages, solanaStats, followingSteps, formText } = currentLanguage
+  const { homeNavbarOptions, headerTitle, headerText, ctaButtonTexts, sectionsTitles, sectionsSubTitles, useCases, services,
+          blockchainAdvantages, projectTools, followingSteps, formText } = currentLanguage
 
   return (
 
@@ -28,11 +28,11 @@ const Home: NextPage = () => {
       
       <Header navbarOptions={homeNavbarOptions} setSecondaryLanguage={setSecondaryLanguage} title={headerTitle}
         text={headerText} buttonText={ctaButtonTexts}/>
-      <UseCases listData={tokensUseCases} title={sectionsTitles[0]} buttonText={ctaButtonTexts[1]} />
+      <UseCases listData={useCases} title={sectionsTitles[0]} subTitle={sectionsSubTitles[0]} buttonText={ctaButtonTexts[1]} />
       <Services listData={services} title={sectionsTitles[1]} buttonText={ctaButtonTexts[4]}/>
       <Advantages listData={blockchainAdvantages} title={sectionsTitles[2]} buttonText={ctaButtonTexts[3]}/>
-      <SupportedBy listData={solanaStats} title={sectionsTitles[3]} buttonText={ctaButtonTexts[0]}/>
-      <FollowingSteps listData={followingSteps} title={sectionsTitles[4]} buttonText={ctaButtonTexts[2]} />
+      <SupportedBy listData={projectTools} title={sectionsTitles[3]} buttonText={ctaButtonTexts[5]}/>
+      <FollowingSteps listData={followingSteps} title={sectionsTitles[4]} buttonText={ctaButtonTexts[6]} />
       <Contact formText={formText} title={sectionsTitles[5]}/>
     </>
   )
