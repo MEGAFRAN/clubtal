@@ -4,30 +4,28 @@ export const indexTextSpanish =
 {
   homeNavbarOptions: [{ name: 'Servicios', link: '/#services' }, { name: 'Pasos a seguir', link: '/#following-steps' }],
   
-  headerTitle: ['Creamos', 'lo que quieras', 'en crypto'],
+  headerTitle: ['Desarrollo', 'Profesional', 'Colaborativo'],
   
-  headerText: ['Desarrollamos tokens de criptomonedas para ti', 'proteje y valoriza lo que mas te importa.'],
+  headerText: ['Pon en practica tu talento digital', 'aprende haciendo'],
   
   ctaButtonTexts: ['Contactanos', 'Cuentanos tu idea', 'Iniciemos el proceso', 'Asesoria gratis', 'Mas informacion'],
 
   sectionsTitles: [
-    '¿Que podras hacer con tus tokens?', 'Servicios', 'Ventajas de la tecnologia blockchain',
+    '¿Quieres ser?', 'Deseas...', '¿Como es nuestra comunidad?',
     'Respaldados por la Red', 'Pasos a seguir', 'Contactanos'
   ],
 
   tokensUseCases : [
-    'Darselos a quien quieras: (Pareja, familia, amigos)', 'Venderlos: (Clientes, Fans)', 'Subastarlos',
-    'Como premio: (Concursos)', 'Como recuerdo: (Matrimonios, cumpleaños, aniversarios, bautizos)', 
-    'Crear beneficios especiales para poseedores: (Acceso VIP, descuentos)', 
-    'Utilizarlos como moneda en tu comunidad', 'Cualquier idea que tengas la creamos en crypto'
+    'Desarrollador de software', 'Marketer digital', 'Diseñador UI/UX',
+    'Community manager', 'QA'
   ],
   
   services : [
-    'Creacion de tokens', 'Asesoria creacion billetera blockchain', 'Asesoria general de blockchain' 
+    '¿Ganar experiencia?', '¿Aprender haciendo?', '¿Acercarte al trabajo de tus sueños?' 
   ],
   
   blockchainAdvantages : [
-    'Segura', 'Verificable', 'Transparente', 'Descentralizada', 'Accesible', 'Igualitaria'
+    'Segura', 'Verificable', 'Abierta', 'Colaborativa', 'Amistosa', 'Igualitaria'
   ],
   
   solanaStats : [

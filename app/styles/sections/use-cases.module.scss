@@ -51,6 +51,13 @@
 
     }
 
+    span {
+        text-align: center;
+        color: colors.$primary-white;
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        padding-bottom: 30px;
+    }
+
     button {
         align-self: center;
     }

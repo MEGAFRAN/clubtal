@@ -3,7 +3,7 @@ import { Navbar } from '../navbar/Navbar'
 import styles from '../../../../styles/sections/header.module.scss'
 import { useRouter } from 'next/router'
 
-export const Header = ({navbarOptions, setIsEnglishText, title, text, buttonText}: any) => {
+export const Header = ({navbarOptions, setSecondaryLanguage, title, text, buttonText}: any) => {
 
     const router = useRouter()
     const GITHUB_PAGES_PATH = '/crypto-crea'
@@ -16,7 +16,7 @@ export const Header = ({navbarOptions, setIsEnglishText, title, text, buttonText
 
         <header className={styles.container}>
 
-            <Navbar options={navbarOptions} setIsEnglishText={setIsEnglishText} buttonText={buttonText[0]}/>
+            <Navbar options={navbarOptions} setSecondaryLanguage={setSecondaryLanguage} buttonText={buttonText[0]}/>
 
             <h1>{title[0]} <em>{title[1]}</em> {title[2]}</h1>
 

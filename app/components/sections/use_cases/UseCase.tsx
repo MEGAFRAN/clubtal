@@ -11,6 +11,7 @@ export const UseCases = ({listData, title, buttonText}: any) => {
            
             <h2>{title}</h2>
             <List listData={listData} />
+            <span>¿Pero te falta experiencia practica?</span>
             <Button text={buttonText} style='cta' scrollToSection={'#contact'}/>
 
         </section>

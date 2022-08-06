@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 export type TextProps =
 {
     text: string,
@@ -26,4 +28,11 @@ export type CardProps =
     imageUrl?: string,
     description?: string,
     featured?: boolean
+}    
+
+export type LanguageToogleProps =
+{
+    setSecondaryLanguage: Dispatch<SetStateAction<boolean>>,
+    mainLanguage?: 'Español',
+    secondaryLanguage?: 'English'
 }    

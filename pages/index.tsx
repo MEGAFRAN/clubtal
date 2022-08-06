@@ -14,9 +14,9 @@ import { indexTextSpanish, indexTextEnglish } from '../app/services/pages/index/
 
 const Home: NextPage = () => {
 
-  const [isEnglishText, setIsEnglishText] = useState<boolean>(true)
+  const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
   
-  const currentLanguage = isEnglishText ? { ...indexTextEnglish } : { ...indexTextSpanish }
+  const currentLanguage = isSecondaryLanguage ? { ...indexTextEnglish } : { ...indexTextSpanish }
 
   const { homeNavbarOptions, headerTitle, headerText, ctaButtonTexts, sectionsTitles, tokensUseCases, services,
           blockchainAdvantages, solanaStats, followingSteps, formText } = currentLanguage
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     <>
       <Head>{HOME_HEAD}</Head>
       
-      <Header navbarOptions={homeNavbarOptions} setIsEnglishText={setIsEnglishText} title={headerTitle}
+      <Header navbarOptions={homeNavbarOptions} setSecondaryLanguage={setSecondaryLanguage} title={headerTitle}
         text={headerText} buttonText={ctaButtonTexts}/>
       <UseCases listData={tokensUseCases} title={sectionsTitles[0]} buttonText={ctaButtonTexts[1]} />
       <Services listData={services} title={sectionsTitles[1]} buttonText={ctaButtonTexts[4]}/>

@@ -2,7 +2,7 @@ import styles from '../../../../styles/components/navbar.module.scss'
 import { Button } from '../../../button/Button'
 import { LanguageToogle } from '../../../language_toogle/LanguageToogle'
 
-export const Navbar = ({ options, setIsEnglishText, buttonText }: any) => {
+export const Navbar = ({ options, setSecondaryLanguage, buttonText }: any) => {
 
     let optionsList = options.map(({ name, link }: any) => (
 
@@ -20,7 +20,7 @@ export const Navbar = ({ options, setIsEnglishText, buttonText }: any) => {
 
             <span className={styles.title}>Menu</span> 
 
-            <LanguageToogle setIsEnglishText={setIsEnglishText}/>
+            <LanguageToogle setSecondaryLanguage={setSecondaryLanguage}/>
 
             <div className={styles.dropdown}>
 

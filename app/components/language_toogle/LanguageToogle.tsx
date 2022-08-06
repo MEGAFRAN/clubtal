@@ -1,19 +1,22 @@
+import { LanguageToogleProps } from '../../constants/types/components_props/types'
 import styles from '../../styles/components/language-toogle.module.scss'
 
-export const LanguageToogle = ({setIsEnglishText}: any) => {
+export const LanguageToogle = ({setSecondaryLanguage, 
+                                mainLanguage='Español', 
+                                secondaryLanguage='English'}: LanguageToogleProps) => {
 
     return (
       
         <div className={styles.container}>
 
-            <button onClick={()=> setIsEnglishText(false)}>
+            <button onClick={()=> setSecondaryLanguage(true)}>
 
-                Español
+                {secondaryLanguage}
 
             </button>  
-            <button onClick={()=> setIsEnglishText(true)}>
+            <button onClick={()=> setSecondaryLanguage(false)}>
 
-                English
+                {mainLanguage}
 
             </button>  
 
