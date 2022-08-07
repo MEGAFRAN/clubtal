@@ -1,16 +1,10 @@
 import { Button } from '../../../button/Button'
 import { Navbar } from '../navbar/Navbar'
 import styles from '../../../../styles/sections/header.module.scss'
-import { useRouter } from 'next/router'
 
 export const Header = ({navbarOptions, setSecondaryLanguage, title, text, buttonText}: any) => {
 
-    const router = useRouter()
-    const GITHUB_PAGES_PATH = '/crypto-crea'
-    const crownImage = router.basePath ===  GITHUB_PAGES_PATH 
-                                            ? '/crypto-crea/images/crown.svg' 
-                                            : '/images/crown.svg'
-
+    const crownImage = '/images/crown.svg'
 
     return (
 

@@ -32,7 +32,7 @@ export const Navbar = ({ options, setSecondaryLanguage, buttonText }: any) => {
 
                 <Button text={buttonText} style='cta' scrollToSection={'#contact'}/>
 
-                <a className={styles.contact} href="mailto:info@cryptocrea.co">info@cryptocrea.co</a>
+                <a className={styles.contact} href="mailto:info@clubtal.com">info@clubtal.com</a>
                 
             </div>
             

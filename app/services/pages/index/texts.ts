@@ -13,7 +13,7 @@ export const indexTextSpanish =
   ],
   
   headerText: [
-    'Gana experiencia en un proyecto real de software', 'aprende haciendo'
+    'Gana experiencia en un sitio web real', 'aprende haciendo'
   ],
   
   ctaButtonTexts: [
@@ -48,11 +48,11 @@ export const indexTextSpanish =
   ],
   
   followingSteps : [
-    `Nos contactas: Nos cuentas sobre tu perfil, y lo que deseas conseguir a nivel de experiencia`, 
+    `Nos contactas: Nos cuentas sobre tu perfil, y el area que deseas experiencia`, 
     `Te ingresamos a la comunidad: Estarás en un grupo basado en tu carrera digital, 
     donde tendrás el apoyo de tus compañeros, compartiendo conocimientos y experiencias`, 
-    `Ganaras experiencia con funcionalidades del proyecto : Podrás elegir lo que quieras practicar o aprender, 
-    colaborar en grupo o de forma individual, obtener experiencia practica, y tener retroalimentación`
+    `Ganaras experiencia con funcionalidades del proyecto: Podrás elegir lo que quieras practicar o aprender, 
+    colaborar en grupo o individualmente, obtener experiencia practica, y tener retroalimentación`
   ],
 
   formText: [
@@ -75,7 +75,7 @@ export const indexTextEnglish =
   ],
   
   headerText: [
-    'Gain experience in a real software project', 'learn by doing', 'learn by doing', 'learn by doing'
+    'Gain experience in a real website', 'learn by doing', 'learn by doing', 'learn by doing'
   ],
   
   ctaButtonTexts: [
@@ -110,7 +110,7 @@ export const indexTextEnglish =
   ],
   
   followingSteps : [
-    `You contact us: You tell us about your profile, and what you want to achieve in terms of experience`, 
+    `You contact us: You tell us about your profile, and the area you want experience`, 
     `You join the community: You will be in a group based on your digital career, 
     where you will have the support of your peers, sharing knowledge and experiences`, 
     `Gain experience with project functionalities: You will be able to choose what you want to practice or learn, 
