@@ -24,10 +24,3 @@ const nextConfig = {
     return config;
   },
 }
-
-module.exports = (phase, { defaultConfig }) => {
-
-  if (phase === PHASE_DEVELOPMENT_SERVER) { return nextConfig }
-
-  return { ...nextConfig, basePath: '/crypto-crea', assetPrefix: '/crypto-crea' }
-}
