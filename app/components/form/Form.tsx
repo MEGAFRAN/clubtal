@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { sendFormMessage } from '../../services/form.service'
+import { _gtmEvents } from '../../services/google-tag-events.service'
 import styles from '../../styles/components/form.module.scss'
 
 export const Form = ({text}: any) => {
@@ -14,6 +15,7 @@ export const Form = ({text}: any) => {
   const onSubmit = (event:any): void => {
     event.preventDefault()
     sendFormMessage(formMessage, formName, formEmail, setMessageResponseStatus, setMessageResponse)
+    _gtmEvents.formSubmit({formMessage, formName, formEmail})
   }
 
 
