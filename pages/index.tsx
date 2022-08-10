@@ -8,6 +8,7 @@ import { FollowingSteps } from '../app/components/sections/following_steps/Follo
 import { Services } from '../app/components/sections/services/Services'
 import { SupportedBy } from '../app/components/sections/supported_by/SupportedBy'
 import { UseCases } from '../app/components/sections/use_cases/UseCase'
+import { GA_MAIN_SCRIPT } from '../app/constants/analytics/google_tag_manager/gaScripts'
 import { GTM_MAIN_SCRIPT, GTM_NO_SCRIPT } from '../app/constants/analytics/google_tag_manager/gtmScripts'
 import { HOME_HEAD } from '../app/constants/seo/homeHead'
 import { indexTextSpanish, indexTextEnglish } from '../app/services/pages/index/texts'
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
       <SupportedBy listData={projectTools} title={sectionsTitles[3]} buttonText={ctaButtonTexts[5]}/>
       <FollowingSteps listData={followingSteps} title={sectionsTitles[4]} buttonText={ctaButtonTexts[6]} />
       <Contact formText={formText} title={sectionsTitles[5]}/>
+      {GA_MAIN_SCRIPT}
       {GTM_MAIN_SCRIPT}
       {GTM_NO_SCRIPT}
     </>
