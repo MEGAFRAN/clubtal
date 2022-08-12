@@ -21,30 +21,29 @@
 
 */
 
-
 body {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  // etc
-  
-  .visual {
-    height: 100px;
-    width: 100%;
-    background: wheat;
-    margin: 0.5rem 0;
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: lightpink;
-    padding: 1rem;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-  }
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+// etc
+
+.visual {
+  height: 100px;
+  width: 100%;
+  background: wheat;
+  margin: 0.5rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: lightpink;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}

@@ -1,18 +1,18 @@
-@use '../abstracts/colors';
-@use '../abstracts/animations';
+@use "../abstracts/colors";
+@use "../abstracts/animations";
 
 .ctaButton {
-    border: solid black 2px;
-    border-radius: 24px;
-    background: #9e8913;
-    background: linear-gradient(0deg, #af8e3c 0, #af8e3c 26%, #fff 96%);
-    color: #111110;
-    padding: 10px 23px;
-    pointer-events: auto;
-    transition: animations.$regular-transition;
+  border: solid black 2px;
+  border-radius: 24px;
+  background: #9e8913;
+  background: linear-gradient(0deg, #af8e3c 0, #af8e3c 26%, #fff 96%);
+  color: #111110;
+  padding: 10px 23px;
+  pointer-events: auto;
+  transition: animations.$regular-transition;
 
-    &:hover {
-        background: colors.$primary-blue;
-        color: colors.$primary-white;
-    }
+  &:hover {
+    background: colors.$primary-blue;
+    color: colors.$primary-white;
+  }
 }

@@ -1,16 +1,15 @@
-@use '../abstracts/colors';
+@use "../abstracts/colors";
 
 .container {
+  button {
+    background-color: inherit;
+    color: colors.$primary-white;
+    padding: 8px;
+    pointer-events: auto;
+    border: none;
 
-    button {
-        background-color: inherit;
-        color: colors.$primary-white;
-        padding: 8px;
-        pointer-events: auto;
-        border: none;
-
-        &:hover {
-            color: colors.$primary-gold;
-        }
+    &:hover {
+      color: colors.$primary-gold;
     }
+  }
 }

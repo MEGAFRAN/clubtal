@@ -1,26 +1,32 @@
-@use '../abstracts/colors';
+@use "../abstracts/colors";
 
 body {
-    height: 100%;
-    font-family: helvetica, sans serif;
-    letter-spacing: 3px;
-    font-size: 100%;
-    color: #fff;
-    background-color: colors.$primary-black;
-    margin: 0 auto;
+  height: 100%;
+  font-family: helvetica, sans serif;
+  letter-spacing: 3px;
+  font-size: 100%;
+  color: #fff;
+  background-color: colors.$primary-black;
+  margin: 0 auto;
 }
 
-h1,h2,h3,h4,p {
-    padding: 0 20px;
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0 20px;
 }
 
-h1,h2,h3,h4 {
-    font-family: Georgia, serif;
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
 }
 
 p {
-    color:#b2becd;
-    font-weight: 400;
+  color: #b2becd;
+  font-weight: 400;
 }
-

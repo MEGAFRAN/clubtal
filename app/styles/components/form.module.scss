@@ -1,100 +1,90 @@
-@use '../abstracts/colors';
-@use '../abstracts/animations';
+@use "../abstracts/colors";
+@use "../abstracts/animations";
 
 .container {
-    width: 340px;
-    background-color: colors.$primary-black;
-    border-radius: 8px;
-    border: solid 2px colors.$primary-gold;
-    box-shadow: 0 0 40px -10px black;
-    padding: 20px 30px;
-    max-width: calc(100vw - 40px);
-    font-family: Montserrat, sans-serif;
+  width: 340px;
+  background-color: colors.$primary-black;
+  border-radius: 8px;
+  border: solid 2px colors.$primary-gold;
+  box-shadow: 0 0 40px -10px black;
+  padding: 20px 30px;
+  max-width: calc(100vw - 40px);
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: flex-start;
+
+  h2 {
+    padding: 0;
+  }
+
+  textarea {
+    width: 100%;
+    border-radius: 10px;
+    transition: animations.$regular-transition;
+    padding: 10px;
+
+    &:focus {
+      border-bottom: 4px solid colors.$primary-gold;
+    }
+  }
+
+  label {
+    color: colors.$secondary-gray;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    align-items: flex-start;
+    width: 100%;
 
-    h2 {
-        padding: 0;
+    span {
+      padding-bottom: 10px;
     }
 
-    
-    
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: colors.$primary-white;
+      outline: 0;
+      resize: none;
+      border: 0;
+      border-radius: 10px;
+      font-family: Montserrat, sans-serif;
+      transition: animations.$regular-transition;
+      border-bottom: 2px solid #bebed2;
 
-    textarea {
-        width: 100%;
-        border-radius: 10px;
-        transition: animations.$regular-transition;
-        padding: 10px;
-
-        &:focus {
-            border-bottom: 4px solid colors.$primary-gold;
-        }
+      &:focus {
+        border-bottom: 4px solid colors.$primary-gold;
+      }
     }
-    
+  }
 
-    
-    label{
-        color: colors.$secondary-gray;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        
-        span{
-            padding-bottom: 10px;
-            
-            
-        }
+  p {
+    padding: 0;
 
-        input {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            background-color: colors.$primary-white;
-            outline: 0;
-            resize: none;
-            border: 0;
-            border-radius: 10px;
-            font-family: Montserrat, sans-serif;
-            transition: animations.$regular-transition;
-            border-bottom: 2px solid #bebed2;
-    
-            &:focus {
-                border-bottom: 4px solid colors.$primary-gold;
-            }
-        }
+    &.response-mensaje--error {
+      border: solid 2px rgb(246, 83, 83);
     }
-
-    p {
-        padding: 0;
-
-        &.response-mensaje--error {
-            border: solid 2px rgb(246, 83, 83);
-        }
-        &.response-mensaje--success {
-            border: solid 2px rgb(13, 151, 78);
-        }
+    &.response-mensaje--success {
+      border: solid 2px rgb(13, 151, 78);
     }
+  }
 
+  button {
+    border: solid black 2px;
+    border-radius: 24px;
+    background: #9e8913;
+    background: linear-gradient(0deg, #af8e3c 0, #af8e3c 26%, #fff 96%);
+    color: #111110;
+    padding: 10px 23px;
+    pointer-events: auto;
+    transition: animations.$regular-transition;
+    margin-top: 20px;
+    align-self: center;
 
-    button {
-        border: solid black 2px;
-        border-radius: 24px;
-        background: #9e8913;
-        background: linear-gradient(0deg, #af8e3c 0, #af8e3c 26%, #fff 96%);
-        color: #111110;
-        padding: 10px 23px;
-        pointer-events: auto;
-        transition: animations.$regular-transition;
-        margin-top: 20px;
-        align-self: center;
-
-        &:hover {
-            background: colors.$primary-blue;
-            color: colors.$primary-white;
-        }
+    &:hover {
+      background: colors.$primary-blue;
+      color: colors.$primary-white;
     }
-
-
+  }
 }

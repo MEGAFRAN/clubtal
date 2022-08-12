@@ -11,44 +11,43 @@
 
 */
 
-
 body {
-    display: grid;
-    height: 100vh;
-    grid-template: auto 1fr auto / auto 1fr auto
-  }
-  
-  // etc
-  
-  header {
-    background: lightpink;
-    padding: 2rem;
-    grid-column: 1 / 4;
-  }
-  
-  .left-sidebar {
-    background: lightblue;
-    grid-column: 1 / 2;
-  }
-  
-  main {
-    background: coral;
-    grid-column: 2 / 3;
-  }
-  
-  .right-sidebar {
-    background: yellow;
-    grid-column: 3 / 4;
-  }
-  
-  footer {
-    background: wheat;
-    padding: 2rem;
-    text-align: center;
-    grid-column: 1 / 4;
-  }
-  
-  .left-sidebar,
-  .right-sidebar {
-    padding: 1rem;
-  }
+  display: grid;
+  height: 100vh;
+  grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+// etc
+
+header {
+  background: lightpink;
+  padding: 2rem;
+  grid-column: 1 / 4;
+}
+
+.left-sidebar {
+  background: lightblue;
+  grid-column: 1 / 2;
+}
+
+main {
+  background: coral;
+  grid-column: 2 / 3;
+}
+
+.right-sidebar {
+  background: yellow;
+  grid-column: 3 / 4;
+}
+
+footer {
+  background: wheat;
+  padding: 2rem;
+  text-align: center;
+  grid-column: 1 / 4;
+}
+
+.left-sidebar,
+.right-sidebar {
+  padding: 1rem;
+}

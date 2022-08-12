@@ -1,38 +1,34 @@
-import React from 'react'
+import React from "react"
 
+export const Table = ({ tableHeaders, tableRows }: any) => {
+  let headers = tableHeaders ? (
+    <tr>
+      {" "}
+      {tableHeaders.map((element: any, index: number) => (
+        <>
+          <th key={index}>{element}</th>
+        </>
+      ))}{" "}
+    </tr>
+  ) : null
 
-export const Table = ({ tableHeaders, tableRows }:any) =>
-{
-
-  let headers = tableHeaders ? <tr> {tableHeaders.map((element: any, index: number) => (<><th key={index}>{element}</th></>))}  </tr>
-                             : null
-
-  let rows = tableRows ? tableRows.map((element: any) =>
-  (
-
-    <tr key={element.id}>
-      {Object.values(element).map((objectValue: any, index:number) => <td key={index}>{objectValue}</td> )}
-    </tr>  
-
-  )) : null 
-  
+  let rows = tableRows
+    ? tableRows.map((element: any) => (
+        <tr key={element.id}>
+          {Object.values(element).map((objectValue: any, index: number) => (
+            <td key={index}>{objectValue}</td>
+          ))}
+        </tr>
+      ))
+    : null
 
   return (
-    
-      <table>
+    <table>
+      <tbody>
+        {headers}
 
-        <tbody>
-          
-          {headers}
-          
-          {rows}
-
-        </tbody>
-        
-      </table>
-
+        {rows}
+      </tbody>
+    </table>
   )
-    
-
 }
-

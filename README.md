@@ -22,6 +22,7 @@ CLUBTAL es una plataforma colaborativa en la que los principiantes de las carrer
 ```bash
 npm i
 ```
+
 -Run the development server:
 
 ```bash
@@ -41,6 +42,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```bash
 npm i
 ```
+
 -Corre el servidor de desarrollo:
 
 ```bash

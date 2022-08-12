@@ -1,75 +1,73 @@
-@use '../abstracts/colors';
+@use "../abstracts/colors";
 
 .container {
-    margin: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 5vw, 40px);
+  background-color: colors.$primary-black;
+  margin-bottom: 60px;
+
+  h2 {
+    padding-bottom: 30px;
+    color: colors.$primary-white;
+    text-align: center;
+  }
+
+  ul {
     display: flex;
-    flex-direction: column;
-    padding: clamp(20px, 5vw, 40px);
-    background-color: colors.$primary-black;
-    margin-bottom: 60px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: clamp(1.2rem, 4vw, 1.2rem);
+    color: #b2becd;
+    list-style: none;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
 
-    h2 {
-        padding-bottom: 30px;
-        color: colors.$primary-white;
-        text-align: center;
-    }
+    li {
+      display: flex;
+      flex-direction: column;
+      background-color: colors.$primary-black;
+      color: #fff;
+      padding: 0 29px;
+      padding-bottom: 50px;
 
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        font-size: clamp(1.2rem, 4vw, 1.2rem);
-        color:#b2becd;
-        list-style: none;
-        justify-content: center;
-        text-align: center;
-        padding: 0;
+      &:nth-child(1) {
+        background-color: colors.$primary-white;
+        color: colors.$primary-black;
+        border-top-left-radius: 141px;
+        border-top-right-radius: 141px;
 
-        li {
-            display: flex;
-            flex-direction: column;
-            background-color: colors.$primary-black;
-            color: #fff;
-            padding: 0 29px;
-            padding-bottom: 50px;
-
-            &:nth-child(1) {
-
-                background-color: colors.$primary-white;
-                color: colors.$primary-black;
-                border-top-left-radius: 141px;
-                border-top-right-radius: 141px;
-
-                &::before {
-                    content: "\2780";
-                    font-size: 6rem;
-                    color: colors.$primary-black;
-                }
-            }
-
-            &:nth-child(2)::before {
-                content: "\2781";
-                font-size: 6rem;
-                color: colors.$primary-white;
-            }
-
-            &:nth-child(3) {
-
-                background-color: colors.$primary-white;
-                color: colors.$primary-black;
-                border-bottom-left-radius: 141px;
-                border-bottom-right-radius: 141px;
-
-                &::before {
-                    content: "\2782";
-                    font-size: 6rem;
-                    color: colors.$primary-black;
-                }
-            }
+        &::before {
+          content: "\2780";
+          font-size: 6rem;
+          color: colors.$primary-black;
         }
-    }
+      }
 
-    button {
-        align-self: center;
+      &:nth-child(2)::before {
+        content: "\2781";
+        font-size: 6rem;
+        color: colors.$primary-white;
+      }
+
+      &:nth-child(3) {
+        background-color: colors.$primary-white;
+        color: colors.$primary-black;
+        border-bottom-left-radius: 141px;
+        border-bottom-right-radius: 141px;
+
+        &::before {
+          content: "\2782";
+          font-size: 6rem;
+          color: colors.$primary-black;
+        }
+      }
     }
+  }
+
+  button {
+    align-self: center;
+  }
 }

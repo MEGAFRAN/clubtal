@@ -13,28 +13,27 @@
 
 */
 
-
 body {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-  }
-  
-  .visual {
-    height: 100px;
-    width: 100%;
-    background: wheat;
-    margin: 0.5rem 0;
-  }
-  
-  .card {
-    width: clamp(45ch, 50%, 75ch);
-    display: flex;
-    flex-direction: column;
-    background: lightpink;
-    padding: 1rem;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-  }
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.visual {
+  height: 100px;
+  width: 100%;
+  background: wheat;
+  margin: 0.5rem 0;
+}
+
+.card {
+  width: clamp(45ch, 50%, 75ch);
+  display: flex;
+  flex-direction: column;
+  background: lightpink;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}

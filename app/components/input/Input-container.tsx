@@ -1,20 +1,12 @@
-import { useState } from "react";
-import { Input } from "./Input";
+import { useState } from "react"
+import { Input } from "./Input"
 
-const InputContainer = () => 
-{
+const InputContainer = () => {
+  const [inputValue, setInputValue] = useState("")
 
-    const [inputValue, setInputValue] = useState('')
+  const textHandler = (event: any) => setInputValue(event.target.value)
 
-    const textHandler = (event:any) => setInputValue(event.target.value)
-    
-
-    return (
-
-        <Input handleChange={textHandler} />
-     
-    )
-
+  return <Input handleChange={textHandler} />
 }
 
 export default InputContainer
