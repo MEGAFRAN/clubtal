@@ -1,5 +1,6 @@
 @use "../abstracts/colors";
 @use "../abstracts/animations";
+@use "../abstracts/mixins";
 
 .container {
   width: 340px;
@@ -51,7 +52,7 @@
       border-radius: 10px;
       font-family: Montserrat, sans-serif;
       transition: animations.$regular-transition;
-      border-bottom: 2px solid #bebed2;
+      border-bottom: 2px solid colors.$secondary-gray;
 
       &:focus {
         border-bottom: 4px solid colors.$primary-gold;
@@ -63,19 +64,24 @@
     padding: 0;
 
     &.response-mensaje--error {
-      border: solid 2px rgb(246, 83, 83);
+      border: solid 2px colors.$primary-red;
     }
     &.response-mensaje--success {
-      border: solid 2px rgb(13, 151, 78);
+      border: solid 2px colors.$primary-green;
     }
   }
 
   button {
-    border: solid black 2px;
+    border: solid colors.$secondary-black 2px;
     border-radius: 24px;
-    background: #9e8913;
-    background: linear-gradient(0deg, #af8e3c 0, #af8e3c 26%, #fff 96%);
-    color: #111110;
+    background: colors.$primary-gold;
+    background: linear-gradient(
+      0deg,
+      colors.$primary-gold 0,
+      colors.$primary-gold 26%,
+      colors.$primary-white 96%
+    );
+    color: colors.$primary-black;
     padding: 10px 23px;
     pointer-events: auto;
     transition: animations.$regular-transition;
@@ -83,8 +89,7 @@
     align-self: center;
 
     &:hover {
-      background: colors.$primary-blue;
-      color: colors.$primary-white;
+      @include mixins.cta-button-hover;
     }
   }
 }

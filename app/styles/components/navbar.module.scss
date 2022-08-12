@@ -1,5 +1,6 @@
 @use "../abstracts/colors";
 @use "../abstracts/animations";
+@use "../abstracts/mixins";
 
 .container {
   position: fixed;
@@ -10,39 +11,15 @@
   width: 100%;
   background: colors.$primary-black;
   backdrop-filter: saturate(180%) blur(20px);
-  box-shadow: 0px -3px 11px black;
+  box-shadow: 0px -3px 11px colors.$secondary-black;
   transition: animations.$regular-transition;
 
   &:focus {
-    pointer-events: none;
-    background-color: black;
-
-    .title {
-      color: colors.$primary-white;
-
-      &::before {
-        color: colors.$primary-gold;
-        content: "X";
-      }
-    }
-
-    .dropdown {
-      opacity: 1;
-      visibility: visible;
-    }
+    @include mixins.navbar-focus;
   }
 
   &:hover {
-    cursor: pointer;
-    background-color: black;
-
-    .title {
-      color: colors.$primary-white;
-
-      &::before {
-        color: colors.$primary-gold;
-      }
-    }
+    @include mixins.navbar-hover;
   }
 
   .title {
@@ -76,14 +53,14 @@
     background-color: colors.$primary-black;
     width: 100%;
     padding: 10px;
-    border: 1px black solid;
+    border: 1px colors.$primary-black solid;
     position: absolute;
     margin-top: 55px;
     z-index: 1;
     opacity: 1;
     visibility: hidden;
     transition: visibility 1s;
-    box-shadow: 0px 5px 14px black;
+    box-shadow: 0px 5px 14px colors.$secondary-black;
     height: 100vh;
 
     ul {
@@ -95,7 +72,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid colors.$secondary-gray;
       padding: 14px 0px;
       font-size: clamp(1.4rem, 4vw, 1.8rem);
 

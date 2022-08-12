@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: clamp(1.2rem, 4vw, 1.2rem);
-    color: #b2becd;
+    color: colors.$secondary-gray;
     list-style: none;
     justify-content: center;
     text-align: center;
@@ -29,7 +29,7 @@
       display: flex;
       flex-direction: column;
       background-color: colors.$primary-black;
-      color: #fff;
+      color: colors.$primary-white;
       padding: 0 29px;
       padding-bottom: 50px;
 
