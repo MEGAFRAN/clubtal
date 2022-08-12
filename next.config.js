@@ -1,5 +1,3 @@
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants")
-
 const nextConfig = {
   //This config doesn't work with Nextjs SSG
 
@@ -22,4 +20,8 @@ const nextConfig = {
 
     return config
   },
+}
+
+module.exports = {
+  nextConfig,
 }
