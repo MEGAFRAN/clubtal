@@ -4,19 +4,21 @@ export const HOME_HEAD = (
     <meta name="viewport" content="height=device-height, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gana experiencia en un proyecto real de software, aprende haciendo"
+      content="Acércate al trabajo de tus sueños,
+      ganando experiencia en un sitio web real"
     />
     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-    <title>Experiencia Profesional Colaborativa - Clubtal</title>
+    <title>Experiencia Profesional Digital - Clubtal</title>
     <meta property="og:locale" content="en_CO" />
     <meta property="og:type" content="WebPage" />
     <meta
       property="og:title"
-      content="Experiencia Profesional Colaborativa - Clubtal"
+      content="Experiencia Profesional Digital - Clubtal"
     />
     <meta
       property="og:description"
-      content="Gana experiencia en un proyecto real de software, aprende haciendo"
+      content="Acércate al trabajo de tus sueños,
+      ganando experiencia en un sitio web real"
     />
     <meta property="og:image" content="/favicon.ico" />
     <meta property="og:site_name" content="Clubtal" />

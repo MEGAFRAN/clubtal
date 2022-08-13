@@ -1,10 +1,10 @@
 ## What is this project?
 
-CLUBTAL is a collaborative platform where beginners of digital careers can get experience by doing features in a living and open project
+CLUBTAL is a collaborative platform where beginners of digital careers can get experience by doing features in a living and open project web site: www.clubtal.com
 
 ## Que es este proyecto?
 
-CLUBTAL es una plataforma colaborativa en la que los principiantes de las carreras digitales pueden adquirir experiencia realizando funcionalidades en un proyecto vivo y abierto
+CLUBTAL es una plataforma colaborativa en la que los principiantes de las carreras digitales pueden adquirir experiencia realizando funcionalidades en un proyecto vivo y abierto sitio web: www.clubtal.com
 
 ## Tech stack used - Stack tecnologico usado
 

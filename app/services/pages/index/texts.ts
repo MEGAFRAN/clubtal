@@ -5,16 +5,19 @@ export const indexTextSpanish = {
     { name: "Contacto", link: "/#contact" },
   ],
 
-  headerTitle: ["Experiencia", "Profesional", "Colaborativa"],
+  headerTitle: ["Experiencia", "Profesional", "Digital"],
 
-  headerText: ["Gana experiencia en un sitio web real", "aprende haciendo"],
+  headerText: [
+    "Acércate al trabajo de tus sueños",
+    "ganando experiencia en un sitio web real",
+  ],
 
   ctaButtonTexts: [
-    "Contactanos",
+    "Contáctanos",
     "Quiero experiencia",
     "Iniciemos el proceso",
     "Unete a la comunidad",
-    "Mas informacion",
+    "Mas información",
     "Estoy interesado",
     "Quiero ser parte",
   ],
@@ -25,7 +28,7 @@ export const indexTextSpanish = {
     "¿Como es nuestra comunidad?",
     "Herramientas que usaras",
     "Pasos a seguir",
-    "Contactanos",
+    "Contáctanos",
   ],
 
   sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
@@ -39,9 +42,8 @@ export const indexTextSpanish = {
   ],
 
   services: [
-    "¿Ganar experiencia?",
-    "¿Aprender haciendo?",
-    "¿Acercarte al trabajo de tus sueños?",
+    "¿Certificar tu experiencia?",
+    "¿Tener lo necesario para conseguir un trabajo?",
   ],
 
   blockchainAdvantages: [
@@ -54,13 +56,14 @@ export const indexTextSpanish = {
   ],
 
   projectTools: [
-    "Github",
-    "Jira",
-    "Confluence",
-    "Discord",
-    "Figma",
-    "Google analytics",
-    "Google tag manager",
+    "Este sitio web -",
+    "Github -",
+    "Jira -",
+    "Confluence -",
+    "Discord -",
+    "Figma -",
+    "Google analytics -",
+    "Google tag manager -",
     "Azure",
   ],
 
@@ -91,13 +94,11 @@ export const indexTextEnglish = {
     { name: "Contact", link: "/#contact" },
   ],
 
-  headerTitle: ["Collaborative", "Professional", "Experience"],
+  headerTitle: ["Digital", "Professional", "Experience"],
 
   headerText: [
-    "Gain experience in a real website",
-    "learn by doing",
-    "learn by doing",
-    "learn by doing",
+    "Get closer to the job of your dreams",
+    "gaining experience on a real web site",
   ],
 
   ctaButtonTexts: [
@@ -135,11 +136,7 @@ export const indexTextEnglish = {
     "QA",
   ],
 
-  services: [
-    "Gain experience?",
-    "Learn by doing?",
-    "Get closer to your dream job?",
-  ],
+  services: ["Certify your expertise?", "Have what it takes to get a job?"],
 
   blockchainAdvantages: [
     "Safe",
@@ -151,13 +148,14 @@ export const indexTextEnglish = {
   ],
 
   projectTools: [
-    "Github",
-    "Jira",
-    "Confluence",
-    "Discord",
-    "Figma",
-    "Google analytics",
-    "Google tag manager",
+    "This web site -",
+    "Github -",
+    "Jira -",
+    "Confluence -",
+    "Discord -",
+    "Figma -",
+    "Google analytics -",
+    "Google tag manager -",
     "Azure",
   ],
 
