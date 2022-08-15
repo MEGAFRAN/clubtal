@@ -1,8 +1,8 @@
-import styles from "../../../styles/sections/advantages.module.scss"
+import styles from "../../../styles/sections/dotted-card.module.scss"
 import { Button } from "../../button/Button"
 import { List } from "../../list/List"
 
-export const Advantages = ({ listData, title, buttonText }: any) => {
+export const SectionDottedCard = ({ listData, title, buttonText }: any) => {
   return (
     <section className={styles.container}>
       <h2>{title}</h2>

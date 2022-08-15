@@ -1,10 +1,15 @@
-import styles from "../../../styles/sections/use-cases.module.scss"
+import styles from "../../../styles/sections/underline-list.module.scss"
 import { Button } from "../../button/Button"
 import { List } from "../../list/List"
 
-export const UseCases = ({ listData, title, subTitle, buttonText }: any) => {
+export const SectionUnderlineList = ({
+  listData,
+  title,
+  subTitle,
+  buttonText,
+}: any) => {
   return (
-    <section id="use-cases" className={styles.container}>
+    <section id="section-underline-list" className={styles.container}>
       <h2>{title}</h2>
       <List listData={listData} />
       <span>{subTitle}</span>

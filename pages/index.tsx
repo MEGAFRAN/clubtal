@@ -2,21 +2,18 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import { useState } from "react"
 import { Header } from "../app/components/sections/above_fold/header/Header"
-import { Advantages } from "../app/components/sections/advantages/Advantages"
-import { Contact } from "../app/components/sections/contact/Contact"
-import { FollowingSteps } from "../app/components/sections/following_steps/FollowingSteps"
-import { Services } from "../app/components/sections/services/Services"
-import { SupportedBy } from "../app/components/sections/supported_by/SupportedBy"
-import { UseCases } from "../app/components/sections/use_cases/UseCase"
-import {
-  GTM_MAIN_SCRIPT,
-  GTM_NO_SCRIPT,
-} from "../app/constants/analytics/google_tag_manager/gtmScripts"
+import { SectionDottedCard } from "../app/components/sections/dotted_card/SectionDottedCard"
+import { SectionContact } from "../app/components/sections/contact/SectionContact"
+import { SectionHamburger } from "../app/components/sections/hamburger/SectionHamburger"
+import { SectionInnerRounded } from "../app/components/sections/inner_rounded/SectionInnerRounded"
+import { SectionSimpleSpace } from "../app/components/sections/simple_space/SectionSimpleSpace"
+import { SectionUnderlineList } from "../app/components/sections/underline_list/SectionUnderlineList"
 import { HOME_HEAD } from "../app/constants/seo/homeHead"
 import {
   indexTextSpanish,
   indexTextEnglish,
 } from "../app/services/pages/index/texts"
+import { SectionAnalytics } from "../app/components/sections/analytics/SectionAnalytics"
 
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
@@ -51,35 +48,34 @@ const Home: NextPage = () => {
         text={headerText}
         buttonText={ctaButtonTexts}
       />
-      <UseCases
+      <SectionUnderlineList
         listData={useCases}
         title={sectionsTitles[0]}
         subTitle={sectionsSubTitles[0]}
         buttonText={ctaButtonTexts[1]}
       />
-      <Services
+      <SectionInnerRounded
         listData={services}
         title={sectionsTitles[1]}
         buttonText={ctaButtonTexts[4]}
       />
-      <Advantages
+      <SectionDottedCard
         listData={blockchainAdvantages}
         title={sectionsTitles[2]}
         buttonText={ctaButtonTexts[3]}
       />
-      <SupportedBy
+      <SectionSimpleSpace
         listData={projectTools}
         title={sectionsTitles[3]}
         buttonText={ctaButtonTexts[5]}
       />
-      <FollowingSteps
+      <SectionHamburger
         listData={followingSteps}
         title={sectionsTitles[4]}
         buttonText={ctaButtonTexts[6]}
       />
-      <Contact formText={formText} title={sectionsTitles[5]} />
-      {GTM_MAIN_SCRIPT}
-      {GTM_NO_SCRIPT}
+      <SectionContact formText={formText} title={sectionsTitles[5]} />
+      <SectionAnalytics />
     </>
   )
 }

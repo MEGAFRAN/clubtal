@@ -1,10 +1,10 @@
-import styles from "../../../styles/sections/following-steps.module.scss"
+import styles from "../../../styles/sections/hamburger.module.scss"
 import { Button } from "../../button/Button"
 import { List } from "../../list/List"
 
-export const FollowingSteps = ({ listData, title, buttonText }: any) => {
+export const SectionHamburger = ({ listData, title, buttonText }: any) => {
   return (
-    <section id="following-steps" className={styles.container}>
+    <section id="section-hamburger" className={styles.container}>
       <h2>{title}</h2>
       <List listData={listData} />
       <Button text={buttonText} style="cta" scrollToSection={"#contact"} />
