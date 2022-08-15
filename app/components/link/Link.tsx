@@ -1,13 +1,13 @@
 import { LinkProps } from "../../constants/types/components_props/types"
 
 export const Link = ({
-  text,
-  href,
-  target,
+  text = "default text",
+  href = "",
+  target = "_self",
   children,
-  isDownload,
-  isOpenNewWindow,
-  emailAddress,
+  isDownload = false,
+  isOpenNewWindow = false,
+  emailAddress = "",
   rel,
   referrerpolicy,
 }: LinkProps) => {
@@ -30,13 +30,4 @@ export const Link = ({
       {text}
     </a>
   )
-}
-
-Link.defaultProps = {
-  text: "default text",
-  href: "",
-  target: "_self",
-  isDownload: false,
-  isOpenNewWindow: false,
-  emailAddress: "",
 }

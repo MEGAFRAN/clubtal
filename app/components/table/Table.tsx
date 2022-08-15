@@ -1,6 +1,7 @@
 import React from "react"
+import { TableProps } from "../../constants/types/components_props/types"
 
-export const Table = ({ tableHeaders, tableRows }: any) => {
+export const Table = ({ tableHeaders, tableRows }: TableProps) => {
   let headers = tableHeaders ? (
     <tr>
       {" "}

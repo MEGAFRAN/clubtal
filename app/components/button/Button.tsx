@@ -1,3 +1,4 @@
+import { ButtonProps } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/button.module.scss"
 
 export const Button = ({
@@ -5,7 +6,7 @@ export const Button = ({
   handleClick,
   style = "regular",
   scrollToSection,
-}: any) => {
+}: ButtonProps) => {
   const scrollTo = (selector: string): void => {
     const section = document.querySelector(selector)
     section?.scrollIntoView({ behavior: "smooth", block: "start" })

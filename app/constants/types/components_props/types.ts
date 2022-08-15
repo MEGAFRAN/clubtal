@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, MouseEventHandler, SetStateAction } from "react"
 
 export type TextProps = {
   text: string
@@ -38,4 +38,36 @@ export type LanguageToogleProps = {
   setSecondaryLanguage: Dispatch<SetStateAction<boolean>>
   mainLanguage?: "Español"
   secondaryLanguage?: "English"
+}
+
+export type ListProps = {
+  listData: []
+}
+
+export type ButtonProps = {
+  text: string
+  style: "cta" | "regular"
+  scrollToSection: string
+  handleClick?: MouseEventHandler<HTMLButtonElement>
+}
+
+export type FormProps = {
+  text: string
+}
+
+export type HeadingProps = {
+  title: string
+  headingType: "h1" | "h2" | "h3"
+}
+
+export type ImageProps = {
+  src: string
+  height: string
+  width: string
+  loading: "eager" | "lazy"
+}
+
+export type TableProps = {
+  tableHeaders: []
+  tableRows: []
 }

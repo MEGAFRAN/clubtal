@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { FormProps } from "../../constants/types/components_props/types"
 import { sendFormMessage } from "../../services/form.service"
 import { _gtmEvents } from "../../services/google-tag-events.service"
 import styles from "../../styles/components/form.module.scss"
 
-export const Form = ({ text }: any) => {
+export const Form = ({ text }: FormProps) => {
   const [messageResponse, setMessageResponse] = useState<string>("")
   const [messageResponseStatus, setMessageResponseStatus] = useState<string>("")
   const [formMessage, setFormMessage] = useState<string>("")

@@ -1,4 +1,9 @@
-export const Title = ({ title, headingType }: any) => {
+import { HeadingProps } from "../../constants/types/components_props/types"
+
+export const Title = ({
+  title = "default title",
+  headingType = "h1",
+}: HeadingProps) => {
   let createHeading =
     headingType === "h1" ? (
       <h1> {title} </h1>
@@ -15,9 +20,4 @@ export const Title = ({ title, headingType }: any) => {
       {createHeading}
     </div>
   )
-}
-
-Title.defaultProps = {
-  headingType: "h1",
-  title: "default title",
 }
