@@ -1,4 +1,4 @@
-import Image, { ImageProps } from "next/image"
+import { ImageProps } from "../../constants/types/components_props/types"
 
 export const ImageContainer = ({
   src = "",
@@ -10,7 +10,7 @@ export const ImageContainer = ({
 
   return (
     <div className="image_container">
-      <Image
+      <img
         src={src}
         alt={imageName || "default image"}
         height={height}
