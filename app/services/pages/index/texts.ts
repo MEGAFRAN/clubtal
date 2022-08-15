@@ -33,7 +33,7 @@ export const indexTextSpanish = {
 
   sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-  useCases: [
+  careers: [
     "Desarrollador de software",
     "Marketer digital",
     "Diseñador UI/UX",
@@ -41,12 +41,12 @@ export const indexTextSpanish = {
     "QA",
   ],
 
-  services: [
+  desires: [
     "¿Certificar tu experiencia?",
     "¿Tener lo necesario para conseguir un trabajo?",
   ],
 
-  blockchainAdvantages: [
+  communityAdvantages: [
     "Segura",
     "Verificable",
     "Abierta",
@@ -128,7 +128,7 @@ export const indexTextEnglish = {
 
   sectionsSubTitles: ["But you lack practical experience?"],
 
-  useCases: [
+  careers: [
     "Software developer",
     "Digital marketer",
     "UI/UX designer",
@@ -136,9 +136,9 @@ export const indexTextEnglish = {
     "QA",
   ],
 
-  services: ["Certify your expertise?", "Have what it takes to get a job?"],
+  desires: ["Certify your expertise?", "Have what it takes to get a job?"],
 
-  blockchainAdvantages: [
+  communityAdvantages: [
     "Safe",
     "Verifiable",
     "Open",

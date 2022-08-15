@@ -29,9 +29,9 @@ const Home: NextPage = () => {
     ctaButtonTexts,
     sectionsTitles,
     sectionsSubTitles,
-    useCases,
-    services,
-    blockchainAdvantages,
+    careers,
+    desires,
+    communityAdvantages,
     projectTools,
     followingSteps,
     formText,
@@ -49,18 +49,18 @@ const Home: NextPage = () => {
         buttonText={ctaButtonTexts}
       />
       <SectionUnderlineList
-        listData={useCases}
+        listData={careers}
         title={sectionsTitles[0]}
         subTitle={sectionsSubTitles[0]}
         buttonText={ctaButtonTexts[1]}
       />
       <SectionInnerRounded
-        listData={services}
+        listData={desires}
         title={sectionsTitles[1]}
         buttonText={ctaButtonTexts[4]}
       />
       <SectionDottedCard
-        listData={blockchainAdvantages}
+        listData={communityAdvantages}
         title={sectionsTitles[2]}
         buttonText={ctaButtonTexts[3]}
       />
