@@ -10,7 +10,8 @@
     "lint": "next lint",
     "test": "jest --watch",
     "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore ."
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^0.26.0",
@@ -26,6 +27,7 @@
     "concurrently": "^7.0.0",
     "eslint": "8.8.0",
     "eslint-config-next": "12.0.10",
+    "husky": "^8.0.1",
     "jest": "^27.5.1",
     "json-server": "^0.17.0",
     "prettier": "^2.7.1",
