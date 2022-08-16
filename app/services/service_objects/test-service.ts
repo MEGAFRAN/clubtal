@@ -8,6 +8,6 @@ export const testService = new ApiCore({
   put: false,
   patch: false,
   remove: false,
-  apiUrl: API_TEST.url,
-  endpoint: API_TEST.endpoint,
+  apiUrl: API_TEST.url || "",
+  endpoint: API_TEST.endpoint || "",
 })
