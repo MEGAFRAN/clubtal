@@ -29,9 +29,7 @@ it("should render same url passed into image prop", () => {
 
   render(<FlippingCard imageUrl={MOCK_URL} title={MOCK_TITLE} />)
   const imgElement = screen.getAllByAltText(EXPECTED_ALT)
-  imgElement.forEach((element) =>
-    expect(element).toHaveAttribute("src", EXPECTED_URL),
-  )
+  imgElement.forEach((element) => expect(element).toHaveAttribute("src", EXPECTED_URL))
 })
 
 it("should render same array of tags passed into tags prop", () => {
@@ -39,9 +37,7 @@ it("should render same array of tags passed into tags prop", () => {
   const EXPECTED_TAGS = ["restaurants", "clothing", "hotels"]
 
   render(<FlippingCard tags={MOCK_TAGS} />)
-  EXPECTED_TAGS.forEach((element) =>
-    expect(screen.getByText(element)).toBeTruthy(),
-  )
+  EXPECTED_TAGS.forEach((element) => expect(screen.getByText(element)).toBeTruthy())
 })
 
 it("should render 'featured' text, if 'true' is passed into feature prop", () => {

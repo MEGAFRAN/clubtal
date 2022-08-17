@@ -11,10 +11,7 @@ export const HOME_HEAD = (
     <title>Experiencia Profesional Digital - Clubtal</title>
     <meta property="og:locale" content="en_CO" />
     <meta property="og:type" content="WebPage" />
-    <meta
-      property="og:title"
-      content="Experiencia Profesional Digital - Clubtal"
-    />
+    <meta property="og:title" content="Experiencia Profesional Digital - Clubtal" />
     <meta
       property="og:description"
       content="Acércate al trabajo de tus sueños,

@@ -9,18 +9,13 @@ import { SectionInnerRounded } from "../app/components/sections/inner_rounded/Se
 import { SectionSimpleSpace } from "../app/components/sections/simple_space/SectionSimpleSpace"
 import { SectionUnderlineList } from "../app/components/sections/underline_list/SectionUnderlineList"
 import { HOME_HEAD } from "../app/constants/seo/homeHead"
-import {
-  indexTextSpanish,
-  indexTextEnglish,
-} from "../app/services/pages/index/texts"
+import { indexTextSpanish, indexTextEnglish } from "../app/services/pages/index/texts"
 import { SectionAnalytics } from "../app/components/sections/analytics/SectionAnalytics"
 
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
 
-  const currentLanguage = isSecondaryLanguage
-    ? { ...indexTextEnglish }
-    : { ...indexTextSpanish }
+  const currentLanguage = isSecondaryLanguage ? { ...indexTextEnglish } : { ...indexTextSpanish }
 
   const {
     homeNavbarOptions,

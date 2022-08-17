@@ -18,14 +18,9 @@ export const sendFormMessage = async (
         body: JSON.stringify(dataToSend),
       }
 
-      await fetch(
-        "https://post-push.azurewebsites.net/api/EmailService",
-        request,
-      ).then(() => {
+      await fetch("https://post-push.azurewebsites.net/api/EmailService", request).then(() => {
         setMessageResponseStatus("success")
-        setMessageResponse(
-          "Gracias recibimos tu mensaje, pronto nos estaremos comunicando contigo",
-        )
+        setMessageResponse("Gracias recibimos tu mensaje, pronto nos estaremos comunicando contigo")
       })
     } catch (error) {
       console.error(error)

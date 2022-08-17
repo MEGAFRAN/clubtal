@@ -7,10 +7,7 @@ export const indexTextSpanish = {
 
   headerTitle: ["Experiencia", "Profesional", "Digital"],
 
-  headerText: [
-    "Acércate al trabajo de tus sueños",
-    "ganando experiencia en un sitio web real",
-  ],
+  headerText: ["Acércate al trabajo de tus sueños", "ganando experiencia en un sitio web real"],
 
   ctaButtonTexts: [
     "Contáctanos",
@@ -41,10 +38,7 @@ export const indexTextSpanish = {
     "QA",
   ],
 
-  desires: [
-    "¿Certificar tu experiencia?",
-    "¿Tener lo necesario para conseguir un trabajo?",
-  ],
+  desires: ["¿Certificar tu experiencia?", "¿Tener lo necesario para conseguir un trabajo?"],
 
   communityAdvantages: [
     "Segura",
@@ -96,10 +90,7 @@ export const indexTextEnglish = {
 
   headerTitle: ["Digital", "Professional", "Experience"],
 
-  headerText: [
-    "Get closer to the job of your dreams",
-    "gaining experience on a real web site",
-  ],
+  headerText: ["Get closer to the job of your dreams", "gaining experience on a real web site"],
 
   ctaButtonTexts: [
     "Contact us",
@@ -128,24 +119,11 @@ export const indexTextEnglish = {
 
   sectionsSubTitles: ["But you lack practical experience?"],
 
-  careers: [
-    "Software developer",
-    "Digital marketer",
-    "UI/UX designer",
-    "Community manager",
-    "QA",
-  ],
+  careers: ["Software developer", "Digital marketer", "UI/UX designer", "Community manager", "QA"],
 
   desires: ["Certify your expertise?", "Have what it takes to get a job?"],
 
-  communityAdvantages: [
-    "Safe",
-    "Verifiable",
-    "Open",
-    "Collaborative",
-    "Friendly",
-    "Equal",
-  ],
+  communityAdvantages: ["Safe", "Verifiable", "Open", "Collaborative", "Friendly", "Equal"],
 
   projectTools: [
     "This web site -",

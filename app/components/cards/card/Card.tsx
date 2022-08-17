@@ -15,11 +15,7 @@ export const Card = ({
           <div className="card__inner--front-header">
             <img src={imageUrl} loading="lazy" alt={title} />
 
-            {featured ? (
-              <span className="card__inner--front-header-featured">
-                Featured
-              </span>
-            ) : null}
+            {featured ? <span className="card__inner--front-header-featured">Featured</span> : null}
           </div>
 
           <div className="card__inner--front-body">

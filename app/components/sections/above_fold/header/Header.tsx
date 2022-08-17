@@ -2,13 +2,7 @@ import { Button } from "../../../button/Button"
 import { Navbar } from "../navbar/Navbar"
 import styles from "../../../../styles/sections/header.module.scss"
 
-export const Header = ({
-  navbarOptions,
-  setSecondaryLanguage,
-  title,
-  text,
-  buttonText,
-}: any) => {
+export const Header = ({ navbarOptions, setSecondaryLanguage, title, text, buttonText }: any) => {
   const crownImage = "/images/crown.svg"
 
   return (

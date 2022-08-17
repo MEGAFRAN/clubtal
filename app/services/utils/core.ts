@@ -23,21 +23,15 @@ export class ApiCore {
     if (getAll) this.getAll = () => apiProvider.getAll(apiUrl, endpoint)
 
     if (getSingle)
-      this.getSingle = (id: AxiosRequestConfig<any>) =>
-        apiProvider.getSingle(apiUrl, endpoint, id)
+      this.getSingle = (id: AxiosRequestConfig<any>) => apiProvider.getSingle(apiUrl, endpoint, id)
 
-    if (post)
-      this.post = (model: object) => apiProvider.post(apiUrl, endpoint, model)
+    if (post) this.post = (model: object) => apiProvider.post(apiUrl, endpoint, model)
 
-    if (put)
-      this.put = (id: string, model: object) =>
-        apiProvider.put(apiUrl, endpoint, id, model)
+    if (put) this.put = (id: string, model: object) => apiProvider.put(apiUrl, endpoint, id, model)
 
-    if (patch)
-      this.patch = (model: object) => apiProvider.patch(apiUrl, endpoint, model)
+    if (patch) this.patch = (model: object) => apiProvider.patch(apiUrl, endpoint, model)
 
     if (remove)
-      this.remove = (id: AxiosRequestConfig<any>) =>
-        apiProvider.remove(apiUrl, endpoint, id)
+      this.remove = (id: AxiosRequestConfig<any>) => apiProvider.remove(apiUrl, endpoint, id)
   }
 }

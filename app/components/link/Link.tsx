@@ -11,9 +11,7 @@ export const Link = ({
   rel,
   referrerpolicy,
 }: LinkProps) => {
-  let downloadAssetPath = isDownload
-    ? href.substring(href.lastIndexOf("/") + 1)
-    : null
+  let downloadAssetPath = isDownload ? href.substring(href.lastIndexOf("/") + 1) : null
   isOpenNewWindow ? (target = "_blank") : null
   emailAddress ? (href = `mailto:${emailAddress}`) : null
 

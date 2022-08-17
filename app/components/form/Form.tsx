@@ -13,13 +13,7 @@ export const Form = ({ text }: FormProps) => {
 
   const onSubmit = (event: any): void => {
     event.preventDefault()
-    sendFormMessage(
-      formMessage,
-      formName,
-      formEmail,
-      setMessageResponseStatus,
-      setMessageResponse,
-    )
+    sendFormMessage(formMessage, formName, formEmail, setMessageResponseStatus, setMessageResponse)
     _gtmEvents.formSubmit({ formMessage, formName, formEmail })
   }
 
@@ -66,9 +60,7 @@ export const Form = ({ text }: FormProps) => {
         />
       </label>
 
-      <p className={`response-mensaje--${messageResponseStatus}`}>
-        {messageResponse}
-      </p>
+      <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
 
       <button type="submit">{text[7]}</button>
     </form>

@@ -15,11 +15,7 @@ export const FlippingCard = ({
           <div className="card__inner--front-header">
             <img src={imageUrl} loading="lazy" alt={title} />
 
-            {featured ? (
-              <span className="card__inner--front-header-featured">
-                Featured
-              </span>
-            ) : null}
+            {featured ? <span className="card__inner--front-header-featured">Featured</span> : null}
           </div>
 
           <div className="card__inner--front-body">
@@ -50,12 +46,7 @@ export const FlippingCard = ({
             </div>
           </div>
 
-          <a
-            className="card__inner--back-cta"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="card__inner--back-cta" href="#" target="_blank" rel="noopener noreferrer">
             LEARN MORE{" "}
           </a>
         </div>

@@ -9,11 +9,7 @@ export const _googleTagService = {
     }
   },
 
-  validateDataLayer(
-    event: string,
-    data: {},
-    environment: string = document.location.origin,
-  ): void {
+  validateDataLayer(event: string, data: {}, environment: string = document.location.origin): void {
     if (event && data) {
       let validatedData = { ...data, environment }
       this.pushDataLayer(event, validatedData)
