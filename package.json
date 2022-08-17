@@ -11,7 +11,8 @@
     "test": "jest --watch",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier:check": "prettier --config .prettierrc.json --check \"*\""
   },
   "dependencies": {
     "axios": "^0.26.0",
@@ -36,5 +37,11 @@
     "prettier": "^2.7.1",
     "sass": "^1.49.7",
     "typescript": "4.5.5"
+  },
+  "lint-staged": {
+    "*": [
+      "npm run prettier:check",
+      "git add"
+    ]
   }
 }
