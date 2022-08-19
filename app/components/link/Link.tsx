@@ -24,8 +24,6 @@ export const Link = ({
       referrerPolicy={referrerpolicy}
     >
       {children}
-
-      {text}
     </a>
   )
 }

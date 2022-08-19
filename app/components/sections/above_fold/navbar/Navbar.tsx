@@ -1,6 +1,7 @@
 import styles from "../../../../styles/components/navbar.module.scss"
 import { Button } from "../../../button/Button"
 import { LanguageToogle } from "../../../language_toogle/LanguageToogle"
+import { Link } from "../../../link/Link"
 
 export const Navbar = ({
   options,
@@ -9,9 +10,15 @@ export const Navbar = ({
   sectionToScroll,
   mail = "info@clubtal.com",
 }: any) => {
-  let optionsList = options.map(({ name, link }: any) => (
+  let optionsList = options.map(({ name, link, externalLink }: any) => (
     <li tabIndex={0} key={name} className={styles.dropdown_option}>
-      <a href={link}>{name}</a>
+      <Link
+        href={link}
+        target={externalLink ? "_blank" : "_self"}
+        rel={externalLink ? "external" : undefined}
+      >
+        {name}
+      </Link>
     </li>
   ))
 

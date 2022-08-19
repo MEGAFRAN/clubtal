@@ -1,12 +1,16 @@
 const careers = "#section-underline-list",
   followingSteps = "#section-hamburger",
-  contact = "#section-contact"
+  contact = "#section-contact",
+  documentation = "https://clubtal.atlassian.net/wiki/spaces/WEB/overview",
+  jira = "https://clubtal.atlassian.net/jira/software/c/projects/WEB/boards/1"
 
 export const HOME_TEXT = {
   sectionsIds: {
     careers,
     followingSteps,
     contact,
+    documentation,
+    jira,
   },
 
   spanishText: {
@@ -14,6 +18,8 @@ export const HOME_TEXT = {
       { name: "Casos de uso", link: careers },
       { name: "Pasos a seguir", link: followingSteps },
       { name: "Contacto", link: contact },
+      { name: "Documentación proyecto", link: documentation, externalLink: true },
+      { name: "Jira proyecto", link: jira, externalLink: true },
     ],
 
     headerTitle: ["Experiencia", "Profesional", "Digital"],
@@ -97,6 +103,8 @@ export const HOME_TEXT = {
       { name: "Use cases", link: careers },
       { name: "Steps to follow", link: followingSteps },
       { name: "Contact", link: contact },
+      { name: "Project documentation", link: documentation, externalLink: true },
+      { name: "Project Jira", link: jira, externalLink: true },
     ],
 
     headerTitle: ["Digital", "Professional", "Experience"],
