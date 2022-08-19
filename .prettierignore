@@ -1,2 +1,9 @@
 # Ignore all YML files:
 *.yml
+
+.env.development
+.env.production
+.eslintignore
+.gitignore
+.prettierignore
+LICENSE

@@ -2,7 +2,14 @@ import { Button } from "../../../button/Button"
 import { Navbar } from "../navbar/Navbar"
 import styles from "../../../../styles/sections/header.module.scss"
 
-export const Header = ({ navbarOptions, setSecondaryLanguage, title, text, buttonText }: any) => {
+export const Header = ({
+  navbarOptions,
+  setSecondaryLanguage,
+  title,
+  text,
+  buttonText,
+  sectionToScroll,
+}: any) => {
   const crownImage = "/images/crown.svg"
 
   return (
@@ -23,7 +30,7 @@ export const Header = ({ navbarOptions, setSecondaryLanguage, title, text, butto
 
       <div className={styles.cta_wrapper}>
         <img src={crownImage} alt="crown" />
-        <Button text={buttonText[0]} style="cta" scrollToSection={"#contact"} />
+        <Button text={buttonText[0]} style="cta" scrollToSection={sectionToScroll} />
       </div>
     </header>
   )
