@@ -3,6 +3,7 @@
 @mixin cta-button-hover {
   background: colors.$primary-blue;
   color: colors.$primary-white;
+  cursor: pointer;
 }
 
 @mixin navbar-hover {

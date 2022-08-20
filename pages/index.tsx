@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     sectionsTitles,
     sectionsSubTitles,
     careers,
-    desires,
+    services,
     communityAdvantages,
     projectTools,
     followingSteps,
@@ -46,17 +46,17 @@ const Home: NextPage = () => {
         buttonText={ctaButtonTexts}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
-      <SectionUnderlineList
+      <SectionInnerRounded
         listData={careers}
         title={sectionsTitles[0]}
-        subTitle={sectionsSubTitles[0]}
-        buttonText={ctaButtonTexts[1]}
+        buttonText={ctaButtonTexts[5]}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
-      <SectionInnerRounded
-        listData={desires}
+      <SectionUnderlineList
+        listData={services}
         title={sectionsTitles[1]}
-        buttonText={ctaButtonTexts[4]}
+        subTitle={sectionsSubTitles[0]}
+        buttonText={ctaButtonTexts[1]}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionDottedCard
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
       <SectionSimpleSpace
         listData={projectTools}
         title={sectionsTitles[3]}
-        buttonText={ctaButtonTexts[5]}
+        buttonText={ctaButtonTexts[4]}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionHamburger

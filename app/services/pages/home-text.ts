@@ -1,12 +1,14 @@
-const careers = "#section-underline-list",
+const directedTo = "#section-inner-rounded",
+  benefits = "#section-underline-list",
   followingSteps = "#section-hamburger",
   contact = "#section-contact",
   documentation = "https://clubtal.atlassian.net/wiki/spaces/WEB/overview",
-  jira = "https://clubtal.atlassian.net/jira/software/c/projects/WEB/boards/1"
+  jira = "https://clubtal.atlassian.net/jira/software/c/projects/WEB/issues"
 
 export const HOME_TEXT = {
   sectionsIds: {
-    careers,
+    directedTo,
+    benefits,
     followingSteps,
     contact,
     documentation,
@@ -15,30 +17,31 @@ export const HOME_TEXT = {
 
   spanishText: {
     homeNavbarOptions: [
-      { name: "Casos de uso", link: careers },
+      { name: "¿A quien va dirigido?", link: directedTo },
+      { name: "Servicios", link: benefits },
       { name: "Pasos a seguir", link: followingSteps },
       { name: "Contacto", link: contact },
       { name: "Documentación proyecto", link: documentation, externalLink: true },
       { name: "Jira proyecto", link: jira, externalLink: true },
     ],
 
-    headerTitle: ["Experiencia", "Profesional", "Digital"],
+    headerTitle: ["Experiencia", "Profesional", "Gratuita"],
 
-    headerText: ["Acércate al trabajo de tus sueños", "ganando experiencia en un sitio web real"],
+    headerText: ["Gana experiencia practica como desarrollador frontend", "en un sitio web real."],
 
     ctaButtonTexts: [
       "Contáctanos",
-      "Quiero experiencia",
+      "Solicitar beneficios",
       "Iniciemos el proceso",
       "Unete a la comunidad",
       "Mas información",
-      "Estoy interesado",
+      "Me interesa",
       "Quiero ser parte",
     ],
 
     sectionsTitles: [
-      "¿Quieres ser?",
-      "Deseas...",
+      "Para personas de América latina con:",
+      "Beneficios para ti",
       "¿Como es nuestra comunidad?",
       "Herramientas que usaras",
       "Pasos a seguir",
@@ -47,15 +50,16 @@ export const HOME_TEXT = {
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-    careers: [
-      "Desarrollador de software",
-      "Marketer digital",
-      "Diseñador UI/UX",
-      "Community manager",
-      "QA",
-    ],
+    careers: ["Conocimientos básicos en desarrollo frontend (Html, Css, Javascript)"],
 
-    desires: ["¿Certificar tu experiencia?", "¿Tener lo necesario para conseguir un trabajo?"],
+    services: [
+      "Experiencia práctica en un sitio web real",
+      "Certificado de experiencia personalizado",
+      "Contacto con un equipo remoto y distribuido en múltiples países",
+      "Red de contactos",
+      "Exposición en redes sociales",
+      "En vivos con: Reclutadores, personal de empresas tecnológicas",
+    ],
 
     communityAdvantages: [
       "Segura",
@@ -72,14 +76,13 @@ export const HOME_TEXT = {
       "Jira -",
       "Confluence -",
       "Discord -",
-      "Figma -",
       "Google analytics -",
       "Google tag manager -",
       "Azure",
     ],
 
     followingSteps: [
-      `Nos contactas: Nos cuentas sobre tu perfil, y el area que deseas experiencia`,
+      `Nos contactas: Nos cuentas sobre tu perfil, y porque quieres entrar a la comunidad clubtal`,
       `Te ingresamos a la comunidad: Estarás en un grupo basado en tu carrera digital, 
       donde tendrás el apoyo de tus compañeros, compartiendo conocimientos y experiencias`,
       `Ganaras experiencia con funcionalidades del proyecto: Podrás elegir lo que quieras practicar o aprender, 
@@ -87,9 +90,9 @@ export const HOME_TEXT = {
     ],
 
     formText: [
-      "Queremos escucharte",
-      "Cuentanos lo que buscas",
-      "Escribe aqui lo que deseas..",
+      "Cuentanos sobre ti",
+      "¿Porque quiero entrar a la comunidad clubtal?",
+      "Escribe aqui lo que quieres..",
       "Mi nombre",
       "Escribe aqui tu nombre..",
       "Mi email",
@@ -100,53 +103,49 @@ export const HOME_TEXT = {
 
   englishText: {
     homeNavbarOptions: [
-      { name: "Use cases", link: careers },
+      { name: "To whom is it directed?", link: directedTo },
+      { name: "Services", link: benefits },
       { name: "Steps to follow", link: followingSteps },
       { name: "Contact", link: contact },
       { name: "Project documentation", link: documentation, externalLink: true },
       { name: "Project Jira", link: jira, externalLink: true },
     ],
 
-    headerTitle: ["Digital", "Professional", "Experience"],
+    headerTitle: ["Free", "Professional", "Experience"],
 
-    headerText: ["Get closer to the job of your dreams", "gaining experience on a real web site"],
+    headerText: ["Gain hands-on experience as a frontend developer", "on a real website."],
 
     ctaButtonTexts: [
       "Contact us",
-      "I want experience",
-      `Let's start the process`,
+      "Apply for benefits",
+      "Let's start the process",
       "Join the community",
       "More information",
       "I am interested",
       "I want to be part",
-      "I want to be part",
     ],
 
     sectionsTitles: [
-      "Do you want to be?",
-      "Do you want to...",
+      "For people from Latin America with:",
+      "Benefits for you",
       "What is our community like?",
-      "Tools you will use",
-      "Next steps",
-      "Contact us",
       "Tools you will use",
       "Steps to follow",
       "Contact us",
-      "How to contact us",
-      "How to find us",
     ],
 
     sectionsSubTitles: ["But you lack practical experience?"],
 
-    careers: [
-      "Software developer",
-      "Digital marketer",
-      "UI/UX designer",
-      "Community manager",
-      "QA",
-    ],
+    careers: ["Basic knowledge in frontend development (Html, Css, Javascript)"],
 
-    desires: ["Certify your expertise?", "Have what it takes to get a job?"],
+    services: [
+      "Hands-on experience on a real website",
+      "Personalized certificate of experience",
+      "Contact with a remote and distributed team in multiple countries",
+      "Networking",
+      "Exposure in social networks",
+      "Live with: Recruiters, personnel of technology companies",
+    ],
 
     communityAdvantages: ["Safe", "Verifiable", "Open", "Collaborative", "Friendly", "Equal"],
 
@@ -156,14 +155,13 @@ export const HOME_TEXT = {
       "Jira -",
       "Confluence -",
       "Discord -",
-      "Figma -",
       "Google analytics -",
       "Google tag manager -",
       "Azure",
     ],
 
     followingSteps: [
-      `You contact us: You tell us about your profile, and the area you want experience`,
+      `You contact us: Tell us about your profile, and why you want to join the clubtal community`,
       `You join the community: You will be in a group based on your digital career, 
       where you will have the support of your peers, sharing knowledge and experiences`,
       `Gain experience with project functionalities: You will be able to choose what you want to practice or learn, 
@@ -171,8 +169,8 @@ export const HOME_TEXT = {
     ],
 
     formText: [
-      "We want to hear from you",
-      "Tell us what you are looking for",
+      "Tell us about yourself",
+      "Why do i want to join the clubtal community?",
       "Write here what you want...",
       "My name",
       "Type your name here...",

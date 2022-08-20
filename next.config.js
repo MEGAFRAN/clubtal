@@ -1,11 +1,4 @@
 const nextConfig = {
-  //This config doesn't work with Nextjs SSG
-
-  /*i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "en"
-  },*/
-
   reactStrictMode: true,
 
   future: {
@@ -22,6 +15,6 @@ const nextConfig = {
   },
 }
 
-module.exports = {
+export default {
   nextConfig,
 }
