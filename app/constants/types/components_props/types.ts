@@ -71,3 +71,11 @@ export type TableProps = {
   tableHeaders: []
   tableRows: []
 }
+
+export type Error404Props = {
+  text: string
+  buttonText: string
+  handleClick: () => void
+  scrollToSection: string
+  styleButton: "cta" | "regular"
+}
