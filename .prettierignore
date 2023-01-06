@@ -1,6 +1,6 @@
 # Ignore all YML files:
 *.yml
-
+sitemap.xml
 .env.development
 .env.production
 .eslintignore
