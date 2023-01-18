@@ -39,6 +39,14 @@
     color: colors.$primary-gold;
   }
 
+  .inActive {
+    &::before {
+      content: "\20B5";
+      color: colors.$primary-gold;
+      font-size: 19px;
+    }
+  }
+
   div:first-of-type {
     align-self: center;
     padding-right: 20px;
