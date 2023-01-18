@@ -7,7 +7,6 @@
 }
 
 @mixin navbar-hover {
-  cursor: pointer;
   background-color: colors.$secondary-black;
 
   .title {
@@ -16,24 +15,5 @@
     &::before {
       color: colors.$primary-gold;
     }
-  }
-}
-
-@mixin navbar-focus {
-  pointer-events: none;
-  background-color: colors.$secondary-black;
-
-  .title {
-    color: colors.$primary-white;
-
-    &::before {
-      color: colors.$primary-gold;
-      content: "X";
-    }
-  }
-
-  .dropdown {
-    opacity: 1;
-    visibility: visible;
   }
 }
