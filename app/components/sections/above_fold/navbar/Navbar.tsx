@@ -1,7 +1,10 @@
+import { useState } from "react"
 import styles from "../../../../styles/components/navbar.module.scss"
 import { Button } from "../../../button/Button"
 import { LanguageToogle } from "../../../language_toogle/LanguageToogle"
 import { Link } from "../../../link/Link"
+import Image from "next/image"
+import logo from "../../../../../public/images/clubtal.png"
 
 export const Navbar = ({
   options,
@@ -21,22 +24,33 @@ export const Navbar = ({
       </Link>
     </li>
   ))
-
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false)
+  const handleToggle = () => {
+    setToggleMenu(!toggleMenu)
+  }
+  console.log(toggleMenu)
   return (
     <nav tabIndex={0} className={styles.container}>
-      <span className={styles.title}>Menu</span>
-
+      <span className={styles.title} onClick={handleToggle}>
+        {!toggleMenu ? (
+          <Image src={logo} alt="Icon of Clubtal" width={22} height={28} />
+        ) : (
+          <span className={styles.active}>X</span>
+        )}
+        Menu
+      </span>
       <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} />
+      {toggleMenu ? (
+        <div className={styles.dropdown}>
+          <ul>{options ? optionsList : null}</ul>
 
-      <div className={styles.dropdown}>
-        <ul>{options ? optionsList : null}</ul>
+          <Button text={buttonText} style="cta" scrollToSection={sectionToScroll} />
 
-        <Button text={buttonText} style="cta" scrollToSection={sectionToScroll} />
-
-        <a className={styles.contact} href={`mailto:${mail}`}>
-          {mail}
-        </a>
-      </div>
+          <a className={styles.contact} href={`mailto:${mail}`}>
+            {mail}
+          </a>
+        </div>
+      ) : null}
     </nav>
   )
 }

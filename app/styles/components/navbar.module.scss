@@ -14,10 +14,6 @@
   box-shadow: 0px -3px 11px colors.$secondary-black;
   transition: animations.$regular-transition;
 
-  &:focus {
-    @include mixins.navbar-focus;
-  }
-
   &:hover {
     @include mixins.navbar-hover;
   }
@@ -32,12 +28,15 @@
     font-weight: 900;
     text-transform: capitalize;
     padding-left: 20px;
+    margin-top: 0.5rem;
 
-    &::before {
-      content: "\20B5";
-      color: colors.$primary-gold;
-      font-size: 19px;
+    &:hover {
+      cursor: pointer;
     }
+  }
+
+  .active {
+    color: colors.$primary-gold;
   }
 
   div:first-of-type {
@@ -55,10 +54,9 @@
     padding: 10px;
     border: 1px colors.$primary-black solid;
     position: absolute;
-    margin-top: 55px;
+    margin-top: clamp(60px, 15vw, 66px);
     z-index: 1;
     opacity: 1;
-    visibility: hidden;
     transition: visibility 1s;
     box-shadow: 0px 5px 14px colors.$secondary-black;
     height: 100vh;
