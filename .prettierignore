@@ -1,6 +1,6 @@
 # Ignore all YML files:
 *.yml
-
+clubtal.png
 .env.development
 .env.production
 .eslintignore
