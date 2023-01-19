@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { Error404 } from "../app/components/error404/Error404"
 
-const custom404 = () => {
+const NotFound = () => {
   const router = useRouter()
   const text = ""
   return (
@@ -17,4 +17,4 @@ const custom404 = () => {
   )
 }
 
-export default custom404
+export default NotFound
