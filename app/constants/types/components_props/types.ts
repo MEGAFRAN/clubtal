@@ -79,3 +79,8 @@ export type Error404Props = {
   scrollToSection: string
   styleButton: "cta" | "regular"
 }
+
+export type ErrorPageProps = {
+  statusCode?: number
+  message?: string
+}
