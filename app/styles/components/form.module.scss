@@ -92,4 +92,10 @@
       @include mixins.cta-button-hover;
     }
   }
+  .loading {
+    background: colors.$secondary-gray;
+    &:hover {
+      @include mixins.cta-button-loading-hover;
+    }
+  }
 }

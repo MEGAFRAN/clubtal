@@ -17,3 +17,9 @@
     }
   }
 }
+
+@mixin cta-button-loading-hover {
+  background: colors.$secondary-gray;
+  color: colors.$primary-black;
+  cursor: default;
+}
