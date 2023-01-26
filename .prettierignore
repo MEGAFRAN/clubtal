@@ -1,6 +1,7 @@
 # Ignore all YML files:
 *.yml
-
+sitemap.xml
+robots.txt
 .env.development
 .env.production
 .eslintignore
