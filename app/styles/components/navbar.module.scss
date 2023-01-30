@@ -13,7 +13,7 @@
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0px -3px 11px colors.$secondary-black;
   transition: animations.$regular-transition;
-
+  height: 65px;
   &:hover {
     @include mixins.navbar-hover;
   }
@@ -64,7 +64,7 @@
     padding: 10px;
     border: 1px colors.$primary-black solid;
     position: absolute;
-    margin-top: clamp(60px, 15vw, 66px);
+    margin-top: clamp(60px, 9vw, 66px);
     z-index: 1;
     opacity: 1;
     transition: visibility 1s;
