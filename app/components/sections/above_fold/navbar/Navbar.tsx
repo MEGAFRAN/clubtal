@@ -26,20 +26,19 @@ export const Navbar = ({
   const handleToggle = () => {
     setToggleMenu(!toggleMenu)
   }
-  console.log(toggleMenu)
   return (
     <nav tabIndex={0} className={styles.container}>
-      <span className={styles.title} onClick={handleToggle}>
+      <menu className={styles.title} onClick={handleToggle}>
         {!toggleMenu ? (
           <span className={styles.inActive}></span>
         ) : (
           <span className={styles.active}>X</span>
         )}
         Menu
-      </span>
+      </menu>
       <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} />
       {toggleMenu ? (
-        <div className={styles.dropdown}>
+        <div className={styles.dropdown} onClick={handleToggle}>
           <ul>{options ? optionsList : null}</ul>
 
           <Button text={buttonText} style="cta" scrollToSection={sectionToScroll} />
