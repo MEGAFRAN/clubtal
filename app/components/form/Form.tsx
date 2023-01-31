@@ -10,10 +10,18 @@ export const Form = ({ text }: FormProps) => {
   const [formMessage, setFormMessage] = useState<string>("")
   const [formName, setFormName] = useState<string>("")
   const [formEmail, setFormEmail] = useState<string>("")
+  const [loading, setLoading] = useState<boolean>(false)
 
   const onSubmit = (event: any): void => {
     event.preventDefault()
-    sendFormMessage(formMessage, formName, formEmail, setMessageResponseStatus, setMessageResponse)
+    sendFormMessage(
+      formMessage,
+      formName,
+      formEmail,
+      setMessageResponseStatus,
+      setMessageResponse,
+      setLoading,
+    )
     _gtmEvents.formSubmit({ formMessage, formName, formEmail })
   }
 
@@ -62,7 +70,9 @@ export const Form = ({ text }: FormProps) => {
 
       <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
 
-      <button type="submit">{text[7]}</button>
+      <button className={loading ? styles.loading : ""} type="submit" disabled={loading}>
+        {loading ? "Enviando..." : text[7]}
+      </button>
     </form>
   )
 }

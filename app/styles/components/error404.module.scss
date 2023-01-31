@@ -1,0 +1,32 @@
+@use "../abstracts/colors";
+
+.container {
+  max-width: 980px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: clamp(0px, 5vw, 40px);
+  border-radius: 38px;
+  border: 4px solid colors.$secondary-black;
+  background-color: colors.$primary-black;
+  margin-bottom: 60px;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: colors.$primary-gold;
+
+    span {
+      color: colors.$primary-white;
+    }
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  button {
+    align-self: center;
+  }
+}
