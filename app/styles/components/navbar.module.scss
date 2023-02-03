@@ -32,8 +32,6 @@
     padding-left: 20px;
     width: calc(100% - 169px);
     height: 60px;
-    margin-top: 0.5rem;
-    width: calc(100% - 169px);
     &:hover {
       cursor: pointer;
     }
@@ -70,8 +68,7 @@
     padding: 10px;
     border: 1px colors.$primary-black solid;
     position: absolute;
-    margin-top: clamp(60px, 16vw, 66px);
-    margin-top: clamp(60px, 9vw, 66px);
+    margin-top: clamp(60px, 18vw, 66px);
     z-index: 1;
     opacity: 1;
     transition: visibility 1s;
