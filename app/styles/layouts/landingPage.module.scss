@@ -1,0 +1,33 @@
+.container {
+  min-width: 500px;
+  section {
+    margin: 80px 0 0 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: center;
+    gap: 24px 0;
+    aside {
+      min-width: 360px;
+      text-align: center;
+      height: 100%;
+      h1 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+      }
+      ul {
+        padding: 0 24px;
+        display: flex;
+        flex-flow: column wrap;
+        row-gap: 12px;
+        text-align: justify;
+        li {
+          font-size: clamp(1rem, 4vw, 1.1rem);
+          list-style: none;
+        }
+      }
+    }
+    form {
+      margin: 0 auto;
+    }
+  }
+}
