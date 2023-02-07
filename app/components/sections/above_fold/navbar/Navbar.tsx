@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { NavbarProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/components/navbar.module.scss"
 import { Button } from "../../../button/Button"
 import { LanguageToogle } from "../../../language_toogle/LanguageToogle"
@@ -9,8 +10,9 @@ export const Navbar = ({
   setSecondaryLanguage,
   buttonText,
   sectionToScroll,
-  mail = "info@clubtal.com",
-}: any) => {
+  mail,
+  withLanguageToggle,
+}: NavbarProps) => {
   let optionsList = options.map(({ name, link, externalLink }: any) => (
     <li tabIndex={0} key={name} className={styles.dropdown_option}>
       <Link
@@ -36,7 +38,7 @@ export const Navbar = ({
         )}
         Menu
       </menu>
-      <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} />
+      {withLanguageToggle ? <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} /> : null}
       {toggleMenu ? (
         <div className={styles.dropdown} onClick={handleToggle}>
           <ul>{options ? optionsList : null}</ul>

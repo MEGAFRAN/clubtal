@@ -35,7 +35,7 @@ export type CardProps = {
 }
 
 export type LanguageToogleProps = {
-  setSecondaryLanguage: Dispatch<SetStateAction<boolean>>
+  setSecondaryLanguage?: Dispatch<SetStateAction<boolean>>
   mainLanguage?: "Español"
   secondaryLanguage?: "English"
 }
@@ -52,7 +52,7 @@ export type ButtonProps = {
 }
 
 export type FormProps = {
-  text: string
+  text: string[]
 }
 
 export type HeadingProps = {
@@ -83,4 +83,23 @@ export type Error404Props = {
 export type ErrorPageProps = {
   statusCode?: number
   message?: string
+}
+
+type homeNavbarOptions = {
+  name: string
+  link: string
+  extraLink?: boolean
+}
+
+export interface NavbarProps {
+  options: homeNavbarOptions[]
+  setSecondaryLanguage?: LanguageToogleProps["setSecondaryLanguage"]
+  buttonText: string
+  sectionToScroll?: string
+  mail: string
+  withLanguageToggle: boolean
+}
+
+export interface LandingPageProps extends NavbarProps, FormProps, HeadingProps {
+  textInformation: string[]
 }
