@@ -1,13 +1,14 @@
 import { useRouter } from "next/router"
 import { LandingPage } from "../app/components/templates/layout/LandingPage"
 import { HOME_TEXT } from "../app/services/pages/home-text"
+import { landingPage } from "../app/services/pages/landing_pages/semillero-analitica-web"
 
 const SemilleroAnaliticaWeb = () => {
   const router = useRouter()
   const { pathname } = router
   const isHomePage = pathname === "/" ? true : false
   const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts, formText, landingPage } = currentLanguage
+  const { homeNavbarOptions, ctaButtonTexts, formText } = currentLanguage
   const { semilleroAnaliticaWeb } = landingPage
   return (
     <LandingPage
