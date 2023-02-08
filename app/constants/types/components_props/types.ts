@@ -34,8 +34,8 @@ export type CardProps = {
   featured?: boolean
 }
 
-export type LanguageToogleProps = {
-  setSecondaryLanguage?: Dispatch<SetStateAction<boolean>>
+export interface LanguageToogleProps {
+  setSecondaryLanguage?: (value: boolean) => void
   mainLanguage?: "Español"
   secondaryLanguage?: "English"
 }
@@ -47,7 +47,7 @@ export type ListProps = {
 export type ButtonProps = {
   text: string
   style: "cta" | "regular"
-  scrollToSection: string
+  scrollToSection?: string
   handleClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -95,7 +95,7 @@ export interface NavbarProps {
   options: homeNavbarOptions[]
   setSecondaryLanguage?: LanguageToogleProps["setSecondaryLanguage"]
   buttonText: string
-  sectionToScroll?: string
+  sectionToScroll?: ButtonProps["scrollToSection"]
   mail: string
   withLanguageToggle: boolean
 }

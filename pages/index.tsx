@@ -33,14 +33,16 @@ const Home: NextPage = () => {
     followingSteps,
     formText,
   } = currentLanguage
-
+  const handleSetSecondaryLanguage = (value: boolean) => {
+    value ? setSecondaryLanguage(true) : setSecondaryLanguage(false)
+  }
   return (
     <>
       <Head>{HOME_HEAD}</Head>
 
       <Header
         navbarOptions={homeNavbarOptions}
-        setSecondaryLanguage={setSecondaryLanguage}
+        setSecondaryLanguage={handleSetSecondaryLanguage}
         title={headerTitle}
         text={headerText}
         buttonText={ctaButtonTexts}
