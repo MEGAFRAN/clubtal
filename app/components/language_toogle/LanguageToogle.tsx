@@ -8,8 +8,12 @@ export const LanguageToogle = ({
 }: LanguageToogleProps) => {
   return (
     <div className={styles.container}>
-      <button onClick={() => setSecondaryLanguage(true)}>{secondaryLanguage}</button>
-      <button onClick={() => setSecondaryLanguage(false)}>{mainLanguage}</button>
+      <button onClick={() => (setSecondaryLanguage ? setSecondaryLanguage(true) : null)}>
+        {secondaryLanguage}
+      </button>
+      <button onClick={() => (setSecondaryLanguage ? setSecondaryLanguage(false) : null)}>
+        {mainLanguage}
+      </button>
     </div>
   )
 }
