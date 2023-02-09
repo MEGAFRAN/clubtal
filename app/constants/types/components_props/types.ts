@@ -47,7 +47,7 @@ export type ListProps = {
 export type ButtonProps = {
   text: string
   style: "cta" | "regular"
-  scrollToSection: string
+  scrollToSection?: string
   handleClick?: MouseEventHandler<HTMLButtonElement>
 }
 
