@@ -1,21 +1,29 @@
+@use "../abstracts/mediaquery";
 .container {
-  min-width: 500px;
   section {
-    margin: 80px 0 20px 0;
-    padding: 0 20px;
+    margin-bottom: 20px;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     align-items: center;
     gap: 24px 0;
+    @media only screen and (max-width: mediaquery.$screen-xs-min) {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      aside {
+        h1 {
+          padding: 0;
+        }
+      }
+    }
     aside {
-      min-width: 360px;
-      text-align: center;
+      min-width: 230px;
       height: 100%;
       h1 {
-        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        text-align: center;
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
       }
       ul {
-        padding: 0 24px;
+        padding: 0;
         display: flex;
         flex-flow: column wrap;
         row-gap: 12px;
@@ -31,6 +39,7 @@
     }
   }
   nav {
+    position: sticky;
     & > div {
       top: 0;
     }
