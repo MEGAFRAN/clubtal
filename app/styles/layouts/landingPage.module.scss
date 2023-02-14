@@ -1,4 +1,4 @@
-@use "../abstracts/mediaquery";
+@use "../abstracts/breakpoints";
 .container {
   nav {
     position: sticky;
@@ -29,7 +29,7 @@
       margin: 0 auto;
     }
   }
-  @media (min-width: mediaquery.$screen-xs-min) {
+  @media (min-width: breakpoints.$screen-tablet-portrait) {
     section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
