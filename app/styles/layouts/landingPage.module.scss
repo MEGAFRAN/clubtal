@@ -1,36 +1,27 @@
 @use "../abstracts/mediaquery";
 .container {
-  section {
-    margin-bottom: 20px;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    align-items: center;
-    gap: 24px 0;
-    @media only screen and (max-width: mediaquery.$screen-xs-min) {
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      aside {
-        h1 {
-          padding: 0;
-        }
-      }
+  nav {
+    position: sticky;
+    & > div {
+      top: 0;
     }
+  }
+  section {
+    margin: 12px 0 24px 0;
     aside {
-      min-width: 230px;
-      height: 100%;
+      padding: 0 24px;
       h1 {
+        padding: 0;
         text-align: center;
-        font-size: clamp(1.2rem, 5vw, 1.8rem);
       }
       ul {
+        list-style: none;
         padding: 0;
-        display: flex;
-        flex-flow: column wrap;
-        row-gap: 12px;
         text-align: justify;
+
         li {
           font-size: clamp(1rem, 4vw, 1.1rem);
-          list-style: none;
+          margin-top: 12px;
         }
       }
     }
@@ -38,10 +29,17 @@
       margin: 0 auto;
     }
   }
-  nav {
-    position: sticky;
-    & > div {
-      top: 0;
+  @media (min-width: mediaquery.$screen-xs-min) {
+    section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    }
+    aside {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    form {
+      align-self: center;
     }
   }
 }
