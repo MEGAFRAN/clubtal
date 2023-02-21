@@ -1,0 +1,54 @@
+@use "../abstracts/colors";
+.container {
+  width: 100%;
+  margin-bottom: 24px;
+  nav {
+    & > div {
+      top: 0;
+    }
+  }
+  .title {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$primary-gray;
+    border-bottom-right-radius: 141px;
+    color: colors.$primary-black;
+    margin-bottom: 24px;
+  }
+  p {
+    margin-bottom: 24px;
+    text-align: justify;
+    padding: 0 12px;
+  }
+  section {
+    padding: 0 12px;
+    margin-bottom: 24px;
+    h2 {
+      padding: 0;
+    }
+    ul {
+      padding: 0;
+      text-align: justify;
+      display: flex;
+      flex-flow: column wrap;
+      gap: 24px 0;
+      list-style: none;
+      li::before {
+        content: "\2022";
+        margin-right: 5px;
+      }
+    }
+  }
+  section:last-of-type {
+    ul {
+      li::before {
+        content: none;
+      }
+    }
+  }
+  form {
+    margin: 0 auto;
+  }
+}

@@ -41,7 +41,7 @@ export type LanguageToogleProps = {
 }
 
 export type ListProps = {
-  listData: []
+  listData: string[]
 }
 
 export type ButtonProps = {
@@ -100,6 +100,20 @@ export interface NavbarProps {
   withLanguageToggle: boolean
 }
 
+export interface SectionTitleListProps {
+  title: string
+  description: string[]
+  id: string
+}
+
 export interface LandingPageProps extends NavbarProps, FormProps, HeadingProps {
   textInformation: string[]
+}
+
+export interface JobDetailProps extends NavbarProps, FormProps {
+  titleJob: string
+  descriptionJob: string
+  taskJob: SectionTitleListProps
+  requirementsJob: SectionTitleListProps
+  aboutCompany: SectionTitleListProps
 }
