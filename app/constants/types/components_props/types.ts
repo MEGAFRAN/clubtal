@@ -117,3 +117,25 @@ export interface JobDetailProps extends NavbarProps, FormProps {
   requirementsJob: SectionTitleListProps
   aboutCompany: SectionTitleListProps
 }
+
+export interface HeaderProps {
+  navbarOptions: homeNavbarOptions[]
+  setSecondaryLanguage: LanguageToogleProps["setSecondaryLanguage"]
+  title: string[]
+  text: string[]
+  buttonText: string[]
+  sectionToScroll: string
+}
+
+export interface SectionContactProps {
+  title: string
+  formText: string[]
+}
+
+export interface SectionGeneralProps {
+  listData: string[]
+  title: string
+  subTitle?: string
+  buttonText: string
+  sectionToScroll: string
+}
