@@ -2,6 +2,7 @@ import { Button } from "../../../button/Button"
 import { Navbar } from "../navbar/Navbar"
 import styles from "../../../../styles/sections/header.module.scss"
 import { useRouter } from "next/router"
+import { HeaderProps } from "../../../../constants/types/components_props/types"
 
 export const Header = ({
   navbarOptions,
@@ -10,7 +11,7 @@ export const Header = ({
   text,
   buttonText,
   sectionToScroll,
-}: any) => {
+}: HeaderProps) => {
   const crownImage = "/images/crown.svg"
   const router = useRouter()
   const { pathname } = router
