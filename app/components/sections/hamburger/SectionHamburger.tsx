@@ -1,7 +1,4 @@
-import {
-  SectionContactProps,
-  SectionGeneralProps,
-} from "../../../constants/types/components_props/types"
+import { SectionGeneralProps } from "../../../constants/types/components_props/types"
 import styles from "../../../styles/sections/hamburger.module.scss"
 import { Button } from "../../button/Button"
 import { List } from "../../list/List"
