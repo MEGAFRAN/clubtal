@@ -10,9 +10,9 @@ export const sendFormMessage = async (
 ) => {
   if (formMessage && clientName && clientEmail) {
     const dataToSend = { formMessage, clientName, clientEmail }
+    setLoading(true)
 
     try {
-      setLoading(true)
       const request: RequestInit = {
         method: "POST",
         mode: "cors",
@@ -21,19 +21,25 @@ export const sendFormMessage = async (
       }
 
       await fetch("https://post-push.azurewebsites.net/api/EmailService", request).then(() => {
-        setLoading(false)
         setMessageResponseStatus("success")
         setMessageResponse("Gracias recibimos tu mensaje, pronto nos estaremos comunicando contigo")
+        setTimeout(() => {
+          setLoading(false)
+        }, 1000)
       })
     } catch (error) {
-      setLoading(false)
       console.error(error)
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000)
     }
   } else {
-    setLoading(false)
     setMessageResponseStatus("error")
     setMessageResponse(
       "Por favor llena todos los campos del formulario, e intenta enviar el mensaje nuevamente",
     )
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
   }
 }
