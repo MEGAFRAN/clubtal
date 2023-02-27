@@ -14,21 +14,28 @@ export const Form = ({ text }: FormProps) => {
 
   const onSubmit = (event: any): void => {
     event.preventDefault()
-    sendFormMessage(
-      formMessage,
-      formName,
-      formEmail,
-      setMessageResponseStatus,
-      setMessageResponse,
-      setLoading,
-    )
-    _gtmEvents.formSubmit({ formMessage, formName, formEmail })
+    if (!formMessage || !formName || !formEmail) {
+      setMessageResponseStatus("error")
+      setMessageResponse(
+        "Por favor llena todos los campos del formulario, e intenta enviar el mensaje nuevamente",
+      )
+    } else {
+      setLoading(true)
+      sendFormMessage(
+        formMessage,
+        formName,
+        formEmail,
+        setMessageResponseStatus,
+        setMessageResponse,
+        setLoading,
+      )
+      _gtmEvents.formSubmit({ formMessage, formName, formEmail })
+    }
   }
 
   return (
     <form className={styles.container} onSubmit={onSubmit}>
       <h2>{text[0]}</h2>
-
       <label form="message">
         <span>{text[1]}</span>
         <textarea
