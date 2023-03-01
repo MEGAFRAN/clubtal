@@ -8,7 +8,8 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch",
+    "test": "jest a",
+    "test:watch": "jest a --watch",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "prepare": "husky install",
@@ -41,6 +42,7 @@
   "lint-staged": {
     "*": [
       "npm run prettier:check",
+      "npm run test",
       "git add"
     ]
   }
