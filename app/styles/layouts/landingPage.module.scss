@@ -1,4 +1,5 @@
 @use "../abstracts/breakpoints";
+@use "../abstracts/colors";
 .container {
   nav {
     position: sticky;
@@ -9,7 +10,13 @@
   section {
     margin: 12px 0 24px 0;
     aside {
-      padding: 0 24px;
+      padding: 16px;
+      background-color: colors.$terciary-black;
+      border-bottom-right-radius: 70px;
+      border-top-right-radius: 70px;
+      border: dashed 4px colors.$primary-gold;
+      border-left: none;
+      margin-bottom: 12px;
       h1 {
         padding: 0;
         text-align: center;
@@ -22,6 +29,9 @@
         li {
           font-size: clamp(1rem, 4vw, 1.1rem);
           margin-top: 12px;
+          border-radius: 15px;
+          border-bottom: 2px solid colors.$secondary-black;
+          padding: 6px;
         }
       }
     }
@@ -35,7 +45,6 @@
       grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     }
     aside {
-      max-width: 800px;
       margin: 0 auto;
     }
     form {
