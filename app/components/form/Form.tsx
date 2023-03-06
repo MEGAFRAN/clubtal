@@ -34,9 +34,9 @@ export const Form = ({ text }: FormProps) => {
   }
 
   return (
-    <form className={styles.container} onSubmit={onSubmit}>
+    <form className={styles.container} onSubmit={onSubmit} aria-label="Contact Form">
       <h2>{text[0]}</h2>
-      <label form="message">
+      <label htmlFor="message">
         <span>{text[1]}</span>
         <textarea
           name="message"
@@ -46,10 +46,11 @@ export const Form = ({ text }: FormProps) => {
           cols={30}
           rows={3}
           onChange={(event) => setFormMessage(event.target.value)}
+          aria-label="Write Message"
         ></textarea>
       </label>
 
-      <label form="name">
+      <label htmlFor="name">
         <span>{text[3]}</span>
         <input
           name="name"
@@ -59,10 +60,11 @@ export const Form = ({ text }: FormProps) => {
           required
           placeholder={text[4]}
           onChange={(event) => setFormName(event.target.value)}
+          aria-label="Full Name"
         />
       </label>
 
-      <label form="email">
+      <label htmlFor="email">
         <span>{text[5]}</span>
         <input
           name="email"
@@ -72,10 +74,13 @@ export const Form = ({ text }: FormProps) => {
           required
           placeholder={text[6]}
           onChange={(event) => setFormEmail(event.target.value)}
+          aria-label="Email Address"
         />
       </label>
 
-      <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
+      <div aria-live="polite" aria-atomic="true">
+        <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
+      </div>
 
       <button className={loading ? styles.loading : ""} type="submit" disabled={loading}>
         {loading ? "Enviando..." : text[7]}
