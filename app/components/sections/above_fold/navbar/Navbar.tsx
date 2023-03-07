@@ -29,23 +29,28 @@ export const Navbar = ({
     setToggleMenu(!toggleMenu)
   }
   return (
-    <nav tabIndex={0} className={styles.container}>
-      <menu className={styles.title} onClick={handleToggle}>
+    <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
+      <button className={styles.title} onClick={handleToggle}>
         {!toggleMenu ? (
           <span className={styles.inActive}></span>
         ) : (
           <span className={styles.active}>X</span>
         )}
         Menu
-      </menu>
+      </button>
       {withLanguageToggle ? <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} /> : null}
       {toggleMenu ? (
         <div className={styles.dropdown} onClick={handleToggle}>
-          <ul>{options ? optionsList : null}</ul>
+          <ul aria-label="Navigation Links">{options ? optionsList : null}</ul>
 
-          <Button text={buttonText} style="cta" scrollToSection={sectionToScroll} />
+          <Button
+            aria-label="Call to Action"
+            text={buttonText}
+            style="cta"
+            scrollToSection={sectionToScroll}
+          />
 
-          <a className={styles.contact} href={`mailto:${mail}`}>
+          <a aria-label="Contact Email" className={styles.contact} href={`mailto:${mail}`}>
             {mail}
           </a>
         </div>
