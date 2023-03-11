@@ -53,6 +53,7 @@ export type ButtonProps = {
 
 export type FormProps = {
   text: string[]
+  endpoint?: string
 }
 
 export type HeadingProps = {

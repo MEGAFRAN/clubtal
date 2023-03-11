@@ -40,7 +40,12 @@ describe("<Form />", () => {
   })
 
   test("display message send and disable button when clicked submit with field full and valid data send ", async () => {
-    const { getByText, getByLabelText, getByRole } = render(<Form text={MOCK_INFORMATION} />)
+    const { getByText, getByLabelText, getByRole } = render(
+      <Form
+        text={MOCK_INFORMATION}
+        endpoint={"https://post-push.azurewebsites.net/api/EmailService"}
+      />,
+    )
     const messageInput = getByLabelText(MOCK_INFORMATION[1])
     const nameInput = getByLabelText(MOCK_INFORMATION[3])
     const emailInput = getByLabelText(MOCK_INFORMATION[5])
@@ -55,6 +60,7 @@ describe("<Form />", () => {
     //valid information send from Form
     await waitFor(() => {
       expect(sendFormMessage).toHaveBeenCalledWith(
+        "https://post-push.azurewebsites.net/api/EmailService",
         "Hello, World!",
         "John Doe",
         "johndoe@example.com",

@@ -1,4 +1,6 @@
-export const API_TEST = {
-  url: process.env.TEST_API || process.env.NEXT_PUBLIC_TEST_API,
-  endpoint: process.env.TEST_API_ENDPOINT || process.env.NEXT_PUBLIC_TEST_API_ENDPOINT,
-}
+const AZURE_SERVERLESS_API = "https://post-push.azurewebsites.net"
+const EMAIL_SERVICE_GENERAL_ENDPOINT = "/api/EmailService"
+const EMAIL_SERVICE_RECRUIT_ENDPOINT = "/api/EmailServiceRecruit1"
+
+export const EMAIL_SERVICE_GENERAL = `${AZURE_SERVERLESS_API}${EMAIL_SERVICE_GENERAL_ENDPOINT}`
+export const EMAIL_SERVICE_RECRUIT = `${AZURE_SERVERLESS_API}${EMAIL_SERVICE_RECRUIT_ENDPOINT}`

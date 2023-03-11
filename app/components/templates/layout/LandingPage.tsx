@@ -13,6 +13,7 @@ export const LandingPage = ({
   mail,
   withLanguageToggle,
   text,
+  endpoint,
 }: LandingPageProps) => {
   return (
     <main className={styles.container}>
@@ -29,7 +30,7 @@ export const LandingPage = ({
             {textInformation && textInformation.map((text, index) => <li key={index}>{text}</li>)}
           </ul>
         </aside>
-        <Form text={text} />
+        <Form text={text} endpoint={endpoint} />
       </section>
     </main>
   )
