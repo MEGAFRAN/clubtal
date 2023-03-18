@@ -11,6 +11,7 @@ import { SectionUnderlineList } from "../app/components/sections/underline_list/
 import { HOME_HEAD } from "../app/constants/seo/homeHead"
 import { HOME_TEXT } from "../app/services/pages/home-text"
 import { SectionAnalytics } from "../app/components/sections/analytics/SectionAnalytics"
+import ChatComponent from "../app/components/chat/ChatComponent"
 
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
@@ -46,6 +47,7 @@ const Home: NextPage = () => {
         buttonText={ctaButtonTexts}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
+      <ChatComponent />
       <SectionInnerRounded
         listData={careers}
         title={sectionsTitles[0]}
