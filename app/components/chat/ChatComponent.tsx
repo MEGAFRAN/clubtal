@@ -1,13 +1,16 @@
 import { useState, useRef, useEffect, FormEvent } from "react"
+import styles from "../../styles/components/chat.module.scss"
 
-interface ChatProps {}
+interface ChatProps {
+  onMinimize: () => void
+}
 
 interface Message {
   role: "system" | "user" | "assistant"
   content: string
 }
 
-const ChatComponent: React.FC<ChatProps> = () => {
+export const ChatComponent: React.FC<ChatProps> = ({ onMinimize }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "system",
@@ -60,10 +63,13 @@ const ChatComponent: React.FC<ChatProps> = () => {
   }
 
   return (
-    <div className="chat-container">
-      <div className="chat-messages" ref={chatContainerRef}>
+    <div className={styles.container}>
+      <button className={styles.minimize_button} onClick={onMinimize}>
+        &#8722;
+      </button>
+      <div className={styles.chat_messages} ref={chatContainerRef}>
         {messages.map((message, index) => (
-          <div key={index} className={`chat-message ${message.role}`}>
+          <div key={index} className={`${styles.message} ${styles[message.role]}`}>
             {message.content}
           </div>
         ))}
@@ -78,77 +84,6 @@ const ChatComponent: React.FC<ChatProps> = () => {
         />
         <button type="submit">Send</button>
       </form>
-
-      <style jsx>{`
-        .chat-container {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          max-height: 600px;
-          max-width: 500px;
-          background-color: #f5f5f5;
-          border: 1px solid #ddd;
-          border-radius: 5px;
-          padding: 16px;
-        }
-
-        .chat-messages {
-          flex: 1;
-          overflow-y: auto;
-        }
-
-        .chat-message {
-          margin-bottom: 8px;
-          line-height: 1.4;
-          word-wrap: break-word;
-          color: red;
-        }
-
-        .chat-message.user {
-          color: #0066cc;
-          font-weight: bold;
-        }
-
-        .chat-message.assistant {
-          color: #777;
-        }
-
-        form {
-          display: flex;
-          align-items: center;
-          margin-top: 8px;
-        }
-
-        input {
-          flex: 1;
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          font-size: 16px;
-          outline: none;
-        }
-
-        input:focus {
-          border-color: #66afe9;
-        }
-
-        button {
-          margin-left: 8px;
-          padding: 8px 16px;
-          background-color: #0066cc;
-          color: #fff;
-          font-size: 16px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-
-        button:hover {
-          background-color: #0052a3;
-        }
-      `}</style>
     </div>
   )
 }
-
-export default ChatComponent

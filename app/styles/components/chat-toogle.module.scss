@@ -1,0 +1,16 @@
+@use "../abstracts/colors";
+@use "../abstracts/animations";
+@use "../abstracts/mixins";
+
+.container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  .open {
+    background-color: red;
+    height: 70px;
+    width: 100px;
+    border-radius: 20px;
+  }
+}
