@@ -13,17 +13,19 @@ export const Navbar = ({
   mail,
   withLanguageToggle,
 }: NavbarProps) => {
-  let optionsList = options.map(({ name, link, externalLink }: any) => (
-    <li tabIndex={0} key={name} className={styles.dropdown_option}>
-      <Link
-        href={link}
-        target={externalLink ? "_blank" : "_self"}
-        rel={externalLink ? "external" : undefined}
-      >
-        {name}
-      </Link>
-    </li>
-  ))
+  let optionsList =
+    options &&
+    options.map(({ name, link, externalLink }: any) => (
+      <li tabIndex={0} key={name} className={styles.dropdown_option}>
+        <Link
+          href={link}
+          target={externalLink ? "_blank" : "_self"}
+          rel={externalLink ? "external" : undefined}
+        >
+          {name}
+        </Link>
+      </li>
+    ))
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const handleToggle = () => {
     setToggleMenu(!toggleMenu)

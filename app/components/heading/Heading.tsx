@@ -13,7 +13,7 @@ export const Title = ({ title = "default title", headingType = "h1" }: HeadingPr
     )
 
   return (
-    <div className="title-container" data-headingType={headingType}>
+    <div className="title-container" data-headingtype={headingType}>
       {createHeading}
     </div>
   )
