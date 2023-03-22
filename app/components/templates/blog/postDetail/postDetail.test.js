@@ -29,10 +29,10 @@ describe("<PostDetail/>", () => {
   test("Should display information author, date and reading time of the post", () => {
     const name = component.getByText("Clubtal")
     const data = component.getByText("March 21 2023")
-    const reading = component.getByText("5 min read")
+    const readingTime = component.getByText("5 min read")
     expect(name).toBeInTheDocument()
     expect(data).toBeInTheDocument()
-    expect(reading).toBeInTheDocument()
+    expect(readingTime).toBeInTheDocument()
   })
   test("Should display content of post", () => {
     const contents = component.getAllByRole("contentinfo")

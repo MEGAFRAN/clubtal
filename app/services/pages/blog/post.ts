@@ -5,6 +5,7 @@ export const post = [
     nameAuthor: " Clubtal",
     dataPost: "March 21 2023 ",
     readingTime: "5 min read",
+    category: "IA",
     contentPost: [
       {
         titleContent: "Title content 1",
