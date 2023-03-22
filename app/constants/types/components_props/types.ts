@@ -140,3 +140,20 @@ export interface SectionGeneralProps {
   buttonText: string
   sectionToScroll: string
 }
+export interface SectionAboutPostProps {
+  nameAuthor: string
+  datePost: string
+  readingTime: string
+  id?: string
+  className?: string
+}
+
+type ContentPost = {
+  titleContent: string
+  descriptionContent: string
+  id?: string
+}
+
+export interface SectionContentPostProps {
+  contentPost: ContentPost[]
+}
