@@ -37,56 +37,57 @@ export const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
 
   return (
     <form className={styles.container} onSubmit={onSubmit} aria-label="Contact Form">
-      <h2>{text[0]}</h2>
-      <label htmlFor="message">
-        <span>{text[1]}</span>
-        <textarea
-          name="message"
-          id="message"
-          required
-          placeholder={text[2]}
-          cols={30}
-          rows={3}
-          onChange={(event) => setFormMessage(event.target.value)}
-          aria-label="Write Message"
-        ></textarea>
-      </label>
-
-      <label htmlFor="name">
-        <span>{text[3]}</span>
-        <input
-          name="name"
-          id="name"
-          autoComplete="name"
-          type="text"
-          required
-          placeholder={text[4]}
-          onChange={(event) => setFormName(event.target.value)}
-          aria-label="Full Name"
-        />
-      </label>
-
-      <label htmlFor="email">
-        <span>{text[5]}</span>
-        <input
-          name="email"
-          id="email"
-          autoComplete="email"
-          type="email"
-          required
-          placeholder={text[6]}
-          onChange={(event) => setFormEmail(event.target.value)}
-          aria-label="Email Address"
-        />
-      </label>
-
-      <div aria-live="polite" aria-atomic="true">
-        <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
-      </div>
-
-      <button className={loading ? styles.loading : ""} type="submit" disabled={loading}>
-        {loading ? "Enviando..." : text[7]}
-      </button>
+      {text && (
+        <>
+          {" "}
+          <h2>{text[0]}</h2>
+          <label htmlFor="message">
+            <span>{text[1]}</span>
+            <textarea
+              name="message"
+              id="message"
+              required
+              placeholder={text[2]}
+              cols={30}
+              rows={3}
+              onChange={(event) => setFormMessage(event.target.value)}
+              aria-label="Write Message"
+            ></textarea>
+          </label>
+          <label htmlFor="name">
+            <span>{text[3]}</span>
+            <input
+              name="name"
+              id="name"
+              autoComplete="name"
+              type="text"
+              required
+              placeholder={text[4]}
+              onChange={(event) => setFormName(event.target.value)}
+              aria-label="Full Name"
+            />
+          </label>
+          <label htmlFor="email">
+            <span>{text[5]}</span>
+            <input
+              name="email"
+              id="email"
+              autoComplete="email"
+              type="email"
+              required
+              placeholder={text[6]}
+              onChange={(event) => setFormEmail(event.target.value)}
+              aria-label="Email Address"
+            />
+          </label>
+          <div aria-live="polite" aria-atomic="true">
+            <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
+          </div>
+          <button className={loading ? styles.loading : ""} type="submit" disabled={loading}>
+            {loading ? "Enviando..." : text[7]}
+          </button>
+        </>
+      )}
     </form>
   )
 }

@@ -1,0 +1,68 @@
+@use "../abstracts/colors";
+.container {
+  width: 100%;
+  background: colors.$primary-white;
+  nav {
+    position: sticky;
+    & > div {
+      top: 0;
+    }
+  }
+  main {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 12px 0;
+  }
+  h1 {
+    margin-top: 24px;
+    text-align: center;
+    color: colors.$primary-black;
+  }
+  h2 {
+    color: colors.$primary-black;
+  }
+  .about {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0 12px;
+    align-content: center;
+    color: colors.$secondary-black;
+  }
+  ul {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 12px 0;
+    padding: 0;
+    & > section > h2,
+    p {
+      padding: 0 12px;
+      text-align: justify;
+    }
+    & > section > p {
+      margin-top: 12px;
+      color: colors.$secondary-black;
+    }
+  }
+  section {
+    margin-bottom: 0;
+    > form {
+      margin-bottom: 24px;
+      > h2 {
+        color: colors.$primary-white;
+      }
+    }
+  }
+  footer {
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: colors.$primary-black;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    box-shadow: 0 0 40px -10px black;
+    border-top: solid 2px colors.$primary-gold;
+  }
+}
