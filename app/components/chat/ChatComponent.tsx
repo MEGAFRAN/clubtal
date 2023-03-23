@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, FormEvent } from "react"
+import { getPageText, initialContext } from "../../services/utils/chatbot"
 import styles from "../../styles/components/chat.module.scss"
 
 interface ChatProps {
@@ -12,10 +13,17 @@ interface Message {
 
 export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
-    { role: "system", content: "Hola! Preguntame lo que quieras" },
+    {
+      role: "system",
+      content: "Hola! Soy Club, tu asistente virtual. ¿Cuentame como puedo ayudarte?",
+    },
   ])
   const [userMessage, setUserMessage] = useState("")
   const chatContainerRef = useRef<HTMLDivElement | null>(null)
+  const initialHiddenContextMessage = {
+    role: "user",
+    content: `${initialContext} """${getPageText()}"""`,
+  }
 
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -36,7 +44,13 @@ export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ messages: [...messages, newUserMessage] }),
+        body: JSON.stringify({
+          messages: [
+            initialHiddenContextMessage,
+            ...messages,
+            { role: "user", content: userMessage },
+          ],
+        }),
       })
 
       if (response.status === 200) {

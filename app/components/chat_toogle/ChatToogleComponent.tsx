@@ -15,7 +15,7 @@ export const ChatToggle: React.FC = () => {
         <ChatComponent onClose={handleToggleChat} />
       ) : (
         <button className={styles.open} onClick={handleToggleChat}>
-          Open Chat
+          ¿Asistencia? Chat Aqui
         </button>
       )}
     </div>

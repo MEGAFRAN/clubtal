@@ -67,12 +67,6 @@ const Home: NextPage = () => {
         buttonText={ctaButtonTexts[3]}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
-      <SectionSimpleSpace
-        listData={projectTools}
-        title={sectionsTitles[3]}
-        buttonText={ctaButtonTexts[4]}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
-      />
       <SectionHamburger
         listData={followingSteps}
         title={sectionsTitles[4]}

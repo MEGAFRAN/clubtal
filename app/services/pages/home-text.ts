@@ -1,9 +1,7 @@
 const directedTo = "#section-inner-rounded",
   benefits = "#section-underline-list",
   followingSteps = "#section-hamburger",
-  contact = "#section-contact",
-  documentation = "https://clubtal.atlassian.net/wiki/spaces/WEB/overview",
-  jira = "https://clubtal.atlassian.net/jira/software/c/projects/WEB/issues"
+  contact = "#section-contact"
 
 export const HOME_TEXT = {
   sectionsIds: {
@@ -11,8 +9,6 @@ export const HOME_TEXT = {
     benefits,
     followingSteps,
     contact,
-    documentation,
-    jira,
   },
 
   spanishText: {
@@ -29,18 +25,18 @@ export const HOME_TEXT = {
 
     ctaButtonTexts: [
       "Contáctanos",
-      "Solicitar prueba",
+      "Solicitar servicio",
       "Iniciemos el proceso",
-      "Unete a la comunidad",
+      "Quiero la prueba",
       "Mas información",
       "Me interesa",
-      "Quiero ser parte",
+      "Hacer solicitud",
     ],
 
     sectionsTitles: [
       "¿Te gustaria tu propio asistente virtual?",
       "Beneficios de tu asistente virtual",
-      "¿Como es nuestra comunidad?",
+      "¿Que incluye el servicio?",
       "Pruebame en tu sitio web",
       "Pasos a seguir",
       "Contáctanos",
@@ -52,20 +48,20 @@ export const HOME_TEXT = {
 
     services: [
       "Servicio al cliente las 24 horas",
-      "Economico",
       "Facil de usar",
+      "Funciona en todo sitio web",
       "Personalizable",
       "Multiples idiomas",
       "Medicion de interacciones",
     ],
 
     communityAdvantages: [
-      "Segura",
-      "Verificable",
-      "Abierta",
-      "Colaborativa",
-      "Amistosa",
-      "Igualitaria",
+      "Analisis de tus necesidades",
+      "Desarrollo",
+      "Personalizacion",
+      "Soporte de instalacion",
+      "Documentacion",
+      "Gratis 7 dias de prueba",
     ],
 
     projectTools: [
@@ -80,17 +76,15 @@ export const HOME_TEXT = {
     ],
 
     followingSteps: [
-      `Nos contactas: Nos cuentas sobre tu perfil, y porque quieres entrar a la comunidad clubtal`,
-      `Te ingresamos a la comunidad: Estarás en un grupo basado en tu carrera digital, 
-      donde tendrás el apoyo de tus compañeros, compartiendo conocimientos y experiencias`,
-      `Ganaras experiencia con funcionalidades del proyecto: Podrás elegir lo que quieras practicar o aprender, 
-      colaborar en grupo o individualmente, obtener experiencia practica, y tener retroalimentación`,
+      `Nos contactas: Hablamos sobre tus necesidades de negocio, y definimos entre todos la mejor solucion`,
+      `Nos das los requerimientos: Con estos datos personalizaremos tu asistente virtual a la medida de tus necesidades`,
+      `Te entregamos tu solucion: En 5 dias luego de tener los requerimientos te entregamos tu asistente virtual`,
     ],
 
     formText: [
       "Cuentanos sobre ti",
-      "¿Porque quiero entrar a la comunidad clubtal?",
-      "Escribe aqui lo que quieres..",
+      "¿Que necesitas en tu negocio?",
+      "Escribe aqui lo que necesitas..",
       "Mi nombre",
       "Escribe aqui tu nombre..",
       "Mi email",
