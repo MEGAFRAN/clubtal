@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, FormEvent } from "react"
 import styles from "../../styles/components/chat.module.scss"
 
 interface ChatProps {
-  onMinimize: () => void
+  onClose: () => void
 }
 
 interface Message {
@@ -10,12 +10,9 @@ interface Message {
   content: string
 }
 
-export const ChatComponent: React.FC<ChatProps> = ({ onMinimize }) => {
+export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "system",
-      content: "Hola! Preguntame lo que quieras",
-    },
+    { role: "system", content: "Hola! Preguntame lo que quieras" },
   ])
   const [userMessage, setUserMessage] = useState("")
   const chatContainerRef = useRef<HTMLDivElement | null>(null)
@@ -64,8 +61,8 @@ export const ChatComponent: React.FC<ChatProps> = ({ onMinimize }) => {
 
   return (
     <div className={styles.container}>
-      <button className={styles.minimize_button} onClick={onMinimize}>
-        &#8722;
+      <button className={styles.close_button} onClick={onClose}>
+        &#x2715;
       </button>
       <div className={styles.chat_messages} ref={chatContainerRef}>
         {messages.map((message, index) => (

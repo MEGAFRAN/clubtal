@@ -21,17 +21,15 @@ export const HOME_TEXT = {
       { name: "Servicios", link: benefits },
       { name: "Pasos a seguir", link: followingSteps },
       { name: "Contacto", link: contact },
-      { name: "Documentación proyecto", link: documentation, externalLink: true },
-      { name: "Jira proyecto", link: jira, externalLink: true },
     ],
 
-    headerTitle: ["Experiencia", "Profesional", "Gratuita"],
+    headerTitle: ["Recorta", "tus", "gastos"],
 
-    headerText: ["Gana experiencia practica como desarrollador frontend", "en un sitio web real."],
+    headerText: ["Inteligencia artificial", "para tu negocio"],
 
     ctaButtonTexts: [
       "Contáctanos",
-      "Solicitar beneficios",
+      "Solicitar prueba",
       "Iniciemos el proceso",
       "Unete a la comunidad",
       "Mas información",
@@ -40,25 +38,25 @@ export const HOME_TEXT = {
     ],
 
     sectionsTitles: [
-      "Para personas de América latina con:",
-      "Beneficios para ti",
+      "¿Te gustaria tu propio asistente virtual?",
+      "Beneficios de tu asistente virtual",
       "¿Como es nuestra comunidad?",
-      "Herramientas que usaras",
+      "Pruebame en tu sitio web",
       "Pasos a seguir",
       "Contáctanos",
     ],
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-    careers: ["Conocimientos básicos en desarrollo frontend (Html, Css, Javascript)"],
+    careers: ["Servicio al cliente las 24 horas, ahorra costos de personal"],
 
     services: [
-      "Experiencia práctica en un sitio web real",
-      "Certificado de experiencia personalizado",
-      "Contacto con un equipo remoto y distribuido en múltiples países",
-      "Red de contactos",
-      "Exposición en redes sociales",
-      "En vivos con: Reclutadores, personal de empresas tecnológicas",
+      "Servicio al cliente las 24 horas",
+      "Economico",
+      "Facil de usar",
+      "Personalizable",
+      "Multiples idiomas",
+      "Medicion de interacciones",
     ],
 
     communityAdvantages: [
@@ -107,8 +105,6 @@ export const HOME_TEXT = {
       { name: "Services", link: benefits },
       { name: "Steps to follow", link: followingSteps },
       { name: "Contact", link: contact },
-      { name: "Project documentation", link: documentation, externalLink: true },
-      { name: "Project Jira", link: jira, externalLink: true },
     ],
 
     headerTitle: ["Free", "Professional", "Experience"],

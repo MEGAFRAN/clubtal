@@ -12,7 +12,7 @@ export const ChatToggle: React.FC = () => {
   return (
     <div className={styles.container}>
       {isChatVisible ? (
-        <ChatComponent onMinimize={handleToggleChat} />
+        <ChatComponent onClose={handleToggleChat} />
       ) : (
         <button className={styles.open} onClick={handleToggleChat}>
           Open Chat
