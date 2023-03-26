@@ -38,6 +38,8 @@ export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
     const newUserMessage: Message = { role: "user", content: userMessage }
     setMessages((prevMessages) => [...prevMessages, newUserMessage])
 
+    setUserMessage("")
+
     try {
       const response = await fetch("https://post-push.azurewebsites.net/api/ChatBotService", {
         method: "POST",
@@ -69,8 +71,6 @@ export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
     } catch (error) {
       console.error("Error:", error)
     }
-
-    setUserMessage("")
   }
 
   return (
