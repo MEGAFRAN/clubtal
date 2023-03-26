@@ -12,6 +12,7 @@ export const Navbar = ({
   sectionToScroll,
   mail,
   withLanguageToggle,
+  withLoginButton,
 }: NavbarProps) => {
   let optionsList =
     options &&
@@ -40,7 +41,10 @@ export const Navbar = ({
         )}
         Menu
       </button>
-      {withLanguageToggle ? <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} /> : null}
+      {withLoginButton && (
+        <Button aria-label="Call to Action" text="Login / Register" style="cta" linkTo="/login" />
+      )}
+      {withLanguageToggle && <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} />}
       {toggleMenu ? (
         <div className={styles.dropdown} onClick={handleToggle}>
           <ul aria-label="Navigation Links">{options ? optionsList : null}</ul>

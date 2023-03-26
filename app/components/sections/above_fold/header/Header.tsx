@@ -1,7 +1,6 @@
 import { Button } from "../../../button/Button"
 import { Navbar } from "../navbar/Navbar"
 import styles from "../../../../styles/sections/header.module.scss"
-import { useRouter } from "next/router"
 import { HeaderProps } from "../../../../constants/types/components_props/types"
 
 export const Header = ({
@@ -13,9 +12,6 @@ export const Header = ({
   sectionToScroll,
 }: HeaderProps) => {
   const crownImage = "/images/crown.svg"
-  const router = useRouter()
-  const { pathname } = router
-  const isHomePage = pathname === "/" ? true : false
   return (
     <header className={styles.container}>
       <Navbar
@@ -23,7 +19,8 @@ export const Header = ({
         setSecondaryLanguage={setSecondaryLanguage}
         buttonText={buttonText[0]}
         mail={"info@clubtal.com"}
-        withLanguageToggle={isHomePage}
+        withLanguageToggle={false}
+        withLoginButton={true}
       />
 
       <h1>

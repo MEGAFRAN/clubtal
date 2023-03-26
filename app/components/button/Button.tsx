@@ -1,11 +1,13 @@
 import { ButtonProps } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/button.module.scss"
+import { Link } from "../link/Link"
 
 export const Button = ({
-  text = "default text",
+  text,
   handleClick,
   style = "regular",
   scrollToSection,
+  linkTo,
 }: ButtonProps) => {
   const scrollTo = (selector: string): void => {
     const section = document.querySelector(selector)
@@ -16,13 +18,15 @@ export const Button = ({
 
   let button = scrollToSection ? (
     <button className={variant} onClick={() => scrollTo(scrollToSection)}>
-      {" "}
-      {text}{" "}
+      {text}
     </button>
+  ) : linkTo ? (
+    <Link href={linkTo}>
+      <button className={variant}>{text}</button>
+    </Link>
   ) : (
     <button className={variant} onClick={handleClick}>
-      {" "}
-      {text}{" "}
+      {text}
     </button>
   )
 

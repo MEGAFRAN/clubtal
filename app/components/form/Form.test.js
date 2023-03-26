@@ -3,10 +3,10 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import { Form } from "./Form"
 import { HOME_TEXT } from "../../services/pages/home-text"
-import { sendFormMessage } from "../../services/form.service"
+import { sendFormMessage } from "../../services/form_services/general_form/general-form.service"
 
 // Mock implementation of sendFormMessage
-jest.mock("../../services/form.service")
+jest.mock("../../services/form_services/general_form/general-form.service")
 
 describe("<Form />", () => {
   const textSpanish = HOME_TEXT.spanishText

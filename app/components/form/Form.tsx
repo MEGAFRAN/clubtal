@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { FormProps } from "../../constants/types/components_props/types"
 import { EMAIL_SERVICE_GENERAL } from "../../services/api/variables"
-import { sendFormMessage } from "../../services/form.service"
+import { sendFormMessage } from "../../services/form_services/general_form/general-form.service"
 import { _gtmEvents } from "../../services/google-tag-events.service"
 import styles from "../../styles/components/form.module.scss"
 

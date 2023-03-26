@@ -49,6 +49,7 @@ export type ButtonProps = {
   style: "cta" | "regular"
   scrollToSection?: string
   handleClick?: MouseEventHandler<HTMLButtonElement>
+  linkTo?: string
 }
 
 export type FormProps = {
@@ -99,6 +100,7 @@ export interface NavbarProps {
   sectionToScroll?: string
   mail: string
   withLanguageToggle: boolean
+  withLoginButton: boolean
 }
 
 export interface SectionTitleListProps {
