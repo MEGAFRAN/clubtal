@@ -9,38 +9,37 @@ export const sendFormMessage = async (
   setMessageResponse: Dispatch<SetStateAction<string>>,
   setLoading: Dispatch<SetStateAction<boolean>>,
 ) => {
-  if (formMessage && clientName && clientEmail) {
-    const dataToSend = { formMessage, clientName, clientEmail }
-    setLoading(true)
+  const stopLoadingEffect = () =>
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
 
-    try {
-      const request: RequestInit = {
-        method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
-      }
-
-      await fetch(endpoint, request).then(() => {
-        setMessageResponseStatus("success")
-        setMessageResponse("Gracias recibimos tu mensaje, pronto nos estaremos comunicando contigo")
-        setTimeout(() => {
-          setLoading(false)
-        }, 1000)
-      })
-    } catch (error) {
-      console.error(error)
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
-    }
-  } else {
+  if (!formMessage || !clientName || !clientEmail) {
     setMessageResponseStatus("error")
     setMessageResponse(
       "Por favor llena todos los campos del formulario, e intenta enviar el mensaje nuevamente",
     )
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
+    stopLoadingEffect()
+
+    return
+  }
+
+  try {
+    setLoading(true)
+    const dataToSend = { formMessage, clientName, clientEmail }
+    const request: RequestInit = {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataToSend),
+    }
+
+    await fetch(endpoint, request).then(() => {
+      setMessageResponseStatus("success")
+      setMessageResponse("Gracias recibimos tu mensaje, pronto nos estaremos comunicando contigo")
+    })
+  } catch (error) {
+    console.error(error)
+    stopLoadingEffect()
   }
 }

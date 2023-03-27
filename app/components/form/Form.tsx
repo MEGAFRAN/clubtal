@@ -20,19 +20,20 @@ export const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
       setMessageResponse(
         "Por favor llena todos los campos del formulario, e intenta enviar el mensaje nuevamente",
       )
-    } else {
-      setLoading(true)
-      sendFormMessage(
-        endpoint,
-        formMessage,
-        formName,
-        formEmail,
-        setMessageResponseStatus,
-        setMessageResponse,
-        setLoading,
-      )
-      _gtmEvents.formSubmit({ formMessage, formName, formEmail })
+      return
     }
+
+    setLoading(true)
+    sendFormMessage(
+      endpoint,
+      formMessage,
+      formName,
+      formEmail,
+      setMessageResponseStatus,
+      setMessageResponse,
+      setLoading,
+    )
+    _gtmEvents.formSubmit({ formMessage, formName, formEmail })
   }
 
   return (

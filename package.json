@@ -16,9 +16,7 @@
     "prettier:check": "prettier --write"
   },
   "dependencies": {
-    "axios": "^0.26.0",
-    "next": "^13.1.6",
-    "openai": "^3.2.1",
+    "next": "^13.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
