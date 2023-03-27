@@ -1,7 +1,8 @@
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
+import { validateMagicLink } from "../../services/form_services/validate_magic_link/validate-magic-link"
 
-export const MagicLinkComponent = () => {
+export const MagicLink = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -12,25 +13,15 @@ export const MagicLinkComponent = () => {
     const { token } = router.query
 
     if (!effectHasRun && token) {
-      // Mark the effect as having run
       setEffectHasRun(true)
 
-      // Make an HTTP GET request to the Azure Function URL
-      fetch(`https://clubtal-web-services.azurewebsites.net/api/validate-magic-link?token=${token}`)
+      validateMagicLink(token)
         .then((response) => {
-          if (response.ok) {
-            // Redirect the user to the website's home page
-            router.push("/semillero-analitica-web")
-          } else {
-            setError(true)
-          }
+          if (response.ok) router.push("/chatbot")
+          else setError(true)
         })
-        .catch(() => {
-          setError(true)
-        })
-        .finally(() => {
-          setLoading(false)
-        })
+        .catch(() => setError(true))
+        .finally(() => setLoading(false))
     }
   }, [router.query.token, effectHasRun])
 

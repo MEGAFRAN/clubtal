@@ -1,6 +1,6 @@
-import { MagicLinkComponent } from "../app/components/magic_link/MagicLinkComponent"
+import { MagicLink } from "../app/components/magic_link/MagicLink"
 
 const MagicLogin = () => {
-  return <MagicLinkComponent />
+  return <MagicLink />
 }
 export default MagicLogin
