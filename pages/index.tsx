@@ -11,6 +11,7 @@ import { SectionUnderlineList } from "../app/components/sections/underline_list/
 import { HOME_HEAD } from "../app/constants/seo/homeHead"
 import { HOME_TEXT } from "../app/services/pages/home-text"
 import { SectionAnalytics } from "../app/components/sections/analytics/SectionAnalytics"
+import { ChatToggle } from "../app/components/chat_toogle/ChatToogleComponent"
 
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
@@ -46,6 +47,7 @@ const Home: NextPage = () => {
         buttonText={ctaButtonTexts}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
+      <ChatToggle />
       <SectionInnerRounded
         listData={careers}
         title={sectionsTitles[0]}
@@ -63,12 +65,6 @@ const Home: NextPage = () => {
         listData={communityAdvantages}
         title={sectionsTitles[2]}
         buttonText={ctaButtonTexts[3]}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
-      />
-      <SectionSimpleSpace
-        listData={projectTools}
-        title={sectionsTitles[3]}
-        buttonText={ctaButtonTexts[4]}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionHamburger

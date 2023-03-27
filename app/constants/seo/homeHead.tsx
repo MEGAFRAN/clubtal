@@ -1,5 +1,10 @@
-const title = "Experiencia Profesional Gratuita - Clubtal",
-  description = "Gana experiencia practica como desarrollador frontend en un sitio web real",
+const title = "Recorta tus gastos con inteligencia artificial - Clubtal",
+  description = `¿Estás buscando formas de mejorar la eficiencia de tu negocio y reducir tus costos operativos? 
+  ¡Tenemos la solución perfecta para ti! Nuestra empresa ofrece una amplia gama de productos de inteligencia artificial, 
+  como asistentes virtuales y herramientas de automatización, diseñados para ayudarte a tomar decisiones más inteligentes y 
+  eficientes en tu negocio. Con nuestras soluciones, puedes liberar tiempo valioso y recursos para centrarte en lo que realmente importa: 
+  hacer crecer tu empresa. ¿Estás listo para aumentar la productividad y reducir los costos de manera significativa? 
+  ¡Únete a nosotros hoy y comienza a transformar tu negocio!`,
   url = "https://clubtal.com/",
   name = "Clubtal",
   favicon = "/favicon.ico",

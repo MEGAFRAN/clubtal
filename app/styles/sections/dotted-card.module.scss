@@ -40,8 +40,9 @@
       align-items: center;
       justify-content: center;
       list-style-type: none;
-      width: 228px;
-      height: 106px;
+      text-align: center;
+      width: 242px;
+      height: 122px;
       color: colors.$primary-white;
       border-radius: 19px;
       border: dashed 4px colors.$primary-white;
@@ -67,12 +68,12 @@
       }
 
       &:nth-child(5)::after {
-        content: "\2764";
+        content: "\2696";
         font-size: 2rem;
       }
 
       &:nth-child(6)::after {
-        content: "\2696";
+        content: "\2764";
         font-size: 2rem;
       }
     }

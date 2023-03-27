@@ -1,9 +1,7 @@
 const directedTo = "#section-inner-rounded",
   benefits = "#section-underline-list",
   followingSteps = "#section-hamburger",
-  contact = "#section-contact",
-  documentation = "https://clubtal.atlassian.net/wiki/spaces/WEB/overview",
-  jira = "https://clubtal.atlassian.net/jira/software/c/projects/WEB/issues"
+  contact = "#section-contact"
 
 export const HOME_TEXT = {
   sectionsIds: {
@@ -11,8 +9,6 @@ export const HOME_TEXT = {
     benefits,
     followingSteps,
     contact,
-    documentation,
-    jira,
   },
 
   spanishText: {
@@ -21,53 +17,51 @@ export const HOME_TEXT = {
       { name: "Servicios", link: benefits },
       { name: "Pasos a seguir", link: followingSteps },
       { name: "Contacto", link: contact },
-      { name: "Documentación proyecto", link: documentation, externalLink: true },
-      { name: "Jira proyecto", link: jira, externalLink: true },
     ],
 
-    headerTitle: ["Experiencia", "Profesional", "Gratuita"],
+    headerTitle: ["Recorta", "tus", "gastos"],
 
-    headerText: ["Gana experiencia practica como desarrollador frontend", "en un sitio web real."],
+    headerText: ["Inteligencia artificial", "para tu negocio"],
 
     ctaButtonTexts: [
       "Contáctanos",
-      "Solicitar beneficios",
+      "Solicitar servicio",
       "Iniciemos el proceso",
-      "Unete a la comunidad",
+      "Quiero la prueba",
       "Mas información",
       "Me interesa",
-      "Quiero ser parte",
+      "Hacer solicitud",
     ],
 
     sectionsTitles: [
-      "Para personas de América latina con:",
-      "Beneficios para ti",
-      "¿Como es nuestra comunidad?",
-      "Herramientas que usaras",
+      "¿Te gustaria tu propio asistente virtual?",
+      "Beneficios de tu asistente virtual",
+      "¿Que incluye el servicio?",
+      "Pruebame en tu sitio web",
       "Pasos a seguir",
       "Contáctanos",
     ],
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-    careers: ["Conocimientos básicos en desarrollo frontend (Html, Css, Javascript)"],
+    careers: ["Servicio al cliente las 24 horas, ahorra costos de personal"],
 
     services: [
-      "Experiencia práctica en un sitio web real",
-      "Certificado de experiencia personalizado",
-      "Contacto con un equipo remoto y distribuido en múltiples países",
-      "Red de contactos",
-      "Exposición en redes sociales",
-      "En vivos con: Reclutadores, personal de empresas tecnológicas",
+      "Servicio al cliente las 24 horas",
+      "Facil de usar",
+      "Funciona en todo sitio web",
+      "Personalizable",
+      "Multiples idiomas",
+      "Medicion de interacciones",
     ],
 
     communityAdvantages: [
-      "Segura",
-      "Verificable",
-      "Abierta",
-      "Colaborativa",
-      "Amistosa",
-      "Igualitaria",
+      "Analisis de tus necesidades",
+      "Desarrollo",
+      "Personalizacion",
+      "Soporte de instalacion",
+      "Documentacion",
+      "Gratis 7 dias de prueba",
     ],
 
     projectTools: [
@@ -82,17 +76,15 @@ export const HOME_TEXT = {
     ],
 
     followingSteps: [
-      `Nos contactas: Nos cuentas sobre tu perfil, y porque quieres entrar a la comunidad clubtal`,
-      `Te ingresamos a la comunidad: Estarás en un grupo basado en tu carrera digital, 
-      donde tendrás el apoyo de tus compañeros, compartiendo conocimientos y experiencias`,
-      `Ganaras experiencia con funcionalidades del proyecto: Podrás elegir lo que quieras practicar o aprender, 
-      colaborar en grupo o individualmente, obtener experiencia practica, y tener retroalimentación`,
+      `Nos contactas: Hablamos sobre tus necesidades de negocio, y definimos entre todos la mejor solucion`,
+      `Nos das los requerimientos: Con estos datos personalizaremos tu asistente virtual a la medida de tus necesidades`,
+      `Te entregamos tu solucion: En 5 dias luego de tener los requerimientos te entregamos tu asistente virtual`,
     ],
 
     formText: [
       "Cuentanos sobre ti",
-      "¿Porque quiero entrar a la comunidad clubtal?",
-      "Escribe aqui lo que quieres..",
+      "¿Que necesitas en tu negocio?",
+      "Escribe aqui lo que necesitas..",
       "Mi nombre",
       "Escribe aqui tu nombre..",
       "Mi email",
@@ -107,8 +99,6 @@ export const HOME_TEXT = {
       { name: "Services", link: benefits },
       { name: "Steps to follow", link: followingSteps },
       { name: "Contact", link: contact },
-      { name: "Project documentation", link: documentation, externalLink: true },
-      { name: "Project Jira", link: jira, externalLink: true },
     ],
 
     headerTitle: ["Free", "Professional", "Experience"],
