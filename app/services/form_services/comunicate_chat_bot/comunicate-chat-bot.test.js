@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import comunicateChatBot from "./comunicate-chat-bot.service"
 
 describe("comunicateChatBot()", () => {
@@ -5,12 +6,12 @@ describe("comunicateChatBot()", () => {
   const mockFetch = jest.fn(() => Promise.resolve(mockResponse))
 
   beforeEach(() => {
-    ;(global as any).fetch = mockFetch
+    global.fetch = mockFetch
   })
 
   afterEach(() => {
     jest.clearAllMocks()
-    delete (global as any).fetch
+    delete global.fetch
   })
 
   test("sends messages to chatbot and returns response", async () => {

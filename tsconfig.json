@@ -15,6 +15,12 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/404.tsx",
+    "app/services/form_services/comunicate_chat_bot/comunicate-chat-bot.test.js"
+  ],
   "exclude": ["node_modules"]
 }
