@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
-import { validateMagicLink } from "../../services/form_services/validate_magic_link/validate-magic-link"
+import validateMagicLink from "../../services/form_services/validate_magic_link/validate-magic-link"
 
 export const MagicLink = () => {
   const router = useRouter()
@@ -35,3 +35,4 @@ export const MagicLink = () => {
 
   return <h1>Validandacion exitosa...</h1>
 }
+export default MagicLink

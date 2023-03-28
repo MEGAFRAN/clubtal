@@ -1,9 +1,9 @@
-const directedTo = "#section-inner-rounded",
-  benefits = "#section-underline-list",
-  followingSteps = "#section-hamburger",
-  contact = "#section-contact"
+const directedTo = "#section-inner-rounded"
+const benefits = "#section-underline-list"
+const followingSteps = "#section-hamburger"
+const contact = "#section-contact"
 
-export const HOME_TEXT = {
+const HOME_TEXT = {
   sectionsIds: {
     directedTo,
     benefits,
@@ -76,9 +76,9 @@ export const HOME_TEXT = {
     ],
 
     followingSteps: [
-      `Nos contactas: Hablamos sobre tus necesidades de negocio, y definimos entre todos la mejor solucion`,
-      `Nos das los requerimientos: Con estos datos personalizaremos tu asistente virtual a la medida de tus necesidades`,
-      `Te entregamos tu solucion: En 5 dias luego de tener los requerimientos te entregamos tu asistente virtual`,
+      "Nos contactas: Hablamos sobre tus necesidades de negocio, y definimos entre todos la mejor solucion",
+      "Nos das los requerimientos: Con estos datos personalizaremos tu asistente virtual a la medida de tus necesidades",
+      "Te entregamos tu solucion: En 5 dias luego de tener los requerimientos te entregamos tu asistente virtual",
     ],
 
     formText: [
@@ -151,7 +151,7 @@ export const HOME_TEXT = {
     ],
 
     followingSteps: [
-      `You contact us: Tell us about your profile, and why you want to join the clubtal community`,
+      "You contact us: Tell us about your profile, and why you want to join the clubtal community",
       `You join the community: You will be in a group based on your digital career, 
       where you will have the support of your peers, sharing knowledge and experiences`,
       `Gain experience with project functionalities: You will be able to choose what you want to practice or learn, 
@@ -170,3 +170,4 @@ export const HOME_TEXT = {
     ],
   },
 }
+export default HOME_TEXT

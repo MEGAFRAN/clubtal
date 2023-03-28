@@ -1,6 +1,6 @@
 import { SectionContentPostProps } from "../../../constants/types/components_props/types"
 
-export function SectionContentPost({ contentPost }: SectionContentPostProps) {
+function SectionContentPost({ contentPost }: SectionContentPostProps) {
   return (
     <ul>
       {contentPost
@@ -14,3 +14,4 @@ export function SectionContentPost({ contentPost }: SectionContentPostProps) {
     </ul>
   )
 }
+export default SectionContentPost

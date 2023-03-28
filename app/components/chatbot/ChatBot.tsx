@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect, FormEvent } from "react"
 import { ChatbotMessage, ChatbotProps } from "../../constants/types/components_props/types"
-import { comunicateChatBot } from "../../services/form_services/comunicate_chat_bot/comunicate-chat-bot.service"
+import comunicateChatBot from "../../services/form_services/comunicate_chat_bot/comunicate-chat-bot.service"
 import { getPageText, initialContext } from "../../services/utils/chatbot"
 import styles from "../../styles/components/chat.module.scss"
 
-export const ChatBot = ({ onClose }: ChatbotProps) => {
+const ChatBot = ({ onClose }: ChatbotProps) => {
   const [messages, setMessages] = useState<ChatbotMessage[]>([
     {
       role: "system",
@@ -78,3 +78,4 @@ export const ChatBot = ({ onClose }: ChatbotProps) => {
     </div>
   )
 }
+export default ChatBot

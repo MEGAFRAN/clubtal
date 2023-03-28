@@ -4,13 +4,14 @@ import {
   SectionAboutPostProps,
   SectionContentPostProps,
 } from "../../../../constants/types/components_props/types"
-import { Button } from "../../../button/Button"
-import { Title } from "../../../heading/Heading"
-import { SectionAboutPost } from "../../../sections/about_post/SectionAboutPost"
+import Button from "../../../button/Button"
+import Title from "../../../heading/Heading"
+import SectionAboutPost from "../../../sections/about_post/SectionAboutPost"
 import { Navbar } from "../../../sections/above_fold/navbar/Navbar"
 import { SectionContact } from "../../../sections/contact/SectionContact"
-import { SectionContentPost } from "../../../sections/content_post/SectionContentPost"
+import SectionContentPost from "../../../sections/content_post/SectionContentPost"
 import styles from "../../../../styles/layouts/postDetail.module.scss"
+
 interface PostDetailProps
   extends NavbarProps,
     SectionAboutPostProps,
@@ -18,7 +19,7 @@ interface PostDetailProps
     FormProps {
   titlePost: string
 }
-export function PostDetail({
+function PostDetail({
   options,
   buttonText,
   mail,
@@ -58,3 +59,4 @@ export function PostDetail({
     </div>
   )
 }
+export default PostDetail

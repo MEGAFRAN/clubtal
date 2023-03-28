@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import { useState } from "react"
-import { LoginForm } from "../app/components/login_form/login_form"
-import { generateMagicLink } from "../app/services/form_services/generate_magic_link/generate-magic-link.service"
+import LoginForm from "../app/components/login_form/login_form"
+import generateMagicLink from "../app/services/form_services/generate_magic_link/generate-magic-link.service"
 
 const LoginPage: NextPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)

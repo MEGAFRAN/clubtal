@@ -1,7 +1,7 @@
 declare let dataLayer: any
 
-export const _googleTagService = {
-  pushDataLayer(event: string, data: {}): void {
+const googleTagService = {
+  pushDataLayer(event: string, data: object): void {
     try {
       dataLayer.push({ event, data })
     } catch (error) {
@@ -9,9 +9,13 @@ export const _googleTagService = {
     }
   },
 
-  validateDataLayer(event: string, data: {}, environment: string = document.location.origin): void {
+  validateDataLayer(
+    event: string,
+    data: object,
+    environment: string = document.location.origin,
+  ): void {
     if (event && data) {
-      let validatedData = { ...data, environment }
+      const validatedData = { ...data, environment }
       this.pushDataLayer(event, validatedData)
     } else {
       console.error(
@@ -20,7 +24,9 @@ export const _googleTagService = {
     }
   },
 
-  feedDataLayer(event: string, data: {}): void {
+  feedDataLayer(event: string, data: object): void {
     this.validateDataLayer(event, data)
   },
 }
+
+export default googleTagService

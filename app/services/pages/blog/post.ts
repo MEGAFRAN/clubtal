@@ -1,4 +1,4 @@
-export const post = [
+const post = [
   {
     title: "First post",
     id: 21032023,
@@ -20,3 +20,4 @@ export const post = [
     ],
   },
 ]
+export default post

@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { FormProps } from "../../constants/types/components_props/types"
 import { EMAIL_SERVICE_GENERAL } from "../../services/api/variables"
-import { sendFormMessage } from "../../services/form_services/general_form/general-form.service"
-import { _gtmEvents } from "../../services/google-tag-events.service"
+import sendFormMessage from "../../services/form_services/general_form/general-form.service"
+import gtmEvents from "../../services/google-tag-events.service"
 import styles from "../../styles/components/form.module.scss"
 
-export const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
+const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
   const [messageResponse, setMessageResponse] = useState<string>("")
   const [messageResponseStatus, setMessageResponseStatus] = useState<string>("")
   const [formMessage, setFormMessage] = useState<string>("")
@@ -13,7 +13,7 @@ export const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
   const [formEmail, setFormEmail] = useState<string>("")
   const [loading, setLoading] = useState<boolean>(false)
 
-  const onSubmit = (event: any): void => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
     if (!formMessage || !formName || !formEmail) {
       setMessageResponseStatus("error")
@@ -33,7 +33,7 @@ export const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
       setMessageResponse,
       setLoading,
     )
-    _gtmEvents.formSubmit({ formMessage, formName, formEmail })
+    gtmEvents.formSubmit({ formMessage, formName, formEmail })
   }
 
   return (
@@ -92,3 +92,5 @@ export const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {
     </form>
   )
 }
+
+export default Form

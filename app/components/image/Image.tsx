@@ -1,12 +1,12 @@
 import { ImageProps } from "../../constants/types/components_props/types"
 
-export const ImageContainer = ({
+const ImageContainer = ({
   src = "",
   height = "auto",
   width = "auto",
   loading = "eager",
 }: ImageProps) => {
-  let imageName = src.substr(src.lastIndexOf("/") + 1)
+  const imageName = src.substr(src.lastIndexOf("/") + 1)
 
   return (
     <div className="image_container">
@@ -20,3 +20,4 @@ export const ImageContainer = ({
     </div>
   )
 }
+export default ImageContainer

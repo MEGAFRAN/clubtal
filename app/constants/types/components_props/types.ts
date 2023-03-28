@@ -168,3 +168,15 @@ export interface ChatbotMessage {
   role: "system" | "user" | "assistant"
   content: string
 }
+
+export interface ChatbotTagGroups {
+  metaDescription: string[]
+  title: string[]
+  h1: string[]
+  h2: string[]
+  h3: string[]
+  a: string[]
+  p: string[]
+  span: string[]
+  [key: string]: string[]
+}

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { ChatBot } from "../chatbot/ChatBot"
 import styles from "../../styles/components/chat-toogle.module.scss"
+import ChatBot from "../chatbot/ChatBot"
 
-export const ChatBotToggle: React.FC = () => {
+const ChatBotToggle: React.FC = () => {
   const [isChatVisible, setIsChatVisible] = useState(false)
 
   function handleToggleChat() {
@@ -21,3 +21,4 @@ export const ChatBotToggle: React.FC = () => {
     </div>
   )
 }
+export default ChatBotToggle

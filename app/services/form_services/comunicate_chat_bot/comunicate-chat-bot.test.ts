@@ -1,4 +1,4 @@
-import { comunicateChatBot } from "./comunicate-chat-bot.service"
+import comunicateChatBot from "./comunicate-chat-bot.service"
 
 describe("comunicateChatBot()", () => {
   const mockResponse = { status: 200, json: jest.fn() }

@@ -2,12 +2,12 @@ import { ChatbotMessage } from "../../../constants/types/components_props/types"
 import { COMUNICATE_CHAT_BOT } from "../../api/variables"
 import { handleError, handleResponse } from "../../utils/reponse/response"
 
-export async function comunicateChatBot(
+async function comunicateChatBot(
   initialHiddenContextMessage: { role: string; content: string },
   messages: ChatbotMessage[],
   userMessage: string,
 ): Promise<Response> {
-  return await fetch(COMUNICATE_CHAT_BOT, {
+  return fetch(COMUNICATE_CHAT_BOT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,3 +19,5 @@ export async function comunicateChatBot(
     .then(handleResponse)
     .catch(handleError)
 }
+
+export default comunicateChatBot

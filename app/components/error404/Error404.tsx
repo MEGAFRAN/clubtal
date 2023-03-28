@@ -1,6 +1,6 @@
-import { Button } from "../button/Button"
 import { Error404Props } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/error404.module.scss"
+import Button from "../button/Button"
 
 const Error404 = ({
   text,

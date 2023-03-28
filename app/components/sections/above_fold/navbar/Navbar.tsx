@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { NavbarProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/components/navbar.module.scss"
-import { Button } from "../../../button/Button"
-import { LanguageToogle } from "../../../language_toogle/LanguageToogle"
-import { Link } from "../../../link/Link"
+import Button from "../../../button/Button"
+import LanguageToogle from "../../../language_toogle/LanguageToogle"
+import Link from "../../../link/Link"
 
 export const Navbar = ({
   options,
@@ -14,7 +14,7 @@ export const Navbar = ({
   withLanguageToggle,
   withLoginButton,
 }: NavbarProps) => {
-  let optionsList =
+  const optionsList =
     options &&
     options.map(({ name, link, externalLink }: any) => (
       <li tabIndex={0} key={name} className={styles.dropdown_option}>
@@ -64,3 +64,4 @@ export const Navbar = ({
     </nav>
   )
 }
+export default Navbar

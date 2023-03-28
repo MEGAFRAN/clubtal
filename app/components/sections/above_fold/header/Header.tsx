@@ -1,9 +1,9 @@
-import { Button } from "../../../button/Button"
 import { Navbar } from "../navbar/Navbar"
 import styles from "../../../../styles/sections/header.module.scss"
 import { HeaderProps } from "../../../../constants/types/components_props/types"
+import Button from "../../../button/Button"
 
-export const Header = ({
+const Header = ({
   navbarOptions,
   setSecondaryLanguage,
   title,
@@ -38,3 +38,4 @@ export const Header = ({
     </header>
   )
 }
+export default Header

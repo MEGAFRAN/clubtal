@@ -1,4 +1,5 @@
-import { generateMagicLink } from "./generate-magic-link.service"
+/* eslint-disable no-undef */
+import generateMagicLink from "./generate-magic-link.service"
 import { GENERATE_MAGIC_LINK } from "../../api/variables"
 
 describe("generateMagicLink", () => {

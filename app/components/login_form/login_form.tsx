@@ -7,7 +7,7 @@ type LoginFormProps = {
   message: string
 }
 
-export const LoginForm = ({ onSubmit, isSubmitting, message }: LoginFormProps) => {
+const LoginForm = ({ onSubmit, isSubmitting, message }: LoginFormProps) => {
   const [email, setEmail] = useState("")
 
   const handleLoginSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,3 +31,4 @@ export const LoginForm = ({ onSubmit, isSubmitting, message }: LoginFormProps) =
     </form>
   )
 }
+export default LoginForm

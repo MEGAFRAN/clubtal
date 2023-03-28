@@ -1,6 +1,9 @@
+import { ChatbotTagGroups } from "../../constants/types/components_props/types"
+
+/* eslint-disable no-plusplus */
 export const getPageText = () => {
-  const metaTags = document.querySelectorAll('meta[name="description"]')
-  const tagGroups = {
+  const metaTags = document.querySelectorAll("meta[name='description']")
+  const tagGroups: ChatbotTagGroups = {
     metaDescription: [],
     title: [],
     h1: [],
@@ -20,13 +23,13 @@ export const getPageText = () => {
 
   const titleTag = document.querySelector("title")
   if (titleTag) {
-    tagGroups.title.push(titleTag.textContent.trim())
+    tagGroups.title.push(titleTag?.textContent?.trim() || "")
   }
 
   const textTags = document.querySelectorAll("p, span, h1, h2, h3, a")
   for (let i = 0; i < textTags.length; i++) {
     const tag = textTags[i].tagName.toLowerCase()
-    const textContent = textTags[i].textContent.trim()
+    const textContent = textTags[i]?.textContent?.trim() || ""
     if (textContent) {
       tagGroups[tag].push(textContent)
     }

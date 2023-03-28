@@ -2,7 +2,7 @@ import React from "react"
 import { TableProps } from "../../constants/types/components_props/types"
 
 export const Table = ({ tableHeaders, tableRows }: TableProps) => {
-  let headers = tableHeaders ? (
+  const headers = tableHeaders ? (
     <tr>
       {" "}
       {tableHeaders.map((element: any, index: number) => (
@@ -13,7 +13,7 @@ export const Table = ({ tableHeaders, tableRows }: TableProps) => {
     </tr>
   ) : null
 
-  let rows = tableRows
+  const rows = tableRows
     ? tableRows.map((element: any) => (
         <tr key={element.id}>
           {Object.values(element).map((objectValue: any, index: number) => (
@@ -33,3 +33,4 @@ export const Table = ({ tableHeaders, tableRows }: TableProps) => {
     </table>
   )
 }
+export default Table

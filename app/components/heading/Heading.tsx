@@ -1,16 +1,21 @@
 import { HeadingProps } from "../../constants/types/components_props/types"
 
-export const Title = ({ title = "default title", headingType = "h1" }: HeadingProps) => {
-  let createHeading =
-    headingType === "h1" ? (
-      <h1> {title} </h1>
-    ) : headingType === "h2" ? (
-      <h2> {title} </h2>
-    ) : headingType === "h3" ? (
-      <h3> {title} </h3>
-    ) : (
-      <h4> {title} </h4>
-    )
+const Title = ({ title = "default title", headingType = "h1" }: HeadingProps) => {
+  let createHeading
+  switch (headingType) {
+    case "h1":
+      createHeading = <h1>{title}</h1>
+      break
+    case "h2":
+      createHeading = <h2>{title}</h2>
+      break
+    case "h3":
+      createHeading = <h3>{title}</h3>
+      break
+    default:
+      createHeading = <h4>{title}</h4>
+      break
+  }
 
   return (
     <div className="title-container" data-headingtype={headingType}>
@@ -18,3 +23,5 @@ export const Title = ({ title = "default title", headingType = "h1" }: HeadingPr
     </div>
   )
 }
+
+export default Title

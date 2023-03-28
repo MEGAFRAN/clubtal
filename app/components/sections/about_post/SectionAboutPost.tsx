@@ -1,5 +1,6 @@
 import { SectionAboutPostProps } from "../../../constants/types/components_props/types"
-export function SectionAboutPost({
+
+function SectionAboutPost({
   nameAuthor,
   datePost,
   readingTime,
@@ -12,3 +13,4 @@ export function SectionAboutPost({
     </section>
   )
 }
+export default SectionAboutPost

@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 import { cleanup, render } from "@testing-library/react"
 import "@testing-library/jest-dom"
-import { PostDetail } from "./PostDetail"
-import { post } from "../../../../services/pages/blog/post"
+import PostDetail from "./PostDetail"
+import post from "../../../../services/pages/blog/post"
 
 describe("<PostDetail/>", () => {
   let component

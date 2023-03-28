@@ -1,7 +1,8 @@
-import { _googleTagService } from "./google-tag-datalayer.service"
+import googleTagService from "./google-tag-datalayer.service"
 
-export const _gtmEvents = {
-  formSubmit(data: {}, event: string = "form_submit"): void {
-    _googleTagService.feedDataLayer(event, data)
+const gtmEvents = {
+  formSubmit(data: object, event = "form_submit"): void {
+    googleTagService.feedDataLayer(event, data)
   },
 }
+export default gtmEvents

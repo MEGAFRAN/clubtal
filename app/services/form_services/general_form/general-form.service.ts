@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react"
 
-export const sendFormMessage = async (
+const sendFormMessage = async (
   endpoint: string,
   formMessage: string,
   clientName: string,
@@ -43,3 +43,4 @@ export const sendFormMessage = async (
     stopLoadingEffect()
   }
 }
+export default sendFormMessage

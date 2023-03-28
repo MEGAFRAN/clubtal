@@ -1,4 +1,5 @@
-import { sendFormMessage } from "./general-form.service"
+/* eslint-disable no-undef */
+import sendFormMessage from "./general-form.service"
 
 describe("sendFormMessage", () => {
   const mockEndpoint = "https://example.com/send-message"

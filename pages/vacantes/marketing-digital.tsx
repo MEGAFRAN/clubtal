@@ -1,8 +1,8 @@
 import { NextPage } from "next"
 import { useRouter } from "next/router"
-import { JobDetail } from "../../app/components/templates/vacancy/JobDetail"
-import { HOME_TEXT } from "../../app/services/pages/home-text"
-import { Vacancy } from "../../app/services/pages/vacancy/marketing-digital"
+import JobDetail from "../../app/components/templates/vacancy/JobDetail"
+import HOME_TEXT from "../../app/services/pages/home-text"
+import Vacancy from "../../app/services/pages/vacancy/marketing-digital"
 
 const MarketingDigital: NextPage = () => {
   const router = useRouter()
