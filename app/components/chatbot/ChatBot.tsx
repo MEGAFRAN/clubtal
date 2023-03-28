@@ -1,18 +1,11 @@
 import { useState, useRef, useEffect, FormEvent } from "react"
+import { ChatbotMessage, ChatbotProps } from "../../constants/types/components_props/types"
+import { comunicateChatBot } from "../../services/form_services/comunicate_chat_bot/comunicate-chat-bot.service"
 import { getPageText, initialContext } from "../../services/utils/chatbot"
 import styles from "../../styles/components/chat.module.scss"
 
-interface ChatProps {
-  onClose: () => void
-}
-
-interface Message {
-  role: "system" | "user" | "assistant"
-  content: string
-}
-
-export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
-  const [messages, setMessages] = useState<Message[]>([
+export const ChatBot = ({ onClose }: ChatbotProps) => {
+  const [messages, setMessages] = useState<ChatbotMessage[]>([
     {
       role: "system",
       content: "Hola! Soy Club, tu asistente virtual. ¿Cuentame como puedo ayudarte?",
@@ -35,25 +28,12 @@ export const ChatComponent: React.FC<ChatProps> = ({ onClose }) => {
     e.preventDefault()
     if (!userMessage.trim()) return
 
-    const newUserMessage: Message = { role: "user", content: userMessage }
+    const newUserMessage: ChatbotMessage = { role: "user", content: userMessage }
     setMessages((prevMessages) => [...prevMessages, newUserMessage])
-
     setUserMessage("")
 
     try {
-      const response = await fetch("https://post-push.azurewebsites.net/api/ChatBotService", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          messages: [
-            initialHiddenContextMessage,
-            ...messages,
-            { role: "user", content: userMessage },
-          ],
-        }),
-      })
+      const response = await comunicateChatBot(initialHiddenContextMessage, messages, userMessage)
 
       if (response.status === 200) {
         const data = await response.json()

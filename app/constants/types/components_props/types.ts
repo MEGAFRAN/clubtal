@@ -87,6 +87,10 @@ export type ErrorPageProps = {
   message?: string
 }
 
+export type ChatbotProps = {
+  onClose: () => void
+}
+
 type homeNavbarOptions = {
   name: string
   link: string
@@ -158,4 +162,9 @@ type ContentPost = {
 
 export interface SectionContentPostProps {
   contentPost: ContentPost[]
+}
+
+export interface ChatbotMessage {
+  role: "system" | "user" | "assistant"
+  content: string
 }

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { ChatComponent } from "../chat/ChatComponent"
+import { ChatBot } from "../chatbot/ChatBot"
 import styles from "../../styles/components/chat-toogle.module.scss"
 
-export const ChatToggle: React.FC = () => {
+export const ChatBotToggle: React.FC = () => {
   const [isChatVisible, setIsChatVisible] = useState(false)
 
   function handleToggleChat() {
@@ -12,7 +12,7 @@ export const ChatToggle: React.FC = () => {
   return (
     <div className={styles.container}>
       {isChatVisible ? (
-        <ChatComponent onClose={handleToggleChat} />
+        <ChatBot onClose={handleToggleChat} />
       ) : (
         <button className={styles.open} onClick={handleToggleChat}>
           ¿Asistencia? Chat Aqui

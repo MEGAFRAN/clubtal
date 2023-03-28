@@ -1,5 +1,5 @@
 import { GENERATE_MAGIC_LINK } from "../../api/variables"
-import { handleError, handleResponse } from "../../utils/response"
+import { handleError, handleResponse } from "../../utils/reponse/response"
 
 export async function generateMagicLink(email: string): Promise<Response> {
   return await fetch(GENERATE_MAGIC_LINK, {

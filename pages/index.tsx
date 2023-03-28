@@ -6,12 +6,11 @@ import { SectionDottedCard } from "../app/components/sections/dotted_card/Sectio
 import { SectionContact } from "../app/components/sections/contact/SectionContact"
 import { SectionHamburger } from "../app/components/sections/hamburger/SectionHamburger"
 import { SectionInnerRounded } from "../app/components/sections/inner_rounded/SectionInnerRounded"
-import { SectionSimpleSpace } from "../app/components/sections/simple_space/SectionSimpleSpace"
 import { SectionUnderlineList } from "../app/components/sections/underline_list/SectionUnderlineList"
 import { HOME_HEAD } from "../app/constants/seo/homeHead"
 import { HOME_TEXT } from "../app/services/pages/home-text"
 import { SectionAnalytics } from "../app/components/sections/analytics/SectionAnalytics"
-import { ChatToggle } from "../app/components/chat_toogle/ChatToogleComponent"
+import { ChatBotToggle } from "../app/components/chatbot_toogle/ChatBotToogle"
 
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
@@ -30,7 +29,6 @@ const Home: NextPage = () => {
     careers,
     services,
     communityAdvantages,
-    projectTools,
     followingSteps,
     formText,
   } = currentLanguage
@@ -47,7 +45,6 @@ const Home: NextPage = () => {
         buttonText={ctaButtonTexts}
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
-      <ChatToggle />
       <SectionInnerRounded
         listData={careers}
         title={sectionsTitles[0]}
@@ -74,6 +71,7 @@ const Home: NextPage = () => {
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionContact formText={formText} title={sectionsTitles[5]} />
+      <ChatBotToggle />
       <SectionAnalytics />
     </>
   )
