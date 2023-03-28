@@ -7,7 +7,7 @@ import { landingPage } from "../app/services/pages/landing_pages/semillero-anali
 const SemilleroAnaliticaWeb = () => {
   const router = useRouter()
   const { pathname } = router
-  const isHomePage = pathname === "/" ? true : false
+  const isHomePage = pathname === "/"
   const currentLanguage = { ...HOME_TEXT.spanishText }
   const { homeNavbarOptions, ctaButtonTexts, formText } = currentLanguage
   const { semilleroAnaliticaWeb } = landingPage

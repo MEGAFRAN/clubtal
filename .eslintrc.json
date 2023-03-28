@@ -16,6 +16,16 @@
     "semi": ["error", "never"],
     "no-empty": "warn",
     "no-cond-assign": ["error", "always"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "for-direction": "off"
   }
 }

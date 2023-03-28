@@ -103,8 +103,8 @@ export interface NavbarProps {
   buttonText: string
   sectionToScroll?: string
   mail: string
-  withLanguageToggle: boolean
-  withLoginButton: boolean
+  withLanguageToggle?: boolean
+  withLoginButton?: boolean
 }
 
 export interface SectionTitleListProps {

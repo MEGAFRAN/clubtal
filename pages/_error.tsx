@@ -2,16 +2,18 @@ import { NextPage } from "next"
 import { ErrorPageProps } from "../app/constants/types/components_props/types"
 import NotFound from "./404"
 
-const ErrorPage: NextPage<ErrorPageProps> = ({ statusCode, message }) => {
+const ErrorPage: NextPage<ErrorPageProps> = ({ statusCode }) => {
   if (statusCode === 404) {
     return <NotFound />
-  } else {
-    return null
   }
+  return null
 }
 
 ErrorPage.getInitialProps = ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+  let statusCode
+  if (res) statusCode = res.statusCode
+  if (err) statusCode = err.statusCode
+  else statusCode = 404
   return { statusCode }
 }
 

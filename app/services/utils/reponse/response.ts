@@ -8,7 +8,6 @@ export async function handleResponse(response: Response | null | undefined): Pro
 export async function handleError(error: any): Promise<any> {
   if (error.data) {
     return error.data
-  } else {
-    throw new Error("Invalid error object - missing data property")
   }
+  throw new Error("Invalid error object - missing data property")
 }
