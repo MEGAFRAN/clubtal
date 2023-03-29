@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import validateMagicLink from "./validate-magic-link"
 import { VALIDATE_MAGIC_LINK } from "../../api/variables"
 

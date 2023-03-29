@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import generateMagicLink from "./generate-magic-link.service"
 import { GENERATE_MAGIC_LINK } from "../../api/variables"
 
@@ -11,7 +10,6 @@ describe("generateMagicLink", () => {
 
   it("should call fetch with the correct arguments", async () => {
     const mockFetch = jest.fn(() => Promise.resolve({}))
-    const mockJSON = jest.fn(() => ({ email: mockEmail }))
     global.fetch = mockFetch
 
     await generateMagicLink(mockEmail)

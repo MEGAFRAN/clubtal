@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import comunicateChatBot from "./comunicate-chat-bot.service"
 
 describe("comunicateChatBot()", () => {
