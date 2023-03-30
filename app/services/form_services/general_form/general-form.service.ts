@@ -39,7 +39,6 @@ const sendFormMessage = async (
       setMessageResponse("Gracias recibimos tu mensaje, pronto nos estaremos comunicando contigo")
     })
   } catch (error) {
-    console.error(error)
     stopLoadingEffect()
   }
 }

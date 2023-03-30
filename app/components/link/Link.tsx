@@ -2,7 +2,7 @@
 import { LinkProps } from "../../constants/types/components_props/types"
 
 const Link = ({
-  text = "default text",
+  text,
   href = "",
   target = "_self",
   children,
@@ -24,6 +24,7 @@ const Link = ({
       rel={rel}
       referrerPolicy={referrerpolicy}
     >
+      {text}
       {children}
     </a>
   )
