@@ -49,26 +49,26 @@ const Home: NextPage = () => {
         listData={careers}
         title={sectionsTitles[0]}
         buttonText={ctaButtonTexts[5]}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
+        linkTo={"/login"}
       />
       <SectionUnderlineList
         listData={services}
         title={sectionsTitles[1]}
         subTitle={sectionsSubTitles[0]}
         buttonText={ctaButtonTexts[1]}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
+        linkTo={"/login"}
       />
       <SectionDottedCard
         listData={communityAdvantages}
         title={sectionsTitles[2]}
         buttonText={ctaButtonTexts[3]}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
+        linkTo={"/login"}
       />
       <SectionHamburger
         listData={followingSteps}
         title={sectionsTitles[4]}
         buttonText={ctaButtonTexts[6]}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
+        linkTo={"/login"}
       />
       <SectionContact formText={formText} title={sectionsTitles[5]} />
       <ChatBotToggle />

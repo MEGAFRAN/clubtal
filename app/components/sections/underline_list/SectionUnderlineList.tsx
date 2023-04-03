@@ -7,12 +7,12 @@ export const SectionUnderlineList = ({
   listData,
   title,
   buttonText,
-  sectionToScroll,
+  linkTo,
 }: SectionGeneralProps) => (
   <section id="section-underline-list" className={styles.container}>
     <h2>{title}</h2>
     <List listData={listData} />
-    <Button text={buttonText} style="cta" scrollToSection={sectionToScroll} />
+    <Button text={buttonText} style="cta" linkTo={linkTo} />
   </section>
 )
 export default SectionUnderlineList

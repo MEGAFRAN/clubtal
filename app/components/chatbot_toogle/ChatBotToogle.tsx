@@ -15,7 +15,7 @@ const ChatBotToggle = () => {
         <ChatBot onClose={handleToggleChat} />
       ) : (
         <button className={styles.open} onClick={handleToggleChat}>
-          ¿Asistencia? Chat Aqui
+          Preguntar a Chatbot 🤖
         </button>
       )}
     </div>

@@ -28,6 +28,7 @@
     li {
       display: flex;
       flex-direction: column;
+      min-width: 50vw;
       background-color: colors.$primary-black;
       color: colors.$primary-white;
       padding: 0 29px;
@@ -67,7 +68,7 @@
     }
   }
 
-  button {
+  button, a {
     align-self: center;
   }
 }

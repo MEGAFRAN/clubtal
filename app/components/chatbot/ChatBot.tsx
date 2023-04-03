@@ -8,7 +8,7 @@ const ChatBot = ({ onClose }: ChatbotProps) => {
   const [messages, setMessages] = useState<ChatbotMessage[]>([
     {
       role: "system",
-      content: "Hola! Soy Club, tu asistente virtual. ¿Cuentame como puedo ayudarte?",
+      content: "Hola! Soy Clubbot, tu chatbot. ¿Que deseas saber de nuestros servicios?",
     },
   ])
   const [userMessage, setUserMessage] = useState("")

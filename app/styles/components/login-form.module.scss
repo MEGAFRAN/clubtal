@@ -1,10 +1,14 @@
+@use "../abstracts/colors";
+@use "../abstracts/animations";
+@use "../abstracts/mixins";
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  max-width: 300px;
+  width: clamp(90vw, 4vw, 400px);
+  max-width: 400px;
   margin: auto;
 
   label {
@@ -20,24 +24,31 @@
     width: 100%;
 
     &::placeholder {
-      font-size: 40px;
+      font-size: 20px;
       color: gray;
+      text-align: center;
     }
   }
 
   button {
-    padding: 0.5rem 1rem;
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-
-    &:hover,
-    &:focus {
-      background-color: #0053a1;
+    width: clamp(90vw, 4vw, 400px);
+    max-width: 400px;
+    border: solid colors.$secondary-black 2px;
+    border-radius: 24px;
+    background: colors.$primary-gold;
+    background: linear-gradient(
+      0deg,
+      colors.$primary-gold 0,
+      colors.$primary-gold 26%,
+      colors.$primary-white 96%
+    );
+    color: colors.$primary-black;
+    padding: 10px 23px;
+    pointer-events: auto;
+    transition: animations.$regular-transition;
+  
+    &:hover {
+      @include mixins.cta-button-hover;
     }
 
     &:disabled {
@@ -45,6 +56,19 @@
       cursor: not-allowed;
     }
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li:before {
+      content: '\2713';
+      font-weight: 900;
+      padding-right: 10px;
+    }
+  }
+
+
 
   p {
     margin-top: 1rem;

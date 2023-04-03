@@ -17,16 +17,18 @@ const LoginForm = ({ onSubmit, isSubmitting, message }: LoginFormProps) => {
 
   return (
     <form className={styles.container} onSubmit={handleLoginSubmit}>
-      <label htmlFor="email">Email:</label>
       <input
-        placeholder="&#9993;"
+        placeholder="Ingresa tu correo empresarial"
         type="email"
         id="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button disabled={isSubmitting}>{isSubmitting ? "Sending" : "Send"}</button>
+      <button disabled={isSubmitting}>{isSubmitting ? "Sending" : "Pruébame gratis"}</button>
+      <ul>
+        <li>Compatible con todos los sitios web</li> <li>Gratis prueba de 7 dias</li>
+      </ul>
       <p>{message}</p>
     </form>
   )
