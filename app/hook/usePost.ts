@@ -5,6 +5,10 @@ interface usePostParams {
   yearFilter?: number
   posts?: Post[]
 }
+interface filterCardPostByYearParams {
+  year: number
+  postsToFilter: Post[]
+}
 export default function usePost({ yearFilter, posts }: usePostParams) {
   const [cardPost, setCardPost] = useState<CardPost[]>([])
   const [loading, setLoading] = useState<boolean>(true)
@@ -22,10 +26,6 @@ export default function usePost({ yearFilter, posts }: usePostParams) {
         description: descriptionContent,
       }
     })
-  interface filterCardPostByYearParams {
-    year: number
-    postsToFilter: Post[]
-  }
   const filterPostByYear = ({ year, postsToFilter }: filterCardPostByYearParams) => {
     const filteredPost = postsToFilter.filter((postFilter) => {
       const yearPost = postFilter.data.getFullYear()

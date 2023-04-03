@@ -201,12 +201,10 @@ export interface CardPost {
   description: string
 }
 
-export interface Post {
+export interface SectionCardPostProps extends SectionAboutPostProps {
   title: string
-  id: number
-  nameAuthor: string
-  data: Date
-  readingTime: string
-  category: string
-  content: ContentPost[]
+  hrefTitle: string
+  description: string
+  hrefFooter: string
+  className?: string
 }

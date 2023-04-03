@@ -28,6 +28,11 @@ export default function useDate() {
     12: "Diciembre",
   }
 
+  type GenerateEndPointCardPostParam = {
+    date: Date
+    title: string
+  }
+
   const getStringMonth = (number: any): string => {
     const monthIndex: keyof TypeMonth = number
     const monthString = months[monthIndex]
@@ -49,10 +54,6 @@ export default function useDate() {
     return dataString
   }
 
-  type GenerateEndPointCardPostParam = {
-    date: Date
-    title: string
-  }
   const generateEndpointCardPost = ({ date, title }: GenerateEndPointCardPostParam): string => {
     const DEFAULT_URL = "/blog"
     const { year, month, day } = getYearMonthDayOfDate(date)
