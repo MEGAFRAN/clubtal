@@ -164,6 +164,16 @@ export interface SectionContentPostProps {
   contentPost: ContentPost[]
 }
 
+export interface Post {
+  title: string
+  id: number
+  nameAuthor: string
+  data: Date
+  readingTime: string
+  category: string
+  contentPost: ContentPost[]
+}
+
 export interface ChatbotMessage {
   role: "system" | "user" | "assistant"
   content: string
@@ -179,4 +189,24 @@ export interface ChatbotTagGroups {
   p: string[]
   span: string[]
   [key: string]: string[]
+}
+
+export interface CardPost {
+  title: string
+  id: number
+  nameAuthor: string
+  data: Date
+  readingTime: string
+  category: string
+  description: string
+}
+
+export interface Post {
+  title: string
+  id: number
+  nameAuthor: string
+  data: Date
+  readingTime: string
+  category: string
+  content: ContentPost[]
 }
