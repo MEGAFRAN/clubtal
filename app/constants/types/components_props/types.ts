@@ -144,7 +144,8 @@ export interface SectionGeneralProps {
   title: string
   subTitle?: string
   buttonText: string
-  sectionToScroll: string
+  sectionToScroll?: string
+  linkTo?: string
 }
 export interface SectionAboutPostProps {
   nameAuthor: string

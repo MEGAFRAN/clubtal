@@ -42,7 +42,7 @@ export const Navbar = ({
         Menu
       </button>
       {withLoginButton && (
-        <Button aria-label="Call to Action" text="Login / Register" style="cta" linkTo="/login" />
+        <Button aria-label="Call to Action" text="Registro" style="cta" linkTo="/login" />
       )}
       {withLanguageToggle && <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} />}
       {toggleMenu ? (
