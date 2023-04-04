@@ -1,12 +1,11 @@
-/* eslint-disable no-undef */
 import { cleanup, render } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import PostDetail from "./PostDetail"
-import post from "../../../../services/pages/blog/post"
+import MockPost from "../../../../constants/mocks/mockPost"
 
 describe("<PostDetail/>", () => {
   let component
-  const mockInformation = post
+  const mockInformation = MockPost
   beforeEach(() => {
     component = render(
       <PostDetail

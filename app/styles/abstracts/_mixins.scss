@@ -23,3 +23,12 @@
   color: colors.$primary-black;
   cursor: default;
 }
+
+@mixin cardPost-hover {
+  border-color: colors.$primary-gold;
+  box-shadow: 0 0 40px -10px black;
+}
+
+@mixin linkCardPost-hover {
+  color: colors.$primary-gold;
+}

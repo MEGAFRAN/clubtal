@@ -1,0 +1,56 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/animations";
+.container {
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 24px;
+  padding: 0 12px;
+  .cardPost {
+    margin: 0 auto;
+    min-width: 350px;
+    border: 1px solid colors.$secondary-gray;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-flow: column wrap;
+    transition: animations.$transition-cardPost;
+    gap: 6px;
+    &:hover {
+      @include mixins.cardPost-hover;
+    }
+    section {
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row wrap;
+      gap: 0 12px;
+      align-content: center;
+      color: colors.$secondary-black;
+      font-size: 14px;
+    }
+    h2 {
+      padding: 0;
+      a {
+        color: colors.$primary-black;
+        transition: animations.$regular-transition;
+        &:hover {
+          @include mixins.linkCardPost-hover;
+        }
+      }
+    }
+    p {
+      padding: 0;
+      color: colors.$secondary-black;
+    }
+    footer {
+      a {
+        font-weight: 600;
+        transition: animations.$regular-transition;
+        &:hover {
+          @include mixins.linkCardPost-hover;
+        }
+      }
+    }
+  }
+}
