@@ -7,7 +7,7 @@
     "dev-db": "concurrently \"npm run local-db\" \"npm run dev\"",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --dir .",
     "test": "jest a",
     "test:watch": "jest a --watch",
     "format": "prettier --check --ignore-path .gitignore .",

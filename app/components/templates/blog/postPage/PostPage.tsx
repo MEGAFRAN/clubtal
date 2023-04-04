@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { CardPost, NavbarProps } from "../../../../constants/types/components_props/types"
 import ListCardPost from "../../../list/card_post/ListCardPost"
-import Navbar from "../../../sections/above_fold/navbar/Navbar"
 import styles from "../../../../styles/layouts/postPage.module.scss"
+import Navbar from "../../../sections/above_fold/navbar/Navbar"
 
 interface PostPageProps extends NavbarProps {
   yearPost: number

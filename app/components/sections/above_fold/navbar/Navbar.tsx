@@ -5,7 +5,7 @@ import Button from "../../../button/Button"
 import LanguageToogle from "../../../language_toogle/LanguageToogle"
 import Link from "../../../link/Link"
 
-export const Navbar = ({
+const Navbar = ({
   options,
   setSecondaryLanguage,
   buttonText,
