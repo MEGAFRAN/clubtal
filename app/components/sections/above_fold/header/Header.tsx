@@ -8,6 +8,7 @@ import Navbar from "../navbar/Navbar"
 const Header = ({
   navbarOptions,
   setSecondaryLanguage,
+  isSecondaryLanguage,
   title,
   text,
   buttonText,
@@ -35,9 +36,11 @@ const Header = ({
       <Navbar
         options={navbarOptions}
         setSecondaryLanguage={setSecondaryLanguage}
+        isSecondaryLanguage={isSecondaryLanguage}
         buttonText={buttonText[0]}
         mail={"info@clubtal.com"}
-        withLanguageToggle={false}
+        withToogleMenu={false}
+        withLanguageToggle={true}
         withLoginButton={true}
       />
 

@@ -3,12 +3,14 @@
 @use "../abstracts/mixins";
 
 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
+  padding: 0 20px;
   background: colors.$primary-black;
   backdrop-filter: saturate(180%) blur(20px);
   box-shadow: 0px -3px 11px colors.$secondary-black;
@@ -29,8 +31,6 @@
     font-size: clamp(1.1rem, 4vw, 1.2rem);
     font-weight: 900;
     text-transform: capitalize;
-    padding-left: 20px;
-    width: calc(100% - 169px);
     height: 60px;
     background: transparent;
     border: none;
@@ -41,13 +41,11 @@
 
   .active {
     height: 30px;
-    padding-left: 20px;
     color: colors.$primary-gold;
   }
 
   .inActive {
     height: 30px;
-    padding-left: 20px;
     &::before {
       content: "\20B5";
       color: colors.$primary-gold;
@@ -57,7 +55,6 @@
 
   div:first-of-type {
     align-self: center;
-    padding-right: 20px;
   }
 
   .dropdown {

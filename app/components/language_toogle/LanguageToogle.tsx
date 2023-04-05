@@ -3,16 +3,21 @@ import styles from "../../styles/components/language-toogle.module.scss"
 
 const LanguageToogle = ({
   setSecondaryLanguage,
+  isSecondaryLanguage,
   mainLanguage = "Español",
   secondaryLanguage = "English",
 }: LanguageToogleProps) => (
   <div className={styles.container}>
-    <button onClick={() => (setSecondaryLanguage ? setSecondaryLanguage(true) : null)}>
-      {secondaryLanguage}
-    </button>
-    <button onClick={() => (setSecondaryLanguage ? setSecondaryLanguage(false) : null)}>
-      {mainLanguage}
-    </button>
+    {isSecondaryLanguage ? (
+      <button onClick={() => (setSecondaryLanguage ? setSecondaryLanguage(false) : null)}>
+        {mainLanguage}
+      </button>
+    ) : (
+      <button onClick={() => (setSecondaryLanguage ? setSecondaryLanguage(true) : null)}>
+        {secondaryLanguage}
+      </button>
+    )}
   </div>
 )
+
 export default LanguageToogle
