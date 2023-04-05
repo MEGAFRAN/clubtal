@@ -5,12 +5,14 @@ import Button from "../../../button/Button"
 import LanguageToogle from "../../../language_toogle/LanguageToogle"
 import Link from "../../../link/Link"
 
-export const Navbar = ({
+const Navbar = ({
   options,
   setSecondaryLanguage,
+  isSecondaryLanguage,
   buttonText,
   sectionToScroll,
   mail,
+  withToogleMenu,
   withLanguageToggle,
   withLoginButton,
 }: NavbarProps) => {
@@ -29,7 +31,9 @@ export const Navbar = ({
     ))
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const handleToggle = () => {
-    setToggleMenu(!toggleMenu)
+    if (withToogleMenu) {
+      setToggleMenu(!toggleMenu)
+    }
   }
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
@@ -39,12 +43,16 @@ export const Navbar = ({
         ) : (
           <span className={styles.active}>X</span>
         )}
-        Menu
       </button>
-      {withLoginButton && (
-        <Button aria-label="Call to Action" text="Login / Register" style="cta" linkTo="/login" />
+      {withLanguageToggle && (
+        <LanguageToogle
+          setSecondaryLanguage={setSecondaryLanguage}
+          isSecondaryLanguage={isSecondaryLanguage}
+        />
       )}
-      {withLanguageToggle && <LanguageToogle setSecondaryLanguage={setSecondaryLanguage} />}
+      {withLoginButton && (
+        <Button aria-label="Call to Action" text="Registro / Login" style="cta" linkTo="/login" />
+      )}
       {toggleMenu ? (
         <div className={styles.dropdown} onClick={handleToggle}>
           <ul aria-label="Navigation Links">{options ? optionsList : null}</ul>

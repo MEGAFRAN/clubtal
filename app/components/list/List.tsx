@@ -7,6 +7,6 @@ const List = ({ listData }: ListProps) => {
     ? listData.map((listItem: any, index: number) => <li key={index}>{listItem}</li>)
     : null
 
-  return isValidListData && <ul className={styles.container}>{listItems}</ul>
+  return isValidListData ? <ul className={styles.container}>{listItems}</ul> : null
 }
 export default List

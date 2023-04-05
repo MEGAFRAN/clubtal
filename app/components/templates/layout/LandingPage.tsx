@@ -1,8 +1,8 @@
 import { LandingPageProps } from "../../../constants/types/components_props/types"
 import Form from "../../form/Form"
 import Title from "../../heading/Heading"
-import { Navbar } from "../../sections/above_fold/navbar/Navbar"
 import styles from "../../../styles/layouts/landingPage.module.scss"
+import Navbar from "../../sections/above_fold/navbar/Navbar"
 
 const LandingPage = ({
   title,

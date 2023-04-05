@@ -7,10 +7,10 @@ import {
 import Button from "../../../button/Button"
 import Title from "../../../heading/Heading"
 import SectionAboutPost from "../../../sections/about_post/SectionAboutPost"
-import { Navbar } from "../../../sections/above_fold/navbar/Navbar"
-import { SectionContact } from "../../../sections/contact/SectionContact"
 import SectionContentPost from "../../../sections/content_post/SectionContentPost"
 import styles from "../../../../styles/layouts/postDetail.module.scss"
+import Navbar from "../../../sections/above_fold/navbar/Navbar"
+import SectionContact from "../../../sections/contact/SectionContact"
 
 interface PostDetailProps
   extends NavbarProps,

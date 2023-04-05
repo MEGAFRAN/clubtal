@@ -19,24 +19,24 @@ const HOME_TEXT = {
       { name: "Contacto", link: contact },
     ],
 
-    headerTitle: ["Recorta", "tus", "gastos"],
+    headerTitle: ["Reduce", "costos", "automaticamente"],
 
-    headerText: ["Inteligencia artificial", "para tu negocio"],
+    headerText: ["Chatbots", "la solución inteligente"],
 
     ctaButtonTexts: [
-      "Contáctanos",
+      "Prueba gratis",
       "Solicitar servicio",
       "Iniciemos el proceso",
       "Quiero la prueba",
       "Mas información",
-      "Me interesa",
+      "Quiero mi chatbot ahora",
       "Hacer solicitud",
     ],
 
     sectionsTitles: [
-      "¿Te gustaria tu propio asistente virtual?",
-      "Beneficios de tu asistente virtual",
-      "¿Que incluye el servicio?",
+      "¿Que hace tu chatbot?",
+      "Beneficios de tu chatbot",
+      "¿Que incluye tu chatbot?",
       "Pruebame en tu sitio web",
       "Pasos a seguir",
       "Contáctanos",
@@ -44,10 +44,10 @@ const HOME_TEXT = {
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-    careers: ["Servicio al cliente las 24 horas, ahorra costos de personal"],
+    careers: ["Te ahorra dinero, Servicio al cliente las 24 horas"],
 
     services: [
-      "Servicio al cliente las 24 horas",
+      "Servicio dia y noche",
       "Facil de usar",
       "Funciona en todo sitio web",
       "Personalizable",
@@ -59,9 +59,9 @@ const HOME_TEXT = {
       "Analisis de tus necesidades",
       "Desarrollo",
       "Personalizacion",
-      "Soporte de instalacion",
+      "Soporte en instalacion",
       "Documentacion",
-      "Gratis 7 dias de prueba",
+      "7 dias de prueba",
     ],
 
     projectTools: [
@@ -76,9 +76,9 @@ const HOME_TEXT = {
     ],
 
     followingSteps: [
-      "Nos contactas: Hablamos sobre tus necesidades de negocio, y definimos entre todos la mejor solucion",
-      "Nos das los requerimientos: Con estos datos personalizaremos tu asistente virtual a la medida de tus necesidades",
-      "Te entregamos tu solucion: En 5 dias luego de tener los requerimientos te entregamos tu asistente virtual",
+      "Registrate",
+      "Entra a tu panel personal y personaliza tu chatbot",
+      "Usa tu chatbot en tu sitio web",
     ],
 
     formText: [

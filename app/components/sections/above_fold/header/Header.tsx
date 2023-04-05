@@ -1,25 +1,46 @@
-import { Navbar } from "../navbar/Navbar"
+import { useState } from "react"
 import styles from "../../../../styles/sections/header.module.scss"
 import { HeaderProps } from "../../../../constants/types/components_props/types"
-import Button from "../../../button/Button"
+import LoginForm from "../../../login_form/login_form"
+import generateMagicLink from "../../../../services/form_services/generate_magic_link/generate-magic-link.service"
+import Navbar from "../navbar/Navbar"
 
 const Header = ({
   navbarOptions,
   setSecondaryLanguage,
+  isSecondaryLanguage,
   title,
   text,
   buttonText,
   sectionToScroll,
 }: HeaderProps) => {
-  const crownImage = "/images/crown.svg"
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState("")
+
+  const handleSubmit = async (email: string) => {
+    setIsSubmitting(true)
+    setMessage("Submitting data...")
+
+    const response = await generateMagicLink(email)
+
+    if (response.ok) {
+      setMessage("Magic link sent to email, please verify.")
+    } else {
+      setMessage("Error: Please try filling the form again.")
+    }
+
+    setIsSubmitting(false)
+  }
   return (
     <header className={styles.container}>
       <Navbar
         options={navbarOptions}
         setSecondaryLanguage={setSecondaryLanguage}
+        isSecondaryLanguage={isSecondaryLanguage}
         buttonText={buttonText[0]}
         mail={"info@clubtal.com"}
-        withLanguageToggle={false}
+        withToogleMenu={false}
+        withLanguageToggle={true}
         withLoginButton={true}
       />
 
@@ -32,8 +53,7 @@ const Header = ({
       </p>
 
       <div className={styles.cta_wrapper}>
-        <img src={crownImage} alt="crown" />
-        <Button text={buttonText[0]} style="cta" scrollToSection={sectionToScroll} />
+        <LoginForm onSubmit={handleSubmit} isSubmitting={isSubmitting} message={message} />
       </div>
     </header>
   )

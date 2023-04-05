@@ -37,7 +37,8 @@ export type CardProps = {
 export type LanguageToogleProps = {
   setSecondaryLanguage?: Dispatch<SetStateAction<boolean>>
   mainLanguage?: "Español"
-  secondaryLanguage?: "English"
+  secondaryLanguage?: "English",
+  isSecondaryLanguage?: boolean
 }
 
 export type ListProps = {
@@ -100,9 +101,11 @@ type homeNavbarOptions = {
 export interface NavbarProps {
   options: homeNavbarOptions[]
   setSecondaryLanguage?: LanguageToogleProps["setSecondaryLanguage"]
+  isSecondaryLanguage?: boolean
   buttonText: string
   sectionToScroll?: string
   mail: string
+  withToogleMenu?: boolean
   withLanguageToggle?: boolean
   withLoginButton?: boolean
 }
@@ -128,6 +131,7 @@ export interface JobDetailProps extends NavbarProps, FormProps {
 export interface HeaderProps {
   navbarOptions: homeNavbarOptions[]
   setSecondaryLanguage: LanguageToogleProps["setSecondaryLanguage"]
+  isSecondaryLanguage: boolean
   title: string[]
   text: string[]
   buttonText: string[]
@@ -144,7 +148,8 @@ export interface SectionGeneralProps {
   title: string
   subTitle?: string
   buttonText: string
-  sectionToScroll: string
+  sectionToScroll?: string
+  linkTo?: string
 }
 export interface SectionAboutPostProps {
   nameAuthor: string
