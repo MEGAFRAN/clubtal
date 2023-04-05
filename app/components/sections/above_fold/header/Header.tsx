@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { Navbar } from "../navbar/Navbar"
 import styles from "../../../../styles/sections/header.module.scss"
 import { HeaderProps } from "../../../../constants/types/components_props/types"
-import Button from "../../../button/Button"
 import LoginForm from "../../../login_form/login_form"
 import generateMagicLink from "../../../../services/form_services/generate_magic_link/generate-magic-link.service"
+import Navbar from "../navbar/Navbar"
 
 const Header = ({
   navbarOptions,

@@ -1,9 +1,9 @@
 import { JobDetailProps } from "../../../constants/types/components_props/types"
 import Form from "../../form/Form"
 import Title from "../../heading/Heading"
-import { Navbar } from "../../sections/above_fold/navbar/Navbar"
 import SectionTitleList from "../../sections/title_list/SectionTitleList"
 import styles from "../../../styles/layouts/vacancyCurrent.module.scss"
+import Navbar from "../../sections/above_fold/navbar/Navbar"
 
 const JobDetail = ({
   options,
