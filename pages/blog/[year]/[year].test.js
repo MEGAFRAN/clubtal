@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import "@testing-library/jest-dom"
 import { cleanup, render, waitFor } from "@testing-library/react"
 import { useRouter } from "next/router"
