@@ -29,7 +29,7 @@ export default function useDate() {
   }
 
   type GenerateEndPointCardPostParam = {
-    date: Date
+    date: string
     title: string
   }
 
@@ -38,16 +38,32 @@ export default function useDate() {
     const monthString = months[monthIndex]
     return monthString
   }
-
-  const getYearMonthDayOfDate = (data: Date) => {
-    const MONTH_LAG = 1
-    const year = data.getFullYear()
-    const month = data.getMonth() + MONTH_LAG
-    const day = data.getDate()
+  const deleteCeroStart = (number: string): string => {
+    if (number.startsWith("0")) {
+      return number.substring(1)
+    }
+    return number
+  }
+  const stringToDate = (data: string): Date => {
+    const stringToArray = data.split("-")
+    const stringYear = stringToArray[0]
+    const stringMonth = deleteCeroStart(stringToArray[1])
+    const stringDay = deleteCeroStart(stringToArray[2])
+    const numberYear = Number(stringYear)
+    const numberMonth = Number(stringMonth)
+    const numberDay = Number(stringDay)
+    const date = new Date(numberYear, numberMonth, numberDay)
+    return date
+  }
+  const getYearMonthDayOfDate = (data: string) => {
+    const date = stringToDate(data)
+    const year = date.getFullYear()
+    const month = date.getMonth()
+    const day = date.getDate()
     return { year, month, day }
   }
 
-  const transformDataToDataString = (data: Date): string => {
+  const transformDataToDataString = (data: string): string => {
     const { year, month, day } = getYearMonthDayOfDate(data)
     const monthLetters = getStringMonth(month)
     const dataString = `${day} ${monthLetters}, ${year}`

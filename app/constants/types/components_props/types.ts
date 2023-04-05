@@ -173,7 +173,7 @@ export interface Post {
   title: string
   id: number
   nameAuthor: string
-  data: Date
+  data: string
   readingTime: string
   category: string
   contentPost: ContentPost[]
@@ -200,7 +200,7 @@ export interface CardPost {
   title: string
   id: number
   nameAuthor: string
-  data: Date
+  data: string
   readingTime: string
   category: string
   description: string

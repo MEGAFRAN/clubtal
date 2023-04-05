@@ -1,12 +1,12 @@
 import Link from "next/link"
-import { CardPost, NavbarProps } from "../../../../constants/types/components_props/types"
+import { NavbarProps, Post } from "../../../../constants/types/components_props/types"
 import ListCardPost from "../../../list/card_post/ListCardPost"
 import styles from "../../../../styles/layouts/postPage.module.scss"
 import Navbar from "../../../sections/above_fold/navbar/Navbar"
 
 interface PostPageProps extends NavbarProps {
   yearPost: number
-  cardPosts: CardPost[]
+  posts: Post[]
 }
 export default function PostPage({
   options,
@@ -14,7 +14,7 @@ export default function PostPage({
   mail,
   withLanguageToggle,
   yearPost,
-  cardPosts,
+  posts,
 }: PostPageProps) {
   return (
     <div className={styles.container}>
@@ -31,7 +31,7 @@ export default function PostPage({
         </div>
       </header>
       <main>
-        <ListCardPost cardPosts={cardPosts} />
+        <ListCardPost listPost={posts} />
       </main>
     </div>
   )

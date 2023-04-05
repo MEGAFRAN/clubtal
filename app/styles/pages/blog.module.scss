@@ -1,0 +1,28 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/animations";
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: colors.$primary-white;
+  a {
+    text-decoration: none;
+    color: colors.$secondary-black;
+  }
+  nav {
+    position: sticky;
+    & > div {
+      top: 0;
+    }
+  }
+  h1 {
+    margin-top: 24px;
+    text-align: center;
+    color: colors.$primary-black;
+  }
+
+  main {
+    margin-top: 24px;
+  }
+}

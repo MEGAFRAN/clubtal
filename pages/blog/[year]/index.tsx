@@ -1,35 +1,74 @@
+import path from "path"
+import fs from "fs/promises"
 import React from "react"
 import { useRouter } from "next/router"
+import { GetStaticProps, InferGetStaticPropsType } from "next"
 import HOME_TEXT from "../../../app/services/pages/home-text"
 import PostPage from "../../../app/components/templates/blog/postPage/PostPage"
-import post from "../../../app/services/pages/blog/post"
-import NotFound from "../../404"
-import usePost from "../../../app/hook/usePost"
+import { BlogPageProps } from ".."
 
-function Year() {
+type PathType = {
+  params: {
+    year: string
+  }
+}
+const postDirectory = path.join(process.cwd(), "post")
+export const getStaticPaths = async () => {
+  const files = await fs.readdir(postDirectory)
+  const paths: PathType[] = files.map((file) => {
+    const yearPost = file.slice(0, 4)
+    return {
+      params: {
+        year: yearPost,
+      },
+    }
+  })
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps<BlogPageProps> = async ({ params }) => {
+  const year = params?.year
+  const files = await fs.readdir(postDirectory)
+  const filterPromiseReadFilesByYear = files
+    .filter((file) => {
+      const yearPost = file.slice(0, 4)
+      return yearPost === year
+    })
+    .map(async (file) => {
+      const fileDirectory = path.join(process.cwd(), `post/${file}`)
+      const contentFile = await fs.readFile(fileDirectory, "utf-8")
+      return JSON.parse(contentFile)
+    })
+  const listPost = await Promise.all(filterPromiseReadFilesByYear)
+  return {
+    props: {
+      listPost,
+    },
+  }
+}
+function Year({ listPost }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
   const { pathname, query } = router
-  const { year } = query
+  const year = query?.year
   const numberYear = Number(year)
   const isHomePage = pathname === "/"
   const currentLanguage = { ...HOME_TEXT.spanishText }
   const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
-  const { cardPost, loading } = usePost({ yearFilter: numberYear, posts: post })
-  const haveCardPost = cardPost?.length > 0
 
-  if (!loading && haveCardPost)
-    return (
-      <PostPage
-        options={homeNavbarOptions}
-        buttonText={ctaButtonTexts[0]}
-        mail={"info@clubtal.com"}
-        withLanguageToggle={isHomePage}
-        yearPost={numberYear}
-        cardPosts={cardPost}
-      />
-    )
-  if (!loading && !haveCardPost) return <NotFound />
-  return null
+  return (
+    <PostPage
+      options={homeNavbarOptions}
+      buttonText={ctaButtonTexts[0]}
+      mail={"info@clubtal.com"}
+      withLanguageToggle={isHomePage}
+      yearPost={numberYear}
+      posts={listPost}
+    />
+  )
 }
 
 export default Year
