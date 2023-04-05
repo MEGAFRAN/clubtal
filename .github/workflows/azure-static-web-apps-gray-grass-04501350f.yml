@@ -8,6 +8,8 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - develop
+    secrets:
+      AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_GRASS_04501350F: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_GRASS_04501350F }}
 
 jobs:
   build_and_deploy_job:
