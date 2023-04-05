@@ -5,7 +5,7 @@ import mockResponsePageYear from "../../../../constants/mocks/mockPostPage"
 
 describe("<PostPage/>", () => {
   let component
-  const { yearPost, cardPosts, options, buttonText, withLanguageToggle } = mockResponsePageYear
+  const { yearPost, posts, options, buttonText, withLanguageToggle } = mockResponsePageYear
   beforeEach(() => {
     component = render(
       <PostPage
@@ -14,7 +14,7 @@ describe("<PostPage/>", () => {
         mail={""}
         withLanguageToggle={withLanguageToggle}
         yearPost={yearPost}
-        cardPosts={cardPosts}
+        posts={posts}
       />,
     )
   })
@@ -37,7 +37,7 @@ describe("<PostPage/>", () => {
     expect(elementYear).not.toHaveAttribute("href")
   })
   test("Should display cardPost", () => {
-    const cardPostExpectLength = cardPosts.length
+    const cardPostExpectLength = posts.length
     const elementsPostCard = component.getAllByRole("article")
     expect(elementsPostCard).toHaveLength(cardPostExpectLength)
   })

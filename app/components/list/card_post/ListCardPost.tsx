@@ -1,14 +1,16 @@
-import { CardPost } from "../../../constants/types/components_props/types"
+import { Post } from "../../../constants/types/components_props/types"
 import useDate from "../../../hook/useDate"
 import SectionCardPost from "../../sections/card_post/SectionCardPost"
 import styles from "../../../styles/components/listCardPost.module.scss"
+import mapPostToCardPost from "../../../services/utils/blog/post"
 
 interface ListCardPost {
-  cardPosts: CardPost[]
+  listPost: Post[]
 }
 
-export default function ListCardPost({ cardPosts }: ListCardPost) {
+export default function ListCardPost({ listPost }: ListCardPost) {
   const { transformDataToDataString, generateEndpointCardPost, truncateText } = useDate()
+  const cardPosts = listPost && mapPostToCardPost(listPost)
   return (
     <ul className={styles.container}>
       {cardPosts
