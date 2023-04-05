@@ -1,6 +1,22 @@
 {
     "routes": [
       {
+        "route": "/_next/static/:path*",
+        "serve": "/_next/static/:path*",
+        "statusCode": 200
+      },
+      {
+        "route": "/api/*",
+        "allowedRoles": [ "anonymous" ],
+        "rewrite": "/api/:splat",
+        "methods": [ "GET", "POST", "PUT", "DELETE" ]
+      },
+      {
+        "route": "/",
+        "serve": "/index.html",
+        "statusCode": 200
+      },
+      {
         "route": "/*",
         "serve": "/404.html",
         "statusCode": 404
