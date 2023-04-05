@@ -40,6 +40,7 @@ const Home: NextPage = () => {
       <Header
         navbarOptions={homeNavbarOptions}
         setSecondaryLanguage={setSecondaryLanguage}
+        isSecondaryLanguage={isSecondaryLanguage}
         title={headerTitle}
         text={headerText}
         buttonText={ctaButtonTexts}
