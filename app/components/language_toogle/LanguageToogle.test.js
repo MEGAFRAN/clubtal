@@ -1,55 +1,67 @@
 import React from "react"
-import { render, fireEvent, screen, act } from "@testing-library/react"
+import { render, fireEvent, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import LanguageToogle from "./LanguageToogle"
 
 describe("<LanguageToogle />", () => {
 
-    it("Tests that the component renders with default props", () => {
+    it("Should update languagecontext values correctly based on the user's preferred language and toggle button clicks", () => {
+        const setSecondaryLanguageMock = jest.fn()
+        jest.spyOn(React, "useContext").mockImplementation(() => ({ isSecondaryLanguage: false, setSecondaryLanguage: setSecondaryLanguageMock }))
+
+        render(<LanguageToogle />)
+        expect(setSecondaryLanguageMock).toHaveBeenCalledWith(true)
+        fireEvent.click(screen.getByRole("button"))
+        expect(setSecondaryLanguageMock).toHaveBeenCalledWith(true)
+
+        jest.spyOn(React, "useContext").mockRestore()
+    })
+
+    it("Should display the secondary language toggle button when clicked", () => {
+        const originalLanguage = window.navigator.language
+        Object.defineProperty(window.navigator, "language", {
+            configurable: true,
+            get: () => "es-CO", 
+        })
+
+        const setIsSecondaryLanguageMock = jest.fn()
+        const mockContextValue = {
+          isSecondaryLanguage: false,
+          setSecondaryLanguage: setIsSecondaryLanguageMock,
+        }
+      
+        jest.spyOn(React, "useContext").mockImplementation(() => mockContextValue)
+
         const { getByText } = render(<LanguageToogle />)
+        fireEvent.click(screen.getByRole("button"))
+
         expect(getByText("English")).toBeInTheDocument()
+
+        jest.spyOn(React, "useContext").mockRestore()
+        Object.defineProperty(window.navigator, "language", {
+            configurable: true,
+            get: () => originalLanguage,
+        })
     })
+      
+    it("Should set default language to english when the browser language is not supported", () => {
+        const originalLanguage = window.navigator.language
+        Object.defineProperty(navigator, "language", {
+            value: "fr-FR",
+            writable: true,
+        })
+        const setSecondaryLanguageMock = jest.fn()
+        jest.spyOn(React, "useContext").mockImplementation(() => ({ isSecondaryLanguage: false, setSecondaryLanguage: setSecondaryLanguageMock }))
 
-    it("Tests that the component renders with custom main and secondary languages", () => {
-        const { getByText } = render(<LanguageToogle mainLanguage="Français" secondaryLanguage="Deutsch" />)
-        expect(getByText("Deutsch")).toBeInTheDocument()
+
+        render(<LanguageToogle />)
+        expect(setSecondaryLanguageMock).toHaveBeenCalledWith(true)
+
+        jest.spyOn(React, "useContext").mockRestore()
+        Object.defineProperty(window.navigator, "language", {
+            configurable: true,
+            get: () => originalLanguage,
+        })
     })
-
-
-    it("Tests that the component still renders when setsecondarylanguage prop is not provided", () => {
-        const { getByText, container } = render(<LanguageToogle isSecondaryLanguage={false} />)
-        const button = getByText("English", { container })
-        fireEvent.click(button)
-        act(() => render(<LanguageToogle isSecondaryLanguage={true} />, { container }))
-        expect(getByText("Español", { container })).toBeInTheDocument()
-    })
-
-    it("Tests that the component still renders when mainlanguage prop is not provided", () => {
-        const { getByText } = render(<LanguageToogle mainLanguage={undefined} />)
-        expect(getByText("English")).toBeInTheDocument()
-    })
-
-    it("Tests that the component still renders when secondarylanguage prop is not provided", () => {
-        const { getByText } = render(<LanguageToogle secondaryLanguage={undefined} />)
-        expect(getByText("English")).toBeInTheDocument()
-    })
-
-    it("Verifies that clicking the secondary language button calls setsecondarylanguage with true", () => {
-        const mockSetSecondaryLanguage = jest.fn()
-        render(<LanguageToogle mainLanguage="Français" secondaryLanguage="Deutsch" setSecondaryLanguage={mockSetSecondaryLanguage} />)
-        fireEvent.click(screen.getByRole("button", { name: "Deutsch" }))
-        expect(mockSetSecondaryLanguage).toHaveBeenCalledWith(true)
-    })
-
-    it("Tests that the component toggles between main and secondary languages when the button is clicked", () => {
-        const { getByText, container } = render(<LanguageToogle isSecondaryLanguage={false} />)
-        const button = getByText("English", { container })
-        fireEvent.click(button)
-        act(() => render(<LanguageToogle isSecondaryLanguage={true} />, { container }))
-        expect(getByText("Español", { container })).toBeInTheDocument()
-        fireEvent.click(button)
-        act(() => render(<LanguageToogle isSecondaryLanguage={false} />, { container }))
-        expect(getByText("English", { container })).toBeInTheDocument()
-      })
 
 })

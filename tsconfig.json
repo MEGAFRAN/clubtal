@@ -19,8 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/404.tsx",
-    "app/services/form_services/comunicate_chat_bot/comunicate-chat-bot.test.js"
+    "pages/404.tsx"
   ],
   "exclude": ["node_modules"]
 }

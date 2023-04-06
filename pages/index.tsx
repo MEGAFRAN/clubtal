@@ -11,6 +11,7 @@ import SectionAnalytics from "../app/components/sections/analytics/SectionAnalyt
 import ChatBotToggle from "../app/components/chatbot_toogle/ChatBotToogle"
 import SectionContact from "../app/components/sections/contact/SectionContact"
 import SectionUnderlineList from "../app/components/sections/underline_list/SectionUnderlineList"
+import languageContext from "../app/contexts/languageContext/languageContext"
 
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
@@ -34,13 +35,11 @@ const Home: NextPage = () => {
   } = currentLanguage
 
   return (
-    <>
+    <languageContext.Provider value={{ isSecondaryLanguage, setSecondaryLanguage }}>
       <Head>{HOME_HEAD}</Head>
 
       <Header
         navbarOptions={homeNavbarOptions}
-        setSecondaryLanguage={setSecondaryLanguage}
-        isSecondaryLanguage={isSecondaryLanguage}
         title={headerTitle}
         text={headerText}
         buttonText={ctaButtonTexts}
@@ -74,7 +73,7 @@ const Home: NextPage = () => {
       <SectionContact formText={formText} title={sectionsTitles[5]} />
       <ChatBotToggle />
       <SectionAnalytics />
-    </>
+    </languageContext.Provider>
   )
 }
 

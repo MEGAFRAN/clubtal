@@ -7,8 +7,6 @@ import Link from "../../../link/Link"
 
 const Navbar = ({
   options,
-  setSecondaryLanguage,
-  isSecondaryLanguage,
   buttonText,
   sectionToScroll,
   mail,
@@ -44,12 +42,7 @@ const Navbar = ({
           <span className={styles.active}>X</span>
         )}
       </button>
-      {withLanguageToggle && (
-        <LanguageToogle
-          setSecondaryLanguage={setSecondaryLanguage}
-          isSecondaryLanguage={isSecondaryLanguage}
-        />
-      )}
+      {withLanguageToggle && <LanguageToogle />}
       {withLoginButton && (
         <Button aria-label="Call to Action" text="Registro / Login" style="cta" linkTo="/login" />
       )}

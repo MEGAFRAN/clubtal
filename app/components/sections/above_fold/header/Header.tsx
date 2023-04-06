@@ -5,15 +5,7 @@ import LoginForm from "../../../login_form/login_form"
 import generateMagicLink from "../../../../services/form_services/generate_magic_link/generate-magic-link.service"
 import Navbar from "../navbar/Navbar"
 
-const Header = ({
-  navbarOptions,
-  setSecondaryLanguage,
-  isSecondaryLanguage,
-  title,
-  text,
-  buttonText,
-  sectionToScroll,
-}: HeaderProps) => {
+const Header = ({ navbarOptions, title, text, buttonText }: HeaderProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
 
@@ -35,8 +27,6 @@ const Header = ({
     <header className={styles.container}>
       <Navbar
         options={navbarOptions}
-        setSecondaryLanguage={setSecondaryLanguage}
-        isSecondaryLanguage={isSecondaryLanguage}
         buttonText={buttonText[0]}
         mail={"info@clubtal.com"}
         withToogleMenu={false}
