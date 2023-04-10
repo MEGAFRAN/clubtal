@@ -35,7 +35,7 @@ describe("<LanguageToogle />", () => {
         const { getByText } = render(<LanguageToogle />)
         fireEvent.click(screen.getByRole("button"))
 
-        expect(getByText("English")).toBeInTheDocument()
+        expect(getByText("Eng")).toBeInTheDocument()
 
         jest.spyOn(React, "useContext").mockRestore()
         Object.defineProperty(window.navigator, "language", {

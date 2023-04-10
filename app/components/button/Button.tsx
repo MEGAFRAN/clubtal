@@ -1,6 +1,6 @@
+import Link from "next/link"
 import { ButtonProps } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/button.module.scss"
-import Link from "../link/Link"
 
 const Button = ({ text, handleClick, style = "regular", scrollToSection, linkTo }: ButtonProps) => {
   const scrollTo = (selector: string): void => {
@@ -8,7 +8,10 @@ const Button = ({ text, handleClick, style = "regular", scrollToSection, linkTo 
     section?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
-  const variant = style === "cta" ? styles.ctaButton : styles.regularButton
+  let variant
+  if (style === "cta") variant = styles.ctaButton
+  if (style === "navbar") variant = styles.navbarButton
+  else variant = styles.regularButton
 
   let button
   if (scrollToSection) {

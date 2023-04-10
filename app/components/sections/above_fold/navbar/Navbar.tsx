@@ -13,6 +13,8 @@ const Navbar = ({
   withToogleMenu,
   withLanguageToggle,
   withLoginButton,
+  withContactButton,
+  withHomeButton,
 }: NavbarProps) => {
   const optionsList =
     options &&
@@ -35,13 +37,17 @@ const Navbar = ({
   }
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
-      <button className={styles.title} onClick={handleToggle}>
-        {!toggleMenu ? (
-          <span className={styles.inActive}></span>
-        ) : (
-          <span className={styles.active}>X</span>
-        )}
-      </button>
+      {withHomeButton && (
+        <Button aria-label="Call to Action" text="Inicio" style="navbar" linkTo="/" />
+      )}
+      {withContactButton && (
+        <Button
+          aria-label="Call to Action"
+          text={buttonText}
+          style="navbar"
+          scrollToSection={sectionToScroll}
+        />
+      )}
       {withLanguageToggle && <LanguageToogle />}
       {withLoginButton && (
         <Button aria-label="Call to Action" text="Registro / Login" style="cta" linkTo="/login" />

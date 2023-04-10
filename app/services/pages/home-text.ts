@@ -106,7 +106,7 @@ const HOME_TEXT = {
     headerText: ["Gain hands-on experience as a frontend developer", "on a real website."],
 
     ctaButtonTexts: [
-      "Contact us",
+      "Contact",
       "Apply for benefits",
       "Let's start the process",
       "Join the community",

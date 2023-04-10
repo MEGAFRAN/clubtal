@@ -10,15 +10,15 @@ const ChatBotToggle = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <>
       {isChatVisible ? (
         <ChatBot onClose={handleToggleChat} />
       ) : (
         <button className={styles.open} onClick={handleToggleChat}>
-          Preguntar a Chatbot 🤖
+          Chat
         </button>
       )}
-    </div>
+    </>
   )
 }
 export default ChatBotToggle

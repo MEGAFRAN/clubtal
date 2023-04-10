@@ -20,41 +20,50 @@
     @include mixins.navbar-hover;
   }
 
-  .title {
-    margin: 0;
+  button, a {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    font-family: Helvetica, Arial, sans-serif;
     color: colors.$primary-white;
-    font-family: monospace;
-    font-size: clamp(1.1rem, 4vw, 1.2rem);
-    font-weight: 900;
-    text-transform: capitalize;
-    height: 60px;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    font-weight: 400;
     background: transparent;
     border: none;
+    text-decoration: none;
+
+    &::before {
+      color: transparent;
+      text-shadow: 0 0 0 colors.$primary-gold;
+      font-size: 19px;
+    }
+
     &:hover {
-      cursor: pointer;
+      @include mixins.cta-button-hover;
+    }
+  }
+
+  button:nth-child(1) {
+    &::before {
+      content: "\1F3E0";
+    }
+  }
+
+  button:nth-child(2) {
+    &::before {
+      content: "\01F4DE";
+    }
+  }
+
+  button:nth-child(3) {
+    &::before {
+      content: "\01F310";
     }
   }
 
   .active {
     height: 30px;
     color: colors.$primary-gold;
-  }
-
-  .inActive {
-    height: 30px;
-    &::before {
-      content: "\20B5";
-      color: colors.$primary-gold;
-      font-size: 19px;
-    }
-  }
-
-  div:first-of-type {
-    align-self: center;
   }
 
   .dropdown {
