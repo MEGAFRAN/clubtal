@@ -8,8 +8,8 @@ import {
 } from "../../constants/types/components_props/types"
 
 const LanguageToogle = ({
-  mainLanguage = "Español",
-  secondaryLanguage = "English",
+  mainLanguage = "Esp",
+  secondaryLanguage = "Eng",
 }: LanguageToogleProps) => {
   const { isSecondaryLanguage, setSecondaryLanguage } = useContext(
     languageContext,
@@ -33,13 +33,17 @@ const LanguageToogle = ({
   }
 
   return (
-    <div className={styles.container}>
+    <>
       {isSecondaryLanguage ? (
-        <button onClick={toggleLanguage}>{mainLanguage}</button>
+        <button className={styles.languageToogle} onClick={toggleLanguage}>
+          {mainLanguage}
+        </button>
       ) : (
-        <button onClick={toggleLanguage}>{secondaryLanguage}</button>
+        <button className={styles.languageToogle} onClick={toggleLanguage}>
+          {secondaryLanguage}
+        </button>
       )}
-    </div>
+    </>
   )
 }
 

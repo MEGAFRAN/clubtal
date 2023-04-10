@@ -5,7 +5,7 @@ import LoginForm from "../../../login_form/login_form"
 import generateMagicLink from "../../../../services/form_services/generate_magic_link/generate-magic-link.service"
 import Navbar from "../navbar/Navbar"
 
-const Header = ({ navbarOptions, title, text, buttonText }: HeaderProps) => {
+const Header = ({ navbarOptions, title, text, buttonText, sectionToScroll }: HeaderProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
 
@@ -31,7 +31,10 @@ const Header = ({ navbarOptions, title, text, buttonText }: HeaderProps) => {
         mail={"info@clubtal.com"}
         withToogleMenu={false}
         withLanguageToggle={true}
-        withLoginButton={true}
+        withLoginButton={false}
+        withContactButton={true}
+        withHomeButton={true}
+        sectionToScroll={sectionToScroll}
       />
 
       <h1>

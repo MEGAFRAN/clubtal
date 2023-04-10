@@ -21,3 +21,15 @@
     @include mixins.cta-button-hover;
   }
 }
+
+.navbarButton {
+  color: colors.$primary-white;
+  background-color: transparent;
+  border: none;
+  pointer-events: auto;
+  transition: animations.$regular-transition;
+
+  &:hover {
+    @include mixins.cta-button-hover;
+  }
+}

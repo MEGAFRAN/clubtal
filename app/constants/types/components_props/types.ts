@@ -35,8 +35,8 @@ export type CardProps = {
 }
 
 export type LanguageToogleProps = {
-  mainLanguage?: "Español"
-  secondaryLanguage?: "English",
+  mainLanguage?: "Esp"
+  secondaryLanguage?: "Eng",
 }
 
 export type ListProps = {
@@ -45,7 +45,7 @@ export type ListProps = {
 
 export type ButtonProps = {
   text: string
-  style: "cta" | "regular"
+  style: "cta" | "regular" | "navbar"
   scrollToSection?: string
   handleClick?: MouseEventHandler<HTMLButtonElement>
   linkTo?: string
@@ -104,6 +104,8 @@ export interface NavbarProps {
   withToogleMenu?: boolean
   withLanguageToggle?: boolean
   withLoginButton?: boolean
+  withContactButton?: boolean
+  withHomeButton?: boolean
 }
 
 export interface SectionTitleListProps {
