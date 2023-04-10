@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/ExPYomq
 
-/*HTML
+/* HTML
 
 <div class="card">
   <h1>Title - Card 1</h1>
@@ -30,17 +30,17 @@ body {
 // etc
 
 .visual {
-  height: 100px;
-  width: 100%;
   background: wheat;
+  height: 100px;
   margin: 0.5rem 0;
+  width: 100%;
 }
 
 .card {
+  background: lightpink;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: lightpink;
   padding: 1rem;
 }
 

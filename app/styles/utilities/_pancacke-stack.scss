@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/bGVXPWB
 
-/*HTML
+/* HTML
 
 <header><h1>Header.com</h1></header>
 <main>Main Content</main>
@@ -11,8 +11,8 @@
 
 body {
   display: grid;
-  height: 100vh;
   grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }
 
 // etc

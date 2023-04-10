@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/eYJOYjj
 
-/*HTML
+/* HTML
 
 <div class="span-12">Span 12</div>
 <div class="span-6">Span 6</div>
@@ -12,8 +12,8 @@
 
 body {
   display: grid;
-  height: 100vh;
   grid-template-columns: repeat(12, 1fr);
+  height: 100vh;
 }
 
 // etc

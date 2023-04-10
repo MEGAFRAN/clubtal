@@ -3,33 +3,32 @@
 @use "../abstracts/mixins";
 
 .ctaButton {
-  border: solid colors.$secondary-black 2px;
-  border-radius: 24px;
-  background: colors.$primary-gold;
   background: linear-gradient(
     0deg,
     colors.$primary-gold 0,
     colors.$primary-gold 26%,
     colors.$primary-white 96%
   );
+  border: solid colors.$secondary-black 2px;
+  border-radius: 24px;
   color: colors.$primary-black;
   padding: 10px 23px;
   pointer-events: auto;
   transition: animations.$regular-transition;
 
   &:hover {
-    @include mixins.cta-button-hover;
+    @include mixins.cta-button-hover ();
   }
 }
 
 .navbarButton {
-  color: colors.$primary-white;
   background-color: transparent;
   border: none;
+  color: colors.$primary-white;
   pointer-events: auto;
   transition: animations.$regular-transition;
 
   &:hover {
-    @include mixins.cta-button-hover;
+    @include mixins.cta-button-hover ();
   }
 }

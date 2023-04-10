@@ -1,41 +1,41 @@
-////Default styling for being able to see the flipping
+//// Default styling for being able to see the flipping
 
 @import "../base/variables";
 
 .card__container {
-  perspective: 40rem;
   display: block;
+  perspective: 40rem;
 
   .card__inner {
+    border-radius: inherit;
     display: flex;
+    height: 29vh;
+    outline: solid 3px black;
+    text-align: center;
     transform-style: preserve-3d;
     transition: 0.7s;
-    border-radius: 0.25rem;
-    height: 29vh;
-    text-align: center;
-    outline: solid 3px black;
-    border-radius: inherit;
 
-    @media screen and (min-width: 1024px) {
-      height: 540px;
+    @media screen and (width >= 1024px) {
       display: block;
+      height: 540px;
     }
 
     &:hover,
     &:active,
     &:focus {
-      transform: rotateY(180deg);
       outline: solid 3px rgb(36, 193, 207);
+      transform: rotateY(180deg);
 
       .card__inner--front {
         display: none;
       }
+
       .card__inner--back {
         display: block;
 
         img {
-          transform: scaleX(-1);
           opacity: 0.4;
+          transform: scaleX(-1);
         }
       }
     }
@@ -43,17 +43,16 @@
     .card__inner--front,
     .card__inner--back {
       align-items: center;
-      border-radius: 0.25rem;
       backface-visibility: hidden;
       border-radius: inherit;
       max-height: 540px;
 
       img {
         height: 75px;
-        width: 100%;
         margin: 0;
+        width: 100%;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (width >= 1024px) {
           height: 150px;
         }
       }
@@ -66,16 +65,16 @@
           font-size: 1.3rem;
           margin-bottom: 1rem;
 
-          @media screen and (min-width: 1024px) {
+          @media screen and (width >= 1024px) {
             font-size: 2rem;
           }
         }
 
         p {
-          line-height: 1.5;
           font-size: 1.2rem;
+          line-height: 1.5;
 
-          @media screen and (min-width: 1024px) {
+          @media screen and (width >= 1024px) {
             text-align: left;
           }
         }
@@ -84,50 +83,50 @@
 
     .card__inner--back {
       display: none;
-      position: relative;
       height: inherit;
+      position: relative;
       transform: rotateY(180deg);
 
       .card__inner--back-tags-container {
         display: none;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (width >= 1024px) {
           display: grid;
           grid-template-columns: 1fr 1fr;
         }
 
         .card__inner--back-tag {
-          display: flex;
+          align-items: center;
           background-color: black;
-          color: white;
           border: black solid 2px;
+          color: white;
+          display: flex;
           font-size: 1.2rem;
           font-weight: 600;
-          margin: 5px;
-          padding: 5px;
-          max-height: 32px;
           justify-content: center;
-          align-items: center;
+          margin: 5px;
+          max-height: 32px;
+          padding: 5px;
           text-transform: capitalize;
         }
       }
 
       .card__inner--back-cta {
-        position: absolute;
-        color: black;
-        text-decoration: underline;
         bottom: 0;
-        right: 0;
-        padding: 0 5px;
+        color: black;
         font-size: 1.2rem;
         font-weight: 500;
+        padding: 0 5px;
+        position: absolute;
+        right: 0;
+        text-decoration: underline;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (width >= 1024px) {
           padding: 0 15px 5px 0;
           text-decoration: none;
         }
 
-        &:after {
+        &::after {
           content: "\003E";
           font-size: 1.6rem;
           font-weight: bold;
@@ -141,28 +140,28 @@
 
     .card__inner--front {
       display: block;
-      overflow-y: auto;
       overflow-x: hidden;
+      overflow-y: auto;
 
       .card__inner--front-header {
         position: relative;
 
         .card__inner--front-header-featured {
-          position: absolute;
-          display: flex;
-          justify-content: center;
           align-items: center;
-          transform: rotate(47deg);
-          top: 33px;
-          right: -63px;
           background-color: black;
           color: white;
-          width: 202px;
-          height: 25px;
+          display: flex;
           font-size: 2rem;
-          font-weight: 600;
-          text-transform: uppercase;
           font-style: italic;
+          font-weight: 600;
+          height: 25px;
+          justify-content: center;
+          position: absolute;
+          right: -63px;
+          text-transform: uppercase;
+          top: 33px;
+          transform: rotate(47deg);
+          width: 202px;
         }
       }
     }

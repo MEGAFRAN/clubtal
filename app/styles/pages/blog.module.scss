@@ -3,23 +3,27 @@
 @use "../abstracts/animations";
 
 .container {
-  width: 100%;
-  height: 100vh;
   background: colors.$primary-white;
+  height: 100vh;
+  width: 100%;
+
   a {
-    text-decoration: none;
     color: colors.$secondary-black;
+    text-decoration: none;
   }
+
   nav {
     position: sticky;
+
     & > div {
       top: 0;
     }
   }
+
   h1 {
+    color: colors.$primary-black;
     margin-top: 24px;
     text-align: center;
-    color: colors.$primary-black;
   }
 
   main {

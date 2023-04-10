@@ -3,57 +3,56 @@
 @use "../abstracts/mixins";
 
 .container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: clamp(90vw, 4vw, 400px);
-  max-width: 400px;
   margin: auto;
+  max-width: 400px;
+  width: clamp(90vw, 4vw, 400px);
 
   label {
     margin-bottom: 0.5rem;
   }
 
   input {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
     width: 100%;
 
     &::placeholder {
-      font-size: 20px;
       color: gray;
+      font-size: 20px;
       text-align: center;
     }
   }
 
   button {
-    width: clamp(90vw, 4vw, 400px);
-    max-width: 400px;
-    border: solid colors.$secondary-black 2px;
-    border-radius: 24px;
-    background: colors.$primary-gold;
     background: linear-gradient(
       0deg,
       colors.$primary-gold 0,
       colors.$primary-gold 26%,
       colors.$primary-white 96%
     );
+    border: solid colors.$secondary-black 2px;
+    border-radius: 24px;
     color: colors.$primary-black;
+    max-width: 400px;
     padding: 10px 23px;
     pointer-events: auto;
     transition: animations.$regular-transition;
+    width: clamp(90vw, 4vw, 400px);
   
     &:hover {
-      @include mixins.cta-button-hover;
+      @include mixins.cta-button-hover ();
     }
 
     &:disabled {
-      opacity: 0.5;
       cursor: not-allowed;
+      opacity: 0.5;
     }
   }
 
@@ -61,7 +60,7 @@
     list-style: none;
     padding: 0;
 
-    li:before {
+    li::before {
       content: '\2713';
       font-weight: 900;
       padding-right: 10px;
@@ -71,10 +70,10 @@
 
 
   p {
-    margin-top: 1rem;
-    color: #333;
+    color: #333333;
     font-size: 1rem;
     font-weight: bold;
+    margin-top: 1rem;
     text-align: center;
   }
 }

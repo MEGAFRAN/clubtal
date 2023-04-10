@@ -1,62 +1,62 @@
 .container {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  width: 375px;
-  height: 667px;
   background: white;
   border-radius: 32px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  bottom: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  height: 667px;
+  margin: auto;
   overflow: hidden;
+  position: fixed;
+  right: 0;
+  width: 375px;
 
-  @media (max-width: 400px) {
-    width: 100%;
-    height: 100%;
+  @media (width <= 400px) {
     border-radius: 0;
+    height: 100%;
+    width: 100%;
   }
 
   .close_button {
-    display: flex;
     align-self: flex-end;
-    padding-right: 30px;
     background: none;
     border: none;
-    font-size: 20px;
     color: #0d0d0d;
-    margin: 4px;
     cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    margin: 4px;
+    padding-right: 30px;
   }
 
   .chat_messages {
-    overflow-y: auto;
-    height: calc(100% - 88px);
-    padding: 12px;
     background-color: #e5ddd5;
+    height: calc(100% - 88px);
+    overflow-y: auto;
+    padding: 12px;
 
     .message {
-      max-width: 85%;
-      margin-bottom: 8px;
-      padding: 8px 12px;
       border-radius: 8px;
+      margin-bottom: 8px;
+      max-width: 85%;
+      padding: 8px 12px;
       word-wrap: break-word;
 
       &.system {
-        color: #000000;
         background-color: #ffffff;
+        color: #000000;
         margin-right: auto;
 
         &.typing-indicator {
-          display: inline-block;
-          vertical-align: middle;
-          margin: 0 4px;
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #ffffff;
           animation: typing-indicator 1s infinite steps(4);
+          background-color: #ffffff;
+          border-radius: 50%;
+          display: inline-block;
+          height: 4px;
+          margin: 0 4px;
+          vertical-align: middle;
+          width: 4px;
         }
 
         @keyframes typing-indicator {
@@ -64,9 +64,11 @@
           20% {
             transform: scale(1);
           }
+
           50% {
             transform: scale(0.5);
           }
+
           100% {
             transform: scale(1);
           }
@@ -74,26 +76,26 @@
       }
 
       &.user {
-        color: #ffffff;
         background-color: #4fc3f7;
+        color: #ffffff;
         margin-left: auto;
       }
 
       &.assistant {
-        color: #000000;
         background-color: #ffffff;
+        color: #000000;
         margin-right: auto;
 
         .dots {
           display: flex;
 
           .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #999;
-            margin-right: 4px;
             animation: wave 1.5s ease-in-out infinite;
+            background-color: #999999;
+            border-radius: 50%;
+            height: 6px;
+            margin-right: 4px;
+            width: 6px;
           }
 
           .dot:nth-child(2) {
@@ -108,15 +110,19 @@
             0% {
               transform: translateY(0);
             }
+
             25% {
               transform: translateY(-5px);
             }
+
             50% {
               transform: translateY(0);
             }
+
             75% {
               transform: translateY(5px);
             }
+
             100% {
               transform: translateY(0);
             }
@@ -127,19 +133,19 @@
   }
 
   form {
+    background-color: #f0f0f0;
+    border-top: 1px solid #cccccc;
     display: flex;
     padding: 8px;
-    background-color: #f0f0f0;
-    border-top: 1px solid #ccc;
 
     input {
-      flex-grow: 1;
       border: none;
+      border-radius: 18px;
+      flex-grow: 1;
+      font-size: 16px;
+      margin-right: 4px;
       outline: none;
       padding: 8px 12px;
-      border-radius: 18px;
-      margin-right: 4px;
-      font-size: 16px;
 
       &::placeholder {
         color: #8e8e93;
@@ -148,15 +154,15 @@
 
     button[type="submit"] {
       background: #34c759;
+      border: none;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
       color: white;
+      cursor: pointer;
       font-size: 16px;
       line-height: 20px;
-      padding: 8px 16px;
-      border-radius: 24px;
-      border: none;
-      box-shadow: 0px 4px 12px rgba(52, 199, 89, 0.4);
-      cursor: pointer;
       outline: none;
+      padding: 8px 16px;
 
       &:hover {
         background: #30b54a;

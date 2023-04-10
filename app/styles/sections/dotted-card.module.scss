@@ -1,51 +1,51 @@
 @use "../abstracts/colors";
 
 .container {
-  max-width: 980px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
   background-color: colors.$terciary-black;
   border-bottom-right-radius: 141px;
   border-top-right-radius: 141px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   margin-bottom: 60px;
+  max-width: 980px;
+  padding: 40px;
 
   h2 {
-    padding-bottom: 30px;
     color: colors.$primary-gray;
+    padding-bottom: 30px;
     text-align: center;
   }
 
   img {
-    height: clamp(150px, 20vw, 300px);
-    border-radius: 146px;
-    margin: auto;
-    border: 31px colors.$primary-black solid;
     align-self: center;
+    border: 31px colors.$primary-black solid;
+    border-radius: 146px;
+    height: clamp(150px, 20vw, 300px);
+    margin: auto;
   }
 
   ul {
+    column-gap: 38px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    row-gap: 20px;
-    column-gap: 38px;
     font-size: clamp(1.2rem, 4vw, 1.2rem);
+    justify-content: space-around;
     padding: 0;
+    row-gap: 20px;
 
     li {
+      align-items: center;
+      border: dashed 4px colors.$primary-white;
+      border-radius: 19px;
+      color: colors.$primary-white;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      height: 122px;
       justify-content: center;
       list-style-type: none;
       text-align: center;
       width: 242px;
-      height: 122px;
-      color: colors.$primary-white;
-      border-radius: 19px;
-      border: dashed 4px colors.$primary-white;
 
       &:nth-child(1)::after {
         content: "\2656";
