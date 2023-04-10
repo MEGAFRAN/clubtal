@@ -10,7 +10,7 @@ const Button = ({ text, handleClick, style = "regular", scrollToSection, linkTo 
 
   let variant
   if (style === "cta") variant = styles.ctaButton
-  if (style === "navbar") variant = styles.navbarButton
+  else if (style === "navbar") variant = styles.navbarButton
   else variant = styles.regularButton
 
   let button
