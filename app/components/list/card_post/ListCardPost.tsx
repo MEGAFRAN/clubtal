@@ -2,7 +2,7 @@ import { Post } from "../../../constants/types/components_props/types"
 import useDate from "../../../hook/useDate"
 import SectionCardPost from "../../sections/card_post/SectionCardPost"
 import styles from "../../../styles/components/listCardPost.module.scss"
-import mapPostToCardPost from "../../../services/utils/blog/post"
+import functionPost from "../../../services/utils/blog/post"
 
 interface ListCardPost {
   listPost: Post[]
@@ -10,7 +10,7 @@ interface ListCardPost {
 
 export default function ListCardPost({ listPost }: ListCardPost) {
   const { transformDataToDataString, generateEndpointCardPost, truncateText } = useDate()
-  const cardPosts = listPost && mapPostToCardPost(listPost)
+  const cardPosts = listPost && functionPost.mapPostToCardPost(listPost)
   return (
     <ul className={styles.container}>
       {cardPosts

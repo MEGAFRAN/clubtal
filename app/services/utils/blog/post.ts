@@ -14,4 +14,17 @@ const mapPostToCardPost = (postsFromApi: Post[]): CardPost[] =>
     }
   })
 
-export default mapPostToCardPost
+const getYearMonthDayFromString = (date: string) => {
+  const stringToArray = date.split("-")
+  const yearPost = stringToArray[0]
+  const monthPost = stringToArray[1]
+  const dayPost = stringToArray[2]
+  return { yearPost, monthPost, dayPost }
+}
+
+const functionPost = {
+  mapPostToCardPost,
+  getYearMonthDayFromString,
+}
+
+export default functionPost

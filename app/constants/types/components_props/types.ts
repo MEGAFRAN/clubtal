@@ -36,7 +36,7 @@ export type CardProps = {
 
 export type LanguageToogleProps = {
   mainLanguage?: "Esp"
-  secondaryLanguage?: "Eng",
+  secondaryLanguage?: "Eng"
 }
 
 export type ListProps = {
@@ -210,6 +210,10 @@ export interface SectionCardPostProps extends SectionAboutPostProps {
   className?: string
 }
 export interface LanguageContextValue {
-  isSecondaryLanguage: boolean;
-  setSecondaryLanguage: (isSecondaryLanguage: boolean) => void;
+  isSecondaryLanguage: boolean
+  setSecondaryLanguage: (isSecondaryLanguage: boolean) => void
+}
+
+export interface PageMonthProps {
+  listPost: Post[]
 }
