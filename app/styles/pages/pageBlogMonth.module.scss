@@ -3,43 +3,52 @@
 @use "../abstracts/animations";
 
 .container {
-  width: 100%;
-  min-height: 100%;
   background-color: colors.$primary-white;
+  min-height: 100%;
+  width: 100%;
+
   a {
-    text-decoration: none;
     color: colors.$secondary-black;
+    text-decoration: none;
   }
+
   nav {
     position: sticky;
+
     & > div {
       top: 0;
     }
   }
+
   header {
+    align-items: center;
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
-    justify-content: space-between;
     gap: 12px;
+    justify-content: space-between;
+
     div {
       color: colors.$secondary-black;
+
       a {
         transition: animations.$regular-transition;
+
         &:hover {
-          @include mixins.linkCardPost-hover;
+          @include mixins.linkCardPost-hover ();
         }
       }
     }
   }
+
   ul {
     margin-bottom: 0;
     padding-bottom: 24px;
   }
+
   h1 {
+    color: colors.$primary-black;
     margin-top: 24px;
     text-align: center;
-    color: colors.$primary-black;
   }
 
   main {
