@@ -40,7 +40,7 @@
         transition: animations.$regular-transition;
 
         &:hover {
-          @include mixins.linkCardPost-hover ();
+          @include mixins.linkcard-post-hover ();
         }
       }
     }

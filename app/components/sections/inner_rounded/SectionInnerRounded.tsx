@@ -1,6 +1,7 @@
 import { SectionGeneralProps } from "../../../constants/types/components_props/types"
 import styles from "../../../styles/sections/inner-rounded.module.scss"
 import Button from "../../button/Button"
+
 import List from "../../list/List"
 
 const SectionInnerRounded = ({ listData, title, buttonText, linkTo }: SectionGeneralProps) => (
