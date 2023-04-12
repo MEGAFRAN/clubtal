@@ -2,7 +2,7 @@
 @use "../abstracts/animations";
 @use "../abstracts/mixins";
 
-.ctaButton {
+.cta_button {
   background: linear-gradient(
     0deg,
     colors.$primary-gold 0,
@@ -21,7 +21,7 @@
   }
 }
 
-.navbarButton {
+.navbar_button {
   background-color: transparent;
   border: none;
   color: colors.$primary-white;

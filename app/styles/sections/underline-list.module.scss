@@ -1,4 +1,5 @@
 @use "../abstracts/colors";
+@use "../base/typography";
 
 .container {
   background-color: colors.$primary-black;
@@ -21,7 +22,7 @@
     color: colors.$primary-white;
     display: flex;
     flex-wrap: wrap;
-    font-family: helvetica, "sans serif", Arial;
+    font-family: typography.$secondary-font-family;
     font-size: clamp(1rem, 4vw, 1.1rem);
     justify-content: space-around;
     list-style: none;

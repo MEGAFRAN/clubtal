@@ -22,11 +22,7 @@
         "keyframe-declaration-no-important": true, 
         "length-zero-no-unit": true, 
         "media-feature-name-no-unknown": true, 
-        "no-descending-specificity": [
-            true, {
-            "ignore": [ "selectors-within-list"
-            ] }
-        ],
+        "no-descending-specificity": null,
         "no-duplicate-at-import-rules": true, 
         "no-duplicate-selectors": true, 
         "no-invalid-double-slash-comments": true, 
