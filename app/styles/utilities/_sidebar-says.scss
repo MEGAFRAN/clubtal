@@ -1,9 +1,9 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/gOaNeWL
 
-//This element takes the second grid position (1fr), meaning it takes up the rest of the remaining space.
+// This element takes the second grid position (1fr), meaning it takes up the rest of the remaining space.
 
-/*HTML
+/* HTML
 
 <div class="sidebar" contenteditable>
   Min: 150px
@@ -21,16 +21,15 @@
 body {
   display: grid;
   grid-template-columns: minmax(150px, 25%) 1fr;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .sidebar {
-  height: 100vh;
-
   //   etc.
   background: lightpink;
   font-size: 2rem;
+  height: 100vh;
   text-align: center;
 }
 

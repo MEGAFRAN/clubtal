@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/mdVbdBy
 
-/*HTML
+/* HTML
 
 <header><h1 contenteditable>Header.com</h1></header>
 <div class="left-sidebar" contenteditable>Left Sidebar</div>
@@ -13,16 +13,16 @@
 
 body {
   display: grid;
-  height: 100vh;
   grid-template: auto 1fr auto / auto 1fr auto;
+  height: 100vh;
 }
 
 // etc
 
 header {
   background: lightpink;
-  padding: 2rem;
   grid-column: 1 / 4;
+  padding: 2rem;
 }
 
 .left-sidebar {
@@ -42,9 +42,9 @@ main {
 
 footer {
   background: wheat;
+  grid-column: 1 / 4;
   padding: 2rem;
   text-align: center;
-  grid-column: 1 / 4;
 }
 
 .left-sidebar,

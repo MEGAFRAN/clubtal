@@ -35,11 +35,11 @@ const LanguageToogle = ({
   return (
     <>
       {isSecondaryLanguage ? (
-        <button className={styles.languageToogle} onClick={toggleLanguage}>
+        <button className={styles.language_toogle} onClick={toggleLanguage}>
           {mainLanguage}
         </button>
       ) : (
-        <button className={styles.languageToogle} onClick={toggleLanguage}>
+        <button className={styles.language_toogle} onClick={toggleLanguage}>
           {secondaryLanguage}
         </button>
       )}

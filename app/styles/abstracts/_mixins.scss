@@ -24,11 +24,11 @@
   cursor: default;
 }
 
-@mixin cardPost-hover {
+@mixin card-post-hover {
   border-color: colors.$primary-gold;
   box-shadow: 0 0 40px -10px black;
 }
 
-@mixin linkCardPost-hover {
+@mixin linkcard-post-hover {
   color: colors.$primary-gold;
 }

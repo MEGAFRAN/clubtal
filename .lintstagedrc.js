@@ -1,3 +1,3 @@
 module.exports = {
-  "**/*.{js,ts,jsx,tsx}": (filenames) => `next lint --fix --file=${filenames.join(",")}`,
+  "**/*.{js,ts,jsx,tsx,scss}": (filenames) => `next lint --fix --file=${filenames.join(",")}`,
 }

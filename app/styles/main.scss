@@ -1,13 +1,8 @@
 @import "abstracts/breakpoints", "abstracts/colors", "abstracts/functions", "abstracts/mixins",
   "abstracts/type", "abstracts/index";
-
 @import "base/base", "base/font-face", "base/index", "base/reset", "base/root", "base/typography";
-
 @import "components/header", "components/link", "components/navbar";
-
 @import "layouts/footer", "layouts/forms", "layouts/grid", "layouts/header", "layouts/navigation",
-  "layouts/sidebar", "layouts/landingPage.module.scss", "layouts/vacancyCurrent.module.scss";
-
+  "layouts/sidebar", "layouts/landingPage.module", "layouts/vacancyCurrent.module";
 @import "pages/404", "pages/contact", "pages/home", "pages/index";
-
 @import "utilities/container", "utilities/index";

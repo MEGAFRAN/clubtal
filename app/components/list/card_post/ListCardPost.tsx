@@ -23,7 +23,7 @@ export default function ListCardPost({ listPost }: ListCardPost) {
             const newDescription = truncateText(cardPost.description)
             return (
               <SectionCardPost
-                className={styles.cardPost}
+                className={styles.card_post}
                 key={cardPost.id}
                 nameAuthor={cardPost.nameAuthor}
                 datePost={newDateString}

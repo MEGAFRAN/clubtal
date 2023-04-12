@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/WNQdBza
 
-/*HTML
+/* HTML
 
 <div class="parent">
   <div class="child">1</div>
@@ -17,15 +17,16 @@
 }
 
 .child {
-  //  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-  //  If we don't want the items to stretch:
-  flex: 0 1 300px;
-  //  If we do want the items to stretch:
-  flex: 1 1 300px;
+  background: lightpink;
 
   //   etc.
   border: 1px solid red;
-  background: lightpink;
+
+  //  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+  //  If we don't want the items to stretch:
+
+  //  If we do want the items to stretch:
+  flex: 1 1 300px;
   font-size: 2rem;
   text-align: center;
 }
