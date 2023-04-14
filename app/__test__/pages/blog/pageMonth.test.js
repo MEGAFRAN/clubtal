@@ -1,10 +1,13 @@
 import { render, screen } from "@testing-library/react"
 import { useRouter } from "next/router"
 import fs from "fs/promises"
-import MonthPage, { getStaticPaths, getStaticProps } from "../../../pages/blog/[year]/[month]/index"
+import MonthPage, {
+  getStaticPaths,
+  getStaticProps,
+} from "../../../../pages/blog/[year]/[month]/index"
 import "@testing-library/jest-dom"
-import mockListPost1 from "../../constants/mocks/mockListPost1.json"
-import mockListPost2 from "../../constants/mocks/mockListPost2.json"
+import mockListPost1 from "../../../constants/mocks/mockListPost1.json"
+import mockListPost2 from "../../../constants/mocks/mockListPost2.json"
 
 jest.mock("fs")
 jest.mock("next/router", () => ({
@@ -101,7 +104,7 @@ describe("getStaticProps", () => {
             nameAuthor: "Clubtal",
             data: "2023-03-21",
             readingTime: "5 min read",
-            category: "IA",
+            category: "Performance",
             contentPost: [
               {
                 titleContent: "Title content 3",

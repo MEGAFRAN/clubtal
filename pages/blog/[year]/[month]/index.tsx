@@ -25,7 +25,8 @@ const postDirectory = path.join(process.cwd(), "post")
 export const getStaticPaths = async () => {
   const files = await fs.readdir(postDirectory)
   const paths: PathType[] = files.map((file) => {
-    const { yearPost, monthPost } = functionPost.getYearMonthDayFromString(file)
+    const fileWithoutExtension = file.replace(/\.json$/, "")
+    const { yearPost, monthPost } = functionPost.getYearMonthDayFromString(fileWithoutExtension)
     return {
       params: {
         year: yearPost,
@@ -44,7 +45,8 @@ export const getStaticProps: GetStaticProps<PageMonthProps> = async ({ params })
   const files = await fs.readdir(postDirectory)
   const filterPromiseReadFilesByYearAndMonth = files
     .filter((file) => {
-      const { yearPost, monthPost } = functionPost.getYearMonthDayFromString(file)
+      const fileWithoutExtension = file.replace(/\.json$/, "")
+      const { yearPost, monthPost } = functionPost.getYearMonthDayFromString(fileWithoutExtension)
       return year === yearPost && month === monthPost
     })
     .map(async (file) => {
