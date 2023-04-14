@@ -91,5 +91,11 @@ export default function useDate() {
     }
     return text
   }
-  return { transformDataToDataString, generateEndpointCardPost, truncateText, getStringMonth }
+  return {
+    transformDataToDataString,
+    generateEndpointCardPost,
+    truncateText,
+    getStringMonth,
+    deleteCeroStart,
+  }
 }
