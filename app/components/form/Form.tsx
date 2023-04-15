@@ -2,7 +2,7 @@ import { useState } from "react"
 import { FormProps } from "../../constants/types/components_props/types"
 import { EMAIL_SERVICE_GENERAL } from "../../services/api/variables"
 import sendFormMessage from "../../services/form_services/general_form/general-form.service"
-import gtmEvents from "../../services/google-tag-events.service"
+import gtmEvents from "../../services/analytics/events/google-tag-events.service"
 import styles from "../../styles/components/form.module.scss"
 
 const Form = ({ text, endpoint = EMAIL_SERVICE_GENERAL }: FormProps) => {

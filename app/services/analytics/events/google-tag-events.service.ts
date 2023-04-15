@@ -1,4 +1,4 @@
-import googleTagService from "./google-tag-datalayer.service"
+import googleTagService from "../datalayer/google-tag-datalayer.service"
 
 const gtmEvents = {
   formSubmit(data: object, event = "form_submit"): void {

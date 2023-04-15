@@ -1,11 +1,18 @@
-declare let dataLayer: any
+declare global {
+  interface Window {
+    dataLayer: Array<any>;
+  }
+}
 
 const googleTagService = {
+
   pushDataLayer(event: string, data: object): void {
-    try {
-      dataLayer.push({ event, data })
-    } catch (error) {
-      console.log(error)
+    if (typeof window !== "undefined" && window.dataLayer) {
+      try {
+        window.dataLayer.push({ event, data })
+      } catch (error) {
+        console.error(error)
+      }
     }
   },
 
