@@ -9,7 +9,7 @@ import HOME_TEXT from "../../../../../../app/services/pages/home-text"
 import functionPost from "../../../../../../app/services/utils/blog/post"
 
 interface PageTitleProps {
-  post: Post
+  post: Post | null
 }
 type PathType = {
   params: {
@@ -52,15 +52,16 @@ export const getStaticProps: GetStaticProps<PageTitleProps> = async ({ params })
   const files = await fs.readdir(fileDirectory)
   const filesReading = functionPost.getInformationFromFile(files)
   const filesRead: Post[] = await Promise.all(filesReading)
-  const filterFilesByYearMonthDayTitle = filesRead.filter((file) => {
+  const findFilesByYearMonthDayTitle = filesRead.find((file) => {
     const { yearPost, monthPost, dayPost } = functionPost.getYearMonthDayFromString(file.data)
     const titlePost = file.title.toLowerCase().split(" ").join("-")
     return yearPost === year && monthPost === month && dayPost === day && titlePost === title
   })
-  if (filterFilesByYearMonthDayTitle.length === 0) return { props: { post: [] } }
+  const post1 = findFilesByYearMonthDayTitle ?? null
+
   return {
     props: {
-      post: filterFilesByYearMonthDayTitle[0],
+      post: post1,
     },
   }
 }

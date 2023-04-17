@@ -2,7 +2,6 @@ import "@testing-library/jest-dom"
 import { cleanup, render } from "@testing-library/react"
 import ListCardPost from "./ListCardPost"
 import mockResponsePageYear from "../../../constants/mocks/mockPostPage"
-import useDate from "../../../hook/useDate"
 
 describe("<ListCardPost/>", () => {
   const mockPost = mockResponsePageYear.posts

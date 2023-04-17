@@ -86,7 +86,7 @@ describe("getStaticProps", () => {
   test("Should return empty array when params that not correspond to files", async () => {
     const mockFiles = ["2023-03-04.json", "2023-03-21.json"]
     const params = { category: "develop" }
-    const expectProps = { props: { post: [] } }
+    const expectProps = { props: { post: null } }
     jest.spyOn(fs, "readdir").mockResolvedValue(mockFiles)
     jest.spyOn(fs, "readFile").mockResolvedValueOnce(JSON.stringify(mockPost1))
     jest.spyOn(fs, "readFile").mockResolvedValueOnce(JSON.stringify(mockPost2))
