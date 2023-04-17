@@ -90,6 +90,26 @@ export type ChatbotProps = {
   onClose: () => void
 }
 
+export interface ChatbotSkeletonColors {
+  one: string
+  two: string
+  three: string
+  four: string
+  five: string
+  six: string
+  seven: string
+}
+
+export type ChatbotSkeletonProps = {
+  colors: ChatbotSkeletonColors
+}
+
+export type ColorPickerProps = {
+  label?: string
+  onChange: (color: string) => void
+  initialHex: string
+}
+
 type homeNavbarOptions = {
   name: string
   link: string

@@ -54,7 +54,7 @@ const ChatBot = ({ onClose }: ChatbotProps) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="chatbot-container">
       <button className={styles.close_button} onClick={onClose}>
         &#x2715;
       </button>
