@@ -14,7 +14,7 @@ const ChatBotToggle = () => {
       {isChatVisible ? (
         <ChatBot onClose={handleToggleChat} />
       ) : (
-        <button className={styles.open} onClick={handleToggleChat}>
+        <button className={styles.open} onClick={handleToggleChat} data-testid="toogle-button">
           Chat
         </button>
       )}
