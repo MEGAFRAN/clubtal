@@ -55,11 +55,20 @@ export default function useDate() {
     const date = new Date(numberYear, numberMonth, numberDay)
     return date
   }
+
+  const addCeroStart = (number: string): string => {
+    if (number.length < 2) {
+      return `0${number}`
+    }
+    return number
+  }
+
   const getYearMonthDayOfDate = (data: string) => {
     const date = stringToDate(data)
     const year = date.getFullYear()
     const month = date.getMonth()
     const day = date.getDate()
+
     return { year, month, day }
   }
 
@@ -76,7 +85,9 @@ export default function useDate() {
     const titleToLowerCase = title.toLocaleLowerCase()
     const stringToArray = titleToLowerCase.split(" ")
     const separateTitleWithCharacter = stringToArray.join("-")
-    const endPoint = `${DEFAULT_URL}/${year}/${month}/${day}/${separateTitleWithCharacter}/`
+    const newDay = addCeroStart(day.toString())
+    const newMonth = addCeroStart(month.toString())
+    const endPoint = `${DEFAULT_URL}/${year}/${newMonth}/${newDay}/${separateTitleWithCharacter}/`
     return endPoint
   }
 
@@ -91,5 +102,11 @@ export default function useDate() {
     }
     return text
   }
-  return { transformDataToDataString, generateEndpointCardPost, truncateText, getStringMonth }
+  return {
+    transformDataToDataString,
+    generateEndpointCardPost,
+    truncateText,
+    getStringMonth,
+    deleteCeroStart,
+  }
 }
