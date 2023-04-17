@@ -5,11 +5,12 @@ import mockResponsePageYear from "../../../constants/mocks/mockPostPage"
 import useDate from "../../../hook/useDate"
 
 describe("<ListCardPost/>", () => {
-  const { transformDataToDataString, generateEndpointCardPost } = useDate()
   const mockPost = mockResponsePageYear.posts
   const mockDescription = [
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. ...",
   ]
+  const mockEndpointsPost = ["/blog/2023/03/21/first-post-1/", "/blog/2023/04/01/second-post-2/"]
+  const mockDataPost = ["21 Marzo, 2023", "1 Abril, 2023"]
   let component
   beforeEach(() => {
     component = render(<ListCardPost listPost={mockPost} />)
@@ -25,10 +26,10 @@ describe("<ListCardPost/>", () => {
     cardPost.forEach((card, index) => {
       const mockAuthorName = mockPost[index].nameAuthor
       const mockReadingTime = mockPost[index].readingTime
-      const mockDataPost = transformDataToDataString(mockPost[index].data)
+      const expectDataPost = mockDataPost[index]
       const authorName = component.getByText(mockAuthorName)
       const readingTime = component.getByText(mockReadingTime)
-      const dataPost = component.getByText(mockDataPost)
+      const dataPost = component.getByText(expectDataPost)
       expect(card).toBeInTheDocument()
       expect(authorName).toBeInTheDocument()
       expect(readingTime).toBeInTheDocument()
@@ -43,10 +44,7 @@ describe("<ListCardPost/>", () => {
     const title2 = component.getByRole("link", { name: mockTitle2Expect })
     titlesPost.push(title1, title2)
     titlesPost.forEach((title, index) => {
-      const mockUrlExpect = generateEndpointCardPost({
-        title: mockPost[index].title,
-        date: mockPost[index].data,
-      })
+      const mockUrlExpect = mockEndpointsPost[index]
       expect(title).toBeInTheDocument()
       expect(title).toHaveAttribute("href", mockUrlExpect)
     })
@@ -62,10 +60,7 @@ describe("<ListCardPost/>", () => {
     const mockNameFooter = "Continuar leyendo"
     const footers = component.getAllByRole("link", { name: mockNameFooter })
     footers.forEach((footer, index) => {
-      const mockUrlExpect = generateEndpointCardPost({
-        title: mockPost[index].title,
-        date: mockPost[index].data,
-      })
+      const mockUrlExpect = mockEndpointsPost[index]
       expect(footer).toBeInTheDocument()
       expect(footer).toHaveAttribute("href", mockUrlExpect)
     })
