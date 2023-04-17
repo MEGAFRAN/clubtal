@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps<PageDayProps> = async ({ params }) =
   }
 }
 
-export function PageDay({ listPost }: InferGetStaticPropsType<typeof getStaticProps>) {
+function PageDay({ listPost }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
   const { getStringMonth, deleteCeroStart } = useDate()
   const { query, pathname } = router

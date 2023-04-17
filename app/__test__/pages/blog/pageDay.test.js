@@ -6,7 +6,6 @@ import PageDay, {
   getStaticPaths,
   getStaticProps,
 } from "../../../../pages/blog/[year]/[month]/[day]/index"
-import mockPost1 from "../../../constants/mocks/mockListPost1.json"
 import mockPost2 from "../../../constants/mocks/mockListPost2.json"
 
 jest.mock("next/router", () => ({
