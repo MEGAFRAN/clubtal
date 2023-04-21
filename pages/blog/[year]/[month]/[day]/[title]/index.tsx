@@ -72,8 +72,8 @@ function PageTitle({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { query, pathname } = router
   const { year, month, day } = query
   const isHomePage = pathname === "/"
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts, formText } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts, formText } = currentLanguage
   const numberMonth = Number(month)
   const stringMonth = getStringMonth(numberMonth).toLowerCase()
   const stringDay = String(day)
@@ -81,8 +81,7 @@ function PageTitle({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const datePost = `${stringMonth} ${dayWithoutCeroStart} ${year}`
   return post ? (
     <PostDetail
-      options={homeNavbarOptions}
-      buttonText={ctaButtonTexts[0]}
+      buttonText={ctaButtonTexts}
       mail="info@clubtal.com"
       withLanguageToggle={isHomePage}
       titlePost={post.title}

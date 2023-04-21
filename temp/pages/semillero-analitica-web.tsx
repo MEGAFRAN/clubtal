@@ -8,13 +8,12 @@ const SemilleroAnaliticaWeb = () => {
   const router = useRouter()
   const { pathname } = router
   const isHomePage = pathname === "/"
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts, formText } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts, formText } = currentLanguage
   const { semilleroAnaliticaWeb } = landingPage
   return (
     <LandingPage
-      options={homeNavbarOptions}
-      buttonText={ctaButtonTexts[0]}
+      buttonText={ctaButtonTexts}
       mail={"info@clubtal.com"}
       withLanguageToggle={isHomePage}
       headingType="h1"

@@ -32,17 +32,12 @@ export default function BlogPage({ listPost }: InferGetStaticPropsType<typeof ge
   const router = useRouter()
   const { pathname } = router
   const isHomePage = pathname === "/"
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts } = currentLanguage
 
   return (
     <div className={styles.container}>
-      <Navbar
-        options={homeNavbarOptions}
-        buttonText={ctaButtonTexts[0]}
-        mail={""}
-        withLanguageToggle={isHomePage}
-      />
+      <Navbar buttonText={ctaButtonTexts} mail={""} withLanguageToggle={isHomePage} />
       <header>
         <h1>Blog clubtal</h1>
       </header>

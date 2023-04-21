@@ -1,9 +1,8 @@
 import HOME_TEXT from "../../services/pages/home-text"
 
-const currentLanguage = { ...HOME_TEXT.spanishText }
-const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
+const currentLanguage = { ...HOME_TEXT.spanish }
+const { ctaButtonTexts } = currentLanguage
 const mockResponsePageYear = {
-  options: homeNavbarOptions,
   buttonText: ctaButtonTexts[0],
   mail: "info@clubtal.com",
   withLanguageToggle: false,

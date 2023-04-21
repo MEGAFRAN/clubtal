@@ -8,7 +8,7 @@ import sendFormMessage from "../../services/form_services/general_form/general-f
 jest.mock("../../services/form_services/general_form/general-form.service")
 
 describe("<Form />", () => {
-  const textSpanish = HOME_TEXT.spanishText
+  const textSpanish = HOME_TEXT.spanish
   const MOCK_INFORMATION = textSpanish.formText
 
   test("renders the correct text", () => {

@@ -76,8 +76,8 @@ function PageDay({ listPost }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { query, pathname } = router
   const { year, month, day } = query
   const isHomePage = pathname === "/"
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts } = currentLanguage
   const numberMonth = Number(month)
   const stringMonth = getStringMonth(numberMonth).toLowerCase()
   const stringDay = String(day)
@@ -86,8 +86,7 @@ function PageDay({ listPost }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className={styles.container}>
       <Navbar
-        options={homeNavbarOptions}
-        buttonText={ctaButtonTexts[0]}
+        buttonText={ctaButtonTexts}
         mail={"info@clubtal.com"}
         withLanguageToggle={isHomePage}
       />

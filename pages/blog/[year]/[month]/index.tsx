@@ -69,14 +69,13 @@ export default function PageMonth({ listPost }: InferGetStaticPropsType<typeof g
   const numberMonth = Number(month)
   const monthString = getStringMonth(numberMonth)
   const isHomePage = pathname === "/"
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts } = currentLanguage
 
   return (
     <div className={styles.container}>
       <Navbar
-        options={homeNavbarOptions}
-        buttonText={ctaButtonTexts[0]}
+        buttonText={ctaButtonTexts}
         mail={"info@clubtal.com"}
         withLanguageToggle={isHomePage}
       />
