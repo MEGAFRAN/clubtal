@@ -87,7 +87,10 @@ export type ErrorPageProps = {
 }
 
 export type ChatbotProps = {
-  onClose: () => void
+  onClose?: () => void
+  initialMessage: string
+  inputPlaceholderText: string
+  sendButtonText: string
 }
 
 export interface ChatbotSkeletonColors {

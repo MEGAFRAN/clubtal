@@ -28,6 +28,7 @@ const Home: NextPage = () => {
     communityAdvantages,
     followingSteps,
     formText,
+    chatbotText,
   } = currentLanguage
 
   return (
@@ -65,7 +66,11 @@ const Home: NextPage = () => {
         sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionContact formText={formText} title={sectionsTitles[5]} />
-      <ChatBotToggle />
+      <ChatBotToggle
+        initialMessage={chatbotText.initialMessage}
+        inputPlaceholderText={chatbotText.inputPlaceholderText}
+        sendButtonText={chatbotText.sendButtonText}
+      />
       <SectionAnalytics />
     </languageContext.Provider>
   )

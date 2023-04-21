@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import styles from "../../styles/components/chat-toogle.module.scss"
 import ChatBot from "../chatbot/ChatBot"
+import { ChatbotProps } from "../../constants/types/components_props/types"
 
-const ChatBotToggle = () => {
+const ChatBotToggle = ({ initialMessage, inputPlaceholderText, sendButtonText }: ChatbotProps) => {
   const [isChatVisible, setIsChatVisible] = useState(false)
 
   function handleToggleChat() {
@@ -12,7 +13,12 @@ const ChatBotToggle = () => {
   return (
     <>
       {isChatVisible ? (
-        <ChatBot onClose={handleToggleChat} />
+        <ChatBot
+          initialMessage={initialMessage}
+          inputPlaceholderText={inputPlaceholderText}
+          sendButtonText={sendButtonText}
+          onClose={handleToggleChat}
+        />
       ) : (
         <button className={styles.open} onClick={handleToggleChat} data-testid="toogle-button">
           Chat
