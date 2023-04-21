@@ -38,12 +38,12 @@ const Navbar = ({
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
       {withHomeButton && (
-        <Button aria-label="Call to Action" text="Inicio" style="navbar" linkTo="/" />
+        <Button aria-label="Call to Action" text={buttonText[8]} style="navbar" linkTo="/" />
       )}
       {withContactButton && (
         <Button
           aria-label="Call to Action"
-          text={buttonText}
+          text={buttonText[0]}
           style="navbar"
           scrollToSection={sectionToScroll}
         />
@@ -58,7 +58,7 @@ const Navbar = ({
 
           <Button
             aria-label="Call to Action"
-            text={buttonText}
+            text={buttonText[0]}
             style="cta"
             scrollToSection={sectionToScroll}
           />

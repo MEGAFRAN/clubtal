@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { NextPage } from "next"
-import ChatBotSkeleton from "../app/components/chatbot_skeleton/ChatBotSkeleton"
-import ColorPickerSelector from "../app/components/color_picker/ColorPicker"
-import { ChatbotSkeletonColors } from "../app/constants/types/components_props/types"
+import ChatBotSkeleton from "../../app/components/chatbot_skeleton/ChatBotSkeleton"
+import ColorPickerSelector from "../../app/components/color_picker/ColorPicker"
+import { ChatbotSkeletonColors } from "../../app/constants/types/components_props/types"
 
 const ChatBot: NextPage = () => {
   const [colors, setColors] = useState<ChatbotSkeletonColors>({

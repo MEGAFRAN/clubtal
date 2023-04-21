@@ -1,8 +1,8 @@
 import { useRouter } from "next/router"
-import LandingPage from "../app/components/templates/layout/LandingPage"
-import { EMAIL_SERVICE_RECRUIT } from "../app/services/api/variables"
-import HOME_TEXT from "../app/services/pages/home-text"
-import landingPage from "../app/services/pages/landing_pages/semillero-analitica-web"
+import LandingPage from "../../app/components/templates/layout/LandingPage"
+import { EMAIL_SERVICE_RECRUIT } from "../../app/services/api/variables"
+import HOME_TEXT from "../../app/services/pages/home-text"
+import landingPage from "../../app/services/pages/landing_pages/semillero-analitica-web"
 
 const SemilleroAnaliticaWeb = () => {
   const router = useRouter()

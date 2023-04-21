@@ -4,8 +4,9 @@ import { HeaderProps } from "../../../../constants/types/components_props/types"
 import LoginForm from "../../../login_form/login_form"
 import generateMagicLink from "../../../../services/form_services/generate_magic_link/generate-magic-link.service"
 import Navbar from "../navbar/Navbar"
+import Button from "../../../button/Button"
 
-const Header = ({ navbarOptions, title, text, buttonText, sectionToScroll }: HeaderProps) => {
+const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: HeaderProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
 
@@ -23,11 +24,11 @@ const Header = ({ navbarOptions, title, text, buttonText, sectionToScroll }: Hea
 
     setIsSubmitting(false)
   }
+
   return (
     <header className={styles.container}>
       <Navbar
-        options={navbarOptions}
-        buttonText={buttonText[0]}
+        buttonText={buttonText}
         mail={"info@clubtal.com"}
         withToogleMenu={false}
         withLanguageToggle={true}
@@ -46,7 +47,11 @@ const Header = ({ navbarOptions, title, text, buttonText, sectionToScroll }: Hea
       </p>
 
       <div className={styles.cta_wrapper}>
-        <LoginForm onSubmit={handleSubmit} isSubmitting={isSubmitting} message={message} />
+        {withMagicLink ? (
+          <LoginForm onSubmit={handleSubmit} isSubmitting={isSubmitting} message={message} />
+        ) : (
+          <Button text={buttonText[7]} style="cta" scrollToSection={sectionToScroll} />
+        )}
       </div>
     </header>
   )

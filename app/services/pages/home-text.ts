@@ -11,48 +11,44 @@ const HOME_TEXT = {
     contact,
   },
 
-  spanishText: {
-    homeNavbarOptions: [
-      { name: "¿A quien va dirigido?", link: directedTo },
-      { name: "Servicios", link: benefits },
-      { name: "Pasos a seguir", link: followingSteps },
-      { name: "Contacto", link: contact },
-    ],
+  spanish: {
 
-    headerTitle: ["Reduce", "costos", "automaticamente"],
+    headerTitle: ["Reduce", "costos", "con"],
 
-    headerText: ["Chatbots", "la solución inteligente"],
+    headerText: ["Inteligencia artificial", "para tu negocio"],
 
     ctaButtonTexts: [
-      "Prueba gratis",
+      "Contacto",
       "Solicitar servicio",
       "Iniciemos el proceso",
       "Quiero la prueba",
       "Mas información",
-      "Quiero mi chatbot ahora",
+      "Quiero mi solucion",
       "Hacer solicitud",
+      "Lo quiero",
+      "Inicio"
     ],
 
     sectionsTitles: [
-      "¿Que hace tu chatbot?",
-      "Beneficios de tu chatbot",
-      "¿Que incluye tu chatbot?",
+      "¿Que hacemos?",
+      "Beneficios para tu negocio",
+      "¿Como lo hacemos?",
       "Pruebame en tu sitio web",
       "Pasos a seguir",
-      "Contáctanos",
+      "Contáctanos"
     ],
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-    careers: ["Te ahorra dinero, Servicio al cliente las 24 horas"],
+    careers: ["Soluciones de inteligencia artifical para negocios"],
 
     services: [
-      "Servicio dia y noche",
-      "Facil de usar",
-      "Funciona en todo sitio web",
-      "Personalizable",
+      "Automatización de tareas ",
+      "Reducción de costos",
+      "Mejora la toma de decisiones",
+      "Mejora la productividad",
       "Multiples idiomas",
-      "Medicion de interacciones",
+      "Ventajas competitivas"
     ],
 
     communityAdvantages: [
@@ -61,24 +57,13 @@ const HOME_TEXT = {
       "Personalizacion",
       "Soporte en instalacion",
       "Documentacion",
-      "7 dias de prueba",
-    ],
-
-    projectTools: [
-      "Este sitio web -",
-      "Github -",
-      "Jira -",
-      "Confluence -",
-      "Discord -",
-      "Google analytics -",
-      "Google tag manager -",
-      "Azure",
+      "7 dias de prueba"
     ],
 
     followingSteps: [
-      "Registrate",
-      "Entra a tu panel personal y personaliza tu chatbot",
-      "Usa tu chatbot en tu sitio web",
+      "Contactanos",
+      "Analizamos tu requerimiento",
+      "Te entregamos tu solucion"
     ],
 
     formText: [
@@ -89,11 +74,11 @@ const HOME_TEXT = {
       "Escribe aqui tu nombre..",
       "Mi email",
       "Escribe aqui tu email..",
-      "Enviar mi mensaje",
+      "Enviar mi mensaje"
     ],
   },
 
-  englishText: {
+  english: {
     homeNavbarOptions: [
       { name: "To whom is it directed?", link: directedTo },
       { name: "Services", link: benefits },
@@ -101,72 +86,68 @@ const HOME_TEXT = {
       { name: "Contact", link: contact },
     ],
 
-    headerTitle: ["Free", "Professional", "Experience"],
+    headerTitle: ["Reduce", "cost", "with"],
 
-    headerText: ["Gain hands-on experience as a frontend developer", "on a real website."],
+    headerText: ["Artificial Intelligence", "for your business"],
 
     ctaButtonTexts: [
       "Contact",
-      "Apply for benefits",
+      "Request service",
       "Let's start the process",
-      "Join the community",
+      "I want the trial",
       "More information",
-      "I am interested",
-      "I want to be part",
+      "I want my solution",
+      "Submit request",
+      "I want it",
+      "Home"
     ],
 
     sectionsTitles: [
-      "For people from Latin America with:",
-      "Benefits for you",
-      "What is our community like?",
-      "Tools you will use",
+      "What do we do?",
+      "Benefits for your business",
+      "How do we do it?",
+      "Try me on your website",
       "Steps to follow",
-      "Contact us",
+      "Contact us"
     ],
 
     sectionsSubTitles: ["But you lack practical experience?"],
 
-    careers: ["Basic knowledge in frontend development (Html, Css, Javascript)"],
+    careers: ["Artificial intelligence solutions for businesses"],
 
     services: [
-      "Hands-on experience on a real website",
-      "Personalized certificate of experience",
-      "Contact with a remote and distributed team in multiple countries",
-      "Networking",
-      "Exposure in social networks",
-      "Live with: Recruiters, personnel of technology companies",
+      "Task automation",
+      "Cost reduction",
+      "Improves decision-making",
+      "Improves productivity",
+      "Multiple languages",
+      "Competitive advantages"
     ],
 
-    communityAdvantages: ["Safe", "Verifiable", "Open", "Collaborative", "Friendly", "Equal"],
-
-    projectTools: [
-      "This web site -",
-      "Github -",
-      "Jira -",
-      "Confluence -",
-      "Discord -",
-      "Google analytics -",
-      "Google tag manager -",
-      "Azure",
+    communityAdvantages: [
+      "Analysis of your needs",
+      "Development",
+      "Customization",
+      "Installation support",
+      "Documentation",
+      "7-day trial"
     ],
 
     followingSteps: [
-      "You contact us: Tell us about your profile, and why you want to join the clubtal community",
-      `You join the community: You will be in a group based on your digital career, 
-      where you will have the support of your peers, sharing knowledge and experiences`,
-      `Gain experience with project functionalities: You will be able to choose what you want to practice or learn, 
-      collaborate as a group or individually, get hands-on experience, and get feedback`,
+      "Contact us",
+      "We analyze your requirement",
+      "We deliver your solution"
     ],
 
     formText: [
       "Tell us about yourself",
-      "Why do i want to join the clubtal community?",
-      "Write here what you want...",
+      "What do you need for your business?",
+      "Write here what you need...",
       "My name",
-      "Type your name here...",
+      "Write your name here...",
       "My email",
-      "Type your email here...",
-      "Send my message",
+      "Write your email here...",
+      "Send my message"
     ],
   },
 }
