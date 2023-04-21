@@ -6,6 +6,7 @@
     "local-db": "json-server -p 4000 --watch db.json",
     "dev-db": "concurrently \"npm run local-db\" \"npm run dev\"",
     "build": "jest a && next build && next export",
+    "build-local": "next build && next export",
     "start": "next start",
     "lint": "next lint --dir .",
     "lint:scss": "stylelint \"./app/**/*.scss\"",
@@ -55,6 +56,7 @@
       "npm run lint:scss:fix",
       "npm run lint",
       "npm run test",
+      "npm run build-local",
       "git add"
     ]
   }
