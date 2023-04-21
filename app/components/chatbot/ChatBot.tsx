@@ -4,11 +4,16 @@ import comunicateChatBot from "../../services/form_services/comunicate_chat_bot/
 import { getPageText, initialContext } from "../../services/utils/chatbot"
 import styles from "../../styles/components/chat.module.scss"
 
-const ChatBot = ({ onClose }: ChatbotProps) => {
+const ChatBot = ({
+  onClose,
+  initialMessage,
+  inputPlaceholderText,
+  sendButtonText,
+}: ChatbotProps) => {
   const [messages, setMessages] = useState<ChatbotMessage[]>([
     {
       role: "system",
-      content: "Hola! Soy Clubbot, tu chatbot. ¿Que deseas saber de nuestros servicios?",
+      content: initialMessage,
     },
   ])
   const [userMessage, setUserMessage] = useState("")
@@ -70,10 +75,10 @@ const ChatBot = ({ onClose }: ChatbotProps) => {
           type="text"
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
-          placeholder="Type your message..."
-          aria-label="Type your message"
+          placeholder={inputPlaceholderText}
+          aria-label={inputPlaceholderText}
         />
-        <button type="submit">Send</button>
+        <button type="submit">{sendButtonText}</button>
       </form>
     </div>
   )

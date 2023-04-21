@@ -76,6 +76,12 @@ const HOME_TEXT = {
       "Escribe aqui tu email..",
       "Enviar mi mensaje"
     ],
+
+    chatbotText: {
+      initialMessage: "Hola! Soy Clubbot ¿Que deseas saber de nuestros servicios?",
+      inputPlaceholderText: "Escribe tu mensaje ...",
+      sendButtonText: "Enviar"
+    }
   },
 
   english: {
@@ -149,6 +155,12 @@ const HOME_TEXT = {
       "Write your email here...",
       "Send my message"
     ],
+
+    chatbotText: {
+      initialMessage: "Hi! I'm Clubbot ¿What would you like to know about our services?",
+      inputPlaceholderText: "Type your message ...",
+      sendButtonText: "Send"
+    }
   },
 }
 export default HOME_TEXT
