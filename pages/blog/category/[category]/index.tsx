@@ -59,15 +59,14 @@ export default function CategoryPage({ listPost }: InferGetStaticPropsType<typeo
   const router = useRouter()
   const { pathname, query } = router
   const { category } = query
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts } = currentLanguage
   const nameCategory = String(category).charAt(0).toUpperCase() + String(category).slice(1)
   const isHomePage = pathname === "/"
   return (
     <div className={styles.container}>
       <Navbar
-        options={homeNavbarOptions}
-        buttonText={ctaButtonTexts[0]}
+        buttonText={ctaButtonTexts}
         mail={"info@clubtal.com"}
         withLanguageToggle={isHomePage}
       />

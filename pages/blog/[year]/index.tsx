@@ -56,13 +56,12 @@ function Year({ listPost }: InferGetStaticPropsType<typeof getStaticProps>) {
   const year = query?.year
   const numberYear = Number(year)
   const isHomePage = pathname === "/"
-  const currentLanguage = { ...HOME_TEXT.spanishText }
-  const { homeNavbarOptions, ctaButtonTexts } = currentLanguage
+  const currentLanguage = { ...HOME_TEXT.spanish }
+  const { ctaButtonTexts } = currentLanguage
 
   return (
     <PostPage
-      options={homeNavbarOptions}
-      buttonText={ctaButtonTexts[0]}
+      buttonText={ctaButtonTexts}
       mail={"info@clubtal.com"}
       withLanguageToggle={isHomePage}
       yearPost={numberYear}

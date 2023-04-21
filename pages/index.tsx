@@ -16,17 +16,13 @@ import languageContext from "../app/contexts/languageContext/languageContext"
 const Home: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
 
-  const currentLanguage = isSecondaryLanguage
-    ? { ...HOME_TEXT.englishText }
-    : { ...HOME_TEXT.spanishText }
+  const currentLanguage = isSecondaryLanguage ? { ...HOME_TEXT.english } : { ...HOME_TEXT.spanish }
 
   const {
-    homeNavbarOptions,
     headerTitle,
     headerText,
     ctaButtonTexts,
     sectionsTitles,
-    sectionsSubTitles,
     careers,
     services,
     communityAdvantages,
@@ -39,7 +35,6 @@ const Home: NextPage = () => {
       <Head>{HOME_HEAD}</Head>
 
       <Header
-        navbarOptions={homeNavbarOptions}
         title={headerTitle}
         text={headerText}
         buttonText={ctaButtonTexts}
@@ -49,26 +44,25 @@ const Home: NextPage = () => {
         listData={careers}
         title={sectionsTitles[0]}
         buttonText={ctaButtonTexts[5]}
-        linkTo={"/login"}
+        sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionUnderlineList
         listData={services}
         title={sectionsTitles[1]}
-        subTitle={sectionsSubTitles[0]}
         buttonText={ctaButtonTexts[1]}
-        linkTo={"/login"}
+        sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionDottedCard
         listData={communityAdvantages}
         title={sectionsTitles[2]}
         buttonText={ctaButtonTexts[3]}
-        linkTo={"/login"}
+        sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionHamburger
         listData={followingSteps}
         title={sectionsTitles[4]}
         buttonText={ctaButtonTexts[6]}
-        linkTo={"/login"}
+        sectionToScroll={HOME_TEXT.sectionsIds.contact}
       />
       <SectionContact formText={formText} title={sectionsTitles[5]} />
       <ChatBotToggle />

@@ -117,8 +117,8 @@ type homeNavbarOptions = {
 }
 
 export interface NavbarProps {
-  options: homeNavbarOptions[]
-  buttonText: string
+  options?: homeNavbarOptions[]
+  buttonText: string[]
   sectionToScroll?: string
   mail: string
   withToogleMenu?: boolean
@@ -147,11 +147,12 @@ export interface JobDetailProps extends NavbarProps, FormProps {
 }
 
 export interface HeaderProps {
-  navbarOptions: homeNavbarOptions[]
+  navbarOptions?: homeNavbarOptions[]
   title: string[]
   text: string[]
   buttonText: string[]
   sectionToScroll: string
+  withMagicLink?: boolean
 }
 
 export interface SectionContactProps {

@@ -5,11 +5,10 @@ import mockResponsePageYear from "../../../../constants/mocks/mockPostPage"
 
 describe("<PostPage/>", () => {
   let component
-  const { yearPost, posts, options, buttonText, withLanguageToggle } = mockResponsePageYear
+  const { yearPost, posts, buttonText, withLanguageToggle } = mockResponsePageYear
   beforeEach(() => {
     component = render(
       <PostPage
-        options={options}
         buttonText={buttonText}
         mail={""}
         withLanguageToggle={withLanguageToggle}
