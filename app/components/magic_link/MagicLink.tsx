@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import validateMagicLink from "../../services/form_services/validate_magic_link/validate-magic-link"
 
-export const MagicLink = () => {
+const MagicLink = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
