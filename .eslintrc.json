@@ -7,15 +7,29 @@
     "airbnb-base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "prettier"
   ],
   "rules": {
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "indent": "off",
+    "linebreak-style": "off",
     "quotes": ["error", "double"],
     "semi": ["error", "never"],
     "no-empty": "warn",
     "no-cond-assign": ["error", "always"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "for-direction": "off"
+  },
+  "env": {
+    "jest": true
   }
 }

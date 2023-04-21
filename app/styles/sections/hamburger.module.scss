@@ -1,73 +1,73 @@
 @use "../abstracts/colors";
 
 .container {
-  margin: auto;
+  background-color: colors.$primary-black;
   display: flex;
   flex-direction: column;
-  padding: clamp(20px, 5vw, 40px);
-  background-color: colors.$primary-black;
+  margin: auto;
   margin-bottom: 60px;
+  padding: clamp(20px, 5vw, 40px);
 
   h2 {
-    padding-bottom: 30px;
     color: colors.$primary-white;
+    padding-bottom: 30px;
     text-align: center;
   }
 
   ul {
+    color: colors.$secondary-gray;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     font-size: clamp(1.2rem, 4vw, 1.2rem);
-    color: colors.$secondary-gray;
-    list-style: none;
     justify-content: center;
-    text-align: center;
+    list-style: none;
     padding: 0;
+    text-align: center;
 
     li {
-      display: flex;
-      flex-direction: column;
       background-color: colors.$primary-black;
       color: colors.$primary-white;
+      display: flex;
+      flex-direction: column;
+      min-width: 50vw;
       padding: 0 29px;
       padding-bottom: 50px;
 
       &:nth-child(1) {
         background-color: colors.$primary-white;
-        color: colors.$primary-black;
         border-top-left-radius: 141px;
         border-top-right-radius: 141px;
+        color: colors.$primary-black;
 
         &::before {
+          color: colors.$primary-black;
           content: "\2780";
           font-size: 6rem;
-          color: colors.$primary-black;
         }
       }
 
       &:nth-child(2)::before {
+        color: colors.$primary-white;
         content: "\2781";
         font-size: 6rem;
-        color: colors.$primary-white;
       }
 
       &:nth-child(3) {
         background-color: colors.$primary-white;
-        color: colors.$primary-black;
         border-bottom-left-radius: 141px;
         border-bottom-right-radius: 141px;
+        color: colors.$primary-black;
 
         &::before {
+          color: colors.$primary-black;
           content: "\2782";
           font-size: 6rem;
-          color: colors.$primary-black;
         }
       }
     }
   }
 
-  button {
+  button, a {
     align-self: center;
   }
 }

@@ -1,7 +1,8 @@
+/* eslint-disable no-param-reassign */
 import { LinkProps } from "../../constants/types/components_props/types"
 
-export const Link = ({
-  text = "default text",
+const Link = ({
+  text,
   href = "",
   target = "_self",
   children,
@@ -11,9 +12,9 @@ export const Link = ({
   rel,
   referrerpolicy,
 }: LinkProps) => {
-  let downloadAssetPath = isDownload ? href.substring(href.lastIndexOf("/") + 1) : null
-  isOpenNewWindow ? (target = "_blank") : null
-  emailAddress ? (href = `mailto:${emailAddress}`) : null
+  const downloadAssetPath = isDownload ? href.substring(href.lastIndexOf("/") + 1) : null
+  if (isOpenNewWindow) target = "_blank"
+  if (emailAddress) href = `mailto:${emailAddress}`
 
   return (
     <a
@@ -23,7 +24,9 @@ export const Link = ({
       rel={rel}
       referrerPolicy={referrerpolicy}
     >
+      {text}
       {children}
     </a>
   )
 }
+export default Link

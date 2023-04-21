@@ -1,9 +1,8 @@
 import { useRouter } from "next/router"
-import { Error404 } from "../app/components/error404/Error404"
+import Error404 from "../app/components/error404/Error404"
 
 const NotFound = () => {
   const router = useRouter()
-  const text = ""
   return (
     <main style={{ display: "flex" }}>
       <Error404

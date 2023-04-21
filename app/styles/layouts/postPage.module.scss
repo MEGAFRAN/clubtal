@@ -1,0 +1,52 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/animations";
+
+.container {
+  background: colors.$primary-white;
+  height: 100vh;
+  width: 100%;
+
+  a {
+    color: colors.$secondary-black;
+    text-decoration: none;
+  }
+
+  nav {
+    position: sticky;
+
+    & > div {
+      top: 0;
+    }
+  }
+
+  h1 {
+    color: colors.$primary-black;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  header {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 12px;
+    justify-content: space-between;
+
+    div {
+      color: colors.$secondary-black;
+
+      a {
+        transition: animations.$regular-transition;
+
+        &:hover {
+          @include mixins.linkcard-post-hover ();
+        }
+      }
+    }
+  }
+
+  main {
+    margin-top: 24px;
+  }
+}

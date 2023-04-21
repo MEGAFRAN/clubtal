@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/xxZKzaX
 
-/*HTML
+/* HTML
 
 <div class="card">
   <h1>Title Here</h1>
@@ -13,8 +13,8 @@
 
 body {
   display: grid;
-  place-items: center;
   height: 100vh;
+  place-items: center;
 }
 
 .visual {
@@ -24,11 +24,11 @@ body {
 }
 
 .card {
-  width: 80%;
+  background: lightpink;
   display: flex;
   flex-direction: column;
-  background: lightpink;
   padding: 1rem;
+  width: 80%;
 }
 
 h1 {

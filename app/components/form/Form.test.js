@@ -1,15 +1,14 @@
 import React from "react"
 import { render, fireEvent, waitFor, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
-import { Form } from "./Form"
-import { HOME_TEXT } from "../../services/pages/home-text"
-import { sendFormMessage } from "../../services/form.service"
+import Form from "./Form"
+import HOME_TEXT from "../../services/pages/home-text"
+import sendFormMessage from "../../services/form_services/general_form/general-form.service"
 
-// Mock implementation of sendFormMessage
-jest.mock("../../services/form.service")
+jest.mock("../../services/form_services/general_form/general-form.service")
 
 describe("<Form />", () => {
-  const textSpanish = HOME_TEXT.spanishText
+  const textSpanish = HOME_TEXT.spanish
   const MOCK_INFORMATION = textSpanish.formText
 
   test("renders the correct text", () => {
@@ -30,7 +29,6 @@ describe("<Form />", () => {
   test("displays error message for invalid input or some fields empty", () => {
     const { getByRole } = render(<Form text={MOCK_INFORMATION} />)
     const submitButton = getByRole("button", { name: "Enviar mi mensaje" })
-    //click button
     fireEvent.click(submitButton)
     expect(
       screen.getByText(
@@ -53,11 +51,9 @@ describe("<Form />", () => {
     fireEvent.change(messageInput, { target: { value: "Hello, World!" } })
     fireEvent.change(nameInput, { target: { value: "John Doe" } })
     fireEvent.change(emailInput, { target: { value: "johndoe@example.com" } })
-    //click button
     fireEvent.click(submitButton)
     expect(await getByText("Enviando...")).toBeInTheDocument()
     expect(await submitButton).toBeDisabled()
-    //valid information send from Form
     await waitFor(() => {
       expect(sendFormMessage).toHaveBeenCalledWith(
         "https://post-push.azurewebsites.net/api/EmailService",

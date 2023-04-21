@@ -1,52 +1,62 @@
 @use "../abstracts/breakpoints";
 @use "../abstracts/colors";
+
 .container {
   nav {
     position: sticky;
+
     & > div {
       top: 0;
     }
   }
+
   section {
-    margin: 12px 0 24px 0;
+    margin: 12px 0 24px;
+
     aside {
-      padding: 16px;
       background-color: colors.$terciary-black;
-      border-bottom-right-radius: 70px;
-      border-top-right-radius: 70px;
       border: dashed 4px colors.$primary-gold;
+      border-bottom-right-radius: 70px;
       border-left: none;
+      border-top-right-radius: 70px;
       margin-bottom: 12px;
+      padding: 16px;
+
       h1 {
         padding: 0;
         text-align: center;
       }
+
       ul {
         list-style: none;
         padding: 0;
         text-align: justify;
 
         li {
+          border-bottom: 2px solid colors.$secondary-black;
+          border-radius: 15px;
           font-size: clamp(1rem, 4vw, 1.1rem);
           margin-top: 12px;
-          border-radius: 15px;
-          border-bottom: 2px solid colors.$secondary-black;
           padding: 6px;
         }
       }
     }
+
     form {
       margin: 0 auto;
     }
   }
+
   @media (min-width: breakpoints.$screen-tablet-portrait) {
     section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     }
+
     aside {
       margin: 0 auto;
     }
+
     form {
       align-self: center;
     }

@@ -1,30 +1,40 @@
+import Link from "next/link"
 import { ButtonProps } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/button.module.scss"
 
-export const Button = ({
-  text = "default text",
-  handleClick,
-  style = "regular",
-  scrollToSection,
-}: ButtonProps) => {
+const Button = ({ text, handleClick, style = "regular", scrollToSection, linkTo }: ButtonProps) => {
   const scrollTo = (selector: string): void => {
     const section = document.querySelector(selector)
     section?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
-  let variant = style === "cta" ? styles.ctaButton : styles.regularButton
+  let variant
+  if (style === "cta") variant = styles.cta_button
+  else if (style === "navbar") variant = styles.navbar_button
+  else variant = styles.regularButton
 
-  let button = scrollToSection ? (
-    <button className={variant} onClick={() => scrollTo(scrollToSection)}>
-      {" "}
-      {text}{" "}
-    </button>
-  ) : (
-    <button className={variant} onClick={handleClick}>
-      {" "}
-      {text}{" "}
-    </button>
-  )
+  let button
+  if (scrollToSection) {
+    button = (
+      <button className={variant} onClick={() => scrollTo(scrollToSection)}>
+        {text}
+      </button>
+    )
+  } else if (linkTo) {
+    button = (
+      <Link href={linkTo}>
+        <button className={variant}>{text}</button>
+      </Link>
+    )
+  } else {
+    button = (
+      <button className={variant} onClick={handleClick}>
+        {text}
+      </button>
+    )
+  }
 
   return button
 }
+
+export default Button

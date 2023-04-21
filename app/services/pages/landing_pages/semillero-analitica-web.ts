@@ -1,4 +1,4 @@
-export const landingPage = {
+const landingPage = {
   semilleroAnaliticaWeb: {
     title: "¡Transforma tu carrera con el programa de entrenamiento gratuito en Analítica Web!",
     text: [
@@ -16,3 +16,4 @@ export const landingPage = {
     ],
   },
 }
+export default landingPage

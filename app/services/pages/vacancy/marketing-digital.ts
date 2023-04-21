@@ -1,4 +1,4 @@
-export const Vacancy = {
+const Vacancy = {
   marketingDigital: {
     title: "Markenting Digital",
     description:
@@ -28,3 +28,4 @@ export const Vacancy = {
     },
   },
 }
+export default Vacancy

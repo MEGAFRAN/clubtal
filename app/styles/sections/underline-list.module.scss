@@ -1,57 +1,58 @@
 @use "../abstracts/colors";
+@use "../base/typography";
 
 .container {
-  max-width: 980px;
-  margin: auto;
+  background-color: colors.$primary-black;
+  border: 4px solid colors.$secondary-black;
+  border-radius: 38px;
   display: flex;
   flex-direction: column;
-  padding: clamp(0px, 5vw, 40px);
-  border-radius: 38px;
-  border: 4px solid colors.$secondary-black;
-  background-color: colors.$primary-black;
+  margin: auto;
   margin-bottom: 60px;
+  max-width: 980px;
+  padding: clamp(0px, 5vw, 40px);
 
   h2 {
-    padding-bottom: 30px;
     color: colors.$primary-white;
+    padding-bottom: 30px;
     text-align: center;
   }
 
   ul {
+    color: colors.$primary-white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    row-gap: 27px;
-    font-family: helvetica, sans serif;
+    font-family: typography.$secondary-font-family;
     font-size: clamp(1rem, 4vw, 1.1rem);
+    justify-content: space-around;
     list-style: none;
-    color: colors.$primary-white;
-    text-align: center;
     padding: 0;
+    row-gap: 27px;
+    text-align: center;
 
     li {
+      align-items: center;
+      background-color: colors.$primary-black;
+      border-bottom: 2px solid colors.$secondary-black;
+      border-radius: 15px;
+      color: colors.$primary-white;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      height: 111px;
       justify-content: center;
       list-style-type: none;
       width: 302px;
-      height: 111px;
-      background-color: colors.$primary-black;
-      color: colors.$primary-white;
-      border-radius: 15px;
-      border-bottom: 2px solid colors.$secondary-black;
     }
   }
 
   span {
-    text-align: center;
     color: colors.$primary-white;
     font-size: clamp(1.2rem, 5vw, 1.8rem);
     padding-bottom: 30px;
+    text-align: center;
   }
 
-  button {
+  button, a {
     align-self: center;
   }
 }

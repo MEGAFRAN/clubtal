@@ -1,7 +1,7 @@
 // https://1linelayouts.glitch.me/
 // https://codepen.io/una/pen/oNbvNQv
 
-/*HTML
+/* HTML
 
 <div>1</div>
 <div>2</div>
@@ -12,15 +12,15 @@
 
 body {
   display: grid;
-  height: 100vh;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  height: 100vh;
 }
 
 // etc
 
 div {
+  background: lightpink;
   display: grid;
   place-items: center;
-  background: lightpink;
 }

@@ -1,19 +1,18 @@
 @use "../abstracts/colors";
 
 .container {
-  min-height: 100%;
-  max-width: 980px;
-  margin: auto;
-  display: flex;
-  position: relative;
-  flex-direction: column;
   align-items: center;
-  row-gap: clamp(3vh, 4vw, 4vh);
-  padding: clamp(4vh, 9vw, 4rem) clamp(5vw, 10vw, 18vw);
-  padding-top: clamp(11vh, 13vw, 146px);
-  padding-bottom: 15vh;
-  text-align: center;
   background-color: colors.$primary-black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: auto;
+  max-width: 980px;
+  padding: clamp(4vh, 9vw, 4rem) clamp(5vw, 10vw, 18vw);
+  position: relative;
+  row-gap: clamp(3vh, 4vw, 4vh);
+  text-align: center;
   z-index: 0;
 
   h1 {
@@ -25,26 +24,22 @@
   }
 
   p {
-    font-size: clamp(1.2rem, 5vw, 1.4rem);
+    color: colors.$primary-gold;
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
 
     em {
       color: colors.$primary-white;
-      font-weight: 500;
       font-size: clamp(1.2rem, 5vw, 1.6rem);
+      font-weight: 500;
     }
   }
 
   .cta_wrapper {
-    display: flex;
-    position: relative;
-    flex-direction: column;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     z-index: -1;
-
-    button {
-      position: absolute;
-      top: 43%;
-    }
 
     img {
       height: clamp(280px, 30vw, 440px);

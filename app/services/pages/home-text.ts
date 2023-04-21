@@ -1,182 +1,154 @@
-const directedTo = "#section-inner-rounded",
-  benefits = "#section-underline-list",
-  followingSteps = "#section-hamburger",
-  contact = "#section-contact",
-  documentation = "https://clubtal.atlassian.net/wiki/spaces/WEB/overview",
-  jira = "https://clubtal.atlassian.net/jira/software/c/projects/WEB/issues"
+const directedTo = "#section-inner-rounded"
+const benefits = "#section-underline-list"
+const followingSteps = "#section-hamburger"
+const contact = "#section-contact"
 
-export const HOME_TEXT = {
+const HOME_TEXT = {
   sectionsIds: {
     directedTo,
     benefits,
     followingSteps,
     contact,
-    documentation,
-    jira,
   },
 
-  spanishText: {
-    homeNavbarOptions: [
-      { name: "¿A quien va dirigido?", link: directedTo },
-      { name: "Servicios", link: benefits },
-      { name: "Pasos a seguir", link: followingSteps },
-      { name: "Contacto", link: contact },
-      { name: "Documentación proyecto", link: documentation, externalLink: true },
-      { name: "Jira proyecto", link: jira, externalLink: true },
-    ],
+  spanish: {
 
-    headerTitle: ["Experiencia", "Profesional", "Gratuita"],
+    headerTitle: ["Reduce", "costos", "con"],
 
-    headerText: ["Gana experiencia practica como desarrollador frontend", "en un sitio web real."],
+    headerText: ["Inteligencia artificial", "para tu negocio"],
 
     ctaButtonTexts: [
-      "Contáctanos",
-      "Solicitar beneficios",
+      "Contacto",
+      "Solicitar servicio",
       "Iniciemos el proceso",
-      "Unete a la comunidad",
+      "Quiero la prueba",
       "Mas información",
-      "Me interesa",
-      "Quiero ser parte",
+      "Quiero mi solucion",
+      "Hacer solicitud",
+      "Lo quiero",
+      "Inicio"
     ],
 
     sectionsTitles: [
-      "Para personas de América latina con:",
-      "Beneficios para ti",
-      "¿Como es nuestra comunidad?",
-      "Herramientas que usaras",
+      "¿Que hacemos?",
+      "Beneficios para tu negocio",
+      "¿Como lo hacemos?",
+      "Pruebame en tu sitio web",
       "Pasos a seguir",
-      "Contáctanos",
+      "Contáctanos"
     ],
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
 
-    careers: ["Conocimientos básicos en desarrollo frontend (Html, Css, Javascript)"],
+    careers: ["Soluciones de inteligencia artifical para negocios"],
 
     services: [
-      "Experiencia práctica en un sitio web real",
-      "Certificado de experiencia personalizado",
-      "Contacto con un equipo remoto y distribuido en múltiples países",
-      "Red de contactos",
-      "Exposición en redes sociales",
-      "En vivos con: Reclutadores, personal de empresas tecnológicas",
+      "Automatización de tareas ",
+      "Reducción de costos",
+      "Mejora la toma de decisiones",
+      "Mejora la productividad",
+      "Multiples idiomas",
+      "Ventajas competitivas"
     ],
 
     communityAdvantages: [
-      "Segura",
-      "Verificable",
-      "Abierta",
-      "Colaborativa",
-      "Amistosa",
-      "Igualitaria",
-    ],
-
-    projectTools: [
-      "Este sitio web -",
-      "Github -",
-      "Jira -",
-      "Confluence -",
-      "Discord -",
-      "Google analytics -",
-      "Google tag manager -",
-      "Azure",
+      "Analisis de tus necesidades",
+      "Desarrollo",
+      "Personalizacion",
+      "Soporte en instalacion",
+      "Documentacion",
+      "7 dias de prueba"
     ],
 
     followingSteps: [
-      `Nos contactas: Nos cuentas sobre tu perfil, y porque quieres entrar a la comunidad clubtal`,
-      `Te ingresamos a la comunidad: Estarás en un grupo basado en tu carrera digital, 
-      donde tendrás el apoyo de tus compañeros, compartiendo conocimientos y experiencias`,
-      `Ganaras experiencia con funcionalidades del proyecto: Podrás elegir lo que quieras practicar o aprender, 
-      colaborar en grupo o individualmente, obtener experiencia practica, y tener retroalimentación`,
+      "Contactanos",
+      "Analizamos tu requerimiento",
+      "Te entregamos tu solucion"
     ],
 
     formText: [
       "Cuentanos sobre ti",
-      "¿Porque quiero entrar a la comunidad clubtal?",
-      "Escribe aqui lo que quieres..",
+      "¿Que necesitas en tu negocio?",
+      "Escribe aqui lo que necesitas..",
       "Mi nombre",
       "Escribe aqui tu nombre..",
       "Mi email",
       "Escribe aqui tu email..",
-      "Enviar mi mensaje",
+      "Enviar mi mensaje"
     ],
   },
 
-  englishText: {
+  english: {
     homeNavbarOptions: [
       { name: "To whom is it directed?", link: directedTo },
       { name: "Services", link: benefits },
       { name: "Steps to follow", link: followingSteps },
       { name: "Contact", link: contact },
-      { name: "Project documentation", link: documentation, externalLink: true },
-      { name: "Project Jira", link: jira, externalLink: true },
     ],
 
-    headerTitle: ["Free", "Professional", "Experience"],
+    headerTitle: ["Reduce", "cost", "with"],
 
-    headerText: ["Gain hands-on experience as a frontend developer", "on a real website."],
+    headerText: ["Artificial Intelligence", "for your business"],
 
     ctaButtonTexts: [
-      "Contact us",
-      "Apply for benefits",
+      "Contact",
+      "Request service",
       "Let's start the process",
-      "Join the community",
+      "I want the trial",
       "More information",
-      "I am interested",
-      "I want to be part",
+      "I want my solution",
+      "Submit request",
+      "I want it",
+      "Home"
     ],
 
     sectionsTitles: [
-      "For people from Latin America with:",
-      "Benefits for you",
-      "What is our community like?",
-      "Tools you will use",
+      "What do we do?",
+      "Benefits for your business",
+      "How do we do it?",
+      "Try me on your website",
       "Steps to follow",
-      "Contact us",
+      "Contact us"
     ],
 
     sectionsSubTitles: ["But you lack practical experience?"],
 
-    careers: ["Basic knowledge in frontend development (Html, Css, Javascript)"],
+    careers: ["Artificial intelligence solutions for businesses"],
 
     services: [
-      "Hands-on experience on a real website",
-      "Personalized certificate of experience",
-      "Contact with a remote and distributed team in multiple countries",
-      "Networking",
-      "Exposure in social networks",
-      "Live with: Recruiters, personnel of technology companies",
+      "Task automation",
+      "Cost reduction",
+      "Improves decision-making",
+      "Improves productivity",
+      "Multiple languages",
+      "Competitive advantages"
     ],
 
-    communityAdvantages: ["Safe", "Verifiable", "Open", "Collaborative", "Friendly", "Equal"],
-
-    projectTools: [
-      "This web site -",
-      "Github -",
-      "Jira -",
-      "Confluence -",
-      "Discord -",
-      "Google analytics -",
-      "Google tag manager -",
-      "Azure",
+    communityAdvantages: [
+      "Analysis of your needs",
+      "Development",
+      "Customization",
+      "Installation support",
+      "Documentation",
+      "7-day trial"
     ],
 
     followingSteps: [
-      `You contact us: Tell us about your profile, and why you want to join the clubtal community`,
-      `You join the community: You will be in a group based on your digital career, 
-      where you will have the support of your peers, sharing knowledge and experiences`,
-      `Gain experience with project functionalities: You will be able to choose what you want to practice or learn, 
-      collaborate as a group or individually, get hands-on experience, and get feedback`,
+      "Contact us",
+      "We analyze your requirement",
+      "We deliver your solution"
     ],
 
     formText: [
       "Tell us about yourself",
-      "Why do i want to join the clubtal community?",
-      "Write here what you want...",
+      "What do you need for your business?",
+      "Write here what you need...",
       "My name",
-      "Type your name here...",
+      "Write your name here...",
       "My email",
-      "Type your email here...",
-      "Send my message",
+      "Write your email here...",
+      "Send my message"
     ],
   },
 }
+export default HOME_TEXT

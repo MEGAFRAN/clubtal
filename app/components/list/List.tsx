@@ -1,8 +1,12 @@
 import { ListProps } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/list.module.scss"
 
-export const List = ({ listData }: ListProps) => {
-  let listItems = listData.map((listItem: any, index: number) => <li key={index}>{listItem}</li>)
+const List = ({ listData }: ListProps) => {
+  const isValidListData = Array.isArray(listData) && listData.length
+  const listItems = isValidListData
+    ? listData.map((listItem: any, index: number) => <li key={index}>{listItem}</li>)
+    : null
 
-  return <ul className={styles.container}>{listData ? listItems : null}</ul>
+  return isValidListData ? <ul className={styles.container}>{listItems}</ul> : null
 }
+export default List

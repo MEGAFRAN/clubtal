@@ -1,15 +1,10 @@
 @use "../abstracts/colors";
 
-.container {
-  button {
-    background-color: inherit;
-    color: colors.$primary-white;
-    padding: 8px;
-    pointer-events: auto;
-    border: none;
-
-    &:hover {
-      color: colors.$primary-gold;
-    }
-  }
+.language_toogle {
+  background-color: inherit;
+  border: none;
+  color: colors.$primary-white;
+  cursor: pointer;
+  padding: 8px;
+  pointer-events: auto;
 }

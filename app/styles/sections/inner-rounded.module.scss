@@ -1,52 +1,52 @@
 @use "../abstracts/colors";
+@use "../base/typography";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(0px, 5vw, 40px);
   background-color: colors.$primary-gray;
-  margin-bottom: 60px;
   border-bottom-left-radius: 141px;
   border-top-left-radius: 141px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  padding: clamp(0px, 5vw, 40px);
 
   h2 {
-    padding-bottom: 30px;
     color: colors.$primary-black;
+    padding-bottom: 30px;
     text-align: center;
   }
 
   ul {
+    border-radius: 66px;
+    box-shadow: 0 -7px 17px colors.$secondary-gray;
+    color: colors.$primary-white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    row-gap: 27px;
-    font-family: helvetica, sans serif;
+    font-family: typography.$secondary-font-family;
     font-size: clamp(1rem, 4vw, 1.1rem);
-    color: colors.$secondary-gray;
+    justify-content: space-around;
     list-style: none;
-    color: colors.$primary-white;
-    text-align: center;
-    padding: 0;
-    max-width: 980px;
     margin: auto;
-    box-shadow: 0px -7px 17px colors.$secondary-gray;
-    border-radius: 66px;
     margin-bottom: 30px;
+    max-width: 980px;
+    padding: 0;
+    row-gap: 27px;
+    text-align: center;
 
     li {
+      align-items: center;
+      border-bottom: solid 2px colors.$primary-gold;
+      color: colors.$primary-black;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      font-weight: bold;
       justify-content: center;
       list-style-type: none;
       padding: 30px;
-      color: colors.$primary-black;
-      font-weight: bold;
-      border-bottom: solid 2px colors.$primary-gold;
     }
   }
 
-  button {
+  button, a {
     align-self: center;
   }
 }

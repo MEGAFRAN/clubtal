@@ -1,6 +1,6 @@
 import React from "react"
-import { FlippingCard } from "./FlippingCard"
 import { render, screen } from "@testing-library/react"
+import FlippingCard from "./FlippingCard"
 import "@testing-library/jest-dom"
 
 it("should render same text passed into title prop", () => {
