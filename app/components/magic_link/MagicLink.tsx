@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
-import validateMagicLink from "../../services/form_services/validate_magic_link/validate-magic-link"
+import { MagicLinkResponse } from "../../constants/types/components_props/types"
+import certifyMagicLink from "../../services/form_services/certify_magic_link/certify-magic-link"
 
 const MagicLink = () => {
   const router = useRouter()
@@ -9,16 +10,25 @@ const MagicLink = () => {
   const [effectHasRun, setEffectHasRun] = useState(false)
 
   useEffect(() => {
-    // Get the token from the URL query parameters
     const { token } = router.query
+
+    if (!token) {
+      router.push("/")
+      return
+    }
 
     if (!effectHasRun && token) {
       setEffectHasRun(true)
 
-      validateMagicLink(token)
-        .then((response) => {
-          if (response.ok) router.push("/chatbot")
-          else setError(true)
+      certifyMagicLink(token)
+        .then((response: Response) => response.json() as Promise<MagicLinkResponse>)
+        .then((data: MagicLinkResponse) => {
+          if (data.token) {
+            localStorage.setItem("token", data.token)
+            router.push("/panel")
+          } else {
+            setError(true)
+          }
         })
         .catch(() => setError(true))
         .finally(() => setLoading(false))

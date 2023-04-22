@@ -1,8 +1,8 @@
-import validateMagicLink from "./validate-magic-link"
-import { VALIDATE_MAGIC_LINK } from "../../api/variables"
+import createMagicLink from "./create-magic-link.service"
+import { CREATE_MAGIC_LINK } from "../../api/variables"
 
-describe("validateMagicLink", () => {
-  const mockToken = "mockToken"
+describe("createMagicLink", () => {
+  const mockEmail = "test@example.com"
 
   afterEach(() => {
     jest.restoreAllMocks()
@@ -12,10 +12,16 @@ describe("validateMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.resolve({}))
     global.fetch = mockFetch
 
-    await validateMagicLink(mockToken)
+    await createMagicLink(mockEmail)
 
     expect(mockFetch).toHaveBeenCalledTimes(1)
-    expect(mockFetch).toHaveBeenCalledWith(`${VALIDATE_MAGIC_LINK}?token=${mockToken}`)
+    expect(mockFetch).toHaveBeenCalledWith(CREATE_MAGIC_LINK, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: mockEmail }),
+    })
   })
 
   it("should return the response from fetch if the request is successful", async () => {
@@ -23,7 +29,7 @@ describe("validateMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.resolve(mockResponse))
     global.fetch = mockFetch
 
-    const result = await validateMagicLink(mockToken)
+    const result = await createMagicLink(mockEmail)
 
     expect(result).toEqual(mockResponse)
   })
@@ -33,6 +39,6 @@ describe("validateMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.reject(mockError))
     global.fetch = mockFetch
 
-    await expect(validateMagicLink(mockToken)).rejects.toThrowError(mockError)
+    await expect(createMagicLink(mockEmail)).rejects.toThrowError(mockError)
   })
 })

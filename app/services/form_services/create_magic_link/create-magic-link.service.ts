@@ -1,8 +1,8 @@
-import { GENERATE_MAGIC_LINK } from "../../api/variables"
+import { CREATE_MAGIC_LINK } from "../../api/variables"
 import { handleError, handleResponse } from "../../utils/reponse/response"
 
-async function generateMagicLink(email: string): Promise<Response> {
-  return fetch(GENERATE_MAGIC_LINK, {
+async function createMagicLink(email: string): Promise<Response> {
+  return fetch(CREATE_MAGIC_LINK, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,4 +12,4 @@ async function generateMagicLink(email: string): Promise<Response> {
     .then(handleResponse)
     .catch(handleError)
 }
-export default generateMagicLink
+export default createMagicLink

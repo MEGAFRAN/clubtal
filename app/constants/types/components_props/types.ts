@@ -241,3 +241,13 @@ export interface LanguageContextValue {
 export interface PageMonthProps {
   listPost: Post[]
 }
+
+export type LoginFormProps = {
+  onSubmit: (email: string) => Promise<void>
+  isSubmitting: boolean
+  message: string
+}
+
+export interface MagicLinkResponse {
+  token: string // assuming the token is a string
+}
