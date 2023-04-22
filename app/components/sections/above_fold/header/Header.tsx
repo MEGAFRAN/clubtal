@@ -2,9 +2,9 @@ import { useState } from "react"
 import styles from "../../../../styles/sections/header.module.scss"
 import { HeaderProps } from "../../../../constants/types/components_props/types"
 import LoginForm from "../../../login_form/login_form"
-import generateMagicLink from "../../../../services/form_services/generate_magic_link/generate-magic-link.service"
 import Navbar from "../navbar/Navbar"
 import Button from "../../../button/Button"
+import createMagicLink from "../../../../services/form_services/create_magic_link/create-magic-link.service"
 
 const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: HeaderProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -14,7 +14,7 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
     setIsSubmitting(true)
     setMessage("Submitting data...")
 
-    const response = await generateMagicLink(email)
+    const response = await createMagicLink(email)
 
     if (response.ok) {
       setMessage("Magic link sent to email, please verify.")
