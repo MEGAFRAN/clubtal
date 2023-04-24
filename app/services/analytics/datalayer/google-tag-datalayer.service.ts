@@ -6,10 +6,10 @@ declare global {
 
 const googleTagService = {
 
-  pushDataLayer(event: string, data: object): void {
+  pushDataLayer(event: string, trigger: string, data: Record<string, any>): void {
     if (typeof window !== "undefined" && window.dataLayer) {
       try {
-        window.dataLayer.push({ event, data })
+        window.dataLayer.push({ event, trigger, data })
       } catch (error) {
         console.error(error)
       }
@@ -18,12 +18,13 @@ const googleTagService = {
 
   validateDataLayer(
     event: string,
+    trigger: string,
     data: object,
     environment: string = document.location.origin,
   ): void {
     if (event && data) {
       const validatedData = { ...data, environment }
-      this.pushDataLayer(event, validatedData)
+      this.pushDataLayer(event, trigger, validatedData)
     } else {
       console.error(
         "Please verify the feedDataLayer function invocation, with the related event you are triggering",
@@ -31,8 +32,8 @@ const googleTagService = {
     }
   },
 
-  feedDataLayer(event: string, data: object): void {
-    this.validateDataLayer(event, data)
+  feedDataLayer(event: string, trigger: string, data: object): void {
+    this.validateDataLayer(event, trigger, data)
   },
 }
 
