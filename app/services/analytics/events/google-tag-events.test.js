@@ -11,11 +11,12 @@ describe("gtmEvents", () => {
   describe("formSubmit event", () => {
     it("should call feedDataLayer with the given data and default event", () => {
       const data = { key: "value" }
-      const defaultEvent = "form_submit"
+      const defaultEvent = "analytics_event"
+      const trigger = "form_submit"
 
       gtmEvents.formSubmit(data)
 
-      expect(googleTagService.feedDataLayer).toHaveBeenCalledWith(defaultEvent, data)
+      expect(googleTagService.feedDataLayer).toHaveBeenCalledWith(defaultEvent, trigger, data)
     })
   })
 })
