@@ -249,5 +249,13 @@ export type LoginFormProps = {
 }
 
 export interface MagicLinkResponse {
-  token: string // assuming the token is a string
+  token: string
+}
+
+export type TextAnalysisProps = { 
+  textCta: string
+  inputCta: string
+  textAreaPlaceholder: string 
+  inputPlaceholder: string
+  buttonText: string
 }

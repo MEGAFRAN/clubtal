@@ -5,6 +5,7 @@ import LoginForm from "../../../login_form/login_form"
 import Navbar from "../navbar/Navbar"
 import Button from "../../../button/Button"
 import createMagicLink from "../../../../services/form_services/create_magic_link/create-magic-link.service"
+import TextAnalysis from "../../../text_analysis/TextAnalysis"
 
 const SentimentAnalysisHeader = ({
   title,
@@ -44,21 +45,13 @@ const SentimentAnalysisHeader = ({
         sectionToScroll={sectionToScroll}
       />
 
-      <h1>
-        {title[0]} <em>{title[1]}</em> {title[2]}
-      </h1>
-      <textarea></textarea>
-      <p>
-        {text[0]},<em> {text[1]}</em>
-      </p>
-
-      <div className={styles.cta_wrapper}>
-        {withMagicLink ? (
-          <LoginForm onSubmit={handleSubmit} isSubmitting={isSubmitting} message={message} />
-        ) : (
-          <Button text={buttonText[7]} style="cta" scrollToSection={sectionToScroll} />
-        )}
-      </div>
+      <TextAnalysis
+        textCta={title[0]}
+        inputCta={title[1]}
+        buttonText={buttonText[0]}
+        textAreaPlaceholder={text[0]}
+        inputPlaceholder={text[1]}
+      />
     </header>
   )
 }

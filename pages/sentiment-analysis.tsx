@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import { useState } from "react"
 import SENTIMENT_ANALYSIS_HEAD from "../app/constants/seo/sentimentAnalysisHead"
-import HOME_TEXT from "../app/services/pages/home-text"
+import SENTIMENT_ANALYSIS_TEXT from "../app/services/pages/sentiment-analysis"
 import SectionAnalytics from "../app/components/sections/analytics/SectionAnalytics"
 import ChatBotToggle from "../app/components/chatbot_toogle/ChatBotToogle"
 import SectionContact from "../app/components/sections/contact/SectionContact"
@@ -12,9 +12,11 @@ import SentimentAnalysisHeader from "../app/components/sections/above_fold/heade
 const SentimentAnalysis: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
 
-  const currentLanguage = isSecondaryLanguage ? { ...HOME_TEXT.english } : { ...HOME_TEXT.spanish }
+  const currentLanguage = isSecondaryLanguage
+    ? { ...SENTIMENT_ANALYSIS_TEXT.english }
+    : { ...SENTIMENT_ANALYSIS_TEXT.spanish }
 
-  const { headerTitle, headerText, ctaButtonTexts, sectionsTitles, formText, chatbotText } =
+  const { ctaText, placeholdersTexts, ctaButtonTexts, sectionsTitles, formText, chatbotText } =
     currentLanguage
 
   return (
@@ -22,10 +24,10 @@ const SentimentAnalysis: NextPage = () => {
       <Head>{SENTIMENT_ANALYSIS_HEAD}</Head>
 
       <SentimentAnalysisHeader
-        title={headerTitle}
-        text={headerText}
+        title={ctaText}
+        text={placeholdersTexts}
         buttonText={ctaButtonTexts}
-        sectionToScroll={HOME_TEXT.sectionsIds.contact}
+        sectionToScroll={SENTIMENT_ANALYSIS_TEXT.sectionsIds.contact}
       />
       <SectionContact formText={formText} title={sectionsTitles[5]} />
       <ChatBotToggle
