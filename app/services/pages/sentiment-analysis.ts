@@ -13,8 +13,9 @@ const SENTIMENT_ANALYSIS_TEXT = {
 
   spanish: {
 
-    ctaText: ["Ingresa un texto, mira si es Positivo, Negativo o Neutral", 
-    "Ingresa el contexto (post red social, mensaje de otra persona, pensamiento, etc)"
+    ctaText: ["Descubre las emociones de tu texto, con análisis de opiniones", 
+    "Ingresa un contexto (post red social, retroalimentacion, reseña, etc)",
+    "Análisis de opiniones"
     ],
 
     placeholdersTexts: ["Escribe el texto a analizar", 
@@ -54,11 +55,11 @@ const SENTIMENT_ANALYSIS_TEXT = {
 
   english: {
 
-    ctaText: ["Enter a text and see if it is Positive, Negative o Neutral", 
-    "Enter the Context (social media post, message from another person, thought, etc.)"
+    ctaText: ["Discover the feelings of your text, with sentiment analysis", 
+    "Enter a Context (social media post, feedback, review, etc.)", "Sentiment analysis"
     ],
 
-    placeholdersTexts: ["Write the text to be analyzed",
+    placeholdersTexts: ["Enter the text to be analyzed",
     "Context"],
 
     ctaButtonTexts: [

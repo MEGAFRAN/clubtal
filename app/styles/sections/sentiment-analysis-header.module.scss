@@ -1,0 +1,45 @@
+@use "../abstracts/colors";
+
+.container {
+  align-items: center;
+  background-color: colors.$primary-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  height: 100vh;
+  max-width: 980px;
+  padding: clamp(4vh, 9vw, 4rem) clamp(5vw, 10vw, 18vw);
+  position: relative;
+  row-gap: clamp(3vh, 4vw, 4vh);
+  text-align: center;
+  z-index: 0;
+
+  h1 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    color: colors.$primary-gold;
+  }
+
+  p {
+    color: colors.$primary-gold;
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+
+    em {
+      color: colors.$primary-white;
+      font-size: clamp(1.2rem, 5vw, 1.6rem);
+      font-weight: 500;
+    }
+  }
+
+  .cta_wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: -1;
+
+    img {
+      height: clamp(280px, 30vw, 440px);
+    }
+  }
+}
