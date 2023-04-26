@@ -9,24 +9,19 @@ const TextAnalysis = ({
   textAreaPlaceholder,
   inputPlaceholder,
   buttonText,
+  requiredValueMessage,
 }: TextAnalysisProps) => {
   const [userMessageContext, setUserMessageContext] = useState("")
   const [userMessage, setUserMessage] = useState("")
   const [textAnalysisResponse, setTextAnalysisResponse] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (!userMessage.trim() || !userMessageContext.trim()) {
-      setErrorMessage("Please fill out both fields.")
-      return
-    }
 
     try {
       const response = await getSentimentAnalysis(userMessage, userMessageContext)
       const data = await response.json()
       setTextAnalysisResponse(data.content)
-      console.log(data)
     } catch (error) {
       console.error(error)
     }
@@ -34,7 +29,7 @@ const TextAnalysis = ({
 
   function handleValidation(event: React.FormEvent<HTMLInputElement>) {
     const input = event.target as HTMLInputElement
-    input.setCustomValidity("This field is required.")
+    input.setCustomValidity(requiredValueMessage)
   }
 
   function handleInput(event: React.FormEvent<HTMLInputElement>) {
@@ -77,11 +72,6 @@ const TextAnalysis = ({
         />
         <button type="submit">{buttonText}</button>
         {textAnalysisResponse && <p>{textAnalysisResponse}</p>}
-        {errorMessage && (
-          <p id="error-message" role="alert">
-            {errorMessage}
-          </p>
-        )}
       </form>
     </div>
   )

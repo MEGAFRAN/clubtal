@@ -19,7 +19,7 @@ const SENTIMENT_ANALYSIS_TEXT = {
     ],
 
     placeholdersTexts: ["Escribe el texto a analizar", 
-    "Contexto"
+    "Contexto", "Favor llenar este campo"
     ],
 
     ctaButtonTexts: [
@@ -60,7 +60,8 @@ const SENTIMENT_ANALYSIS_TEXT = {
     ],
 
     placeholdersTexts: ["Enter the text to be analyzed",
-    "Context"],
+    "Context", "Please fill this field"
+    ],
 
     ctaButtonTexts: [
       "Analyze text"

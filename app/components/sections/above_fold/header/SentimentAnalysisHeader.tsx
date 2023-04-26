@@ -11,6 +11,7 @@ const SentimentAnalysisHeader = ({ title, text, buttonText }: HeaderProps) => (
       buttonText={buttonText[0]}
       textAreaPlaceholder={text[0]}
       inputPlaceholder={text[1]}
+      requiredValueMessage={text[2]}
     />
   </header>
 )

@@ -258,4 +258,5 @@ export type TextAnalysisProps = {
   textAreaPlaceholder: string 
   inputPlaceholder: string
   buttonText: string
+  requiredValueMessage: string
 }
