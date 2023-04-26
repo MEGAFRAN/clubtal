@@ -2,6 +2,7 @@ import { useState } from "react"
 import getSentimentAnalysis from "../../services/text_analysis/get-sentiment-analysis"
 import styles from "../../styles/components/text-analysis.module.scss"
 import { TextAnalysisProps } from "../../constants/types/components_props/types"
+import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
 
 const TextAnalysis = ({
   textCta,
@@ -27,16 +28,6 @@ const TextAnalysis = ({
     }
   }
 
-  function handleValidation(event: React.FormEvent<HTMLInputElement>) {
-    const input = event.target as HTMLInputElement
-    input.setCustomValidity(requiredValueMessage)
-  }
-
-  function handleInput(event: React.FormEvent<HTMLInputElement>) {
-    const input = event.target as HTMLInputElement
-    input.setCustomValidity("")
-  }
-
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
@@ -51,8 +42,8 @@ const TextAnalysis = ({
           aria-label={textAreaPlaceholder}
           aria-invalid={!userMessage.trim()}
           aria-describedby="user-message-error"
-          onInvalid={handleValidation}
-          onInput={handleInput}
+          onInvalid={(event) => handleValidation(event, requiredValueMessage)}
+          onInput={(event) => handleInput(event)}
           required
         />
         <label htmlFor="user-message-context">{inputCta}</label>
@@ -66,8 +57,8 @@ const TextAnalysis = ({
           aria-label={inputPlaceholder}
           aria-invalid={!userMessageContext.trim()}
           aria-describedby="user-message-context-error"
-          onInvalid={handleValidation}
-          onInput={handleInput}
+          onInvalid={(event) => handleValidation(event, requiredValueMessage)}
+          onInput={(event) => handleInput(event)}
           required
         />
         <button type="submit">{buttonText}</button>

@@ -154,7 +154,7 @@ export interface HeaderProps {
   title: string[]
   text: string[]
   buttonText: string[]
-  sectionToScroll: string
+  sectionToScroll?: string
   withMagicLink?: boolean
 }
 
