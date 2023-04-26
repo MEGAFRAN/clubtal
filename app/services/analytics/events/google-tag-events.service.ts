@@ -6,5 +6,9 @@ const gtmEvents = {
   formSubmit(data: Record<string, any>, trigger = "form_submit", event = analyticsEvent): void {
     googleTagService.feedDataLayer(event, trigger, data)
   },
+  openChatbot(data: Record<string, any>, trigger = "open_chatbot", event = analyticsEvent): void {
+    googleTagService.feedDataLayer(event, trigger, data)
+  }
 }
 export default gtmEvents
+
