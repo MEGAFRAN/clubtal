@@ -49,7 +49,7 @@ const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
             isLoading={isLoading}
             buttonText={text[3]}
             loadingText={text[5]}
-            maxProgress={100}
+            maxProgress={150}
           />
         </>
       )}
