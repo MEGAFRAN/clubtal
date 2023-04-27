@@ -27,7 +27,7 @@ const SENTIMENT_ANALYSIS_TEXT = {
     ],
     
     feedback: ["Nos gusta tu opinion", "¿Como podemos mejorar la aplicación para ti?", 
-    "Escribe tu opinion", "Enviar Opinion", "Favor llenar este campo"],
+    "Escribe tu opinion", "Enviar Opinion", "Favor llenar este campo", "...Enviando"],
   },
 
   english: {
@@ -57,7 +57,7 @@ const SENTIMENT_ANALYSIS_TEXT = {
     ],
 
     feedback: ["We like your opinion", "How can we improve the application for you?", 
-    "Write your opinion", "Send Opinion", "Please fill this field"],
+    "Write your opinion", "Send Opinion", "Please fill this field", "...Sending"],
   },
 }
 export default SENTIMENT_ANALYSIS_TEXT

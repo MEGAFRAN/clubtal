@@ -6,10 +6,10 @@ import { handleInput, handleValidation } from "../../services/utils/validationHa
 import sendFeedbackMessage from "../../services/form_services/feedback_form/feedback-form.service"
 
 const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
-  const [messageResponse, setMessageResponse] = useState<string>("")
-  const [messageResponseStatus, setMessageResponseStatus] = useState<string>("")
-  const [formMessage, setFormMessage] = useState<string>("")
-  const [loading, setLoading] = useState<boolean>(false)
+  const [messageResponse, setMessageResponse] = useState("")
+  const [messageResponseStatus, setMessageResponseStatus] = useState("")
+  const [formMessage, setFormMessage] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
@@ -28,7 +28,6 @@ const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
     <form className={styles.container} onSubmit={onSubmit} aria-label="Feedback Form">
       {text && (
         <>
-          {" "}
           <h2>{text[1]}</h2>
           <label htmlFor="message">
             <input
@@ -45,9 +44,13 @@ const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
           <div aria-live="polite" aria-atomic="true">
             <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
           </div>
-          <button className={loading ? styles.loading : ""} type="submit" disabled={loading}>
-            {loading ? "Enviando..." : text[3]}
-          </button>
+          {loading ? (
+            <div className={styles.loading}>{text[5]}</div>
+          ) : (
+            <button disabled={loading} type="submit">
+              {text[3]}
+            </button>
+          )}
         </>
       )}
     </form>

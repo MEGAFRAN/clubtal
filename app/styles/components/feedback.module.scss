@@ -85,10 +85,6 @@
   }
 
   .loading {
-    background: colors.$secondary-gray;
-
-    &:hover {
-      @include mixins.cta-button-loading-hover ();
-    }
+    @include mixins.loading-animation ();   
   }
 }
