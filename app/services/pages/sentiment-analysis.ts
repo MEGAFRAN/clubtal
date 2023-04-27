@@ -1,15 +1,4 @@
-const directedTo = "#section-inner-rounded"
-const benefits = "#section-underline-list"
-const followingSteps = "#section-hamburger"
-const contact = "#section-contact"
-
 const SENTIMENT_ANALYSIS_TEXT = {
-  sectionsIds: {
-    directedTo,
-    benefits,
-    followingSteps,
-    contact,
-  },
 
   spanish: {
 
@@ -26,15 +15,6 @@ const SENTIMENT_ANALYSIS_TEXT = {
       "Analizar texto"
     ],
 
-    sectionsTitles: [
-      "¿Que hacemos?",
-      "Beneficios para tu negocio",
-      "¿Como lo hacemos?",
-      "Pruebame en tu sitio web",
-      "Pasos a seguir",
-      "Contáctanos"
-    ],
-
     formText: [
       "Cuentanos sobre ti",
       "¿Que necesitas en tu negocio?",
@@ -45,12 +25,9 @@ const SENTIMENT_ANALYSIS_TEXT = {
       "Escribe aqui tu email..",
       "Enviar mi mensaje"
     ],
-
-    chatbotText: {
-      initialMessage: "Hola! Soy Clubbot ¿Que deseas saber de nuestros servicios?",
-      inputPlaceholderText: "Escribe tu mensaje ...",
-      sendButtonText: "Enviar"
-    }
+    
+    feedback: ["Nos gusta tu opinion", "¿Como podemos mejorar la aplicación para ti?", 
+    "Escribe tu opinion", "Enviar Opinion", "Favor llenar este campo", "...Enviando"],
   },
 
   english: {
@@ -67,15 +44,6 @@ const SENTIMENT_ANALYSIS_TEXT = {
       "Analyze text"
     ],
 
-    sectionsTitles: [
-      "What do we do?",
-      "Benefits for your business",
-      "How do we do it?",
-      "Try me on your website",
-      "Steps to follow",
-      "Contact us"
-    ],
-
     formText: [
       "Tell us about yourself",
       "What do you need for your business?",
@@ -84,14 +52,12 @@ const SENTIMENT_ANALYSIS_TEXT = {
       "Write your name here...",
       "My email",
       "Write your email here...",
-      "Send my message"
+      "Send my message",
+      "Please fill this field"
     ],
 
-    chatbotText: {
-      initialMessage: "Hi! I'm Clubbot ¿What would you like to know about our services?",
-      inputPlaceholderText: "Type your message ...",
-      sendButtonText: "Send"
-    }
+    feedback: ["We like your opinion", "How can we improve the application for you?", 
+    "Write your opinion", "Send Opinion", "Please fill this field", "...Sending"],
   },
 }
 export default SENTIMENT_ANALYSIS_TEXT
