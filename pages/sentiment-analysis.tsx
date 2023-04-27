@@ -7,6 +7,7 @@ import SectionAnalytics from "../app/components/sections/analytics/SectionAnalyt
 import languageContext from "../app/contexts/languageContext/languageContext"
 import SentimentAnalysisHeader from "../app/components/sections/above_fold/header/SentimentAnalysisHeader"
 import SectionFeedback from "../app/components/sections/feedback/SectionFeedback"
+import SectionContentPage from "../app/components/sections/content_page/SectionContentPage"
 
 const SentimentAnalysis: NextPage = () => {
   const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
@@ -15,7 +16,7 @@ const SentimentAnalysis: NextPage = () => {
     ? { ...SENTIMENT_ANALYSIS_TEXT.spanish }
     : { ...SENTIMENT_ANALYSIS_TEXT.english }
 
-  const { ctaText, placeholdersTexts, ctaButtonTexts, feedback } = currentLanguage
+  const { ctaText, placeholdersTexts, ctaButtonTexts, feedback, content } = currentLanguage
 
   return (
     <languageContext.Provider value={{ isSecondaryLanguage, setSecondaryLanguage }}>
@@ -26,6 +27,7 @@ const SentimentAnalysis: NextPage = () => {
         buttonText={ctaButtonTexts}
       />
       <SectionFeedback formText={feedback} title={feedback[0]} />
+      <SectionContentPage content={content} />
       <SectionAnalytics />
     </languageContext.Provider>
   )

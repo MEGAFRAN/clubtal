@@ -3,6 +3,7 @@ import getSentimentAnalysis from "../../services/text_analysis/get-sentiment-ana
 import styles from "../../styles/components/text-analysis.module.scss"
 import { TextAnalysisProps } from "../../constants/types/components_props/types"
 import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
+import Loading from "../loading/Loading"
 
 const TextAnalysis = ({
   textCta,
@@ -11,20 +12,25 @@ const TextAnalysis = ({
   inputPlaceholder,
   buttonText,
   requiredValueMessage,
+  loadingText,
 }: TextAnalysisProps) => {
   const [userMessageContext, setUserMessageContext] = useState("")
   const [userMessage, setUserMessage] = useState("")
   const [textAnalysisResponse, setTextAnalysisResponse] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     try {
+      setIsLoading(true)
       const response = await getSentimentAnalysis(userMessage, userMessageContext)
       const data = await response.json()
       setTextAnalysisResponse(data.content)
+      setIsLoading(false)
     } catch (error) {
       console.error(error)
+      setIsLoading(false)
     }
   }
 
@@ -61,8 +67,13 @@ const TextAnalysis = ({
           onInput={(event) => handleInput(event)}
           required
         />
-        <button type="submit">{buttonText}</button>
-        {textAnalysisResponse && <p>{textAnalysisResponse}</p>}
+        <Loading
+          isLoading={isLoading}
+          buttonText={buttonText}
+          loadingText={loadingText}
+          maxProgress={350}
+        />
+        {!isLoading && textAnalysisResponse && <p>{textAnalysisResponse}</p>}
       </form>
     </div>
   )

@@ -1,0 +1,36 @@
+@use "../abstracts/colors";
+
+.container  {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+    progress {
+        width: 100%; 
+        height: 50px;
+        appearance: none;
+        border: 2px dotted colors.$primary-black;
+        background-color: colors.$primary-green;
+
+        &::-moz-progress-bar {
+            background-color: colors.$primary-white;
+          }
+
+          &::-webkit-progress-value {
+            background-color: colors.$primary-green;
+          }
+
+          &::-webkit-progress-bar {
+            background-color: colors.$primary-white;
+          }
+     }
+
+     span {
+        position: absolute;
+        color: colors.$primary-black;
+        padding: 1rem;
+     }
+}
+
+
