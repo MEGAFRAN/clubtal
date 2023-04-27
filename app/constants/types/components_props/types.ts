@@ -154,7 +154,7 @@ export interface HeaderProps {
   title: string[]
   text: string[]
   buttonText: string[]
-  sectionToScroll: string
+  sectionToScroll?: string
   withMagicLink?: boolean
 }
 
@@ -187,6 +187,10 @@ type ContentPost = {
 
 export interface SectionContentPostProps {
   contentPost: ContentPost[]
+}
+
+export interface SectionContentPageProps {
+  content: Record<string, any>
 }
 
 export interface Post {
@@ -240,4 +244,31 @@ export interface LanguageContextValue {
 
 export interface PageMonthProps {
   listPost: Post[]
+}
+
+export type LoginFormProps = {
+  onSubmit: (email: string) => Promise<void>
+  isSubmitting: boolean
+  message: string
+}
+
+export interface MagicLinkResponse {
+  token: string
+}
+
+export type TextAnalysisProps = { 
+  textCta: string
+  inputCta: string
+  textAreaPlaceholder: string 
+  inputPlaceholder: string
+  buttonText: string
+  requiredValueMessage: string
+  loadingText: string
+}
+
+export type LoadingProps = {
+  isLoading: boolean
+  buttonText: string
+  loadingText: string
+  maxProgress: number
 }

@@ -1,11 +1,6 @@
 import { useState } from "react"
 import styles from "../../styles/components/login-form.module.scss"
-
-type LoginFormProps = {
-  onSubmit: (email: string) => Promise<void>
-  isSubmitting: boolean
-  message: string
-}
+import { LoginFormProps } from "../../constants/types/components_props/types"
 
 const LoginForm = ({ onSubmit, isSubmitting, message }: LoginFormProps) => {
   const [email, setEmail] = useState("")
