@@ -4,6 +4,7 @@ import styles from "../../styles/components/text-analysis.module.scss"
 import { TextAnalysisProps } from "../../constants/types/components_props/types"
 import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
 import Loading from "../loading/Loading"
+import gtmEvents from "../../services/analytics/events/google-tag-events.service"
 
 const TextAnalysis = ({
   textCta,
@@ -23,6 +24,7 @@ const TextAnalysis = ({
     event.preventDefault()
 
     try {
+      gtmEvents.sendMessageTextAnalysis({ userMessage, userMessageContext })
       setIsLoading(true)
       const response = await getSentimentAnalysis(userMessage, userMessageContext)
       const data = await response.json()
