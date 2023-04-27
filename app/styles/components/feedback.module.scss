@@ -83,8 +83,4 @@
       @include mixins.cta-button-hover ();
     }
   }
-
-  .loading {
-    @include mixins.loading-animation ();   
-  }
 }

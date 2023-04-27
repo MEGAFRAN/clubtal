@@ -4,23 +4,24 @@ import { SEND_FEEDBACK_EMAIL } from "../../services/api/variables"
 import styles from "../../styles/components/feedback.module.scss"
 import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
 import sendFeedbackMessage from "../../services/form_services/feedback_form/feedback-form.service"
+import Loading from "../loading/Loading"
 
 const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
   const [messageResponse, setMessageResponse] = useState("")
   const [messageResponseStatus, setMessageResponseStatus] = useState("")
   const [formMessage, setFormMessage] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
 
-    setLoading(true)
+    setIsLoading(true)
     sendFeedbackMessage(
       endpoint,
       formMessage,
       setMessageResponseStatus,
       setMessageResponse,
-      setLoading,
+      setIsLoading,
     )
   }
 
@@ -44,13 +45,12 @@ const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
           <div aria-live="polite" aria-atomic="true">
             <p className={`response-mensaje--${messageResponseStatus}`}>{messageResponse}</p>
           </div>
-          {loading ? (
-            <div className={styles.loading}>{text[5]}</div>
-          ) : (
-            <button disabled={loading} type="submit">
-              {text[3]}
-            </button>
-          )}
+          <Loading
+            isLoading={isLoading}
+            buttonText={text[3]}
+            loadingText={text[5]}
+            maxProgress={100}
+          />
         </>
       )}
     </form>

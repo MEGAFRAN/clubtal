@@ -1,0 +1,29 @@
+@use "../base/typography";
+@use "../abstracts/colors";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: justify;
+    font-family: typography.$primary-font-family;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+    color: colors.$secondary-black;
+    background-color: #fff;
+    text-align: left;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 1rem;
+
+    p {
+        color: #333;
+    }
+
+    li {
+        font-weight: normal;
+        padding-bottom: 16px;
+    }
+}

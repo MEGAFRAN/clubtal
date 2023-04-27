@@ -189,6 +189,10 @@ export interface SectionContentPostProps {
   contentPost: ContentPost[]
 }
 
+export interface SectionContentPageProps {
+  content: Record<string, any>
+}
+
 export interface Post {
   title: string
   id: number
@@ -259,4 +263,12 @@ export type TextAnalysisProps = {
   inputPlaceholder: string
   buttonText: string
   requiredValueMessage: string
+  loadingText: string
+}
+
+export type LoadingProps = {
+  isLoading: boolean
+  buttonText: string
+  loadingText: string
+  maxProgress: number
 }
