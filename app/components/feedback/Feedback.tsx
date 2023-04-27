@@ -5,6 +5,7 @@ import styles from "../../styles/components/feedback.module.scss"
 import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
 import sendFeedbackMessage from "../../services/form_services/feedback_form/feedback-form.service"
 import Loading from "../loading/Loading"
+import gtmEvents from "../../services/analytics/events/google-tag-events.service"
 
 const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
   const [messageResponse, setMessageResponse] = useState("")
@@ -15,6 +16,7 @@ const Feedback = ({ text, endpoint = SEND_FEEDBACK_EMAIL }: FormProps) => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
 
+    gtmEvents.sendFeedbackTextAnalysis({ formMessage })
     setIsLoading(true)
     sendFeedbackMessage(
       endpoint,
