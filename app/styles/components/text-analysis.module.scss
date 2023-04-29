@@ -14,19 +14,17 @@
       gap: 1rem;
     }
 
-    input {
+    textarea, input {
       padding: 1rem;
       font-size: 1.2rem;
-      border: 2px solid #ccc;
+      border: 2px solid colors.$secondary-gray;
       border-radius: 5px;
       resize: none;
       width: 90vw;
       max-width: 600px;
 
-      &:focus {
-        outline: none;
-        border-color: #5a5a5a;
-      }
+      @include mixins.field-validation ();
+
     }
 
     button {

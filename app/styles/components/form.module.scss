@@ -26,9 +26,7 @@
     transition: animations.$regular-transition;
     width: 100%;
 
-    &:focus {
-      border-bottom: 4px solid colors.$primary-gold;
-    }
+    @include mixins.field-validation ();
   }
 
   label {
@@ -48,15 +46,12 @@
       border-radius: 10px;
       box-sizing: border-box;
       font-family: Montserrat, sans-serif;
-      outline: 0;
       padding: 10px;
       resize: none;
       transition: animations.$regular-transition;
       width: 100%;
 
-      &:focus {
-        border-bottom: 4px solid colors.$primary-gold;
-      }
+      @include mixins.field-validation ();
     }
   }
 

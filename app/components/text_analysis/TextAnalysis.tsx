@@ -40,10 +40,9 @@ const TextAnalysis = ({
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="user-message">{textCta}</label>
-        <input
+        <textarea
           className={styles.user_message}
           id="user-message"
-          type="text"
           placeholder={textAreaPlaceholder}
           value={userMessage}
           onChange={(event) => setUserMessage(event.target.value)}
