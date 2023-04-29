@@ -32,3 +32,13 @@
 @mixin linkcard-post-hover {
   color: colors.$primary-gold;
 }
+
+@mixin field-validation {
+  &:focus {
+    outline-color: colors.$secondary-gray;
+
+    &:invalid {
+      outline-color: colors.$primary-gold;
+    }
+  }
+}
