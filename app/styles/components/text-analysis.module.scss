@@ -46,15 +46,18 @@
       }
     }
 
-    p {
+    .analysis_result {
       background-color: white;
-      color: black;
+      color: colors.$primary-black;
       width: 90vw;
       max-width: 600px;
       height: 20vh;
       max-height: 300px;
       overflow-y: scroll; 
       font-size: 1rem;
+      outline: solid 2px colors.$primary-gold;
+      border-radius: 5px;
+      outline-width: thick;
     }
     
     .user_message {

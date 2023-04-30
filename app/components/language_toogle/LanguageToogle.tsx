@@ -1,46 +1,36 @@
 // LanguageToogle.js
-import { useEffect, useContext } from "react"
+import { useEffect, useContext, useCallback } from "react"
 import styles from "../../styles/components/language-toogle.module.scss"
 import languageContext from "../../contexts/languageContext/languageContext"
 import {
   LanguageContextValue,
   LanguageToogleProps,
 } from "../../constants/types/components_props/types"
+import getUserLanguage from "../../services/utils/languageValidator"
 
 const LanguageToogle = ({
-  mainLanguage = "Esp",
-  secondaryLanguage = "Eng",
+  mainLanguage = "Eng",
+  secondaryLanguage = "Esp",
 }: LanguageToogleProps) => {
-  const { isSecondaryLanguage, setSecondaryLanguage } = useContext(
-    languageContext,
-  ) as LanguageContextValue
+  const { userLanguage, setUserLanguage } = useContext(languageContext) as LanguageContextValue
 
   useEffect(() => {
-    const getUserLanguage = () => {
-      const { language } = navigator
+    setUserLanguage(getUserLanguage())
+  }, [setUserLanguage])
 
-      if (language.startsWith("en")) return "en"
-      if (language.startsWith("es")) return "es"
-      return "en"
-    }
-
-    const userLanguage = getUserLanguage()
-    setSecondaryLanguage(userLanguage === "en")
-  }, [setSecondaryLanguage])
-
-  const toggleLanguage = () => {
-    setSecondaryLanguage(!isSecondaryLanguage)
-  }
+  const toggleLanguage = useCallback(() => {
+    setUserLanguage(userLanguage === "english" ? "español" : "english")
+  }, [setUserLanguage, userLanguage])
 
   return (
     <>
-      {isSecondaryLanguage ? (
+      {userLanguage === "english" ? (
         <button className={styles.language_toogle} onClick={toggleLanguage}>
-          {mainLanguage}
+          {secondaryLanguage}
         </button>
       ) : (
         <button className={styles.language_toogle} onClick={toggleLanguage}>
-          {secondaryLanguage}
+          {mainLanguage}
         </button>
       )}
     </>

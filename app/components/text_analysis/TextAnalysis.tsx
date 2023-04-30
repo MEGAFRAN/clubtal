@@ -72,9 +72,11 @@ const TextAnalysis = ({
           isLoading={isLoading}
           buttonText={buttonText}
           loadingText={loadingText}
-          maxProgress={350}
+          maxProgress={160}
         />
-        {!isLoading && textAnalysisResponse && <p>{textAnalysisResponse}</p>}
+        {!isLoading && textAnalysisResponse && (
+          <p className={styles.analysis_result}>{textAnalysisResponse}</p>
+        )}
       </form>
     </div>
   )

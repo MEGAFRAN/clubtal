@@ -1,4 +1,4 @@
-import { Dispatch, MouseEventHandler, SetStateAction } from "react"
+import {MouseEventHandler} from "react"
 
 export type TextProps = {
   text: string
@@ -35,8 +35,8 @@ export type CardProps = {
 }
 
 export type LanguageToogleProps = {
-  mainLanguage?: "Esp"
-  secondaryLanguage?: "Eng"
+  mainLanguage?: "Eng"
+  secondaryLanguage?: "Esp"
 }
 
 export type ListProps = {
@@ -238,8 +238,8 @@ export interface SectionCardPostProps extends SectionAboutPostProps {
   className?: string
 }
 export interface LanguageContextValue {
-  isSecondaryLanguage: boolean
-  setSecondaryLanguage: (isSecondaryLanguage: boolean) => void
+  userLanguage: "english" | "español"
+  setUserLanguage: (userLanguage: "english" | "español") => void
 }
 
 export interface PageMonthProps {
@@ -272,3 +272,9 @@ export type LoadingProps = {
   loadingText: string
   maxProgress: number
 }
+
+type CurrentLanguage = {
+  userLanguage: string
+}
+
+export type SocialSharingProps = CurrentLanguage 
