@@ -2,7 +2,10 @@ import { useState } from "react"
 import { FormProps } from "../../constants/types/components_props/types"
 import { SEND_FEEDBACK_EMAIL } from "../../services/api/variables"
 import styles from "../../styles/components/feedback.module.scss"
-import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
+import {
+  handleInput,
+  handleValidation,
+} from "../../services/utils/general/validation_handlers/validationHandlers"
 import sendFeedbackMessage from "../../services/form_services/feedback_form/feedback-form.service"
 import Loading from "../loading/Loading"
 import gtmEvents from "../../services/analytics/events/google-tag-events.service"

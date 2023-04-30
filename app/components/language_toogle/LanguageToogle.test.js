@@ -5,8 +5,18 @@ import LanguageToogle from "./LanguageToogle"
 
 describe("<LanguageToogle />", () => {
 
+    const originalLanguage = window.navigator.language
+
+    afterEach(() => {
+        jest.spyOn(React, "useContext").mockRestore()
+
+        Object.defineProperty(window.navigator, "language", {
+            configurable: true,
+            get: () => originalLanguage,
+        })
+    })
+
     it("Should display the secondary language toggle button when clicked", () => {
-        const originalLanguage = window.navigator.language
         Object.defineProperty(window.navigator, "language", {
             configurable: true,
             get: () => "es-CO", 
@@ -24,16 +34,9 @@ describe("<LanguageToogle />", () => {
         fireEvent.click(screen.getByRole("button"))
 
         expect(getByText("Eng")).toBeInTheDocument()
-
-        jest.spyOn(React, "useContext").mockRestore()
-        Object.defineProperty(window.navigator, "language", {
-            configurable: true,
-            get: () => originalLanguage,
-        })
     })
       
     it("Should set default language to english when the browser language is not supported", () => {
-        const originalLanguage = window.navigator.language
         Object.defineProperty(navigator, "language", {
             value: "fr-FR",
             writable: true,
@@ -44,12 +47,6 @@ describe("<LanguageToogle />", () => {
 
         render(<LanguageToogle />)
         expect(setUserLanguageMock).toHaveBeenCalledWith("english")
-
-        jest.spyOn(React, "useContext").mockRestore()
-        Object.defineProperty(window.navigator, "language", {
-            configurable: true,
-            get: () => originalLanguage,
-        })
     })
 
 })

@@ -1,4 +1,4 @@
-import { ChatbotTagGroups } from "../../constants/types/components_props/types"
+import { ChatbotTagGroups } from "../../../../constants/types/components_props/types"
 
 /* eslint-disable no-plusplus */
 export const getPageText = () => {

@@ -9,7 +9,7 @@ import SentimentAnalysisHeader from "../app/components/sections/above_fold/heade
 import SectionFeedback from "../app/components/sections/feedback/SectionFeedback"
 import SectionContentPage from "../app/components/sections/content_page/SectionContentPage"
 import SocialSharing from "../app/components/social_sharing/SocialSharing"
-import getUserLanguage from "../app/services/utils/languageValidator"
+import getUserLanguage from "../app/services/utils/general/language_validator/languageValidator"
 
 const SentimentAnalysis: NextPage = () => {
   const [userLanguage, setUserLanguage] = useState<"english" | "español">("english")

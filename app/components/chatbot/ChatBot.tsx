@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, FormEvent } from "react"
 import { ChatbotMessage, ChatbotProps } from "../../constants/types/components_props/types"
 import comunicateChatBot from "../../services/form_services/comunicate_chat_bot/comunicate-chat-bot.service"
-import { getPageText, initialContext } from "../../services/utils/chatbot"
+import { getPageText, initialContext } from "../../services/utils/general/chatbot/chatbot"
 import styles from "../../styles/components/chat.module.scss"
 
 const ChatBot = ({

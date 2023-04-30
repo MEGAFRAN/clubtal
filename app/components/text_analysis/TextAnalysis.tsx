@@ -2,7 +2,10 @@ import { useState } from "react"
 import getSentimentAnalysis from "../../services/text_analysis/get-sentiment-analysis"
 import styles from "../../styles/components/text-analysis.module.scss"
 import { TextAnalysisProps } from "../../constants/types/components_props/types"
-import { handleInput, handleValidation } from "../../services/utils/validationHandlers"
+import {
+  handleInput,
+  handleValidation,
+} from "../../services/utils/general/validation_handlers/validationHandlers"
 import Loading from "../loading/Loading"
 import gtmEvents from "../../services/analytics/events/google-tag-events.service"
 

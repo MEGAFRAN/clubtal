@@ -6,7 +6,7 @@ import {
   LanguageContextValue,
   LanguageToogleProps,
 } from "../../constants/types/components_props/types"
-import getUserLanguage from "../../services/utils/languageValidator"
+import getUserLanguage from "../../services/utils/general/language_validator/languageValidator"
 
 const LanguageToogle = ({
   mainLanguage = "Eng",
