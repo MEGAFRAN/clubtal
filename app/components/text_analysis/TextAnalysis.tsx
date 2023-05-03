@@ -85,7 +85,7 @@ const TextAnalysis = ({
           isLoading={isLoading}
           buttonText={buttonText}
           loadingText={loadingText}
-          maxProgress={50}
+          maxProgress={100}
         />
         {!isLoading &&
         sentimentAnalysis?.length &&
