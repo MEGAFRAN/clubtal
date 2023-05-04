@@ -2,8 +2,8 @@ import { useState } from "react"
 import { NavbarProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/components/navbar.module.scss"
 import Button from "../../../button/Button"
-import LanguageToogle from "../../../language_toogle/LanguageToogle"
 import Link from "../../../link/Link"
+import LanguagesToogle from "../../../language_toogle/LanguagesToogle"
 
 const Navbar = ({
   options,
@@ -30,6 +30,7 @@ const Navbar = ({
       </li>
     ))
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
+  const[buttonHome,ButtonContact,buttonOther] = buttonText || []
   const handleToggle = () => {
     if (withToogleMenu) {
       setToggleMenu(!toggleMenu)
@@ -38,17 +39,17 @@ const Navbar = ({
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
       {withHomeButton && (
-        <Button aria-label="Call to Action" text={buttonText[8]} style="navbar" linkTo="/" />
+        <Button aria-label="Call to Action" text={buttonHome} style="navbar" linkTo="/" />
       )}
       {withContactButton && (
         <Button
           aria-label="Call to Action"
-          text={buttonText[0]}
+          text={ButtonContact}
           style="navbar"
           scrollToSection={sectionToScroll}
         />
       )}
-      {withLanguageToggle && <LanguageToogle />}
+      {withLanguageToggle && <LanguagesToogle/>}
       {withLoginButton && (
         <Button aria-label="Call to Action" text="Registro / Login" style="cta" linkTo="/login" />
       )}
@@ -58,7 +59,7 @@ const Navbar = ({
 
           <Button
             aria-label="Call to Action"
-            text={buttonText[0]}
+            text={buttonOther}
             style="cta"
             scrollToSection={sectionToScroll}
           />
