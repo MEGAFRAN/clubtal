@@ -14,9 +14,10 @@ import SectionUnderlineList from "../app/components/sections/underline_list/Sect
 import languageContext from "../app/contexts/languageContext/languageContext"
 
 const Home: NextPage = () => {
-  const [isSecondaryLanguage, setSecondaryLanguage] = useState<boolean>(false)
+  const [userLanguage, setUserLanguage] = useState<"english" | "español">("english")
 
-  const currentLanguage = isSecondaryLanguage ? { ...HOME_TEXT.english } : { ...HOME_TEXT.spanish }
+  const appLanguage =
+    userLanguage === "español" ? { ...HOME_TEXT.spanish } : { ...HOME_TEXT.english }
 
   const {
     headerTitle,
@@ -29,10 +30,10 @@ const Home: NextPage = () => {
     followingSteps,
     formText,
     chatbotText,
-  } = currentLanguage
+  } = appLanguage
 
   return (
-    <languageContext.Provider value={{ isSecondaryLanguage, setSecondaryLanguage }}>
+    <languageContext.Provider value={{ userLanguage, setUserLanguage }}>
       <Head>{HOME_HEAD}</Head>
 
       <Header

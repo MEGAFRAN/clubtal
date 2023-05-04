@@ -46,15 +46,18 @@
       }
     }
 
-    p {
-      background-color: white;
-      color: black;
+    .analysis_result {
+      background-color: colors.$primary-white;
+      color: colors.$primary-black;
       width: 90vw;
       max-width: 600px;
       height: 20vh;
       max-height: 300px;
       overflow-y: scroll; 
       font-size: 1rem;
+      outline: solid 2px colors.$primary-gold;
+      border-radius: 5px;
+      outline-width: thick;
     }
     
     .user_message {
@@ -65,6 +68,20 @@
     .user_message_context {
       height: 5vh;
       max-height: 100px;
+    }
+
+    .results_container { 
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 20px;
+      border: 2px solid colors.$primary-gold;
+      text-align: left;
+
+      .sentiment_analysis, .key_phrases, .entity_recognition {
+        display: flex;
+        flex-direction: column;
+      }
     }
     
   }

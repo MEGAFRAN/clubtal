@@ -2,9 +2,9 @@ const SENTIMENT_ANALYSIS_TEXT = {
 
   spanish: {
 
-    ctaText: ["Descubre las emociones de tu texto con análisis de opiniones.",
+    ctaText: ["Descubre la informacion de tu texto (sentimientos, frases clave, entidades) con análisis de texto.",
     "Ingresa un contexto (publicación en redes sociales, retroalimentación, reseña, etc).",
-    "Análisis de opiniones."
+    "Análisis de texto."
     ],
     
     placeholdersTexts: ["Escribe el texto que deseas analizar.",
@@ -71,8 +71,8 @@ const SENTIMENT_ANALYSIS_TEXT = {
 
   english: {
 
-    ctaText: ["Discover the feelings of your text, with sentiment analysis", 
-    "Enter a Context (social media post, feedback, review, etc.)", "Sentiment analysis"
+    ctaText: ["Discover the information of your text (sentiments, key phrases, entities), with text analysis", 
+    "Enter a Context (social media post, feedback, review, etc.)", "Text analysis"
     ],
 
     placeholdersTexts: ["Enter the text to be analyzed",

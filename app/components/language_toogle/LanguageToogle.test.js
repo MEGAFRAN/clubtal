@@ -5,29 +5,27 @@ import LanguageToogle from "./LanguageToogle"
 
 describe("<LanguageToogle />", () => {
 
-    it("Should update languagecontext values correctly based on the user's preferred language and toggle button clicks", () => {
-        const setSecondaryLanguageMock = jest.fn()
-        jest.spyOn(React, "useContext").mockImplementation(() => ({ isSecondaryLanguage: false, setSecondaryLanguage: setSecondaryLanguageMock }))
+    const originalLanguage = window.navigator.language
 
-        render(<LanguageToogle />)
-        expect(setSecondaryLanguageMock).toHaveBeenCalledWith(true)
-        fireEvent.click(screen.getByRole("button"))
-        expect(setSecondaryLanguageMock).toHaveBeenCalledWith(true)
-
+    afterEach(() => {
         jest.spyOn(React, "useContext").mockRestore()
+
+        Object.defineProperty(window.navigator, "language", {
+            configurable: true,
+            get: () => originalLanguage,
+        })
     })
 
     it("Should display the secondary language toggle button when clicked", () => {
-        const originalLanguage = window.navigator.language
         Object.defineProperty(window.navigator, "language", {
             configurable: true,
             get: () => "es-CO", 
         })
 
-        const setIsSecondaryLanguageMock = jest.fn()
+        const setUserLanguageMock = jest.fn()
         const mockContextValue = {
-          isSecondaryLanguage: false,
-          setSecondaryLanguage: setIsSecondaryLanguageMock,
+            userLanguage: "es-CO",
+          setUserLanguage: setUserLanguageMock,
         }
       
         jest.spyOn(React, "useContext").mockImplementation(() => mockContextValue)
@@ -36,32 +34,19 @@ describe("<LanguageToogle />", () => {
         fireEvent.click(screen.getByRole("button"))
 
         expect(getByText("Eng")).toBeInTheDocument()
-
-        jest.spyOn(React, "useContext").mockRestore()
-        Object.defineProperty(window.navigator, "language", {
-            configurable: true,
-            get: () => originalLanguage,
-        })
     })
       
     it("Should set default language to english when the browser language is not supported", () => {
-        const originalLanguage = window.navigator.language
         Object.defineProperty(navigator, "language", {
             value: "fr-FR",
             writable: true,
         })
-        const setSecondaryLanguageMock = jest.fn()
-        jest.spyOn(React, "useContext").mockImplementation(() => ({ isSecondaryLanguage: false, setSecondaryLanguage: setSecondaryLanguageMock }))
+        const setUserLanguageMock = jest.fn()
+        jest.spyOn(React, "useContext").mockImplementation(() => ({ userLanguage: "fr-FR", setUserLanguage: setUserLanguageMock }))
 
 
         render(<LanguageToogle />)
-        expect(setSecondaryLanguageMock).toHaveBeenCalledWith(true)
-
-        jest.spyOn(React, "useContext").mockRestore()
-        Object.defineProperty(window.navigator, "language", {
-            configurable: true,
-            get: () => originalLanguage,
-        })
+        expect(setUserLanguageMock).toHaveBeenCalledWith("english")
     })
 
 })
