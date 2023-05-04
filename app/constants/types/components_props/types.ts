@@ -320,3 +320,22 @@ export interface EntityRecognitionState {
     confidenceScore: number
   }[]
 }
+
+export interface MagicLink {
+  button:      string;
+  messageOk:   string;
+  messageFail: string;
+}
+export interface HomePageProps  {
+  headerTitle:          string[];
+  headerText:           string[];
+  headerButtons:         string[];
+  magicLink:            MagicLink;
+  sectionInnerRounded:  SectionGeneralProps;
+  sectionUnderLineList: SectionGeneralProps;
+  sectionDottedCard:    SectionGeneralProps;
+  sectionHamburger:     SectionGeneralProps;
+  form:                 SectionContactProps;
+  chatbot:              ChatbotProps;
+  sectionContact:       string;
+}
