@@ -1,5 +1,5 @@
-const title = "Clubtal Sentiment Analysis App | AI-Powered Solution for Business Insights"
-const description = `Discover Clubtal's AI-powered sentiment analysis app, designed to provide 
+const title = "Clubtal Text Analysis App | AI-Powered Solution for Business Insights"
+const description = `Discover Clubtal's AI-powered text analysis app, designed to provide 
   businesses with actionable insights on customer emotions and opinions. Automate processes, 
   reduce costs, and make data-driven decisions with our cutting-edge technology. Try it now!`
 const url = "https://clubtal.com/"
@@ -7,7 +7,7 @@ const name = "Clubtal"
 const favicon = "/favicon.ico"
 const themeColor = "#212121"
 
-const SENTIMENT_ANALYSIS_HEAD = (
+const TEXT_ANALYSIS_HEAD = (
   <>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="height=device-height, initial-scale=1.0" />
@@ -30,4 +30,4 @@ const SENTIMENT_ANALYSIS_HEAD = (
     <meta name="theme-color" content={themeColor} />
   </>
 )
-export default SENTIMENT_ANALYSIS_HEAD
+export default TEXT_ANALYSIS_HEAD

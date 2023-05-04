@@ -263,7 +263,8 @@ export type TextAnalysisProps = {
   inputPlaceholder: string
   buttonText: string
   requiredValueMessage: string
-  loadingText: string
+  loadingText: string,
+  userLanguage: string
 }
 
 export type LoadingProps = {
@@ -278,3 +279,44 @@ type CurrentLanguage = {
 }
 
 export type SocialSharingProps = CurrentLanguage 
+
+export interface SentimentAnalysisState {
+  id: string
+  warnings: string[]
+  sentiment: string
+  confidenceScores: {
+    positive: number
+    neutral: number
+    negative: number
+  }
+  sentences: {
+    text: string
+    sentiment: string
+    confidenceScores: {
+      positive: number
+      neutral: number
+      negative: number
+    }
+    offset: number
+    length: number
+    opinions: any[]
+  }[]
+}
+
+export interface KeyPhrasesState {
+  id: string
+  warnings: string[]
+  keyPhrases: string[]
+}
+
+export interface EntityRecognitionState {
+  id: string
+  warnings: string[]
+  entities: {
+    text: string
+    category: string
+    offset: number
+    length: number
+    confidenceScore: number
+  }[]
+}

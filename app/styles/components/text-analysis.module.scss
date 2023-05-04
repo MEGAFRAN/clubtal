@@ -47,7 +47,7 @@
     }
 
     .analysis_result {
-      background-color: white;
+      background-color: colors.$primary-white;
       color: colors.$primary-black;
       width: 90vw;
       max-width: 600px;
@@ -68,6 +68,20 @@
     .user_message_context {
       height: 5vh;
       max-height: 100px;
+    }
+
+    .results_container { 
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 20px;
+      border: 2px solid colors.$primary-gold;
+      text-align: left;
+
+      .sentiment_analysis, .key_phrases, .entity_recognition {
+        display: flex;
+        flex-direction: column;
+      }
     }
     
   }

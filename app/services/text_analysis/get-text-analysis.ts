@@ -1,8 +1,8 @@
-import { GET_SENTIMENT_ANALYSIS } from "../api/variables"
+import { GET_TEXT_ANALYSIS } from "../api/variables"
 import { handleError, handleResponse } from "../utils/reponse/response"
 
-async function getSentimentAnalysis(text: string, context: string): Promise<Response> {
-  return fetch(GET_SENTIMENT_ANALYSIS, {
+async function getTextAnalysis(text: string, context: string): Promise<Response> {
+  return fetch(GET_TEXT_ANALYSIS, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,4 +13,4 @@ async function getSentimentAnalysis(text: string, context: string): Promise<Resp
     .catch(handleError)
 }
 
-export default getSentimentAnalysis
+export default getTextAnalysis
