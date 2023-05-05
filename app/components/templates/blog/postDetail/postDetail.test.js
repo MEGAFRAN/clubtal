@@ -1,12 +1,18 @@
 import { cleanup, render } from "@testing-library/react"
 import "@testing-library/jest-dom"
+import { useRouter } from "next/router"
 import PostDetail from "./PostDetail"
 import MockPost from "../../../../constants/mocks/mockPost"
 
+jest.mock("next/router", () => ({
+  useRouter: jest.fn(),
+}))
 describe("<PostDetail/>", () => {
   let component
   const mockInformation = MockPost
+  const mockRouter = { query: { locale: "en" } }
   beforeEach(() => {
+    useRouter.mockImplementation(() => mockRouter)
     component = render(
       <PostDetail
         titlePost={mockInformation[0].title}
