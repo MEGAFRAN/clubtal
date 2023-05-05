@@ -330,7 +330,6 @@ export interface HomePageProps  {
   headerTitle:          string[];
   headerText:           string[];
   headerButtons:         string[];
-  magicLink:            MagicLink;
   sectionInnerRounded:  SectionGeneralProps;
   sectionUnderLineList: SectionGeneralProps;
   sectionDottedCard:    SectionGeneralProps;

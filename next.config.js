@@ -4,7 +4,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-
+  trailingSlash: true,
   webpack(config) {
     const modifiedConfig = {
       ...config,
@@ -19,10 +19,6 @@ const nextConfig = {
 
     return modifiedConfig
   },
-  i18n: {
-    locales: ["en","es"],
-    defaultLocale: "en",
-  }
 }
 
 module.exports = nextConfig
