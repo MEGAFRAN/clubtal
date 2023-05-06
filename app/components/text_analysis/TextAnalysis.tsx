@@ -13,6 +13,7 @@ import {
 } from "../../services/utils/general/validation_handlers/validationHandlers"
 import Loading from "../loading/Loading"
 import gtmEvents from "../../services/analytics/events/google-tag-events.service"
+import FileUploader from "../file_uploader/FileUploader"
 
 const TextAnalysis = ({
   textCta,
@@ -30,6 +31,10 @@ const TextAnalysis = ({
   const [keyPhrases, setKeyPhrases] = useState<KeyPhrasesState[]>([])
   const [entityRecognition, setEntityRecognition] = useState<EntityRecognitionState[]>([])
   const [isLoading, setIsLoading] = useState(false)
+
+  const handleDataUpdate = (data: string) => {
+    setUserMessage(data)
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -53,6 +58,7 @@ const TextAnalysis = ({
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="user-message">{textCta}</label>
+        <FileUploader onDataUpdate={handleDataUpdate} />
         <textarea
           className={styles.user_message}
           id="user-message"

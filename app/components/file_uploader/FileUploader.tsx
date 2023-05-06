@@ -1,20 +1,31 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import handleFileUpload from "../../services/utils/general/file_loader/fileLoader"
+import styles from "../../styles/components/file-uploader.module.scss"
+import { FileUploaderProps } from "../../constants/types/components_props/types"
 
-const FileUploader: React.FC = () => {
-  const [data, setData] = useState<string[]>([])
+const FileUploader = ({ onDataUpdate }: FileUploaderProps) => {
+  const [data, setData] = useState("")
 
-  const handleFileData = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const arrayFileData = await handleFileUpload(event)
-    if (arrayFileData) setData(arrayFileData)
+  const handleFileData = (event: React.ChangeEvent<HTMLInputElement>) => {
+    handleFileUpload(event, setData)
   }
 
+  useEffect(() => {
+    if (data.length) onDataUpdate(data)
+  }, [data])
+
   return (
-    <div>
-      <input type="file" accept=".rtf, .txt, .doc, .docx" onChange={handleFileData} />
-      {data.map((row, index) => (
-        <div key={index}>{row}</div>
-      ))}
+    <div className={styles.container}>
+      <label htmlFor="file-upload">
+        Select or drop text file <br />
+        (Supported formats: .txt .rtf .doc .docx)
+      </label>
+      <input
+        id="file-upload"
+        type="file"
+        accept=".rtf, .txt, .doc, .docx"
+        onChange={handleFileData}
+      />
     </div>
   )
 }

@@ -320,3 +320,7 @@ export interface EntityRecognitionState {
     confidenceScore: number
   }[]
 }
+
+export type FileUploaderProps = {
+  onDataUpdate: (data: string) => void
+}
