@@ -8,7 +8,8 @@ const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>, setD
     const reader = new FileReader()
     reader.readAsBinaryString(file)
 
-    reader.onload = async () => {
+    reader.onload = async () => 
+    {
         const fileData = reader.result as string
         let newData: string[] = []
 
