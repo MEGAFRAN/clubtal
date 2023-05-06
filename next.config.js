@@ -4,7 +4,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-
+  trailingSlash: true,
   webpack(config) {
     const modifiedConfig = {
       ...config,

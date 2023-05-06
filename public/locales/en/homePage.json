@@ -1,0 +1,82 @@
+{
+    
+
+    "headerTitle": ["Reduce", "cost", "with"],
+
+    "headerText": ["Artificial Intelligence", "for your business"],
+
+    "headerButtons": ["I want it","Home","Contact"],
+
+    "magicLink" : {
+        "button":       "Lo quiero",
+        "messageOk":    "Enlace Magic enviado al correo electrónico, por favor verifíquelo.",
+        "messageFail":  "Error: Por favor, intente rellenar el formulario de nuevo."
+
+    },
+
+    "sectionInnerRounded": {
+        "listData": ["Artificial intelligence solutions for businesses"],
+        "title":    "What do we do?",
+        "buttonText":   "I want my solution"
+    },
+
+    "sectionUnderLineList": {
+        "listData": [
+            "Task automation",
+            "Cost reduction",
+            "Improves decision-making",
+            "Improves productivity",
+            "Multiple languages",
+            "Competitive advantages"
+          ],
+        "title":    "Benefits for your business",
+        "buttonText":   "Request service"
+    },
+
+    "sectionDottedCard": {
+        "listData": [
+            "Analysis of your needs",
+            "Development",
+            "Customization",
+            "Installation support",
+            "Documentation",
+            "7-day trial"
+          ],
+        "title":    "How do we do it?",
+        "buttonText":   "I want the trial"
+    },
+
+    "sectionHamburger": {
+        "listData": [
+            "Contact us",
+            "We analyze your requirement",
+            "We deliver your solution"
+        ],
+        "title":        "Steps to follow",
+        "buttonText":   "Submit request"
+    },
+
+    "form": {
+        "formText": [
+            "Tell us about yourself",
+            "What do you need for your business?",
+            "Write here what you need...",
+            "My name",
+            "Write your name here...",
+            "My email",
+            "Write your email here...",
+            "Send my message"
+          ],
+        "title": "Contact us"
+    },
+
+    "chatbot": {
+        "initialMessage":       "Hi! I'm Clubbot ¿What would you like to know about our services?",
+        "inputPlaceholderText": "Type your message ...",
+        "sendButtonText":       "Send"
+      },
+
+    "sectionContact": "#section-contact"
+
+
+}

@@ -24,11 +24,11 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
 
     setIsSubmitting(false)
   }
-
+  const [buttonHero,...resButton]= buttonText || []
   return (
     <header className={styles.container}>
       <Navbar
-        buttonText={buttonText}
+        buttonText={resButton}
         mail={"info@clubtal.com"}
         withToogleMenu={false}
         withLanguageToggle={true}
@@ -50,7 +50,7 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
         {withMagicLink ? (
           <LoginForm onSubmit={handleSubmit} isSubmitting={isSubmitting} message={message} />
         ) : (
-          <Button text={buttonText[7]} style="cta" scrollToSection={sectionToScroll} />
+          <Button text={buttonHero} style="cta" scrollToSection={sectionToScroll} />
         )}
       </div>
     </header>

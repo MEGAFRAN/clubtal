@@ -1,12 +1,18 @@
 import { cleanup, render } from "@testing-library/react"
+import { useRouter } from "next/router"
 import "@testing-library/jest-dom"
 import PostPage from "./PostPage"
 import mockResponsePageYear from "../../../../constants/mocks/mockPostPage"
 
+jest.mock("next/router", () => ({
+  useRouter: jest.fn(),
+}))
 describe("<PostPage/>", () => {
   let component
   const { yearPost, posts, buttonText, withLanguageToggle } = mockResponsePageYear
+  const mockRouter = { query: { locale: "es" } }
   beforeEach(() => {
+    useRouter.mockImplementation(() => mockRouter)
     component = render(
       <PostPage
         buttonText={buttonText}

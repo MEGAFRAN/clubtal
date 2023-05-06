@@ -1,2 +1,4 @@
 node_modules
 out
+_document.tsx
+redirect.js
