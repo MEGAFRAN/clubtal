@@ -1,18 +1,18 @@
 import nextI18nextConfig from "../../../next-i18next.config"
-import LanguagesToogle from "../language_toogle/LanguagesToogle"
+import { ButtonLocaleProps } from "../../constants/types/components_props/types"
+import SwitchLanguage from "../switch_language/SwitchLanguage"
 
-interface ButtonLocaleProps {
-    currentLocale: string | string[]
-}
-export default function ButtonLocale({ currentLocale }: ButtonLocaleProps) {
+function ButtonLocale({ currentLocale }: ButtonLocaleProps) {
 
     return (
         <>
             {nextI18nextConfig.i18n.locales.map((locale) => {
                 if (locale === currentLocale) return null
-                return <LanguagesToogle locale={locale} key={locale} />
+                return <SwitchLanguage locale={locale} key={locale} />
             })}
 
         </>
     )
 }
+
+export default ButtonLocale

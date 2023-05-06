@@ -5,7 +5,7 @@
 
     "headerText": ["Artificial Intelligence", "for your business"],
 
-    "headerButtons": ["I want it","Home","Contact","others"],
+    "headerButtons": ["I want it","Home","Contact"],
 
     "magicLink" : {
         "button":       "Lo quiero",

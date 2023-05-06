@@ -1,14 +1,12 @@
 import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { LinkNavigationProps } from "../../constants/types/components_props/types"
 
-interface LinkTProps {
-  children: React.ReactNode
-  href: string
-  locale?: any
-  skipLocaleHandling?: boolean
-}
-const LinkComponent = ({ children, skipLocaleHandling, ...rest }: LinkTProps) => {
+
+
+
+const LinkNavigation = ({ children, skipLocaleHandling, ...rest }: LinkNavigationProps) => {
   const router = useRouter()
   const locale = rest.locale || router.query.locale || ""
 
@@ -27,4 +25,4 @@ const LinkComponent = ({ children, skipLocaleHandling, ...rest }: LinkTProps) =>
   )
 }
 
-export default LinkComponent
+export default LinkNavigation

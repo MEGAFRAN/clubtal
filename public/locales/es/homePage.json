@@ -3,7 +3,7 @@
 
     "headerText": ["Inteligencia artificial", "para tu negocio"],
 
-    "headerButtons": ["Lo quiero","Inicio","Contacto","Otros"],
+    "headerButtons": ["Lo quiero","Inicio","Contacto"],
 
     "magicLink" : {
         "button":       "Lo quiero",

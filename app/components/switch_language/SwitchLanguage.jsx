@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import languageDetector from "../../../lib/languageDetector"
 
-export default function LanguagesToogle({locale,...rest}) {
+ function SwitchLanguage({locale,...rest}) {
   const router = useRouter()
 
   let href = rest.href || router.asPath
@@ -24,3 +24,5 @@ export default function LanguagesToogle({locale,...rest}) {
     </Link>
   )
 }
+
+export default SwitchLanguage

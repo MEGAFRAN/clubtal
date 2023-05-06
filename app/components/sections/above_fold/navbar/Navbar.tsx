@@ -33,7 +33,7 @@ const Navbar = ({
       </li>
     ))
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-  const [buttonHome, ButtonContact, buttonOther] = buttonText || []
+  const [buttonHome, ButtonContact] = buttonText || []
   const handleToggle = () => {
     if (withToogleMenu) {
       setToggleMenu(!toggleMenu)
@@ -64,7 +64,7 @@ const Navbar = ({
 
           <Button
             aria-label="Call to Action"
-            text={buttonOther}
+            text={ButtonContact}
             style="cta"
             scrollToSection={sectionToScroll}
           />

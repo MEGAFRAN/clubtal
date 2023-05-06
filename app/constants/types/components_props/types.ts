@@ -1,4 +1,4 @@
-import {MouseEventHandler} from "react"
+import { MouseEventHandler } from "react"
 
 export type TextProps = {
   text: string
@@ -256,14 +256,14 @@ export interface MagicLinkResponse {
   token: string
 }
 
-export type TextAnalysisProps = { 
+export type TextAnalysisProps = {
   textCta: string
   inputCta: string
-  textAreaPlaceholder: string 
+  textAreaPlaceholder: string
   inputPlaceholder: string
   buttonText: string
   requiredValueMessage: string
-  loadingText: string,
+  loadingText: string
   userLanguage: string
 }
 
@@ -278,7 +278,7 @@ type CurrentLanguage = {
   userLanguage: string
 }
 
-export type SocialSharingProps = CurrentLanguage 
+export type SocialSharingProps = CurrentLanguage
 
 export interface SentimentAnalysisState {
   id: string
@@ -322,19 +322,30 @@ export interface EntityRecognitionState {
 }
 
 export interface MagicLink {
-  button:      string;
-  messageOk:   string;
-  messageFail: string;
+  button: string
+  messageOk: string
+  messageFail: string
 }
-export interface HomePageProps  {
-  headerTitle:          string[];
-  headerText:           string[];
-  headerButtons:         string[];
-  sectionInnerRounded:  SectionGeneralProps;
-  sectionUnderLineList: SectionGeneralProps;
-  sectionDottedCard:    SectionGeneralProps;
-  sectionHamburger:     SectionGeneralProps;
-  form:                 SectionContactProps;
-  chatbot:              ChatbotProps;
-  sectionContact:       string;
+export interface HomePageProps {
+  headerTitle: string[]
+  headerText: string[]
+  headerButtons: string[]
+  sectionInnerRounded: SectionGeneralProps
+  sectionUnderLineList: SectionGeneralProps
+  sectionDottedCard: SectionGeneralProps
+  sectionHamburger: SectionGeneralProps
+  form: SectionContactProps
+  chatbot: ChatbotProps
+  sectionContact: string
+}
+
+export interface ButtonLocaleProps {
+  currentLocale: string | string[]
+}
+
+export interface LinkNavigationProps {
+  children: React.ReactNode
+  href: string
+  locale?: any
+  skipLocaleHandling?: boolean
 }
