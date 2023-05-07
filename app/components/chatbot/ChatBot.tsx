@@ -12,7 +12,7 @@ const ChatBot = ({
 }: ChatbotProps) => {
   const [messages, setMessages] = useState<ChatbotMessage[]>([
     {
-      role: "system",
+      role: "assistant",
       content: initialMessage,
     },
   ])
