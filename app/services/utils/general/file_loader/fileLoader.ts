@@ -20,8 +20,24 @@ const handleFileUpload = async (
       reader.readAsText(file, "UTF-8")
     })
 
+  const readAsArrayBuffer = () => new Promise((resolve, reject) => {
+      reader.onload = () => {
+        resolve(reader.result)
+      }
+      reader.onerror = () => {
+        reject(reader.error)
+      }
+      reader.readAsArrayBuffer(file)
+    })
+
+  let fileData
   try {
-    const fileData = await readAsText()
+    if (file.type === "application/msword" || file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
+      fileData = await readAsArrayBuffer()
+    } else {
+      fileData = await readAsText()
+    }
+    
     let newData: string[] = []
 
     const validExtensions = ["txt", "rtf", "doc", "docx"]
@@ -47,7 +63,7 @@ const handleFileUpload = async (
         file.type === "application/msword" ||
         file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
       ) {
-        const result = await mammoth.convertToHtml({ arrayBuffer: reader.result })
+        const result = await mammoth.convertToHtml({ arrayBuffer: fileData })
         const docData = result.value.replace(/<\/p>/g, "\n") // Replace closing paragraph tags with line breaks
         newData = docData
           .split("\n")
