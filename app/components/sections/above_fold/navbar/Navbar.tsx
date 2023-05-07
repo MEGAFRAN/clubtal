@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
 import { NavbarProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/components/navbar.module.scss"
 import Button from "../../../button/Button"
-import LanguageToogle from "../../../language_toogle/LanguageToogle"
 import Link from "../../../link/Link"
+import ButtonLocale from "../../../button_locale/ButtonLocale"
+import nextI18nextConfig from "../../../../../next-i18next.config"
 
 const Navbar = ({
   options,
@@ -16,6 +18,7 @@ const Navbar = ({
   withContactButton,
   withHomeButton,
 }: NavbarProps) => {
+  const router = useRouter()
   const optionsList =
     options &&
     options.map(({ name, link, externalLink }: any) => (
@@ -30,25 +33,28 @@ const Navbar = ({
       </li>
     ))
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
+  const [buttonHome, ButtonContact] = buttonText || []
   const handleToggle = () => {
     if (withToogleMenu) {
       setToggleMenu(!toggleMenu)
     }
   }
+  const currentLocale =
+    router.query.locale || nextI18nextConfig.i18n.defaultLocale
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
       {withHomeButton && (
-        <Button aria-label="Call to Action" text={buttonText[8]} style="navbar" linkTo="/" />
+        <Button aria-label="Call to Action" text={buttonHome} style="navbar" linkTo="/" />
       )}
       {withContactButton && (
         <Button
           aria-label="Call to Action"
-          text={buttonText[0]}
+          text={ButtonContact}
           style="navbar"
           scrollToSection={sectionToScroll}
         />
       )}
-      {withLanguageToggle && <LanguageToogle />}
+      {withLanguageToggle && <ButtonLocale currentLocale={currentLocale} />}
       {withLoginButton && (
         <Button aria-label="Call to Action" text="Registro / Login" style="cta" linkTo="/login" />
       )}
@@ -58,7 +64,7 @@ const Navbar = ({
 
           <Button
             aria-label="Call to Action"
-            text={buttonText[0]}
+            text={ButtonContact}
             style="cta"
             scrollToSection={sectionToScroll}
           />

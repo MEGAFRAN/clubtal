@@ -1,0 +1,32 @@
+@use "../abstracts/colors";
+@use "../abstracts/animations";
+@use "../abstracts/mixins";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: 600px;
+    position: relative;
+
+    input[type="file"] {
+        height: 90px;
+        color: transparent;
+        background-color: transparent;
+        position: absolute;
+        border: none;
+        
+        &::-webkit-file-upload-button {
+          border: none;
+          color: transparent;
+          background-color: transparent;
+        }
+    }
+
+    label {
+        display: inline-block;
+        border: dashed colors.$primary-gold 2px;
+        padding: 20px 0px;
+    }
+      
+ }
