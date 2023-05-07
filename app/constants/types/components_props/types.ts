@@ -349,3 +349,6 @@ export interface LinkNavigationProps {
   locale?: any
   skipLocaleHandling?: boolean
 }
+export type FileUploaderProps = {
+  onDataUpdate: (data: string) => void
+}

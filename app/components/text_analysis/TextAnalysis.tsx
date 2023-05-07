@@ -13,6 +13,8 @@ import {
 } from "../../services/utils/general/validation_handlers/validationHandlers"
 import Loading from "../loading/Loading"
 import gtmEvents from "../../services/analytics/events/google-tag-events.service"
+import FileUploader from "../file_uploader/FileUploader"
+import countWordsRepetitions from "../../services/utils/general/count_words/countWordsRepetitions"
 
 const TextAnalysis = ({
   textCta,
@@ -28,8 +30,13 @@ const TextAnalysis = ({
   const [userMessage, setUserMessage] = useState("")
   const [sentimentAnalysis, setSentimentAnalysis] = useState<SentimentAnalysisState[]>([])
   const [keyPhrases, setKeyPhrases] = useState<KeyPhrasesState[]>([])
+  const [keyPhrasesCount, setKeyPhrasesCount] = useState<{ [key: string]: number }[]>([])
   const [entityRecognition, setEntityRecognition] = useState<EntityRecognitionState[]>([])
   const [isLoading, setIsLoading] = useState(false)
+
+  const handleDataUpdate = (data: string) => {
+    setUserMessage(data)
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -42,6 +49,9 @@ const TextAnalysis = ({
       setSentimentAnalysis(data?.sentimentAnalysis)
       setKeyPhrases(data?.keyPhrases)
       setEntityRecognition(data?.entityRecognition)
+      const wordsToCount = data?.keyPhrases[0]?.keyPhrases || []
+      const wordsRepetitions = countWordsRepetitions(userMessage, wordsToCount)
+      setKeyPhrasesCount(wordsRepetitions)
       setIsLoading(false)
     } catch (error) {
       console.error(error)
@@ -53,6 +63,7 @@ const TextAnalysis = ({
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="user-message">{textCta}</label>
+        <FileUploader onDataUpdate={handleDataUpdate} />
         <textarea
           className={styles.user_message}
           id="user-message"
@@ -102,23 +113,32 @@ const TextAnalysis = ({
               </span>
               <span>
                 {userLanguage === "español" ? "Porcentaje positivo: " : "Positive percentage: "}
-                {sentimentAnalysis[0].confidenceScores.positive * 100}%
+                {Math.round(sentimentAnalysis[0].confidenceScores.positive * 100)}%
               </span>
               <span>
                 {userLanguage === "español" ? "Porcentaje neutral: " : "Neutral percentage: "}
-                {sentimentAnalysis[0].confidenceScores.neutral * 100}%
+                {Math.round(sentimentAnalysis[0].confidenceScores.neutral * 100)}%
               </span>
               <span>
                 {userLanguage === "español" ? "Porcentaje negativo: " : "Negative percentage: "}
-                {sentimentAnalysis[0].confidenceScores.negative * 100}%
+                {Math.round(sentimentAnalysis[0].confidenceScores.negative * 100)}%
               </span>
             </div>
             <div className={styles.key_phrases}>
-              <span>{userLanguage === "español" ? "Frases claves " : "Key phrases "}</span>
+              <span>
+                {userLanguage === "español"
+                  ? "Frases claves y cantidad de veces en el texto"
+                  : "Key phrases and number of times in the text"}
+              </span>
               <ol>
-                {keyPhrases[0].keyPhrases.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {keyPhrasesCount.map((item, index) => {
+                  const [name, count] = Object.entries(item)[0]
+                  return (
+                    <li key={index}>
+                      {name}: {count}
+                    </li>
+                  )
+                })}
               </ol>
             </div>
             <div className={styles.entity_recognition}>
