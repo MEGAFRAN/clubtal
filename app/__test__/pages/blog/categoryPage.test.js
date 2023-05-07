@@ -8,6 +8,7 @@ import CategoryPage, {
 } from "../../../../pages/blog/category/[category]/index"
 import mockPost1 from "../../../constants/mocks/mockListPost1.json"
 import mockPost2 from "../../../constants/mocks/mockListPost2.json"
+
 jest.mock("fs/promises")
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),

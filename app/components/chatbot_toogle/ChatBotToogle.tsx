@@ -6,15 +6,14 @@ import gtmEvents from "../../services/analytics/events/google-tag-events.service
 
 const ChatBotToggle = ({ initialMessage, inputPlaceholderText, sendButtonText }: ChatbotProps) => {
   const [isChatVisible, setIsChatVisible] = useState(false)
-  const [hasOpenedChat, setHasOpenedChat] = useState(false);
+  const [hasOpenedChat, setHasOpenedChat] = useState(false)
 
   function handleToggleChat() {
-
     setIsChatVisible(!isChatVisible)
 
     if (!hasOpenedChat) {
-      gtmEvents.openChatbot({ initialMessage, inputPlaceholderText, sendButtonText });
-      setHasOpenedChat(true);
+      gtmEvents.openChatbot({ initialMessage, inputPlaceholderText, sendButtonText })
+      setHasOpenedChat(true)
     }
   }
 
