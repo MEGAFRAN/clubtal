@@ -63,11 +63,11 @@ const handleFileUpload = async (
         file.type === "application/msword" ||
         file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
       ) {
-        const result = await mammoth.convertToHtml({ arrayBuffer: fileData })
+        const result = await mammoth.convertToHtml({ arrayBuffer: fileData as ArrayBuffer })
         const docData = result.value.replace(/<\/p>/g, "\n") // Replace closing paragraph tags with line breaks
         newData = docData
           .split("\n")
-          .map((row) => row.replace(/<\/?[^>]+(>|$)/g, "").trim()) // Remove HTML tags from each row and trim any extra white space
+          .map((row: string) => row.replace(/<\/?[^>]+(>|$)/g, "").trim()) // Remove HTML tags from each row and trim any extra white space
       }
       setData(newData.join(""))
     } else {
