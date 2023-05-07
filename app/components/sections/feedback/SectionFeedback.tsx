@@ -3,7 +3,7 @@ import styles from "../../../styles/sections/contact.module.scss"
 import Feedback from "../../feedback/Feedback"
 
 const SectionFeedback = ({ title, formText }: SectionContactProps) => (
-  <section id="section-contact" className={styles.container}>
+  <section className={styles.container}>
     <h2>{title}</h2>
     <Feedback text={formText} />
   </section>

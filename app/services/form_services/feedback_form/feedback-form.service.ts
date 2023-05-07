@@ -1,36 +1,19 @@
-import { Dispatch, SetStateAction } from "react"
+import { SEND_FEEDBACK_EMAIL } from "../../api/variables"
+import { handleError, handleResponse } from "../../utils/reponse/response"
 
-const sendFeedbackMessage = async (
-  endpoint: string,
-  formMessage: string,
-  setMessageResponseStatus: Dispatch<SetStateAction<string>>,
-  setMessageResponse: Dispatch<SetStateAction<string>>,
-  setLoading: Dispatch<SetStateAction<boolean>>,
-) => {
-  const stopLoadingEffect = () => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 500)
-  }
+async function sendFeedbackMessage (
+  formMessage: string, 
+  isPositiveFeedback: boolean
+): Promise<Response> {
 
-  try {
-    setLoading(true)
-    const dataToSend = { formMessage }
-    const request: RequestInit = {
+    return fetch(SEND_FEEDBACK_EMAIL, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dataToSend),
-    }
+      body: JSON.stringify({ formMessage, isPositiveFeedback }),
+    })    
+    .then(handleResponse)
+    .catch(handleError)
 
-    await fetch(endpoint, request).then(() => {
-      setMessageResponseStatus("success")
-      setMessageResponse("Thanks for your opinion, Gracias por tu opinion")
-    })
-
-    stopLoadingEffect()
-  } catch (error) {
-    stopLoadingEffect()
-  }
 }
 export default sendFeedbackMessage

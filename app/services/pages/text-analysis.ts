@@ -2,12 +2,12 @@ const SENTIMENT_ANALYSIS_TEXT = {
 
   spanish: {
 
-    ctaText: ["Descubre la informacion de tu texto (sentimientos, frases clave, entidades) con análisis de texto.",
+    ctaText: ["Descubre la informacion de tu texto (sentimientos, frases clave y mas) con análisis de texto.",
     "Ingresa un contexto (publicación en redes sociales, retroalimentación, reseña, etc).",
     "Análisis de texto."
     ],
     
-    placeholdersTexts: ["Escribe el texto que deseas analizar.",
+    placeholdersTexts: ["O ingresa el texto que deseas analizar",
     "Ingresa el contexto.",
     "Por favor, completa este campo.",
     "Enviando...",
@@ -30,12 +30,16 @@ const SENTIMENT_ANALYSIS_TEXT = {
     ],
     
     feedback: [
-    "Nos encanta saber tu opinión.",
+    "Califica la aplicación",
     "¿Cómo podemos mejorar la aplicación para ti?",
     "Escribe tu opinión aquí.",
     "Enviar opinión.",
     "Por favor, completa este campo.",
-    "Enviando..."
+    "Enviando...", 
+    "Enviar", 
+    "Cancelar",
+    "¿Que te gusta de la aplicación?",
+    "¿Que podemos mejorar en la aplicación?"
     ],
 
     content: {
@@ -71,11 +75,11 @@ const SENTIMENT_ANALYSIS_TEXT = {
 
   english: {
 
-    ctaText: ["Discover the information of your text (sentiments, key phrases, entities), with text analysis", 
+    ctaText: ["Discover the information of your text (sentiments, key phrases and more), with text analysis", 
     "Enter a Context (social media post, feedback, review, etc.)", "Text analysis"
     ],
 
-    placeholdersTexts: ["Enter the text to be analyzed",
+    placeholdersTexts: ["Or enter the text you wish to be analyzed",
     "Context", "Please fill this field", "Sending...", "Analyzing..."
     ],
 
@@ -95,8 +99,9 @@ const SENTIMENT_ANALYSIS_TEXT = {
       "Please fill this field"
     ],
 
-    feedback: ["We like your opinion", "How can we improve the application for you?", 
-    "Write your opinion", "Send Opinion", "Please fill this field", "...Sending"],
+    feedback: ["Rate the app", "How can we improve the application for you?", 
+    "Write your opinion", "Send Opinion", "Please fill this field", "...Sending", 
+    "Send", "Cancel", "What do you like about the app?", "What can be improved in the app?"],
 
     content: {
       h1: "Sentiment Analysis: A Game-Changer for Business Success",

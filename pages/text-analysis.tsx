@@ -33,8 +33,8 @@ const TextAnalysis: NextPage = () => {
         text={placeholdersTexts}
         buttonText={ctaButtonTexts}
       />
-      <SocialSharing userLanguage={userLanguage} />
       <SectionFeedback formText={feedback} title={feedback[0]} />
+      <SocialSharing userLanguage={userLanguage} />
       <SectionContentPage content={content} />
       <SectionAnalytics />
     </languageContext.Provider>

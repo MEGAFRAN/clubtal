@@ -17,7 +17,7 @@ const FileUploader = ({ onDataUpdate }: FileUploaderProps) => {
   return (
     <div className={styles.container}>
       <label htmlFor="file-upload">
-        Select or drop text file <br />
+        Select or drag a text file <br />
         (Supported formats: .txt .rtf .doc .docx)
       </label>
       <input
