@@ -52,7 +52,7 @@ export type ButtonProps = {
 }
 
 export type FormProps = {
-  text: string[]
+  text?: string[]
   endpoint?: string
 }
 
@@ -88,9 +88,6 @@ export type ErrorPageProps = {
 
 export type ChatbotProps = {
   onClose?: () => void
-  initialMessage: string
-  inputPlaceholderText: string
-  sendButtonText: string
 }
 
 export interface ChatbotSkeletonColors {
@@ -160,7 +157,6 @@ export interface HeaderProps {
 
 export interface SectionContactProps {
   title: string
-  formText: string[]
 }
 
 export interface SectionGeneralProps {

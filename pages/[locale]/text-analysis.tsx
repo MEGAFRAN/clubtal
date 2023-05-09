@@ -34,7 +34,7 @@ const TextAnalysis: NextPage = () => {
         text={placeholdersTexts}
         buttonText={ctaButtonTexts}
       />
-      <SectionFeedback formText={feedback} title={feedback[0]} />
+      <SectionFeedback title={feedback[0]} />
       <SocialSharing />
       <SectionContentPage content={content} />
       <SectionAnalytics />

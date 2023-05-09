@@ -39,7 +39,7 @@ const JobDetail = ({
       description={aboutCompany.description}
       id={aboutCompany.id}
     />
-    <Form text={text} />
+    <Form />
   </main>
 )
 export default JobDetail

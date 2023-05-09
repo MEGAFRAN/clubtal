@@ -1,19 +1,16 @@
 import { useState, useRef, useEffect, FormEvent } from "react"
+import { useTranslation } from "next-i18next"
 import { ChatbotMessage, ChatbotProps } from "../../constants/types/components_props/types"
 import comunicateChatBot from "../../services/form_services/comunicate_chat_bot/comunicate-chat-bot.service"
 import { getPageText, initialContext } from "../../services/utils/general/chatbot/chatbot"
 import styles from "../../styles/components/chat.module.scss"
 
-const ChatBot = ({
-  onClose,
-  initialMessage,
-  inputPlaceholderText,
-  sendButtonText,
-}: ChatbotProps) => {
+const ChatBot = ({ onClose }: ChatbotProps) => {
+  const { t } = useTranslation(["components/text"])
   const [messages, setMessages] = useState<ChatbotMessage[]>([
     {
       role: "assistant",
-      content: initialMessage,
+      content: t("hiImClubbot"),
     },
   ])
   const [userMessage, setUserMessage] = useState("")
@@ -75,10 +72,10 @@ const ChatBot = ({
           type="text"
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
-          placeholder={inputPlaceholderText}
-          aria-label={inputPlaceholderText}
+          placeholder={t("typeYourMessage") as string}
+          aria-label={t("typeYourMessage") as string}
         />
-        <button type="submit">{sendButtonText}</button>
+        <button type="submit">{t("send")}</button>
       </form>
     </div>
   )

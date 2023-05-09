@@ -29,7 +29,7 @@ const LandingPage = ({
           {textInformation && textInformation.map((item, index) => <li key={index}>{item}</li>)}
         </ul>
       </aside>
-      <Form text={text} endpoint={endpoint} />
+      <Form endpoint={endpoint} />
     </section>
   </main>
 )

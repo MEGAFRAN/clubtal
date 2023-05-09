@@ -52,7 +52,7 @@ function PostDetail({
         <SectionContentPost contentPost={contentPost} />
       </main>
 
-      <SectionContact title="Contáctanos" formText={text} />
+      <SectionContact title="Contáctanos" />
       <footer role={"toolbar"}>
         <Button text="Contáctanos" style="cta" scrollToSection="#section-contact" />
       </footer>

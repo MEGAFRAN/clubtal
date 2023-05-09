@@ -70,15 +70,8 @@ const Home: NextPage<HomeProps> = () => {
         buttonText={TEXT_TRANSLATIONS.sectionHamburger.buttonText}
         sectionToScroll={TEXT_TRANSLATIONS.sectionContact}
       />
-      <SectionContact
-        formText={TEXT_TRANSLATIONS.form.formText}
-        title={TEXT_TRANSLATIONS.form.title}
-      />
-      <ChatBotToggle
-        initialMessage={TEXT_TRANSLATIONS.chatbot.initialMessage}
-        inputPlaceholderText={TEXT_TRANSLATIONS.chatbot.inputPlaceholderText}
-        sendButtonText={TEXT_TRANSLATIONS.chatbot.sendButtonText}
-      />
+      <SectionContact title={TEXT_TRANSLATIONS.form.title} />
+      <ChatBotToggle />
       <SectionAnalytics />
     </languageContext.Provider>
   )
@@ -86,5 +79,5 @@ const Home: NextPage<HomeProps> = () => {
 
 export default Home
 
-const getStaticProps = makeStaticProps(["common", "homePage"])
+const getStaticProps = makeStaticProps(["common", "homePage", "components/text"])
 export { getStaticPaths, getStaticProps }
