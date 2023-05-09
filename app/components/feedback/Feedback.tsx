@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import { useTranslation } from "next-i18next"
 import styles from "../../styles/components/feedback.module.scss"
 import gtmEvents from "../../services/analytics/events/google-tag-events.service"
 import sendFeedbackMessage from "../../services/form_services/feedback_form/feedback-form.service"
@@ -7,11 +8,12 @@ import {
   handleValidation,
 } from "../../services/utils/general/validation_handlers/validationHandlers"
 
-const Feedback = ({ text }: any) => {
+const Feedback = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [feedbackText, setFeedbackText] = useState("")
   const [isPositiveFeedback, setIsPositiveFeedback] = useState(true)
   const modalRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation(["components/text"])
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
@@ -52,8 +54,12 @@ const Feedback = ({ text }: any) => {
                   name="message"
                   id="message"
                   required
-                  placeholder={isPositiveFeedback ? text[8] : text[9]}
-                  onInvalid={(event) => handleValidation(event, text[4])}
+                  placeholder={
+                    isPositiveFeedback
+                      ? (t("whatDoYouLikeAboutTheApp") as string)
+                      : (t("whatCanBeImprovedInTheApp") as string)
+                  }
+                  onInvalid={(event) => handleValidation(event, t("pleaseFillThisField"))}
                   onInput={(event) => handleInput(event)}
                   onChange={(event) => setFeedbackText(event.target.value)}
                   aria-label="Write Message"
@@ -61,10 +67,10 @@ const Feedback = ({ text }: any) => {
               </label>
               <div className={styles.modal_actions}>
                 <button className={styles.send} type="submit">
-                  {text[6]}
+                  {t("send")}
                 </button>
                 <button className={styles.cancel} onClick={() => setIsModalOpen(false)}>
-                  {text[7]}
+                  {t("cancel")}
                 </button>
               </div>
             </form>

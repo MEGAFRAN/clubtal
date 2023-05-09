@@ -1,11 +1,11 @@
 import React, { useState } from "react"
+import { useTranslation } from "next-i18next"
 import getTextAnalysis from "../../services/text_analysis/get-text-analysis"
 import styles from "../../styles/components/text-analysis.module.scss"
 import {
   EntityRecognitionState,
   KeyPhrasesState,
   SentimentAnalysisState,
-  TextAnalysisProps,
 } from "../../constants/types/components_props/types"
 import {
   handleInput,
@@ -16,16 +16,7 @@ import gtmEvents from "../../services/analytics/events/google-tag-events.service
 import FileUploader from "../file_uploader/FileUploader"
 import countWordsRepetitions from "../../services/utils/general/count_words/countWordsRepetitions"
 
-const TextAnalysis = ({
-  textCta,
-  inputCta,
-  textAreaPlaceholder,
-  inputPlaceholder,
-  buttonText,
-  requiredValueMessage,
-  loadingText,
-  userLanguage,
-}: TextAnalysisProps) => {
+const TextAnalysis = () => {
   const [userMessageContext, setUserMessageContext] = useState("")
   const [userMessage, setUserMessage] = useState("")
   const [sentimentAnalysis, setSentimentAnalysis] = useState<SentimentAnalysisState[]>([])
@@ -33,6 +24,7 @@ const TextAnalysis = ({
   const [keyPhrasesCount, setKeyPhrasesCount] = useState<{ [key: string]: number }[]>([])
   const [entityRecognition, setEntityRecognition] = useState<EntityRecognitionState[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const { t } = useTranslation(["components/text"])
 
   const handleDataUpdate = (data: string) => {
     setUserMessage(data)
@@ -62,74 +54,63 @@ const TextAnalysis = ({
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="user-message">{textCta}</label>
+        <label htmlFor="user-message">{t("discoverTheInformationOfYourText")}</label>
         <FileUploader onDataUpdate={handleDataUpdate} />
         <textarea
           className={styles.user_message}
           id="user-message"
-          placeholder={textAreaPlaceholder}
+          placeholder={t("orEnterTheTextYoWishToBeAnalyzed") as string}
           value={userMessage}
           onChange={(event) => setUserMessage(event.target.value)}
-          aria-label={textAreaPlaceholder}
+          aria-label={t("orEnterTheTextYoWishToBeAnalyzed") as string}
           aria-invalid={!userMessage.trim()}
           aria-describedby="user-message-error"
-          onInvalid={(event) => handleValidation(event, requiredValueMessage)}
+          onInvalid={(event) => handleValidation(event, t("pleaseFillThisField"))}
           onInput={(event) => handleInput(event)}
           required
         />
-        <label htmlFor="user-message-context">{inputCta}</label>
+        <label htmlFor="user-message-context">{t("enterAContext")}</label>
         <input
           className={styles.user_message_context}
           id="user-message-context"
           type="text"
-          placeholder={inputPlaceholder}
+          placeholder={t("context") as string}
           value={userMessageContext}
           onChange={(event) => setUserMessageContext(event.target.value)}
-          aria-label={inputPlaceholder}
+          aria-label={t("context") as string}
           aria-invalid={!userMessageContext.trim()}
           aria-describedby="user-message-context-error"
-          onInvalid={(event) => handleValidation(event, requiredValueMessage)}
+          onInvalid={(event) => handleValidation(event, t("pleaseFillThisField"))}
           onInput={(event) => handleInput(event)}
           required
         />
-        <Loading
-          isLoading={isLoading}
-          buttonText={buttonText}
-          loadingText={loadingText}
-          maxProgress={100}
-        />
+        <Loading isLoading={isLoading} maxProgress={100} />
         {!isLoading &&
         sentimentAnalysis?.length &&
         keyPhrases?.length &&
         entityRecognition?.length ? (
           <div className={styles.results_container}>
-            <span>{userLanguage === "español" ? "INFORMACION DEL TEXTO" : "TEXT INFO"}</span>
+            <span>{t("textInformation")}</span>
             <div className={styles.sentiment_analysis}>
               <span>
-                {userLanguage === "español"
-                  ? "Sentimiento predominante: "
-                  : "Prevailing sentiment: "}
+                {t("prevailingSentiment")}
                 {sentimentAnalysis[0].sentiment}
               </span>
               <span>
-                {userLanguage === "español" ? "Porcentaje positivo: " : "Positive percentage: "}
+                {t("positivePercentage")}
                 {Math.round(sentimentAnalysis[0].confidenceScores.positive * 100)}%
               </span>
               <span>
-                {userLanguage === "español" ? "Porcentaje neutral: " : "Neutral percentage: "}
+                {t("neutralPercentage")}
                 {Math.round(sentimentAnalysis[0].confidenceScores.neutral * 100)}%
               </span>
               <span>
-                {userLanguage === "español" ? "Porcentaje negativo: " : "Negative percentage: "}
+                {t("negativePercentage")}
                 {Math.round(sentimentAnalysis[0].confidenceScores.negative * 100)}%
               </span>
             </div>
             <div className={styles.key_phrases}>
-              <span>
-                {userLanguage === "español"
-                  ? "Frases claves y cantidad de veces en el texto"
-                  : "Key phrases and number of times in the text"}
-              </span>
+              <span>{t("keyPhrasesAndNumberOfTimesInTheText")}</span>
               <ol>
                 {keyPhrasesCount.map((item, index) => {
                   const [name, count] = Object.entries(item)[0]
@@ -142,13 +123,13 @@ const TextAnalysis = ({
               </ol>
             </div>
             <div className={styles.entity_recognition}>
-              <span>{userLanguage === "español" ? "Entidades " : "Entities "}</span>
+              <span>{t("entities")}</span>
               <ol>
                 {entityRecognition[0].entities.map((entity, index) => (
                   <li key={index}>
-                    {userLanguage === "español" ? "Texto: " : "Text: "}
+                    {t("text")}
                     {entity.text} <br />
-                    {userLanguage === "español" ? "Categoría: " : "Category: "}
+                    {t("category")}
                     {entity.category}
                   </li>
                 ))}

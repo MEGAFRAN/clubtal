@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
+import { useTranslation } from "next-i18next"
 import styles from "../../styles/components/social-sharing.module.scss"
-import { SocialSharingProps } from "../../constants/types/components_props/types"
 
-const SocialSharing = ({ userLanguage }: SocialSharingProps) => {
+const SocialSharing = () => {
   const [currentUrl, setCurrentUrl] = useState("")
+  const { t } = useTranslation(["components/text"])
 
   useEffect(() => {
     setCurrentUrl(window.location.href)
@@ -14,12 +15,10 @@ const SocialSharing = ({ userLanguage }: SocialSharingProps) => {
   const twitterUrl = `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`
   const linkedInUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${shareText}`
   const instagramUrl = `https://www.instagram.com/?url=${currentUrl}`
-  const shareInSocialMediaTitle =
-    userLanguage === "español" ? "Compartir en redes sociales" : "Share in social media"
 
   return (
     <div className={styles.container}>
-      <h2>{shareInSocialMediaTitle}</h2>
+      <h2>{t("shareInSocialMedia")}</h2>
       <div className={styles.sharing_buttons_container}>
         <a
           href={fbUrl}

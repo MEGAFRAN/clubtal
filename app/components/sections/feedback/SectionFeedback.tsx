@@ -2,10 +2,10 @@ import { SectionContactProps } from "../../../constants/types/components_props/t
 import styles from "../../../styles/sections/contact.module.scss"
 import Feedback from "../../feedback/Feedback"
 
-const SectionFeedback = ({ title, formText }: SectionContactProps) => (
+const SectionFeedback = ({ title }: SectionContactProps) => (
   <section className={styles.container}>
     <h2>{title}</h2>
-    <Feedback text={formText} />
+    <Feedback />
   </section>
 )
 export default SectionFeedback

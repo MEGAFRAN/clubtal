@@ -256,21 +256,8 @@ export interface MagicLinkResponse {
   token: string
 }
 
-export type TextAnalysisProps = {
-  textCta: string
-  inputCta: string
-  textAreaPlaceholder: string
-  inputPlaceholder: string
-  buttonText: string
-  requiredValueMessage: string
-  loadingText: string
-  userLanguage: string
-}
-
 export type LoadingProps = {
   isLoading: boolean
-  buttonText: string
-  loadingText: string
   maxProgress: number
 }
 
