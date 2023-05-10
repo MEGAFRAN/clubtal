@@ -16,10 +16,7 @@
     color: colors.$primary-gold;
     font-size: 3rem;
     text-align: center;
-
-    span {
-      color: colors.$primary-white;
-    }
+    
   }
 
   p {
@@ -28,5 +25,17 @@
 
   button {
     align-self: center;
+  }
+  
+  span:nth-child(1) {
+      color: colors.$primary-gold;
+  }
+  
+  span:nth-child(2) {
+      color: colors.$primary-white;
+  }
+  
+  span:nth-child(3) {
+      color: colors.$primary-gold;
   }
 }
