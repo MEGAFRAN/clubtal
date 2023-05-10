@@ -1,4 +1,5 @@
 {
   "message-error-404": "We did not find the address you were looking for, if you want more information we invite you to visit our home page.",
-  "name-button-404" :  "Go to home page"
+  "message-error-500": "Server Error: The server encountered an internal or configuration error and could not complete your request",
+  "name-button-home" :  "Go to home page"
 }

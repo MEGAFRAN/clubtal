@@ -73,7 +73,8 @@ export type TableProps = {
   tableRows: []
 }
 
-export type Error404Props = {
+export type ErrorCommonPagesProps = {
+  codeError: "404" | "500"
   text: string
   buttonText: string
   handleClick: () => void

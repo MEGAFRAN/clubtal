@@ -3,16 +3,16 @@ import { useTranslation } from "next-i18next"
 import ErrorCommonPages from "../../app/components/error_common_pages/ErrorCommonPages"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
 
-const NotFound = () => {
+const ServerError = () => {
   const router = useRouter()
   const { t } = useTranslation(["common"])
-  // this code is when not found at endpoints in app
-  const code = "404"
+  // this code is when there is a server error
+  const code = "500"
   return (
     <main style={{ display: "flex" }}>
       <ErrorCommonPages
         codeError={code}
-        text={t("message-error-404")}
+        text={t("message-error-500")}
         buttonText={t("name-button-home")}
         styleButton="cta"
         scrollToSection=""
@@ -22,7 +22,7 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default ServerError
 
 const getStaticProps = makeStaticProps(["common"])
 export { getStaticPaths, getStaticProps }
