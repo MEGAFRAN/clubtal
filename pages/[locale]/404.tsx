@@ -10,10 +10,12 @@ const NotFound = () => {
     <main style={{ display: "flex" }}>
       <Error404
         text={t("message-error-404")}
-        buttonText={t("name-button-404")}
+        buttonTextEnglish={t("name-button-404-en")}
+        buttonTextSpanish={t("name-button-404-es")}
         styleButton="cta"
         scrollToSection=""
-        handleClick={() => router.replace("/")}
+        handleClickEnglish={() => router.replace("/")}
+        handleClickSpanish={() => router.replace("/es")}
       />
     </main>
   )

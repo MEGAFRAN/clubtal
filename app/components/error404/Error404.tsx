@@ -4,8 +4,10 @@ import Button from "../button/Button"
 
 const Error404 = ({
   text,
-  buttonText,
-  handleClick,
+  buttonTextEnglish,
+  handleClickEnglish,
+  buttonTextSpanish,
+  handleClickSpanish,
   scrollToSection,
   styleButton,
 }: Error404Props) => (
@@ -14,12 +16,20 @@ const Error404 = ({
       <span>4</span>0<span>4</span>
     </h1>
     <p>{text}</p>
-    <Button
-      text={buttonText}
-      handleClick={handleClick}
-      scrollToSection={scrollToSection}
-      style={styleButton}
-    />
+    <div>
+      <Button
+        text={buttonTextEnglish}
+        handleClick={handleClickEnglish}
+        scrollToSection={scrollToSection}
+        style={styleButton}
+      />
+      <Button
+        text={buttonTextSpanish}
+        handleClick={handleClickSpanish}
+        scrollToSection={scrollToSection}
+        style={styleButton}
+      />
+    </div>
   </section>
 )
 
