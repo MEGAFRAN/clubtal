@@ -39,12 +39,12 @@ const Navbar = ({
       setToggleMenu(!toggleMenu)
     }
   }
-  const currentLocale =
-    router.query.locale || nextI18nextConfig.i18n.defaultLocale
+  const currentLocale = router.query.locale || nextI18nextConfig.i18n.defaultLocale
+  const hrefHome = currentLocale === "en" ? "/" : `/${currentLocale}`
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
       {withHomeButton && (
-        <Button aria-label="Call to Action" text={buttonHome} style="navbar" linkTo="/" />
+        <Button aria-label="Call to Action" text={buttonHome} style="navbar" linkTo={hrefHome} />
       )}
       {withContactButton && (
         <Button
