@@ -1,3 +1,4 @@
-import { Redirect } from "../lib/redirect"
+import TextAnalysis, { getStaticProps } from "./[locale]/text-analysis"
 
-export default Redirect
+export default TextAnalysis
+export { getStaticProps }
