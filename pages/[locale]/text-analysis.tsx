@@ -9,7 +9,7 @@ import SocialSharing from "../../app/components/social_sharing/SocialSharing"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
 
 const TextAnalysis: NextPage = () => {
-  const { t } = useTranslation(["textAnalysisPage"])
+  const { t } = useTranslation(["pages/textAnalysis"])
 
   return (
     <>
@@ -24,5 +24,5 @@ const TextAnalysis: NextPage = () => {
 
 export default TextAnalysis
 
-const getStaticProps = makeStaticProps(["textAnalysisPage", "components/text"])
+const getStaticProps = makeStaticProps(["pages/textAnalysis", "components/text"])
 export { getStaticPaths, getStaticProps }

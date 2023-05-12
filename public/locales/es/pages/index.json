@@ -1,0 +1,36 @@
+{
+    "headerTitle": ["Reduce", "costos", "con"],
+    "headerText": ["Inteligencia artificial", "para tu negocio"],
+    "headerButtons": ["Lo quiero","Inicio","Contacto"],
+    "listData": ["Soluciones de inteligencia artifical para negocios"],
+    "listData2": [
+        "Automatización de tareas ",
+        "Reducción de costos",
+        "Mejora la toma de decisiones",
+        "Mejora la productividad",
+        "Multiples idiomas",
+        "Ventajas competitivas"
+    ],
+    "listData3": [
+        "Analisis de tus necesidades",
+        "Desarrollo",
+        "Personalizacion",
+        "Soporte en instalacion",
+        "Documentacion",
+        "7 dias de prueba"
+    ],
+    "listData4": [
+        "Contactanos",
+        "Analizamos tu requerimiento",
+        "Te entregamos tu solucion"
+    ],
+
+    "benefitsForYourBusiness": "Beneficios para tu negocio",
+    "contactUs": "Contáctanos",
+
+    "iWantMySolution": "quiero mi solucion",
+    "requestService":   "solicitar servicio",
+    "sectionContact": "#section-contact",
+    "stepsToFollow": "pasos a seguir",
+    "whatDoWeDo": "¿que hacemos?"
+}

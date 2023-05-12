@@ -1,0 +1,36 @@
+{
+    "headerTitle": ["Reduce", "cost", "with"],
+    "headerText": ["Artificial Intelligence", "for your business"],
+    "headerButtons": ["I want it","Home","Contact"],
+    "listData": ["Artificial intelligence solutions for businesses"],
+    "listData2": [
+        "Task automation",
+        "Cost reduction",
+        "Improves decision-making",
+        "Improves productivity",
+        "Multiple languages",
+        "Competitive advantages"
+    ],
+    "listData3": [
+        "Analysis of your needs",
+        "Development",
+        "Customization",
+        "Installation support",
+        "Documentation",
+        "7-day trial"
+    ],
+    "listData4": [
+        "Contact us",
+        "We analyze your requirement",
+        "We deliver your solution"
+    ],
+
+    "benefitsForYourBusiness": "Benefits for your business",
+    "contactUs": "Contact us",
+
+    "iWantMySolution": "I want my solution",
+    "requestService": "Request service",
+    "sectionContact": "#section-contact",
+    "stepsToFollow": "Steps to follow",
+    "whatDoWeDo": "What do we do?"
+}
