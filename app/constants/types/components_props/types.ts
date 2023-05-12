@@ -75,8 +75,10 @@ export type TableProps = {
 
 export type Error404Props = {
   text: string
-  buttonText: string
-  handleClick: () => void
+  buttonTextEnglish: string
+  handleClickEnglish: () => void
+  buttonTextSpanish: string
+  handleClickSpanish: () => void
   scrollToSection: string
   styleButton: "cta" | "regular"
 }

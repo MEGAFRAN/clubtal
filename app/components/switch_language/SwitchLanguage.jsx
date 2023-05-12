@@ -6,8 +6,11 @@ import languageDetector from "../../../lib/languageDetector"
   const router = useRouter()
 
   let href = rest.href || router.asPath
+  
+
   let pName = router.pathname
   Object.keys(router.query).forEach((k) => {
+
     if (k === "locale") {
       pName = pName.replace(`[${k}]`, locale)
       return
@@ -17,7 +20,10 @@ import languageDetector from "../../../lib/languageDetector"
   if (locale) {
     href = rest.href ? `/${locale}${rest.href}` : pName
   }
-
+  if (href.indexOf(`/${locale}`) < 0) {
+    href = `/${locale}${href}`
+  }
+  href = href === "/en" ? "/" : href
   return (
     <Link className="languages-toogle" href={href} onClick={() => languageDetector.cache(locale)}>
       <button>{locale}</button>
