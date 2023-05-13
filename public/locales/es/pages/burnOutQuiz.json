@@ -1,0 +1,38 @@
+{
+    "burnOutQuestions": [
+        "Me siento emocionalmente agotado por mi trabajo",
+        "Me siento agotado al final de la jornada laboral",
+        "Me siento fatigado cuando me levanto por la mañana y tengo que afrontar otro día de trabajo",
+        "Trabajar con gente todo el día es realmente agotador para mí",
+        "Me siento quemado por mi trabajo",
+        "Me siento frustrado por mi trabajo",
+        "Siento que me esfuerzo demasiado en mi trabajo",
+        "Trabajar directamente con la gente me estresa demasiado",
+        "Siento que estoy al límite de mis fuerzas",
+        "Siento que trato a algunos destinatarios como si fueran objetos impersonales",
+        "Me he vuelto más insensible con la gente desde que acepté este trabajo",
+        "Me preocupa que este trabajo me esté endureciendo emocionalmente",
+        "No me importa lo que les pase a algunos destinatarios",
+        "Siento que los destinatarios me culpan de algunos de sus problemas",
+        "Comprendo fácilmente cómo se sienten mis destinatarios",
+        "Siento que influyo positivamente en la vida de otras personas a través de mi trabajo",
+        "Me siento con mucha energía",
+        "Puedo crear fácilmente un ambiente relajado con mis destinatarios",
+        "Me siento eufórico después de trabajar estrechamente con mis destinatarios",
+        "He conseguido muchas cosas que merecen la pena en este trabajo",
+        "En mi trabajo, afronto los problemas emocionales con mucha calma",
+        "Siento que influyo positivamente en la vida de otras personas a través de mi trabajo"
+    ],
+    "burnOutQuiz": "burnout quiz",
+    "burnOutQuizRatings": [
+        "Nunca",
+        "Unas pocas veces al año",
+        "Una vez al mes o menos",
+        "Unas pocas veces al mes",
+        "Una vez a la semana",
+        "Varias veces a la semana",
+        "Todos los días"
+    ],
+    "rateApp": "rate app",
+    "textAnalysis": "Text analysis"
+}
