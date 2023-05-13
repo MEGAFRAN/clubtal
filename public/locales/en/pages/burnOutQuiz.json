@@ -1,0 +1,38 @@
+{
+    "burnOutQuestions": [
+        "I feel emotionally drained from my work.",
+        "I feel used up at the end of the workday.",
+        "I feel fatigued when I get up in the morning and have to face another day on the job.",
+        "Working with people all day is really a strain for me.",
+        "I feel burned out from my work.",
+        "I feel frustrated by my job.",
+        "I feel I'm working too hard on my job.",
+        "Working with people directly puts too much stress on me.",
+        "I feel like I'm at the end of my rope.",
+        "I feel I treat some recipients as if they were impersonal objects.",
+        "I've become more callous toward people since I took this job.",
+        "I worry that this job is hardening me emotionally.",
+        "I don't really care what happens to some recipients.",
+        "I feel recipients blame me for some of their problems.",
+        "I can easily understand how my recipients feel about things.",
+        "I feel I'm positively influencing other people's lives through my work.",
+        "I feel very energetic.",
+        "I can easily create a relaxed atmosphere with my recipients.",
+        "I feel exhilarated after working closely with my recipients.",
+        "I have accomplished many worthwhile things in this job.",
+        "In my work, I deal with emotional problems very calmly.",
+        "I feel I'm positively influencing other people's lives through my work."
+    ],
+    "burnOutQuiz": "burnout quiz",
+    "burnOutQuizRatings": [
+        "Never",
+        "A few times a year",
+        "Once a month or less",
+        "A few times a month",
+        "Once a week",
+        "A few times a week",
+        "Every day"
+    ],
+    "rateApp": "rate app",
+    "textAnalysis": "Text analysis"
+}

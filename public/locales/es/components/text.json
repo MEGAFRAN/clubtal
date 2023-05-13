@@ -1,4 +1,5 @@
 {
+  "analyzeAnswers": "analizar respuestas",
   "analyzing": "analizando",
   "cancel": "cancelar",
   "category": "categoría",
@@ -23,6 +24,7 @@
   "send": "enviar",
   "sending": "enviando",
   "sendMyMessage": "enviar mi mensaje",
+  "selectAnswer": "seleccionar respuesta",
   "selectOrDragTextFile": "selecciona o arrastra un archivo de texto",
   "shareInSocialMedia": "compartir en redes sociales",
   "supportedFormats": "(formatos soportados: .txt .rtf .doc .docx)",
