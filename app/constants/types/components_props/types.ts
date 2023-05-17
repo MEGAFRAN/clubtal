@@ -337,3 +337,12 @@ export interface LinkNavigationProps {
 export type FileUploaderProps = {
   onDataUpdate: (data: string) => void
 }
+
+export type QuestionnarieProps = {
+  questions: string[]
+  ratings: string[]
+}
+
+export type QuestionnarieFormState = {
+  [key: string]: string
+}

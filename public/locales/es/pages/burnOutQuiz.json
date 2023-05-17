@@ -23,7 +23,7 @@
         "En mi trabajo, afronto los problemas emocionales con mucha calma",
         "Siento que influyo positivamente en la vida de otras personas a través de mi trabajo"
     ],
-    "burnOutQuiz": "burnout quiz",
+    "burnOutQuiz": "quiz estres laboral",
     "burnOutQuizRatings": [
         "Nunca",
         "Unas pocas veces al año",
@@ -33,6 +33,6 @@
         "Varias veces a la semana",
         "Todos los días"
     ],
-    "rateApp": "rate app",
+    "rateApp": "califica la aplicación",
     "textAnalysis": "Text analysis"
 }
