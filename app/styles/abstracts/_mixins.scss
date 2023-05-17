@@ -1,9 +1,25 @@
 @use "./colors";
+@use "./animations";
 
 @mixin cta-button-hover {
   background: colors.$primary-blue;
   color: colors.$primary-white;
   cursor: pointer;
+}
+
+@mixin cta-button-appearance {
+  background: linear-gradient(
+    0deg,
+    colors.$primary-gold 0,
+    colors.$primary-gold 26%,
+    colors.$primary-white 96%
+  );
+  border: solid colors.$secondary-black 2px;
+  border-radius: 24px;
+  color: colors.$primary-black;
+  padding: 10px 23px;
+  pointer-events: auto;
+  transition: animations.$regular-transition;
 }
 
 @mixin navbar-hover {
