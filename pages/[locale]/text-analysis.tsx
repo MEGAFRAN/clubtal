@@ -24,5 +24,7 @@ const TextAnalysis: NextPage = () => {
 
 export default TextAnalysis
 
-const getStaticProps = makeStaticProps(["pages/textAnalysis", "components/text"])
+// ns ---> is variable of next-i18next that should to have array strings these strings are names of files that we want to translate in this page
+const ns = ["pages/textAnalysis", "components/text"]
+const getStaticProps = makeStaticProps({ ns })
 export { getStaticPaths, getStaticProps }

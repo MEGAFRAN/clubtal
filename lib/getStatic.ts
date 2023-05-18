@@ -1,5 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import i18nextConfig from "../next-i18next.config"
+import { Ctx, GetI18Props, MakeStaticProps } from "../app/constants/types/components_props/types"
 
 export const getI18nPaths = () =>
   i18nextConfig.i18n.locales.map((lng) => ({
@@ -13,7 +14,7 @@ export const getStaticPaths = () => ({
   paths: getI18nPaths(),
 })
 
-export async function getI18nProps(ctx, ns = ["common"]) {
+export async function getI18nProps({ ctx, ns = ["common"] }: GetI18Props) {
   const locale = ctx?.params?.locale || i18nextConfig.i18n.defaultLocale
   const props = {
     ...(await serverSideTranslations(locale, ns)),
@@ -21,10 +22,10 @@ export async function getI18nProps(ctx, ns = ["common"]) {
   return props
 }
 
-export function makeStaticProps(ns = {}) {
-  return async function getStaticProps(ctx) {
+export function makeStaticProps({ ns = [] }: MakeStaticProps) {
+  return async function getStaticProps(ctx: Ctx) {
     return {
-      props: await getI18nProps(ctx, ns),
+      props: await getI18nProps({ ctx, ns }),
     }
   }
 }

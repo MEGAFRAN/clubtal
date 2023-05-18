@@ -337,3 +337,20 @@ export interface LinkNavigationProps {
 export type FileUploaderProps = {
   onDataUpdate: (data: string) => void
 }
+
+export type Ctx = {
+  params: {
+    locale: string | undefined
+  }
+  locales: string[] | undefined
+  locale: string | undefined
+  defaultLocale: string | undefined
+}
+export interface GetI18Props {
+  ctx: Ctx
+  ns: string[]
+}
+
+export interface MakeStaticProps {
+  ns: string[]
+}
