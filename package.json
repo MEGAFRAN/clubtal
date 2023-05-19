@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "jest a && next build && next export",
-    "build-local": "next build && next export",
+    "build": "jest a && next build",
+    "build-local": "next build",
     "start": "next start",
     "lint": "next lint --dir .",
     "lint:scss": "stylelint \"./app/**/*.scss\"",
