@@ -34,5 +34,10 @@
         "Todos los días"
     ],
     "rate": "califica",
-    "textAnalysis": "Text analysis"
+    "textAnalysis": "Text analysis",
+    "contentTitles": ["¿Para quien es este quiz de estres laboral?", "Que tan preciso es?"],
+    "contentParagraphs": [
+        "A continuación encontrará una lista de 10 preguntas diseñadas para ayudarle a determinar si puede estar sufriendo una depresión. Las preguntas se refieren a experiencias vitales comunes entre las personas que padecen depresión. Lea atentamente cada pregunta e indique con qué frecuencia ha experimentado los mismos problemas o similares en las últimas semanas.",
+        "Este cuestionario NO es una herramienta de diagnóstico. Los trastornos mentales sólo pueden ser diagnosticados por profesionales de la salud autorizados. Clubtal cree que las evaluaciones pueden ser un valioso primer paso hacia la obtención de tratamiento. Con demasiada frecuencia, las personas se abstienen de buscar ayuda por miedo a que sus preocupaciones no sean lo suficientemente legítimas o graves como para justificar una intervención profesional."
+    ]
 }

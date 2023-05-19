@@ -161,6 +161,11 @@ export interface SectionContactProps {
   title: string
 }
 
+export interface SectionQuizContentProps {
+  titles: string[]
+  paragraphs: string[]
+}
+
 export interface SectionGeneralProps {
   listData: string[]
   title: string
