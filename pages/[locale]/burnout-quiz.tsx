@@ -8,6 +8,7 @@ import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
 import BURNOUT_QUIZ_HEAD from "../../app/constants/seo/burnOutQuizHead"
 import QuestionnarieHeader from "../../app/components/sections/above_fold/header/QuestionnarieHeader"
 import Questionnaire from "../../app/components/questionnarie/Questionnarie"
+import calculateBurnoutResult from "../../app/services/utils/quiz/burnout-quiz"
 
 const BurnOutQuiz: NextPage = () => {
   const { t } = useTranslation(["pages/burnOutQuiz"])
@@ -17,8 +18,9 @@ const BurnOutQuiz: NextPage = () => {
       <Head>{BURNOUT_QUIZ_HEAD}</Head>
       <QuestionnarieHeader title={t("burnOutQuiz") as string}>
         <Questionnaire
+          quizLogic={calculateBurnoutResult}
           questions={t("burnOutQuestions", { returnObjects: true })}
-          ratings={t("burnOutQuizRatings", { returnObjects: true })}
+          options={t("burnOutQuizOptions", { returnObjects: true })}
         />
       </QuestionnarieHeader>
       <SectionFeedback title={t("rateApp") as string} />
