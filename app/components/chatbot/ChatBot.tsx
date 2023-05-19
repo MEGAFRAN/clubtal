@@ -4,6 +4,7 @@ import { ChatbotMessage, ChatbotProps } from "../../constants/types/components_p
 import comunicateChatBot from "../../services/form_services/comunicate_chat_bot/comunicate-chat-bot.service"
 import { getPageText, initialContext } from "../../services/utils/general/chatbot/chatbot"
 import styles from "../../styles/components/chat.module.scss"
+import gtmEvents from "../../services/analytics/events/google-tag-events.service"
 
 const ChatBot = ({ onClose }: ChatbotProps) => {
   const { t } = useTranslation(["components/text"])
@@ -33,6 +34,7 @@ const ChatBot = ({ onClose }: ChatbotProps) => {
     const newUserMessage: ChatbotMessage = { role: "user", content: userMessage }
     setMessages((prevMessages) => [...prevMessages, newUserMessage])
     setUserMessage("")
+    gtmEvents.sendMessageChatbot({ userMessage })
 
     try {
       const response = await comunicateChatBot(initialHiddenContextMessage, messages, userMessage)

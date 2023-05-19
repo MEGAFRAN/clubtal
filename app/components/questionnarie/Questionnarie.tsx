@@ -6,7 +6,7 @@ import {
   QuestionnarieProps,
 } from "../../constants/types/components_props/types"
 
-const Questionnaire = ({ questions, ratings }: QuestionnarieProps) => {
+const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) => {
   const { t } = useTranslation(["components/text"])
   const [formState, setFormState] = useState<QuestionnarieFormState>({})
   const [results, setResults] = useState<string | null>(null)
@@ -15,12 +15,12 @@ const Questionnaire = ({ questions, ratings }: QuestionnarieProps) => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
-    setFormState((prevFormState) => ({ ...prevFormState, [name]: value }))
+    setFormState((prevFormState) => ({ ...prevFormState, [name]: parseInt(value, 10) }))
   }
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    setResults(JSON.stringify(formState))
+    setResults(quizLogic(formState))
   }
 
   const nextQuestion = () => {
@@ -35,7 +35,7 @@ const Questionnaire = ({ questions, ratings }: QuestionnarieProps) => {
     }
   }
 
-  const isCurrentQuestionAnswered = !!formState[`question${currentQuestionIndex}`]
+  const isCurrentQuestionAnswered = typeof formState[`question${currentQuestionIndex}`] === "number"
 
   return (
     <div className={styles.container}>
@@ -44,17 +44,17 @@ const Questionnaire = ({ questions, ratings }: QuestionnarieProps) => {
           <label aria-label="Question" className={styles.question_label}>{`${
             currentQuestionIndex + 1
           }: ${questions[currentQuestionIndex]}`}</label>
-          <div className={styles.ratings}>
-            {ratings.map((rating, j) => (
-              <label key={j} aria-label={`Rating ${j}`} className={styles.rating_label}>
+          <div className={styles.options}>
+            {options.map((option, j) => (
+              <label key={j} aria-label={`Option ${j}`} className={styles.option_label}>
                 <input
                   type="radio"
                   name={`question${currentQuestionIndex}`}
-                  value={rating}
-                  checked={formState[`question${currentQuestionIndex}`] === rating}
+                  value={j}
+                  checked={formState[`question${currentQuestionIndex}`] === j}
                   onChange={handleInputChange}
                 />
-                {rating}
+                {option}
               </label>
             ))}
           </div>
@@ -87,7 +87,7 @@ const Questionnaire = ({ questions, ratings }: QuestionnarieProps) => {
           </div>
         </div>
       </form>
-      {results && <p className="results">{results}</p>}
+      {results && <div dangerouslySetInnerHTML={{ __html: results }} />}
     </div>
   )
 }
