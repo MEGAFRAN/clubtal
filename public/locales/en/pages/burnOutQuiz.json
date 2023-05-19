@@ -33,6 +33,6 @@
         "A few times a week",
         "Every day"
     ],
-    "rateApp": "rate app",
+    "rate": "rate",
     "textAnalysis": "Text analysis"
 }

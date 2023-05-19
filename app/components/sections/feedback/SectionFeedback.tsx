@@ -1,5 +1,5 @@
 import { SectionContactProps } from "../../../constants/types/components_props/types"
-import styles from "../../../styles/sections/contact.module.scss"
+import styles from "../../../styles/sections/feedback.module.scss"
 import Feedback from "../../feedback/Feedback"
 
 const SectionFeedback = ({ title }: SectionContactProps) => (

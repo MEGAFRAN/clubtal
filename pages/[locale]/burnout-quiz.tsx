@@ -2,8 +2,6 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import { useTranslation } from "next-i18next"
 import SectionAnalytics from "../../app/components/sections/analytics/SectionAnalytics"
-import SectionFeedback from "../../app/components/sections/feedback/SectionFeedback"
-import SocialSharing from "../../app/components/social_sharing/SocialSharing"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
 import BURNOUT_QUIZ_HEAD from "../../app/constants/seo/burnOutQuizHead"
 import QuestionnarieHeader from "../../app/components/sections/above_fold/header/QuestionnarieHeader"
@@ -23,8 +21,6 @@ const BurnOutQuiz: NextPage = () => {
           options={t("burnOutQuizOptions", { returnObjects: true })}
         />
       </QuestionnarieHeader>
-      <SectionFeedback title={t("rateApp") as string} />
-      <SocialSharing />
       <SectionAnalytics />
     </>
   )

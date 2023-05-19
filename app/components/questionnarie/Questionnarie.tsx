@@ -5,6 +5,8 @@ import {
   QuestionnarieFormState,
   QuestionnarieProps,
 } from "../../constants/types/components_props/types"
+import SectionFeedback from "../sections/feedback/SectionFeedback"
+import SocialSharing from "../social_sharing/SocialSharing"
 
 const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) => {
   const { t } = useTranslation(["components/text"])
@@ -39,55 +41,62 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
 
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.question}>
-          <label aria-label="Question" className={styles.question_label}>{`${
-            currentQuestionIndex + 1
-          }: ${questions[currentQuestionIndex]}`}</label>
-          <div className={styles.options}>
-            {options.map((option, j) => (
-              <label key={j} aria-label={`Option ${j}`} className={styles.option_label}>
-                <input
-                  type="radio"
-                  name={`question${currentQuestionIndex}`}
-                  value={j}
-                  checked={formState[`question${currentQuestionIndex}`] === j}
-                  onChange={handleInputChange}
-                />
-                {option}
-              </label>
-            ))}
-          </div>
-          <div className={styles.button_container}>
-            {currentQuestionIndex !== 0 && (
-              <button className={styles.prev} type="button" onClick={prevQuestion}>
-                {t("previous")}
-              </button>
-            )}
-            {currentQuestionIndex !== questions.length - 1 ? (
-              <button
-                className={styles.next}
-                type="button"
-                onClick={nextQuestion}
-                disabled={!isCurrentQuestionAnswered}
-              >
-                {t("next")}
-              </button>
-            ) : (
-              <button type="submit" disabled={!isCurrentQuestionAnswered}>
-                {t("analyzeAnswers")}
-              </button>
-            )}
-          </div>
-          <div className={styles.progress_bar}>
-            <div className={styles.fill} style={{ width: `${progress}%` }} />
-          </div>
-          <div style={{ color: "white" }}>
-            {currentQuestionIndex + 1}/{questions.length}
-          </div>
+      {results ? (
+        <div className={styles.results_container}>
+          <div dangerouslySetInnerHTML={{ __html: results }} />
+          <SectionFeedback title={t("rate") as string} />
+          <SocialSharing />
         </div>
-      </form>
-      {results && <div dangerouslySetInnerHTML={{ __html: results }} />}
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <div className={styles.question}>
+            <label aria-label="Question" className={styles.question_label}>{`${
+              currentQuestionIndex + 1
+            }: ${questions[currentQuestionIndex]}`}</label>
+            <div className={styles.options}>
+              {options.map((option, j) => (
+                <label key={j} aria-label={`Option ${j}`} className={styles.option_label}>
+                  <input
+                    type="radio"
+                    name={`question${currentQuestionIndex}`}
+                    value={j}
+                    checked={formState[`question${currentQuestionIndex}`] === j}
+                    onChange={handleInputChange}
+                  />
+                  {option}
+                </label>
+              ))}
+            </div>
+            <div className={styles.button_container}>
+              {currentQuestionIndex !== 0 && (
+                <button className={styles.prev} type="button" onClick={prevQuestion}>
+                  {t("previous")}
+                </button>
+              )}
+              {currentQuestionIndex !== questions.length - 1 ? (
+                <button
+                  className={styles.next}
+                  type="button"
+                  onClick={nextQuestion}
+                  disabled={!isCurrentQuestionAnswered}
+                >
+                  {t("next")}
+                </button>
+              ) : (
+                <button type="submit" disabled={!isCurrentQuestionAnswered}>
+                  {t("analyzeAnswers")}
+                </button>
+              )}
+            </div>
+            <div className={styles.progress_bar}>
+              <div className={styles.fill} style={{ width: `${progress}%` }} />
+            </div>
+            <div style={{ color: "white" }}>
+              {currentQuestionIndex + 1}/{questions.length}
+            </div>
+          </div>
+        </form>
+      )}
     </div>
   )
 }

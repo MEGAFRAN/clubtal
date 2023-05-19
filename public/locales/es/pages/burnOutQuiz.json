@@ -33,6 +33,6 @@
         "Varias veces a la semana",
         "Todos los días"
     ],
-    "rateApp": "califica la aplicación",
+    "rate": "califica",
     "textAnalysis": "Text analysis"
 }
