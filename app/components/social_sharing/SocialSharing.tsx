@@ -18,7 +18,7 @@ const SocialSharing = () => {
 
   return (
     <div className={styles.container}>
-      <h2>{t("shareInSocialMedia")}</h2>
+      <h2>{t("share")}</h2>
       <div className={styles.sharing_buttons_container}>
         <a
           href={fbUrl}

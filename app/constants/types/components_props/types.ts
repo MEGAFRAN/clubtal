@@ -161,6 +161,11 @@ export interface SectionContactProps {
   title: string
 }
 
+export interface SectionQuizContentProps {
+  titles: string[]
+  paragraphs: string[]
+}
+
 export interface SectionGeneralProps {
   listData: string[]
   title: string
@@ -336,6 +341,16 @@ export interface LinkNavigationProps {
 }
 export type FileUploaderProps = {
   onDataUpdate: (data: string) => void
+}
+
+export type QuestionnarieProps = {
+  questions: string[]
+  options: string[]
+  quizLogic: (ratings: Record<string, number>) => string
+}
+
+export type QuestionnarieFormState = {
+  [key: string]: number
 }
 
 export type Ctx = {
