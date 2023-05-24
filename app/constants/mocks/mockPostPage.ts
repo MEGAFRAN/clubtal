@@ -12,41 +12,21 @@ const mockResponsePageYear = {
       title: "First post 1",
       id: 21032023,
       nameAuthor: "Clubtal",
-      data: "2023-03-21",
+      date: "2023-03-21",
       readingTime: "5 min read",
       category: "IA",
-      contentPost: [
-        {
-          titleContent: "Title content 21",
-          descriptionContent:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. Exercitationem, distinctio! Blanditiis, quas vel. Expedita eius consequatur fuga facere voluptas architecto non cumque autem possimus, unde aliquid voluptatibus. Inventore!",
-        },
-        {
-          titleContent: "Title content 22",
-          descriptionContent:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. Exercitationem, distinctio! Blanditiis, quas vel. Expedita eius consequatur fuga facere voluptas architecto non cumque autem possimus, unde aliquid voluptatibus. Inventore! 02",
-        },
-      ],
+      overview:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. Exercitationem, distinctio! Blanditiis, quas vel. Expedita eius consequatur fuga facere voluptas architecto non cumque autem possimus, unde aliquid voluptatibus. Inventore!",
     },
     {
       title: "Second post 2",
       id: 28032023,
       nameAuthor: "Chanchito",
-      data: "2023-04-01",
+      date: "2023-04-01",
       readingTime: "6 min read",
       category: "IA",
-      contentPost: [
-        {
-          titleContent: "Title content 21",
-          descriptionContent:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. Exercitationem, distinctio! Blanditiis, quas vel. Expedita eius consequatur fuga facere voluptas architecto non cumque autem possimus, unde aliquid voluptatibus. Inventore!",
-        },
-        {
-          titleContent: "Title content 22",
-          descriptionContent:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. Exercitationem, distinctio! Blanditiis, quas vel. Expedita eius consequatur fuga facere voluptas architecto non cumque autem possimus, unde aliquid voluptatibus. Inventore! 02",
-        },
-      ],
+      overview:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. Exercitationem, distinctio! Blanditiis, quas vel. Expedita eius consequatur fuga facere voluptas architecto non cumque autem possimus, unde aliquid voluptatibus. Inventore!",
     },
   ],
 }

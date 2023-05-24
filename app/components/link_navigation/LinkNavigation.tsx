@@ -16,8 +16,8 @@ const LinkNavigation = ({ children, skipLocaleHandling, ...rest }: LinkNavigatio
 
   return (
     <>
-      <Link href={href}>
-        <a {...rest}>{children}</a>
+      <Link href={href} legacyBehavior>
+        {children}
       </Link>
     </>
   )
