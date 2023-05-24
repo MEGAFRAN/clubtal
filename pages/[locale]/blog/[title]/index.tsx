@@ -1,13 +1,17 @@
-import type { NextPage } from "next"
+import { InferGetStaticPropsType } from "next"
+import { MDXRemote } from "next-mdx-remote"
+import MDXComponents from "../../../../app/components/mdx"
 import { getStaticPaths, makeStaticProps } from "../../../../lib/getStaticPostDetail"
 
-const DetailPost: NextPage = () => (
+// ns ---> is variable of next-i18next that should to have array strings these strings are names of files that we want to translate in this page
+const ns = ["common"]
+const getStaticProps = makeStaticProps({ ns })
+export { getStaticPaths, getStaticProps }
+
+const DetailPost = ({ source }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <div>
-    <h1>PostDetail</h1>
+    <MDXRemote {...source} components={MDXComponents} />
   </div>
 )
 
 export default DetailPost
-
-const getStaticProps = makeStaticProps({ ns: ["common"] })
-export { getStaticPaths, getStaticProps }

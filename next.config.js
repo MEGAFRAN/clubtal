@@ -5,6 +5,9 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  images: {
+    domains: ["source.unsplash.com"],
+  },
   webpack(config) {
     const modifiedConfig = {
       ...config,

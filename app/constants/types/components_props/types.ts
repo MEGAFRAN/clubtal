@@ -227,10 +227,11 @@ export interface CardPost {
   title: string
   id: number
   nameAuthor: string
-  data: string
+  date: string
   readingTime: string
   category: string
-  description: string
+  overview: string
+  locale: string
 }
 
 export interface SectionCardPostProps extends SectionAboutPostProps {
@@ -356,6 +357,7 @@ export type QuestionnarieFormState = {
 export type Ctx = {
   params: {
     locale: string | undefined
+    title: string | undefined
   }
   locales: string[] | undefined
   locale: string | undefined
@@ -368,4 +370,15 @@ export interface GetI18Props {
 
 export interface MakeStaticProps {
   ns: string[]
+}
+
+export interface BlogPageProps {
+  listPost: CardPost[]
+}
+
+export type PathsPost = {
+  params: {
+    locale: string
+    title: string
+  }
 }
