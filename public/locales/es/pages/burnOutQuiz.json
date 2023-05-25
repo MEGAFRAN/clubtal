@@ -1,4 +1,8 @@
 {
+    "metatagDescription" : "descripcion de quemado",
+    "metatagTitle": "titulo de prueba quemado",
+    "metatagLocale": "es_CO",
+    "metatagUrl": "www.clubtal.com/quemado",
     "burnOutQuestions": [
         "Me siento emocionalmente agotado por mi trabajo",
         "Me siento agotado al final de la jornada laboral",

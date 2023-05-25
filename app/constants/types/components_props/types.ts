@@ -352,3 +352,13 @@ export type QuestionnarieProps = {
 export type QuestionnarieFormState = {
   [key: string]: string
 }
+
+export type pageHeadProps = { 
+  description: string
+  title: string
+  locale: string
+  url: string  
+  favicon?: string
+  name?: string
+  themeColor?: string
+}
