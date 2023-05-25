@@ -3,18 +3,25 @@ import Head from "next/head"
 import { useTranslation } from "next-i18next"
 import SectionAnalytics from "../../app/components/sections/analytics/SectionAnalytics"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
-import BURNOUT_QUIZ_HEAD from "../../app/constants/seo/burnOutQuizHead"
 import QuestionnarieHeader from "../../app/components/sections/above_fold/header/QuestionnarieHeader"
 import Questionnaire from "../../app/components/questionnarie/Questionnarie"
 import calculateBurnoutResult from "../../app/services/utils/quiz/burnout-quiz"
 import SectionQuizContent from "../../app/components/sections/quiz_content/QuizContent"
+import PageHead from "../../app/components/page_head/PageHead"
 
 const BurnOutQuiz: NextPage = () => {
   const { t } = useTranslation(["pages/burnOutQuiz"])
 
   return (
     <>
-      <Head>{BURNOUT_QUIZ_HEAD}</Head>
+      <Head>
+        <PageHead
+          description={t("metatagDescription")}
+          title={t("metatagTitle")}
+          locale={t("metatagLocale")}
+          url={t("metatagUrl")}
+        />
+      </Head>
       <QuestionnarieHeader title={t("burnOutQuiz") as string}>
         <Questionnaire
           quizLogic={calculateBurnoutResult}

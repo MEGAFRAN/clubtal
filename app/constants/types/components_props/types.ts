@@ -387,3 +387,13 @@ export const LOCALES = {
   ENGLISH: "en",
   SPANISH: "es",
 } as const
+
+export type pageHeadProps = { 
+  description: string
+  title: string
+  locale: string
+  url: string  
+  favicon?: string
+  name?: string
+  themeColor?: string
+}
