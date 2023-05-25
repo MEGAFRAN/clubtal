@@ -346,9 +346,9 @@ export type FileUploaderProps = {
 export type QuestionnarieProps = {
   questions: string[]
   options: string[]
-  quizLogic: (ratings: Record<string, number>) => string
+  quizLogic: (ratings: Record<string, string>) => string
 }
 
 export type QuestionnarieFormState = {
-  [key: string]: number
+  [key: string]: string
 }

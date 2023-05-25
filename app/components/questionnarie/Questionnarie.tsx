@@ -17,7 +17,7 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
-    setFormState((prevFormState) => ({ ...prevFormState, [name]: parseInt(value, 10) }))
+    setFormState((prevFormState) => ({ ...prevFormState, [name]: value }))
   }
 
   const handleSubmit = (event: FormEvent) => {
@@ -37,7 +37,7 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
     }
   }
 
-  const isCurrentQuestionAnswered = typeof formState[`question${currentQuestionIndex}`] === "number"
+  const isCurrentQuestionAnswered = typeof formState[`question${currentQuestionIndex}`] === "string"
 
   return (
     <div className={styles.container}>
@@ -59,8 +59,8 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
                   <input
                     type="radio"
                     name={`question${currentQuestionIndex}`}
-                    value={j}
-                    checked={formState[`question${currentQuestionIndex}`] === j}
+                    value={option}
+                    checked={formState[`question${currentQuestionIndex}`] === option}
                     onChange={handleInputChange}
                   />
                   {option}
