@@ -3,6 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { serialize } from "next-mdx-remote/serialize"
 import { CardPost, PathsPost } from "../app/constants/types/components_props/types"
+import IS_DEVELOPMENT from "../app/constants/config/config"
 
 const root = process.cwd()
 
@@ -22,25 +23,25 @@ interface GetFileByLocaleAndTitle {
   title: string
 }
 
-export const getAllPathsOfPost = () => {
+export const getAllPathsOfPost = (locale: string) => {
   const postDirectory = path.join("post")
   const localeNames = getFiles(postDirectory)
+  const findIndexLocale = localeNames.findIndex((name) => name === locale)
+  const localName = localeNames[findIndexLocale]
   const paths: PathsPost[] = []
-  for (const localName of localeNames) {
-    const localeDirectory = path.join(postDirectory, localName)
-    const yearNames = getFiles(localeDirectory)
-    for (const yearName of yearNames) {
-      const yearDirectory = path.join(localeDirectory, yearName)
-      const postNames = getFiles(yearDirectory)
-      for (const postName of postNames) {
-        const titlePost = postName.replace(/\.mdx?$/, "")
-        paths.push({
-          params: {
-            locale: localName,
-            title: titlePost,
-          },
-        })
-      }
+  const localeDirectory = path.join(postDirectory, localName)
+  const yearNames = getFiles(localeDirectory)
+  for (const yearName of yearNames) {
+    const yearDirectory = path.join(localeDirectory, yearName)
+    const postNames = getFiles(yearDirectory)
+    for (const postName of postNames) {
+      const titlePost = postName.replace(/\.mdx?$/, "")
+      paths.push({
+        params: {
+          locale: localName,
+          title: titlePost,
+        },
+      })
     }
   }
   return paths
@@ -80,8 +81,9 @@ export const getFileByLocaleAndTitle = async ({ locale, title }: GetFileByLocale
   const localDirectory = path.join("post", locale)
   const folders = getFiles(localDirectory)
   const { pathFile } = getAllPostDataAndPathFile({ folders, locale, title })
-  const fileContent = fs.readFileSync(pathFile, "utf8")
+  const fileContent = readFileContent(pathFile)
   // Use gray-matter to parse the post metadata and content section
+  if (!fileContent) return null
   const { data, content } = matter(fileContent)
   const source = await serialize(content)
   const frontMatter = data as CardPost
@@ -93,3 +95,16 @@ export const sortPostByDate = (posts: CardPost[]) =>
     if (currentPost.date < nextPost.date) return 1
     return -1
   })
+
+function readFileContent(pathFile: string) {
+  try {
+    const fileContent = fs.readFileSync(pathFile, "utf8")
+    return fileContent
+  } catch (error) {
+    if (IS_DEVELOPMENT) {
+      console.error(error)
+      return null
+    }
+    return null
+  }
+}

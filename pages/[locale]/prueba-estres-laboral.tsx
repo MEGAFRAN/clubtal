@@ -32,6 +32,7 @@ const BurnOutQuiz: NextPage = () => {
 }
 
 export default BurnOutQuiz
-
-const getStaticProps = makeStaticProps(["pages/burnOutQuiz", "components/text"])
+// ns ---> is variable of next-i18next that should to have array strings these strings are names of files that we want to translate in this page
+const ns = ["pages/burnOutQuiz", "components/text"]
+const getStaticProps = makeStaticProps({ ns })
 export { getStaticPaths, getStaticProps }

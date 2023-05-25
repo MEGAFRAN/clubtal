@@ -382,3 +382,8 @@ export type PathsPost = {
     title: string
   }
 }
+
+export const LOCALES = {
+  ENGLISH: "en",
+  SPANISH: "es",
+} as const

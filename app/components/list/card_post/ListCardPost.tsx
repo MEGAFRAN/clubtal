@@ -22,7 +22,7 @@ export default function ListCardPost({ listPost }: ListCardPost) {
             return (
               <SectionCardPost
                 className={styles.card_post}
-                key={cardPost.id}
+                key={cardPost.title.concat(cardPost.date)}
                 nameAuthor={cardPost.nameAuthor}
                 datePost={newDateString}
                 readingTime={cardPost.readingTime}
