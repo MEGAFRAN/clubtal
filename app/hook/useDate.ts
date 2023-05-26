@@ -29,7 +29,6 @@ export default function useDate() {
   }
 
   type GenerateEndPointCardPostParam = {
-    date: string
     title: string
   }
 
@@ -79,16 +78,12 @@ export default function useDate() {
     return dataString
   }
 
-  const generateEndpointCardPost = ({ date, title }: GenerateEndPointCardPostParam): string => {
+  const generateEndpointCardPost = ({ title }: GenerateEndPointCardPostParam): string => {
     const DEFAULT_URL = "/blog"
-    const { year, month, day } = getYearMonthDayOfDate(date)
     const titleToLowerCase = title.toLocaleLowerCase()
     const stringToArray = titleToLowerCase.split(" ")
     const separateTitleWithCharacter = stringToArray.join("-")
-    const newDay = addCeroStart(day.toString())
-    const newMonth = addCeroStart(month.toString())
-    const endPoint = `${DEFAULT_URL}/${year}/${newMonth}/${newDay}/${separateTitleWithCharacter}/`
-    return endPoint
+    return `${DEFAULT_URL}/${separateTitleWithCharacter}`
   }
 
   const truncateText = (text: string): string => {

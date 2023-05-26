@@ -1,5 +1,6 @@
 *.yml
 sitemap.xml
+*.mdx
 robots.txt
 .eslintignore
 .gitignore

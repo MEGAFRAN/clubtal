@@ -1,17 +1,23 @@
 import "@testing-library/jest-dom"
+import { useRouter } from "next/router"
 import { cleanup, render } from "@testing-library/react"
 import ListCardPost from "./ListCardPost"
 import mockResponsePageYear from "../../../constants/mocks/mockPostPage"
 
+jest.mock("next/router", () => ({
+  useRouter: jest.fn(),
+}))
 describe("<ListCardPost/>", () => {
+  const mockRouter = { query: { locale: "en" } }
   const mockPost = mockResponsePageYear.posts
   const mockDescription = [
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquid. ...",
   ]
-  const mockEndpointsPost = ["/blog/2023/03/21/first-post-1/", "/blog/2023/04/01/second-post-2/"]
+  const mockEndpointsPost = ["/en/blog/first-post-1", "/en/blog/second-post-2"]
   const mockDataPost = ["21 Marzo, 2023", "1 Abril, 2023"]
   let component
   beforeEach(() => {
+    useRouter.mockImplementation(() => mockRouter)
     component = render(<ListCardPost listPost={mockPost} />)
   })
   afterEach(cleanup)

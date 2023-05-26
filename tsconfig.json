@@ -30,7 +30,7 @@
     "**/*.tsx",
     "pages/404.tsx",
     ".next/types/**/*.ts"
-  ],
+, "lib/redirect.js", "app/components/mdx/index.ts"  ],
   "exclude": [
     "node_modules"
   ]

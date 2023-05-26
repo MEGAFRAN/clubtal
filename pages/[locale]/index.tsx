@@ -57,6 +57,7 @@ const Home: NextPage = () => {
 }
 
 export default Home
-
-const getStaticProps = makeStaticProps(["common", "components/text", "pages/index"])
+// ns ---> is variable of next-i18next that should to have array strings these strings are names of files that we want to translate in this page
+const ns = ["common", "components/text", "pages/index"]
+const getStaticProps = makeStaticProps({ ns })
 export { getStaticPaths, getStaticProps }
