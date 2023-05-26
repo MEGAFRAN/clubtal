@@ -354,7 +354,7 @@ export type QuestionnarieFormState = {
   [key: string]: number
 }
 
-export type Ctx = {
+export type ParamsStaticProps = {
   params: {
     locale: string | undefined
     title: string | undefined
@@ -364,7 +364,7 @@ export type Ctx = {
   defaultLocale: string | undefined
 }
 export interface GetI18Props {
-  ctx: Ctx
+  paramStatic: ParamsStaticProps
   ns: string[]
 }
 

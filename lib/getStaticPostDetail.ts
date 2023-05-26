@@ -1,10 +1,10 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import i18nextConfig from "../next-i18next.config"
 import {
-  Ctx,
   GetI18Props,
   LOCALES,
   MakeStaticProps,
+  ParamsStaticProps,
 } from "../app/constants/types/components_props/types"
 import { getAllPathsOfPost, getFileByLocaleAndTitle } from "./posts"
 
@@ -24,8 +24,8 @@ export const getStaticPathsEn = () => {
   }
 }
 
-export async function getI18nProps({ ctx, ns = ["common"] }: GetI18Props) {
-  const locale = ctx?.params?.locale || i18nextConfig.i18n.defaultLocale
+export async function getI18nProps({ paramStatic, ns = ["common"] }: GetI18Props) {
+  const locale = paramStatic?.params?.locale || i18nextConfig.i18n.defaultLocale
   const props = {
     ...(await serverSideTranslations(locale, ns)),
   }
@@ -33,11 +33,11 @@ export async function getI18nProps({ ctx, ns = ["common"] }: GetI18Props) {
 }
 
 export function makeStaticProps({ ns = [] }: MakeStaticProps) {
-  return async function getStaticProps(ctx: Ctx) {
-    const locale = ctx?.params?.locale || i18nextConfig.i18n.defaultLocale
-    const title = ctx?.params?.title as string
+  return async function getStaticProps(paramStatic: ParamsStaticProps) {
+    const locale = paramStatic?.params?.locale || i18nextConfig.i18n.defaultLocale
+    const title = paramStatic?.params?.title as string
     const fileContent = await getFileByLocaleAndTitle({ locale, title })
-    const i18Configuration = await getI18nProps({ ctx, ns })
+    const i18Configuration = await getI18nProps({ paramStatic, ns })
     if (fileContent === null) return { notFound: true }
     const { frontMatter, source } = fileContent
     return {
