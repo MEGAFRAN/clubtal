@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next"
-import React, { useState, FormEvent } from "react"
+import React, { useState, FormEvent, useEffect } from "react"
 import styles from "../../styles/components/questionnarie.module.scss"
 import {
   QuestionnarieFormState,
@@ -28,6 +28,8 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
   const nextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
+    } else {
+      setResults(quizLogic(formState))
     }
   }
 
@@ -36,6 +38,29 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
       setCurrentQuestionIndex((prevIndex) => prevIndex - 1)
     }
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.target && (event.target as HTMLElement).tagName === "INPUT") {
+        switch (event.key) {
+          case "ArrowRight":
+            nextQuestion()
+            break
+          case "ArrowLeft":
+            prevQuestion()
+            break
+          default:
+            break
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [currentQuestionIndex])
 
   const isCurrentQuestionAnswered = typeof formState[`question${currentQuestionIndex}`] === "string"
 
@@ -49,13 +74,20 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <div className={styles.question}>
-            <label aria-label="Question" className={styles.question_label}>{`${
+          <fieldset className={styles.question}>
+            <legend id="question-label" className={styles.question_label}>{`${
               currentQuestionIndex + 1
-            }: ${questions[currentQuestionIndex]}`}</label>
-            <div className={styles.options}>
+            }: ${questions[currentQuestionIndex]}`}</legend>
+            <div role="group" aria-labelledby="question-label" className={styles.options}>
               {options.map((option, j) => (
-                <label key={j} aria-label={`Option ${j}`} className={styles.option_label}>
+                <label
+                  key={j}
+                  className={
+                    formState[`question${currentQuestionIndex}`] === option
+                      ? `${styles.option_label} ${styles.option_label_checked}`
+                      : styles.option_label
+                  }
+                >
                   <input
                     type="radio"
                     name={`question${currentQuestionIndex}`}
@@ -89,12 +121,19 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
               )}
             </div>
             <div className={styles.progress_bar}>
-              <div className={styles.fill} style={{ width: `${progress}%` }} />
+              <div
+                className={styles.fill}
+                style={{ width: `${progress}%` }}
+                aria-valuenow={progress}
+                aria-valuemin={1}
+                aria-valuemax={questions.length}
+                role="progressbar"
+              />
             </div>
-            <div style={{ color: "white" }}>
+            <div style={{ color: "white" }} aria-live="polite">
               {currentQuestionIndex + 1}/{questions.length}
             </div>
-          </div>
+          </fieldset>
         </form>
       )}
     </div>
