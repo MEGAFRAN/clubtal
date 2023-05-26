@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next"
-import React, { useState, FormEvent } from "react"
+import React, { useState, FormEvent, KeyboardEvent } from "react"
 import styles from "../../styles/components/questionnarie.module.scss"
 import {
   QuestionnarieFormState,
@@ -13,7 +13,10 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
   const [formState, setFormState] = useState<QuestionnarieFormState>({})
   const [results, setResults] = useState<string | null>(null)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const progress = (currentQuestionIndex / (questions.length - 1)) * 100
+  const numberOfQuestions = questions.length - 1
+  const barProgress = (currentQuestionIndex / numberOfQuestions) * 100
+  const quizProgress = `${currentQuestionIndex + 1}/${questions.length}`
+  const currentQuestion = `question${currentQuestionIndex}`
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
@@ -26,8 +29,10 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
   }
 
   const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < numberOfQuestions) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
+    } else {
+      setResults(quizLogic(formState))
     }
   }
 
@@ -37,7 +42,22 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
     }
   }
 
-  const isCurrentQuestionAnswered = typeof formState[`question${currentQuestionIndex}`] === "string"
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (!event.target || (event.target as HTMLElement).tagName !== "INPUT") return
+
+    switch (event.key) {
+      case "ArrowRight":
+        nextQuestion()
+        break
+      case "ArrowLeft":
+        prevQuestion()
+        break
+      default:
+        break
+    }
+  }
+
+  const isCurrentQuestionAnswered = typeof formState[currentQuestion] === "string"
 
   return (
     <div className={styles.container}>
@@ -49,19 +69,27 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <div className={styles.question}>
-            <label aria-label="Question" className={styles.question_label}>{`${
+          <fieldset className={styles.question}>
+            <legend id="question-label" className={styles.question_label}>{`${
               currentQuestionIndex + 1
-            }: ${questions[currentQuestionIndex]}`}</label>
-            <div className={styles.options}>
-              {options.map((option, j) => (
-                <label key={j} aria-label={`Option ${j}`} className={styles.option_label}>
+            }: ${questions[currentQuestionIndex]}`}</legend>
+            <div role="group" aria-labelledby="question-label" className={styles.options}>
+              {options.map((option) => (
+                <label
+                  key={option}
+                  className={
+                    formState[currentQuestion] === option
+                      ? `${styles.option_label} ${styles.option_label_checked}`
+                      : styles.option_label
+                  }
+                >
                   <input
                     type="radio"
-                    name={`question${currentQuestionIndex}`}
+                    name={currentQuestion}
                     value={option}
-                    checked={formState[`question${currentQuestionIndex}`] === option}
+                    checked={formState[currentQuestion] === option}
                     onChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
                   />
                   {option}
                 </label>
@@ -73,7 +101,7 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
                   {t("previous")}
                 </button>
               )}
-              {currentQuestionIndex !== questions.length - 1 ? (
+              {currentQuestionIndex !== numberOfQuestions ? (
                 <button
                   className={styles.next}
                   type="button"
@@ -89,12 +117,19 @@ const Questionnaire = ({ questions, options, quizLogic }: QuestionnarieProps) =>
               )}
             </div>
             <div className={styles.progress_bar}>
-              <div className={styles.fill} style={{ width: `${progress}%` }} />
+              <div
+                className={styles.fill}
+                style={{ width: `${barProgress}%` }}
+                aria-valuenow={barProgress}
+                aria-valuemin={1}
+                aria-valuemax={questions.length}
+                role="progressbar"
+              />
             </div>
-            <div style={{ color: "white" }}>
-              {currentQuestionIndex + 1}/{questions.length}
+            <div style={{ color: "white" }} aria-live="polite">
+              {quizProgress}
             </div>
-          </div>
+          </fieldset>
         </form>
       )}
     </div>
