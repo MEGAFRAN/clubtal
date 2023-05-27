@@ -10,7 +10,7 @@ import ChatBotToggle from "../../app/components/chatbot_toogle/ChatBotToogle"
 import SectionContact from "../../app/components/sections/contact/SectionContact"
 import SectionUnderlineList from "../../app/components/sections/underline_list/SectionUnderlineList"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
-import PageHead from "../../app/components/page_head/PlageHead"
+import PageHead from "../../app/components/page_head/PageHead"
 
 const Home: NextPage = () => {
   const { t } = useTranslation(["pages/index"])
