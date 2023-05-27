@@ -14,7 +14,7 @@ describe("PageHead", () => {
       themeColor: "#212121",
     }
   
-    it("renders properly", () => {
+    it("renders element", () => {
       render(<PageHead {...defaultProps} />)
       
       expect(document.querySelector("title")).toHaveTextContent(defaultProps.title)
