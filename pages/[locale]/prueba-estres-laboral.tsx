@@ -7,7 +7,7 @@ import QuestionnarieHeader from "../../app/components/sections/above_fold/header
 import Questionnaire from "../../app/components/questionnarie/Questionnarie"
 import calculateBurnoutResult from "../../app/services/utils/quiz/burnout-quiz"
 import SectionQuizContent from "../../app/components/sections/quiz_content/QuizContent"
-import PageHead from "../../app/components/page_head/PageHead"
+import PageHead from "../../app/components/page_head/PlageHead"
 
 const BurnOutQuiz: NextPage = () => {
   const { t } = useTranslation(["pages/burnOutQuiz"])
