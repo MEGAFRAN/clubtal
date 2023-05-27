@@ -5,20 +5,26 @@ import Header from "../../app/components/sections/above_fold/header/Header"
 import SectionDottedCard from "../../app/components/sections/dotted_card/SectionDottedCard"
 import SectionHamburger from "../../app/components/sections/hamburger/SectionHamburger"
 import SectionInnerRounded from "../../app/components/sections/inner_rounded/SectionInnerRounded"
-import HOME_HEAD from "../../app/constants/seo/homeHead"
 import SectionAnalytics from "../../app/components/sections/analytics/SectionAnalytics"
 import ChatBotToggle from "../../app/components/chatbot_toogle/ChatBotToogle"
 import SectionContact from "../../app/components/sections/contact/SectionContact"
 import SectionUnderlineList from "../../app/components/sections/underline_list/SectionUnderlineList"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
+import PageHead from "../../app/components/page_head/PageHead"
 
 const Home: NextPage = () => {
   const { t } = useTranslation(["pages/index"])
 
   return (
     <>
-      <Head>{HOME_HEAD}</Head>
-
+      <Head>
+        <PageHead
+          description={t("metatagDescription")}
+          title={t("metatagTitle")}
+          locale={t("metatagLocale")}
+          url={t("metatagUrl")}
+        />
+      </Head>
       <Header
         title={t("headerTitle", { returnObjects: true })}
         text={t("headerText", { returnObjects: true })}

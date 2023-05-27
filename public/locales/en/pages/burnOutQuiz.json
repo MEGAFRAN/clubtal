@@ -1,4 +1,8 @@
 {
+    "metatagDescription" : "test burnout description",
+    "metatagTitle": "test burnout title",
+    "metatagLocale": "en_US",
+    "metatagUrl": "www.clubtal.com/burnout",
     "burnOutQuestions": [
         "I feel emotionally drained from my work.",
         "I feel used up at the end of the workday.",
