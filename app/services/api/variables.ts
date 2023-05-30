@@ -1,5 +1,6 @@
 const AZURE_SERVERLESS_API = "https://post-push.azurewebsites.net"
 const CLUBTAL_SERVICES_API = "https://clubtal-web-services.azurewebsites.net"
+const WORDPRESS_API = "https://testtal.wpengine.com"
 const EMAIL_SERVICE_GENERAL_ENDPOINT = "/api/EmailService"
 const EMAIL_SERVICE_RECRUIT_ENDPOINT = "/api/EmailServiceRecruit1"
 const COMUNICATE_CHAT_BOT_ENDPOINT = "/api/comunicate-chat-bot"
@@ -7,6 +8,7 @@ const CREATE_MAGIC_LINK_ENDPOINT = "/api/create-magic-link"
 const CERTIFY_MAGIC_LINK_ENDPOINT = "/api/certify-magic-link"
 const SEND_FEEDBACK_EMAIL_ENDPOINT = "/api/send-feedback-email"
 const GET_TEXT_ANALYSIS_ENDPOINT = "/api/get-text-analysis"
+const GRAPH_QL_ENDPOINT= "/graphql"
 
 
 export const EMAIL_SERVICE_GENERAL = `${AZURE_SERVERLESS_API}${EMAIL_SERVICE_GENERAL_ENDPOINT}`
@@ -16,3 +18,4 @@ export const CREATE_MAGIC_LINK = `${CLUBTAL_SERVICES_API}${CREATE_MAGIC_LINK_END
 export const CERTIFY_MAGIC_LINK = `${CLUBTAL_SERVICES_API}${CERTIFY_MAGIC_LINK_ENDPOINT}`
 export const GET_TEXT_ANALYSIS = `${CLUBTAL_SERVICES_API}${GET_TEXT_ANALYSIS_ENDPOINT}`
 export const SEND_FEEDBACK_EMAIL = `${AZURE_SERVERLESS_API}${SEND_FEEDBACK_EMAIL_ENDPOINT}`
+export const REQUEST_WORDPRESS_GRAPH_QL = `${WORDPRESS_API}${GRAPH_QL_ENDPOINT}`
