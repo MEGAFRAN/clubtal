@@ -80,12 +80,7 @@
         }
   
         .send {
-            background: linear-gradient(
-              0deg,
-              colors.$primary-gold 0,
-              colors.$primary-gold 26%,
-              colors.$primary-white 96%
-            );
+            background-color: colors.$primary-green;
         }
   
         .cancel {

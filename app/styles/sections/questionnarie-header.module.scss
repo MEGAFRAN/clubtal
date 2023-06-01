@@ -2,7 +2,7 @@
 
 .container {
   align-items: stretch;
-  background-color: colors.$primary-black;
+  background-color: colors.$primary-white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,15 +18,15 @@
 
   h1 {
     font-size: clamp(1.4rem, 5vw, 1.8rem);
-    color: colors.$primary-gold;
+    color: colors.$primary-green;
   }
 
   p {
-    color: colors.$primary-gold;
+    color: colors.$primary-green;
     font-size: clamp(1.2rem, 5vw, 1.6rem);
 
     em {
-      color: colors.$primary-white;
+      color: colors.$primary-black;
       font-size: clamp(1.2rem, 5vw, 1.6rem);
       font-weight: 500;
     }

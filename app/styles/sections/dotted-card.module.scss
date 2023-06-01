@@ -12,7 +12,7 @@
   padding: 40px;
 
   h2 {
-    color: colors.$primary-gray;
+    color: colors.$gray8;
     padding-bottom: 30px;
     text-align: center;
   }
@@ -36,9 +36,9 @@
 
     li {
       align-items: center;
-      border: dashed 4px colors.$primary-white;
+      border: dashed 4px colors.$gray8;
       border-radius: 19px;
-      color: colors.$primary-white;
+      color: colors.$primary-black;
       display: flex;
       flex-direction: column;
       height: 122px;

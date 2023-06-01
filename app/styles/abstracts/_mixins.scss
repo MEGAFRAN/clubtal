@@ -8,13 +8,8 @@
 }
 
 @mixin cta-button-appearance {
-  background: linear-gradient(
-    0deg,
-    colors.$primary-gold 0,
-    colors.$primary-gold 26%,
-    colors.$primary-white 96%
-  );
-  border: solid colors.$secondary-black 2px;
+  background-color: colors.$primary-green;
+  border: none;
   border-radius: 24px;
   color: colors.$primary-black;
   padding: 10px 23px;
@@ -29,7 +24,7 @@
     color: colors.$primary-white;
 
     &::before {
-      color: colors.$primary-gold;
+      color: colors.$primary-green;
     }
   }
 }
@@ -41,12 +36,12 @@
 }
 
 @mixin card-post-hover {
-  border-color: colors.$primary-gold;
+  border-color: colors.$primary-green;
   box-shadow: 0 0 40px -10px black;
 }
 
 @mixin linkcard-post-hover {
-  color: colors.$primary-gold;
+  color: colors.$primary-green;
 }
 
 @mixin field-validation {
@@ -54,7 +49,7 @@
     outline-color: colors.$secondary-gray;
 
     &:invalid {
-      outline-color: colors.$primary-gold;
+      outline-color: colors.$primary-green;
     }
   }
 }

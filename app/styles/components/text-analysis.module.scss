@@ -28,12 +28,7 @@
     }
 
     button {
-      background: linear-gradient(
-        0deg,
-        colors.$primary-gold 0,
-        colors.$primary-gold 26%,
-        colors.$primary-white 96%
-      );
+      background-color: colors.$primary-green;
       border: solid colors.$secondary-black 2px;
       border-radius: 24px;
       color: colors.$primary-black;
@@ -55,7 +50,7 @@
       max-height: 300px;
       overflow-y: scroll; 
       font-size: 1rem;
-      outline: solid 2px colors.$primary-gold;
+      outline: solid 2px colors.$primary-green;
       border-radius: 5px;
       outline-width: thick;
     }
@@ -75,7 +70,7 @@
       flex-direction: column;
       gap: 2rem;
       padding: 20px;
-      border: 2px solid colors.$primary-gold;
+      border: 2px solid colors.$primary-green;
       text-align: left;
 
       .sentiment_analysis, .key_phrases, .entity_recognition {

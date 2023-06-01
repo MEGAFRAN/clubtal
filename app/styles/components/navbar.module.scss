@@ -4,8 +4,7 @@
 
 .container {
   align-items: center;
-  backdrop-filter: saturate(180%) blur(20px);
-  background: colors.$primary-black;
+  background: colors.$primary-white;
   box-shadow: 0 -3px 11px colors.$secondary-black;
   display: flex;
   height: 65px;
@@ -25,7 +24,7 @@
     align-items: center;
     background: transparent;
     border: none;
-    color: colors.$primary-white;
+    color: colors.$primary-black;
     display: flex;
     flex-direction: column;
     font-family: Helvetica, Arial, sans-serif;
@@ -36,7 +35,7 @@
     &::before {
       color: transparent;
       font-size: 19px;
-      text-shadow: 0 0 0 colors.$primary-gold;
+      text-shadow: 0 0 0 colors.$primary-green;
     }
 
     &:hover {
@@ -63,7 +62,7 @@
   }
 
   .active {
-    color: colors.$primary-gold;
+    color: colors.$primary-green;
     height: 30px;
   }
 
@@ -98,19 +97,19 @@
       padding: 14px 0;
 
       a {
-        color: colors.$primary-white;
+        color: colors.$primary-black;
         pointer-events: auto;
         text-decoration: none;
         text-transform: capitalize;
 
         &:hover {
-          color: colors.$primary-gold;
+          color: colors.$primary-green;
         }
       }
     }
 
     .contact {
-      color: colors.$primary-white;
+      color: colors.$primary-black;
       pointer-events: auto;
       text-decoration: none;
     }

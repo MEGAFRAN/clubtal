@@ -2,8 +2,8 @@
 @use "../base/typography";
 
 body {
-  background-color: colors.$primary-black;
-  color: colors.$primary-white;
+  background-color: colors.$primary-white;
+  color: colors.$primary-black;
   font-family: typography.$secondary-font-family;
   font-size: 100%;
   height: 100%;

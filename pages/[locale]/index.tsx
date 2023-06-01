@@ -31,12 +31,6 @@ const Home: NextPage = () => {
         buttonText={t("headerButtons", { returnObjects: true })}
         sectionToScroll={t("sectionContact") as string}
       />
-      <SectionInnerRounded
-        listData={t("listData", { returnObjects: true })}
-        title={t("whatDoWeDo")}
-        buttonText={t("iWantMySolution")}
-        sectionToScroll={t("sectionContact") as string}
-      />
       <SectionUnderlineList
         listData={t("listData2", { returnObjects: true })}
         title={t("benefitsForYourBusiness")}
@@ -46,12 +40,6 @@ const Home: NextPage = () => {
       <SectionDottedCard
         listData={t("listData3", { returnObjects: true })}
         title={t("whatDoWeDo")}
-        buttonText={t("requestService")}
-        sectionToScroll={t("sectionContact") as string}
-      />
-      <SectionHamburger
-        listData={t("listData4", { returnObjects: true })}
-        title={t("stepsToFollow")}
         buttonText={t("requestService")}
         sectionToScroll={t("sectionContact") as string}
       />
