@@ -263,6 +263,7 @@ export interface MagicLinkResponse {
 export type LoadingProps = {
   isLoading: boolean
   maxProgress: number
+  loadingMessage: string
 }
 
 type CurrentLanguage = {

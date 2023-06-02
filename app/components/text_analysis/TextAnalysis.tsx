@@ -84,7 +84,11 @@ const TextAnalysis = () => {
           onInput={(event) => handleInput(event)}
           required
         />
-        <Loading isLoading={isLoading} maxProgress={100} />
+        <Loading
+          isLoading={isLoading}
+          maxProgress={100}
+          loadingMessage={t("analyzing") as string}
+        />
         {!isLoading &&
         sentimentAnalysis?.length &&
         keyPhrases?.length &&
