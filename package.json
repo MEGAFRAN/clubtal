@@ -56,8 +56,7 @@
       "npm run prettier:check",
       "npm run lint:scss:fix",
       "npm run lint",
-      "npm run test",
-      "git add"
+      "npm run test"
     ]
   }
 }
