@@ -1,30 +1,11 @@
-import { useState } from "react"
 import styles from "../../../../styles/sections/header.module.scss"
 import { HeaderProps } from "../../../../constants/types/components_props/types"
 import LoginForm from "../../../login_form/login_form"
 import Navbar from "../navbar/Navbar"
 import Button from "../../../button/Button"
-import createMagicLink from "../../../../services/form_services/create_magic_link/create-magic-link.service"
 
 const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: HeaderProps) => {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [message, setMessage] = useState("")
-
-  const handleSubmit = async (email: string) => {
-    setIsSubmitting(true)
-    setMessage("Submitting data...")
-
-    const response = await createMagicLink(email)
-
-    if (response.ok) {
-      setMessage("Magic link sent to email, please verify.")
-    } else {
-      setMessage("Error: Please try filling the form again.")
-    }
-
-    setIsSubmitting(false)
-  }
-  const [buttonHero,...resButton]= buttonText || []
+  const [buttonHero, ...resButton] = buttonText || []
   return (
     <header className={styles.container}>
       <Navbar
@@ -48,7 +29,7 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
 
       <div className={styles.cta_wrapper}>
         {withMagicLink ? (
-          <LoginForm onSubmit={handleSubmit} isSubmitting={isSubmitting} message={message} />
+          <LoginForm />
         ) : (
           <Button text={buttonHero} style="cta" scrollToSection={sectionToScroll} />
         )}

@@ -1,11 +1,9 @@
 import { useState, useEffect, memo, useCallback } from "react"
-import { useTranslation } from "next-i18next"
 import { LoadingProps } from "../../constants/types/components_props/types"
 import styles from "../../styles/components/loading.module.scss"
 
-const Loading = ({ isLoading, maxProgress }: LoadingProps) => {
+const Loading = ({ isLoading, maxProgress, loadingMessage }: LoadingProps) => {
   const [progressValue, setProgressValue] = useState(0)
-  const { t } = useTranslation(["components/text"])
 
   const incrementProgressValue = useCallback(() => {
     setProgressValue((prevProgressValue) => prevProgressValue + 1)
@@ -32,20 +30,16 @@ const Loading = ({ isLoading, maxProgress }: LoadingProps) => {
     <>
       {isLoading ? (
         <div className={styles.container}>
-          <span>{t("analyzing")}</span>
+          <span>{loadingMessage}</span>
           <progress
             value={progressValue}
             max={maxProgress}
             role="progressbar"
-            aria-valuetext={`Loading ${t("analyzing")}: ${progressValue}%`}
+            aria-valuetext={`Loading ${loadingMessage}: ${progressValue}%`}
             aria-label="Loading progress"
           ></progress>
         </div>
-      ) : (
-        <button disabled={isLoading} type="submit">
-          {t("freeTextAnalysis")}
-        </button>
-      )}
+      ) : null}
     </>
   )
 }
