@@ -1,20 +1,20 @@
 import React, { useState } from "react"
 import { useTranslation } from "next-i18next"
-import getTextAnalysis from "../../services/text_analysis/get-text-analysis"
-import styles from "../../styles/components/text-analysis.module.scss"
+import getTextAnalysis from "../../../app/services/text_analysis/get-text-analysis"
+import styles from "../../../app/styles/components/text-analysis.module.scss"
 import {
   EntityRecognitionState,
   KeyPhrasesState,
   SentimentAnalysisState,
-} from "../../constants/types/components_props/types"
+} from "../../../app/constants/types/components_props/types"
 import {
   handleInput,
   handleValidation,
-} from "../../services/utils/general/validation_handlers/validationHandlers"
-import Loading from "../loading/Loading"
-import gtmEvents from "../../services/analytics/events/google-tag-events.service"
+} from "../../../app/services/utils/general/validation_handlers/validationHandlers"
+import Loading from "../../../app/components/loading/Loading"
+import gtmEvents from "../../../app/services/analytics/events/google-tag-events.service"
 import FileUploader from "../file_uploader/FileUploader"
-import countWordsRepetitions from "../../services/utils/general/count_words/countWordsRepetitions"
+import countWordsRepetitions from "../../../app/services/utils/general/count_words/countWordsRepetitions"
 
 const TextAnalysis = () => {
   const [userMessageContext, setUserMessageContext] = useState("")

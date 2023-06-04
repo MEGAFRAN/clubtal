@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useTranslation } from "next-i18next"
-import handleFileUpload from "../../services/utils/general/file_loader/fileLoader"
-import styles from "../../styles/components/file-uploader.module.scss"
-import { FileUploaderProps } from "../../constants/types/components_props/types"
+import handleFileUpload from "../../util/file_loader/fileLoader"
+import styles from "../../../app/styles/components/file-uploader.module.scss"
+import { FileUploaderProps } from "../../../app/constants/types/components_props/types"
 
 const FileUploader = ({ onDataUpdate }: FileUploaderProps) => {
   const [data, setData] = useState("")
