@@ -62,7 +62,7 @@ describe("sendFormMessage", () => {
     )
   })
 
-  /*it("should set message response status and message response to error if request fails", async () => {
+  /* it("should set message response status and message response to error if request fails", async () => {
     const mockError = new Error("Fetch failed")
     const mockFetch = jest.fn(() => Promise.reject(mockError))
     global.fetch = mockFetch
@@ -92,5 +92,5 @@ describe("sendFormMessage", () => {
     expect(mockSetMessageResponse).toHaveBeenCalledWith(
       "Por favor llena todos los campos del formulario, e intenta enviar el mensaje nuevamente",
     )
-  })*/
+  }) */
 })
