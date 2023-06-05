@@ -5,6 +5,7 @@ import {
   ParamsStaticProps,
   GetI18Props,
   MakeStaticProps,
+  LOCALES,
 } from "../app/constants/types/components_props/types"
 import { getI18nPaths } from "./getStatic"
 
@@ -23,12 +24,12 @@ export async function getI18nProps({ paramStatic, ns = ["common"] }: GetI18Props
 
 export function makeStaticProps({ ns = [] }: MakeStaticProps) {
   return async function getStaticProps(paramStatic: ParamsStaticProps) {
-    const locale = paramStatic?.params?.locale || (i18nextConfig.i18n.defaultLocale as string)
+    const locale = (paramStatic?.params?.locale || i18nextConfig.i18n.defaultLocale) as LOCALES
     const allPostData = await getMetaDataOfPostByLocale(locale)
-    const sortAllPostData = sortPostByDate(allPostData)
+
     const i18Configuration = await getI18nProps({ paramStatic, ns })
     return {
-      props: { listPost: sortAllPostData, ...i18Configuration },
+      props: { listPost: allPostData, ...i18Configuration },
     }
   }
 }

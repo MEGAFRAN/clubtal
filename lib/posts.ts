@@ -2,8 +2,20 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { serialize } from "next-mdx-remote/serialize"
-import { CardPost, PathsPost } from "../app/constants/types/components_props/types"
+import {
+  CardPost,
+  DataPost,
+  LANGUAGE,
+  LOCALES,
+  PathsPost,
+  PostFromGraphql,
+  PostFromGraphqlEdge,
+  PostsEdge,
+  RESULT_LANGUAGE_BY_LOCALE,
+} from "../app/constants/types/components_props/types"
 import IS_DEVELOPMENT from "../app/constants/config/config"
+import queries from "../app/constants/query/query"
+import requestHeadlessData from "../app/services/headless/request-headless.service"
 
 const root = process.cwd()
 
@@ -69,11 +81,9 @@ export const getAllPostDataAndPathFile = ({ folders, locale, title }: GetAllPost
   return { allPostData, pathFile }
 }
 
-export const getMetaDataOfPostByLocale = (locale: string) => {
-  const localDirectory = path.join("post", locale)
-  // get fileNames under of /post/[locale]
-  const folders = getFiles(localDirectory)
-  const { allPostData } = getAllPostDataAndPathFile({ folders, locale })
+export const getMetaDataOfPostByLocale = async (locale: LOCALES) => {
+  const language = RESULT_LANGUAGE_BY_LOCALE[locale] as LANGUAGE
+  const allPostData = await getAllPostByLanguage(language)
   return allPostData
 }
 
@@ -96,6 +106,42 @@ export const sortPostByDate = (posts: CardPost[]) =>
     return -1
   })
 
+async function getAllPostByLanguage(language: LANGUAGE): Promise<CardPost[]> {
+  const currentQuery = queries.allInformation(language)
+  const variables = {
+    where: language,
+  }
+  const response = await requestHeadlessData(currentQuery, variables)
+  const json = await response.json()
+  if (json.errors) {
+    console.error(json.errors)
+  }
+  const dataPosts = json.data as DataPost
+
+  const postsEdges = dataPosts.posts.edges
+  const cardPosts = mapPost(postsEdges)
+  const cardPostSorted = sortPostByDate(cardPosts)
+
+  return cardPostSorted
+}
+
+// mapPost ---> This function was created to maintain the CardPost interface contract.
+function mapPost(posts: PostsEdge[]): CardPost[] {
+  return posts.map((post) => {
+    const [language, category] = post.node.categories.edges
+    const date = String(post.node.date)
+    return {
+      title: post.node.title,
+      id: post.node.id,
+      nameAuthor: post.node.author.node.name,
+      date: date,
+      readingTime: post.node.readingTime,
+      category: category.node.name,
+      overview: post.node.content,
+      locale: language.node.name,
+    }
+  })
+}
 function readFileContent(pathFile: string) {
   try {
     const fileContent = fs.readFileSync(pathFile, "utf8")

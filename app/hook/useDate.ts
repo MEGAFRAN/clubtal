@@ -1,3 +1,5 @@
+import { LANGUAGE, LANGUAGES } from "../constants/types/components_props/types"
+
 export default function useDate() {
   type TypeMonth = {
     1: string
@@ -13,28 +15,54 @@ export default function useDate() {
     11: string
     12: string
   }
-  const months: TypeMonth = {
-    1: "Enero",
-    2: "Febrero",
-    3: "Marzo",
-    4: "Abril",
-    5: "Mayo",
-    6: "Junio",
-    7: "Julio",
-    8: "Agosto",
-    9: "Septiembre",
-    10: "Octubre",
-    11: "Noviembre",
-    12: "Diciembre",
+  const months = {
+    [LANGUAGES.SPANISH]: {
+      1: "Enero",
+      2: "Febrero",
+      3: "Marzo",
+      4: "Abril",
+      5: "Mayo",
+      6: "Junio",
+      7: "Julio",
+      8: "Agosto",
+      9: "Septiembre",
+      10: "Octubre",
+      11: "Noviembre",
+      12: "Diciembre",
+    },
+    [LANGUAGES.ENGLISH]: {
+      1: "January",
+      2: "February",
+      3: "March",
+      4: "April",
+      5: "May",
+      6: "June",
+      7: "July",
+      8: "August",
+      9: "September",
+      10: "October",
+      11: "November",
+      12: "December",
+    },
   }
 
   type GenerateEndPointCardPostParam = {
     title: string
   }
 
-  const getStringMonth = (number: any): string => {
-    const monthIndex: keyof TypeMonth = number
-    const monthString = months[monthIndex]
+  interface TransformDataToDataStringProps {
+    data: string
+    language: LANGUAGE
+  }
+
+  interface GetStringMonth {
+    month: number
+    language: LANGUAGE
+  }
+
+  const getStringMonth = ({ month, language }: GetStringMonth): string => {
+    const numberMonth = month as keyof TypeMonth
+    const monthString = months[language][numberMonth]
     return monthString
   }
   const deleteCeroStart = (number: string): string => {
@@ -63,17 +91,20 @@ export default function useDate() {
   }
 
   const getYearMonthDayOfDate = (data: string) => {
-    const date = stringToDate(data)
+    const date = new Date(data)
     const year = date.getFullYear()
-    const month = date.getMonth()
-    const day = date.getDate()
+    const month = date.getUTCMonth() + 1 // Months are counted from 0, so add 1
+    const day = date.getUTCDate()
 
     return { year, month, day }
   }
 
-  const transformDataToDataString = (data: string): string => {
+  const transformDataToDataString = ({
+    data,
+    language,
+  }: TransformDataToDataStringProps): string => {
     const { year, month, day } = getYearMonthDayOfDate(data)
-    const monthLetters = getStringMonth(month)
+    const monthLetters = getStringMonth({ month, language })
     const dataString = `${day} ${monthLetters}, ${year}`
     return dataString
   }
@@ -87,15 +118,18 @@ export default function useDate() {
   }
 
   const truncateText = (text: string): string => {
-    const MAX_LONG = 10
-    const stringToArray = text.split(" ")
+    const MAX_LONG = 20
+    const withoutTags = text.replace(/<\/?[^>]+(>|$)/g, "")
+    const withoutNewlines = withoutTags.replace(/\n/g, "")
+    const withoutExtraSpaces = withoutNewlines.replace(/\s{2,}/g, " ")
+    const stringToArray = withoutExtraSpaces.split(" ")
     if (stringToArray.length > MAX_LONG) {
       const cutArray = stringToArray.slice(0, MAX_LONG)
       const arrayToString = cutArray.join(" ")
       const truncatedText = arrayToString.concat(" ...")
       return truncatedText
     }
-    return text
+    return withoutExtraSpaces
   }
   return {
     transformDataToDataString,

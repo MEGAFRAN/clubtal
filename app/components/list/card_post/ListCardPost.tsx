@@ -1,4 +1,4 @@
-import { CardPost } from "../../../constants/types/components_props/types"
+import { CardPost, LANGUAGE } from "../../../constants/types/components_props/types"
 import useDate from "../../../hook/useDate"
 import SectionCardPost from "../../sections/card_post/SectionCardPost"
 import styles from "../../../styles/components/listCardPost.module.scss"
@@ -14,7 +14,9 @@ export default function ListCardPost({ listPost }: ListCardPost) {
     <ul className={styles.container}>
       {listPost
         ? listPost.map((cardPost) => {
-            const newDateString = transformDataToDataString(cardPost.date)
+            const data = cardPost.date
+            const language = cardPost.locale as LANGUAGE
+            const newDateString = transformDataToDataString({ data, language })
             const newDescription = truncateText(cardPost.overview)
             const endPoint = generateEndpointCardPost({
               title: cardPost.title,
