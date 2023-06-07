@@ -1,4 +1,4 @@
-import DetailPost, { getStaticProps } from "../../[locale]/blog/[title]"
+import DetailPost, { getStaticProps } from "../../[locale]/blog/[slug]"
 import { getStaticPathsEn } from "../../../lib/getStaticPostDetail"
 
 export default DetailPost

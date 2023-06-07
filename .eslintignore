@@ -3,3 +3,4 @@ out
 _document.tsx
 redirect.js
 posts.ts
+query.ts

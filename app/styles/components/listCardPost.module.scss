@@ -15,12 +15,12 @@
     flex-flow: column wrap;
     gap: 6px;
     margin: 0 auto;
-    min-width: 350px;
+    max-width: 850px;
     padding: 12px;
     transition: animations.$transition-card-post;
 
     &:hover {
-      @include mixins.card-post-hover ();
+      @include mixins.card-post-hover();
     }
 
     section {
@@ -41,7 +41,7 @@
         transition: animations.$regular-transition;
 
         &:hover {
-          @include mixins.linkcard-post-hover ();
+          @include mixins.linkcard-post-hover();
         }
       }
     }
@@ -57,7 +57,7 @@
         transition: animations.$regular-transition;
 
         &:hover {
-          @include mixins.linkcard-post-hover ();
+          @include mixins.linkcard-post-hover();
         }
       }
     }
