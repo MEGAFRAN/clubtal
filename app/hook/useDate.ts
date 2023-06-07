@@ -1,6 +1,19 @@
-import { LANGUAGE, LANGUAGES } from "../constants/types/components_props/types"
+import { LANGUAGE } from "../constants/types/components_props/types"
 
 export default function useDate() {
+  type GenerateEndPointCardPostParam = {
+    title: string
+  }
+
+  interface TransformDataToDataStringProps {
+    data: string
+    language: LANGUAGE
+  }
+
+  interface GetStringMonth {
+    month: number
+    language: LANGUAGE
+  }
   type TypeMonth = {
     1: string
     2: string
@@ -14,6 +27,10 @@ export default function useDate() {
     10: string
     11: string
     12: string
+  }
+  interface Months {
+    español: TypeMonth
+    english: TypeMonth
   }
   const months: Months = {
     español: {
@@ -44,24 +61,6 @@ export default function useDate() {
       11: "November",
       12: "December",
     },
-  }
-
-  interface Months {
-    español: TypeMonth
-    english: TypeMonth
-  }
-  type GenerateEndPointCardPostParam = {
-    title: string
-  }
-
-  interface TransformDataToDataStringProps {
-    data: string
-    language: LANGUAGE
-  }
-
-  interface GetStringMonth {
-    month: number
-    language: LANGUAGE
   }
 
   const getStringMonth = ({ month, language }: GetStringMonth): string => {
