@@ -1,6 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import i18nextConfig from "../next-i18next.config"
-import { getMetaDataOfPostByLocale, sortPostByDate } from "./posts"
+import { getMetaDataOfPostByLocale } from "./posts"
 import {
   ParamsStaticProps,
   GetI18Props,

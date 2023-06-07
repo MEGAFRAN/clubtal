@@ -15,7 +15,7 @@ export default function ListCardPost({ listPost }: ListCardPost) {
       {listPost
         ? listPost.map((cardPost) => {
             const data = cardPost.date
-            const language = cardPost.locale as LANGUAGE
+            const language = cardPost.language as LANGUAGE
             const newDateString = transformDataToDataString({ data, language })
             const newDescription = truncateText(cardPost.overview)
             const endPoint = generateEndpointCardPost({

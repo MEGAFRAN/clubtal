@@ -196,16 +196,6 @@ export interface SectionContentPageProps {
   content: Record<string, any>
 }
 
-export interface Post {
-  title: string
-  id: number
-  nameAuthor: string
-  data: string
-  readingTime: string
-  category: string
-  contentPost: ContentPost[]
-}
-
 export interface ChatbotMessage {
   role: "system" | "user" | "assistant"
   content: string
@@ -231,7 +221,12 @@ export interface CardPost {
   readingTime: string
   category: string
   overview: string
-  locale: string
+  language: string
+  slug: string
+}
+
+export interface Post extends CardPost {
+  content: string
 }
 
 export interface SectionCardPostProps extends SectionAboutPostProps {
@@ -358,7 +353,7 @@ export type QuestionnarieFormState = {
 export type ParamsStaticProps = {
   params: {
     locale: string | undefined
-    title: string | undefined
+    slug: string | undefined
   }
   locales: string[] | undefined
   locale: string | undefined
@@ -380,7 +375,7 @@ export interface BlogPageProps {
 export type PathsPost = {
   params: {
     locale: string
-    title: string
+    slug: string
   }
 }
 
@@ -409,8 +404,13 @@ export type pageHeadProps = {
 }
 
 export const RESULT_LANGUAGE_BY_LOCALE = {
-  [LOCALES.ENGLISH]: "english",
-  [LOCALES.SPANISH]: "español",
+  [LOCALES.ENGLISH]: LANGUAGES.ENGLISH,
+  [LOCALES.SPANISH]: LANGUAGES.SPANISH,
+}
+
+export const RESULT_LOCALE_BY_LANGUAGE = {
+  [LANGUAGES.ENGLISH]: LOCALES.ENGLISH,
+  [LANGUAGES.SPANISH]: LOCALES.SPANISH,
 }
 
 export interface AuthorNode {
@@ -458,4 +458,14 @@ export interface DataPost {
 
 export interface PostFromGraphql {
   data: DataPost
+}
+
+export interface getPostByLocaleAndSlugParams {
+  locale: LOCALES
+  slug: string
+}
+
+export interface queryPostByLanguageAndSlug {
+  language: LANGUAGE
+  slug: string
 }

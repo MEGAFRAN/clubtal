@@ -1,4 +1,4 @@
-import { LANGUAGE } from "../types/components_props/types"
+import { LANGUAGE, queryPostByLanguageAndSlug } from "../types/components_props/types"
 
 const queries = {
   allInformation: (language: LANGUAGE) => `query New {
@@ -28,6 +28,33 @@ const queries = {
             }
           }
         }`,
+  byLanguageAndSlug: ({ language, slug }: queryPostByLanguageAndSlug) => `query New {
+    posts (where: {categoryName: \"${language}"\, uri: \"${slug}\"}) {
+      edges {
+        node {
+          id
+          title
+          readingTime
+          content
+          uri
+          date
+          author {
+            node {
+              id
+              name
+            }
+          }
+          categories {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }`,
 }
 
 export default queries
