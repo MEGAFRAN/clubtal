@@ -15,8 +15,8 @@ export default function useDate() {
     11: string
     12: string
   }
-  const months = {
-    [LANGUAGES.SPANISH]: {
+  const months: Months = {
+    español: {
       1: "Enero",
       2: "Febrero",
       3: "Marzo",
@@ -30,7 +30,7 @@ export default function useDate() {
       11: "Noviembre",
       12: "Diciembre",
     },
-    [LANGUAGES.ENGLISH]: {
+    english: {
       1: "January",
       2: "February",
       3: "March",
@@ -46,6 +46,10 @@ export default function useDate() {
     },
   }
 
+  interface Months {
+    español: TypeMonth
+    english: TypeMonth
+  }
   type GenerateEndPointCardPostParam = {
     title: string
   }
@@ -63,6 +67,7 @@ export default function useDate() {
   const getStringMonth = ({ month, language }: GetStringMonth): string => {
     const numberMonth = month as keyof TypeMonth
     const monthString = months[language][numberMonth]
+    console.log(month, language)
     return monthString
   }
   const deleteCeroStart = (number: string): string => {
