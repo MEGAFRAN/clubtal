@@ -1,82 +1,35 @@
 @use "../abstracts/colors";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
 
 .container {
-  background: colors.$primary-white;
-  width: 100%;
-
-  nav {
-    position: sticky;
-
-    & > div {
-      top: 0;
-    }
-  }
-
-  main {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 12px 0;
-  }
-
   h1 {
-    color: colors.$primary-black;
-    margin-top: 24px;
-    text-align: center;
+    font-size: clamp(font_size.$title-s, 5vw, font_size.$title-l);
+    line-height: 1.08349;
+    font-weight: 700;
+    letter-spacing: -0.003em;
+    text-transform: capitalize;
   }
-
-  h2 {
-    color: colors.$primary-black;
+  li {
+    font-size: clamp(font_size.$sub-title-s, 5vw, font_size.$sub-title-l);
+    line-height: 1.08349;
+    font-weight: 700;
+    letter-spacing: -0.003em;
   }
-
-  .about {
-    align-content: center;
-    color: colors.$secondary-black;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 0 12px;
-    justify-content: center;
-    margin: 0 auto;
+  p {
+    font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
+    line-height: 1.4211;
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    margin-bottom: spacing.$large;
   }
+  > header {
+    margin: spacing.$extraLarge auto;
 
-  ul {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 12px 0;
-    padding: 0;
-
-    & > section > h2,
-    p {
-      padding: 0 12px;
-      text-align: justify;
-    }
-
-    & > section > p {
-      color: colors.$secondary-black;
-      margin-top: 12px;
-    }
+    max-width: 653px;
   }
-
-  section {
-    margin-bottom: 0;
-
-    > form {
-      margin-bottom: 24px;
-
-      > h2 {
-        color: colors.$primary-white;
-      }
-    }
-  }
-
-  footer {
-    align-items: center;
-    background: colors.$primary-black;
-    border-top: solid 2px colors.$primary-green;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    box-shadow: 0 0 40px -10px black;
-    display: flex;
-    height: 96px;
-    justify-content: center;
+  > main {
+    margin: auto;
+    max-width: 653px;
   }
 }
