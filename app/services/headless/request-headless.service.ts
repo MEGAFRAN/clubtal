@@ -5,7 +5,7 @@ import { handleError, handleResponse } from "../utils/reponse/response"
 
 async function requestHeadlessData (
   query: string, 
-  variables: Record<string, any>
+  variables?: Record<string, any>
 ): Promise<Response> {
 
     return fetch(REQUEST_WORDPRESS_GRAPH_QL, {

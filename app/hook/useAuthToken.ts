@@ -6,7 +6,7 @@ const useAuthToken = () => {
   const { push } = useRouter()
 
   useEffect(() => {
-    const tokenFromLocalStorage = localStorage.getItem("token")
+    const tokenFromLocalStorage = localStorage.getItem("clubtal_token")
     if (!tokenFromLocalStorage) {
       push("/")
     }

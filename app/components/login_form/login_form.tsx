@@ -54,10 +54,10 @@ const LoginForm = () => {
         </div>
         <Loading
           isLoading={isLoading}
-          maxProgress={100}
+          maxProgress={150}
           loadingMessage={t("validatingEmail") as string}
         />
-        <p aria-live="polite">{message}</p>
+        {isSubmitting ? null : <p aria-live="polite">{message}</p>}
       </form>
     </>
   )
