@@ -26,7 +26,7 @@
     transition: animations.$regular-transition;
     width: 100%;
 
-    @include mixins.field-validation ();
+    @include mixins.field-validation();
   }
 
   label {
@@ -51,7 +51,7 @@
       transition: animations.$regular-transition;
       width: 100%;
 
-      @include mixins.field-validation ();
+      @include mixins.field-validation();
     }
   }
 
@@ -69,10 +69,11 @@
 
   button {
     align-self: center;
-    @include mixins.cta-button-appearance ();
+
+    @include mixins.cta-button-appearance();
 
     &:hover {
-      @include mixins.cta-button-hover ();
+      @include mixins.cta-button-hover();
     }
   }
 
@@ -80,7 +81,7 @@
     background: colors.$secondary-gray;
 
     &:hover {
-      @include mixins.cta-button-loading-hover ();
+      @include mixins.cta-button-loading-hover();
     }
   }
 }

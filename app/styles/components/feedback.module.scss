@@ -3,89 +3,89 @@
 @use "../abstracts/mixins";
 
 .container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+
+  .feedback_buttons {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  
-    .feedback_buttons {
-      display: flex;
-      gap: 40px;
-    }
-  
-    .thumb_up,
-    .thumb_down {
-      font-size: 2rem;
-      padding: 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
+    gap: 40px;
+  }
+
+  .thumb_up,
+  .thumb_down {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0;
+  }
+
+  .modal {
+    align-items: center;
+    background-color: colors.$secondary-black;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .modal_content {
+    background-color: colors.$primary-gray;
+    border-radius: 5px;
+    max-width: 500px;
+    padding: 20px;
+    width: 90vw;
+
+    input {
+      background-color: colors.$primary-white;
+      border: 1px solid colors.$secondary-gray;
+      border-bottom: 2px solid colors.$secondary-gray;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-family: Montserrat, sans-serif;
+      height: 20vh;
+      max-height: 300px;
+      padding: 10px;
+      resize: none;
+      transition: animations.$regular-transition;
       width: 100%;
-      height: 100%;
-      background-color: colors.$secondary-black;
+
+      @include mixins.field-validation();
+    }
+
+    .modal_actions {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-    }
-  
-    .modal_content {
-      background-color: colors.$primary-gray;
-      padding: 20px;
-      border-radius: 5px;
-      width: 90vw;
-      max-width: 500px;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 10px;
 
-      input {
-        background-color: colors.$primary-white;
-        border: 1px solid colors.$secondary-gray;
-        border-bottom: 2px solid colors.$secondary-gray;
-        border-radius: 10px;
-        box-sizing: border-box;
-        font-family: Montserrat, sans-serif;
-        padding: 10px;
-        resize: none;
+      button {
+        align-self: center;
+        border: solid colors.$secondary-black 2px;
+        border-radius: 24px;
+        color: colors.$primary-black;
+        margin-top: 20px;
+        padding: 10px 23px;
+        pointer-events: auto;
         transition: animations.$regular-transition;
-        width: 100%;
-        height: 20vh;
-        max-height: 300px;
 
-        @include mixins.field-validation ();
+        &:hover {
+          @include mixins.cta-button-hover();
+        }
       }
-  
-      .modal_actions {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        margin-top: 10px;
-  
-        button {
-            align-self: center;
-            border: solid colors.$secondary-black 2px;
-            border-radius: 24px;
-            color: colors.$primary-black;
-            margin-top: 20px;
-            padding: 10px 23px;
-            pointer-events: auto;
-            transition: animations.$regular-transition;
-        
-            &:hover {
-              @include mixins.cta-button-hover ();
-            }
-        }
-  
-        .send {
-            background-color: colors.$primary-green;
-        }
-  
-        .cancel {
-            background-color: colors.$primary-gray
-        }
+
+      .send {
+        background-color: colors.$primary-green;
+      }
+
+      .cancel {
+        background-color: colors.$primary-gray;
       }
     }
-}  
+  }
+}

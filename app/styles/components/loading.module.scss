@@ -1,36 +1,34 @@
 @use "../abstracts/colors";
 
-.container  {
-    display: flex;
-    align-items: center;
-    position: relative;
+.container {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+
+  progress {
+    appearance: none;
+    background-color: colors.$primary-green;
+    border: 2px dotted colors.$primary-black;
+    height: 50px;
     width: 100%;
 
-    progress {
-        width: 100%; 
-        height: 50px;
-        appearance: none;
-        border: 2px dotted colors.$primary-black;
-        background-color: colors.$primary-green;
+    &::-moz-progress-bar {
+      background-color: colors.$primary-white;
+    }
 
-        &::-moz-progress-bar {
-            background-color: colors.$primary-white;
-          }
+    &::-webkit-progress-value {
+      background-color: colors.$primary-green;
+    }
 
-          &::-webkit-progress-value {
-            background-color: colors.$primary-green;
-          }
+    &::-webkit-progress-bar {
+      background-color: colors.$primary-white;
+    }
+  }
 
-          &::-webkit-progress-bar {
-            background-color: colors.$primary-white;
-          }
-     }
-
-     span {
-        position: absolute;
-        color: colors.$primary-black;
-        padding: 1rem;
-     }
+  span {
+    color: colors.$primary-black;
+    padding: 1rem;
+    position: absolute;
+  }
 }
-
-

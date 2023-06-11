@@ -3,104 +3,105 @@
 @use "../abstracts/mixins";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-    form {
-      width: 100%;
-  
-      .question {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-  
-        .question_label {
-          display: block;
-          font-size: 18px;
-        }
-  
-        .options {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-  
-          .option_label {
-            display: flex;
-            align-items: center;
-            border: solid colors.$primary-green 1px;
-            border-radius: 8px;
-            padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-            &:hover {
-              background-color: colors.$primary-blue;
-              cursor: pointer;
-            }
-  
-            input {
-              margin-right: 10px;
-            }
-          }
-          .option_label_checked {
-            background-color: colors.$primary-blue;
-          }
-        }
-      }
+  form {
+    width: 100%;
 
-      .button_container {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-
-        button {
-          @include mixins.cta-button-appearance ();
-          width: 140px;
-      
-          &:hover {
-            @include mixins.cta-button-hover ();
-          }
-  
-          &:disabled {
-            pointer-events: none;
-            opacity: 0.5;
-          }
-
-          &.prev {
-            &::before {
-              padding-right: 10px;
-              content: "<";
-            }
-          }
-
-          &.next {
-            margin-left: auto;
-            &::after {
-              padding-left: 10px;
-              content: ">";
-            }
-          }
-        }
-      }
-    }
-  
-    .results_container {
+    .question {
       display: flex;
       flex-direction: column;
-      align-items: center;
-    }
+      gap: 20px;
 
-    .progress_bar {
-        height: 20px;
-        background-color: colors.$primary-white;
-        border-radius: 10px;
-        overflow: hidden;
-    
-        .fill {
-          height: 100%;
-          background-color: colors.$primary-blue;
-          transition: width 0.3s ease;
+      .question_label {
+        display: block;
+        font-size: 18px;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .option_label {
+          align-items: center;
+          border: solid colors.$primary-green 1px;
+          border-radius: 8px;
+          display: flex;
+          padding: 8px;
+
+          &:hover {
+            background-color: colors.$primary-blue;
+            cursor: pointer;
+          }
+
+          input {
+            margin-right: 10px;
+          }
         }
-    }
-}
 
-  
+        .option_label_checked {
+          background-color: colors.$primary-blue;
+        }
+      }
+    }
+
+    .button_container {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+
+      button {
+        @include mixins.cta-button-appearance();
+
+        width: 140px;
+
+        &:hover {
+          @include mixins.cta-button-hover();
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+        &.prev {
+          &::before {
+            content: "<";
+            padding-right: 10px;
+          }
+        }
+
+        &.next {
+          margin-left: auto;
+
+          &::after {
+            content: ">";
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .results_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .progress_bar {
+    background-color: colors.$primary-white;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+
+    .fill {
+      background-color: colors.$primary-blue;
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+  }
+}

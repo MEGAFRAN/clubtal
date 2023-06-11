@@ -6,8 +6,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 56px;
+  justify-content: center;
   max-width: 400px;
   width: clamp(90vw, 4vw, 400px);
 
@@ -16,37 +16,38 @@
   }
 
   .input_container {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    display: flex;
     gap: 12px;
-  
+    justify-content: center;
+    width: 100%;
+
     input {
       border: 1px solid #cccccc;
       border-radius: 12px;
       font-size: 1.3rem;
+      gap: 12px;
       padding: 1rem;
       width: 80%;
-      gap: 12px;
-  
+
       &::placeholder {
         color: gray;
         font-size: 1.3rem;
         text-align: center;
       }
     }
-  
+
     button {
-      @include mixins.cta-button-appearance ();
-      padding: 0px;
+      @include mixins.cta-button-appearance();
+
       font-size: 30px;
+      padding: 0;
       width: 46px;
-    
+
       &:hover {
-        @include mixins.cta-button-hover ();
+        @include mixins.cta-button-hover();
       }
-  
+
       &:disabled {
         cursor: not-allowed;
         opacity: 0.5;

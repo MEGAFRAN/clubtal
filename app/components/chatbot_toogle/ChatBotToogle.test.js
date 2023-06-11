@@ -4,7 +4,6 @@ import "@testing-library/jest-dom"
 import ChatBotToggle from "./ChatBotToogle"
 
 describe("<ChatBotToggle />", () => {
- 
   it("Tests that the chat is initially hidden", () => {
     render(<ChatBotToggle />)
     const chatBotToogleButton = screen.queryByTestId("toogle-button")
@@ -12,5 +11,4 @@ describe("<ChatBotToggle />", () => {
     const chatBotContainer = screen.queryByTestId("chatbot-container")
     expect(chatBotContainer).not.toBeInTheDocument()
   })
-
 })

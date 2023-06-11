@@ -3,30 +3,29 @@
 @use "../abstracts/mixins";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    max-width: 600px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  position: relative;
+  width: 90vw;
 
-    input[type="file"] {
-        height: 90px;
-        color: transparent;
-        background-color: transparent;
-        position: absolute;
-        border: none;
-        
-        &::-webkit-file-upload-button {
-          border: none;
-          color: transparent;
-          background-color: transparent;
-        }
-    }
+  input[type="file"] {
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    height: 90px;
+    position: absolute;
 
-    label {
-        display: inline-block;
-        border: dashed colors.$primary-green 2px;
-        padding: 20px 0px;
+    &::-webkit-file-upload-button {
+      background-color: transparent;
+      border: none;
+      color: transparent;
     }
-      
- }
+  }
+
+  label {
+    border: dashed colors.$primary-green 2px;
+    display: inline-block;
+    padding: 20px 0;
+  }
+}

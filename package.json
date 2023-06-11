@@ -12,8 +12,7 @@
     "test:watch": "jest a --watch",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
-    "prepare": "husky install",
-    "prettier:check": "prettier --write"
+    "prepare": "husky install"
   },
   "dependencies": {
     "jsonwebtoken": "^9.0.0",
@@ -47,13 +46,5 @@
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.0.0",
     "typescript": "5.1.3"
-  },
-  "lint-staged": {
-    "*": [
-      "npm run prettier:check",
-      "npm run lint:scss:fix",
-      "npm run lint",
-      "npm run test"
-    ]
   }
 }

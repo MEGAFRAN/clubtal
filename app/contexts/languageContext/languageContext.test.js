@@ -7,7 +7,7 @@ describe("languageContext", () => {
     render(
       <languageContext.Provider value={{ language: "en" }}>
         <div></div>
-      </languageContext.Provider>
+      </languageContext.Provider>,
     )
   })
 
@@ -29,7 +29,7 @@ describe("languageContext", () => {
     render(
       <languageContext.Provider value={{ language: "en" }}>
         <TestComponent />
-      </languageContext.Provider>
+      </languageContext.Provider>,
     )
   })
 })
