@@ -6,18 +6,18 @@ import {
   MakeStaticProps,
   ParamsStaticProps,
 } from "../app/constants/types/components_props/types"
-import { getAllPathsOfPost, getFileByLocaleAndTitle } from "./posts"
+import { getAllPathsOfPost, getPostByLocaleAndSlug } from "./posts"
 
-export const getStaticPathsEs = () => {
-  const paths = getAllPathsOfPost(LOCALES.SPANISH)
+export const getStaticPathsEs = async () => {
+  const paths = await getAllPathsOfPost(LOCALES.SPANISH)
   return {
     paths,
     fallback: false,
   }
 }
 
-export const getStaticPathsEn = () => {
-  const paths = getAllPathsOfPost(LOCALES.ENGLISH)
+export const getStaticPathsEn = async () => {
+  const paths = await getAllPathsOfPost(LOCALES.ENGLISH)
   return {
     paths,
     fallback: false,
@@ -34,14 +34,17 @@ export async function getI18nProps({ paramStatic, ns = ["common"] }: GetI18Props
 
 export function makeStaticProps({ ns = [] }: MakeStaticProps) {
   return async function getStaticProps(paramStatic: ParamsStaticProps) {
-    const locale = paramStatic?.params?.locale || i18nextConfig.i18n.defaultLocale
-    const title = paramStatic?.params?.title as string
-    const fileContent = await getFileByLocaleAndTitle({ locale, title })
+    const locale = (paramStatic?.params?.locale || i18nextConfig.i18n.defaultLocale) as LOCALES
+    const slug = paramStatic?.params?.slug as string
+    const post = await getPostByLocaleAndSlug({ locale, slug })
     const i18Configuration = await getI18nProps({ paramStatic, ns })
-    if (fileContent === null) return { notFound: true }
-    const { frontMatter, source } = fileContent
+    if (!post) {
+      return {
+        notFound: true,
+      }
+    }
     return {
-      props: { frontMatter, source, ...i18Configuration },
+      props: { post, ...i18Configuration },
     }
   }
 }

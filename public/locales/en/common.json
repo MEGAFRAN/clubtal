@@ -1,5 +1,6 @@
 {
   "message-error-404": "We did not find the address you were looking for, if you want more information we invite you to visit our home page.",
-  "name-button-404-en" :  "Home English",
-  "name-button-404-es" :  "Inicio Español"
+  "name-button-404-en": "Home English",
+  "name-button-404-es": "Inicio Español",
+  "name-button-card": "Read more"
 }

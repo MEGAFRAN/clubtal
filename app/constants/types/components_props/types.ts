@@ -196,16 +196,6 @@ export interface SectionContentPageProps {
   content: Record<string, any>
 }
 
-export interface Post {
-  title: string
-  id: number
-  nameAuthor: string
-  data: string
-  readingTime: string
-  category: string
-  contentPost: ContentPost[]
-}
-
 export interface ChatbotMessage {
   role: "system" | "user" | "assistant"
   content: string
@@ -225,13 +215,18 @@ export interface ChatbotTagGroups {
 
 export interface CardPost {
   title: string
-  id: number
+  id: string
   nameAuthor: string
   date: string
   readingTime: string
   category: string
   overview: string
-  locale: string
+  language: string
+  slug: string
+}
+
+export interface Post extends CardPost {
+  content: string
 }
 
 export interface SectionCardPostProps extends SectionAboutPostProps {
@@ -358,7 +353,7 @@ export type QuestionnarieFormState = {
 export type ParamsStaticProps = {
   params: {
     locale: string | undefined
-    title: string | undefined
+    slug: string | undefined
   }
   locales: string[] | undefined
   locale: string | undefined
@@ -380,21 +375,97 @@ export interface BlogPageProps {
 export type PathsPost = {
   params: {
     locale: string
-    title: string
+    slug: string
   }
 }
+
+export type LOCALES = "en" | "es"
+
+export type LANGUAGE = "english" | "español"
 
 export const LOCALES = {
   ENGLISH: "en",
   SPANISH: "es",
 } as const
 
-export type pageHeadProps = { 
+export const LANGUAGES = {
+  ENGLISH: "english",
+  SPANISH: "español",
+} as const
+
+export type pageHeadProps = {
   description: string
   title: string
   locale: string
-  url: string  
+  url: string
   favicon?: string
   name?: string
   themeColor?: string
+}
+
+export const RESULT_LANGUAGE_BY_LOCALE = {
+  [LOCALES.ENGLISH]: LANGUAGES.ENGLISH,
+  [LOCALES.SPANISH]: LANGUAGES.SPANISH,
+}
+
+export const RESULT_LOCALE_BY_LANGUAGE = {
+  [LANGUAGES.ENGLISH]: LOCALES.ENGLISH,
+  [LANGUAGES.SPANISH]: LOCALES.SPANISH,
+}
+
+export interface AuthorNode {
+  id: string
+  name: string
+}
+export interface Author {
+  node: AuthorNode
+}
+
+export interface EdgeNode {
+  name: string
+}
+
+export interface Edge {
+  node: EdgeNode
+}
+
+export interface Categories {
+  edges: Edge[]
+}
+
+export interface PostFromGraphqlNode {
+  readingTime: string
+  id: string
+  title: string
+  content: string
+  uri: string
+  date: Date
+  author: Author
+  categories: Categories
+}
+
+export interface PostsEdge {
+  node: PostFromGraphqlNode
+}
+
+export interface Posts {
+  edges: PostsEdge[]
+}
+
+export interface DataPost {
+  posts: Posts
+}
+
+export interface PostFromGraphql {
+  data: DataPost
+}
+
+export interface getPostByLocaleAndSlugParams {
+  locale: LOCALES
+  slug: string
+}
+
+export interface queryPostByLanguageAndSlug {
+  language: LANGUAGE
+  slug: string
 }
