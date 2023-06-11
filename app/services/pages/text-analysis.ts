@@ -1,45 +1,43 @@
 const SENTIMENT_ANALYSIS_TEXT = {
-
   spanish: {
+    ctaText: [
+      "Descubre la informacion de tu texto (sentimientos, frases clave y mas) con análisis de texto.",
+      "Ingresa un contexto (publicación en redes sociales, retroalimentación, reseña, etc).",
+      "Análisis de texto.",
+    ],
 
-    ctaText: ["Descubre la informacion de tu texto (sentimientos, frases clave y mas) con análisis de texto.",
-    "Ingresa un contexto (publicación en redes sociales, retroalimentación, reseña, etc).",
-    "Análisis de texto."
+    placeholdersTexts: [
+      "O ingresa el texto que deseas analizar",
+      "Ingresa el contexto.",
+      "Por favor, completa este campo.",
+      "Enviando...",
+      "Analizando...",
     ],
-    
-    placeholdersTexts: ["O ingresa el texto que deseas analizar",
-    "Ingresa el contexto.",
-    "Por favor, completa este campo.",
-    "Enviando...",
-    "Analizando..."
-    ],
-    
-    ctaButtonTexts: [
-    "Analizar texto gratis."
-    ],
-    
+
+    ctaButtonTexts: ["Analizar texto gratis."],
+
     formText: [
-    "Cuéntanos sobre ti.",
-    "¿Qué necesitas para tu negocio?",
-    "Escribe aquí lo que necesitas.",
-    "Mi nombre.",
-    "Escribe tu nombre aquí.",
-    "Mi correo electrónico.",
-    "Escribe tu correo electrónico aquí.",
-    "Enviar mi mensaje."
+      "Cuéntanos sobre ti.",
+      "¿Qué necesitas para tu negocio?",
+      "Escribe aquí lo que necesitas.",
+      "Mi nombre.",
+      "Escribe tu nombre aquí.",
+      "Mi correo electrónico.",
+      "Escribe tu correo electrónico aquí.",
+      "Enviar mi mensaje.",
     ],
-    
+
     feedback: [
-    "Califica la aplicación",
-    "¿Cómo podemos mejorar la aplicación para ti?",
-    "Escribe tu opinión aquí.",
-    "Enviar opinión.",
-    "Por favor, completa este campo.",
-    "Enviando...", 
-    "Enviar", 
-    "Cancelar",
-    "¿Que te gusta de la aplicación?",
-    "¿Que podemos mejorar en la aplicación?"
+      "Califica la aplicación",
+      "¿Cómo podemos mejorar la aplicación para ti?",
+      "Escribe tu opinión aquí.",
+      "Enviar opinión.",
+      "Por favor, completa este campo.",
+      "Enviando...",
+      "Enviar",
+      "Cancelar",
+      "¿Que te gusta de la aplicación?",
+      "¿Que podemos mejorar en la aplicación?",
     ],
 
     content: {
@@ -60,32 +58,37 @@ const SENTIMENT_ANALYSIS_TEXT = {
       secondH2: "Principales Aplicaciones del Análisis de Sentimientos",
       thirdP: `El análisis de sentimientos puede ser un cambiador de juego para las empresas en diversos sectores. 
       Aquí hay algunas de las aplicaciones más comunes:`,
-      thirPUl: ["Servicio al Cliente: Al categorizar automáticamente los comentarios de los clientes como positivos, negativos o neutros, el análisis de sentimientos ayuda a los equipos de servicio al cliente a identificar y priorizar problemas, garantizando una resolución oportuna y eficiente.",
-      "Desarrollo de Productos: El análisis de los comentarios de los clientes ayuda a las empresas a identificar las fortalezas y debilidades de los productos, lo que les permite tomar decisiones basadas en datos para mejorar los productos y desarrollar nuevas funciones.",
-      "Monitoreo de Marca: El análisis de sentimientos puede rastrear la reputación de una marca mediante el monitoreo de plataformas de redes sociales, blogs y artículos de noticias, lo que permite a las empresas responder de manera proactiva a las tendencias emergentes o posibles crisis.",
-      "Análisis de Competidores: Al comparar el sentimiento de los comentarios de los clientes de su marca y sus competidores, puede identificar áreas para mejorar y capitalizar las debilidades de sus competidores.",
-      "Investigación de Mercado: El análisis de sentimientos puede ayudar a las empresas a comprender la opinión pública sobre temas o tendencias específicas, lo que les permite crear campañas de marketing específicas y posicionar mejor sus productos."],
+      thirPUl: [
+        "Servicio al Cliente: Al categorizar automáticamente los comentarios de los clientes como positivos, negativos o neutros, el análisis de sentimientos ayuda a los equipos de servicio al cliente a identificar y priorizar problemas, garantizando una resolución oportuna y eficiente.",
+        "Desarrollo de Productos: El análisis de los comentarios de los clientes ayuda a las empresas a identificar las fortalezas y debilidades de los productos, lo que les permite tomar decisiones basadas en datos para mejorar los productos y desarrollar nuevas funciones.",
+        "Monitoreo de Marca: El análisis de sentimientos puede rastrear la reputación de una marca mediante el monitoreo de plataformas de redes sociales, blogs y artículos de noticias, lo que permite a las empresas responder de manera proactiva a las tendencias emergentes o posibles crisis.",
+        "Análisis de Competidores: Al comparar el sentimiento de los comentarios de los clientes de su marca y sus competidores, puede identificar áreas para mejorar y capitalizar las debilidades de sus competidores.",
+        "Investigación de Mercado: El análisis de sentimientos puede ayudar a las empresas a comprender la opinión pública sobre temas o tendencias específicas, lo que les permite crear campañas de marketing específicas y posicionar mejor sus productos.",
+      ],
       thirdH2: "Conclusión",
       fourthP: `El análisis de sentimientos, impulsado por la IA y el PLN, ofrece a las empresas 
       información valiosa sobre las emociones y opiniones de los clientes. Al implementar esta tecnología, 
       las empresas pueden mejorar el compromiso de los clientes, impulsar el desarrollo de productos y diseñar estrategias 
-      de marketing más efectivas. Al seguir las mejores prácticas`},
-
+      de marketing más efectivas. Al seguir las mejores prácticas`,
+    },
   },
 
   english: {
-
-    ctaText: ["Discover the information of your text (sentiments, key phrases and more), with text analysis", 
-    "Enter a Context (social media post, feedback, review, etc.)", "Text analysis"
+    ctaText: [
+      "Discover the information of your text (sentiments, key phrases and more), with text analysis",
+      "Enter a Context (social media post, feedback, review, etc.)",
+      "Text analysis",
     ],
 
-    placeholdersTexts: ["Or enter the text you wish to be analyzed",
-    "Context", "Please fill this field", "Sending...", "Analyzing..."
+    placeholdersTexts: [
+      "Or enter the text you wish to be analyzed",
+      "Context",
+      "Please fill this field",
+      "Sending...",
+      "Analyzing...",
     ],
 
-    ctaButtonTexts: [
-      "Free text analysis"
-    ],
+    ctaButtonTexts: ["Free text analysis"],
 
     formText: [
       "Tell us about yourself",
@@ -96,12 +99,21 @@ const SENTIMENT_ANALYSIS_TEXT = {
       "My email",
       "Write your email here...",
       "Send my message",
-      "Please fill this field"
+      "Please fill this field",
     ],
 
-    feedback: ["Rate the app", "How can we improve the application for you?", 
-    "Write your opinion", "Send Opinion", "Please fill this field", "...Sending", 
-    "Send", "Cancel", "What do you like about the app?", "What can be improved in the app?"],
+    feedback: [
+      "Rate the app",
+      "How can we improve the application for you?",
+      "Write your opinion",
+      "Send Opinion",
+      "Please fill this field",
+      "...Sending",
+      "Send",
+      "Cancel",
+      "What do you like about the app?",
+      "What can be improved in the app?",
+    ],
 
     content: {
       h1: "Sentiment Analysis: A Game-Changer for Business Success",
@@ -120,20 +132,22 @@ const SENTIMENT_ANALYSIS_TEXT = {
         processing (NLP) techniques, sentiment analysis can accurately identify emotions, 
         opinions, and attitudes expressed by customers. This helps businesses make data-driven 
         decisions to enhance customer engagement, product development, and marketing strategies.`,
-        secondH2: "Top Applications of Sentiment Analysis",
-        thirdP: `Sentiment analysis can be a game-changer for businesses across various sectors. 
+      secondH2: "Top Applications of Sentiment Analysis",
+      thirdP: `Sentiment analysis can be a game-changer for businesses across various sectors. 
         Here are some of the most common applications:`,
-        thirPUl: [ "Customer Service: By automatically categorizing customer feedback as positive, negative, or neutral, sentiment analysis helps customer service teams identify and prioritize issues, ensuring timely and efficient resolution.",
-          "Product Development: Analyzing customer feedback helps businesses identify product strengths and weaknesses, enabling them to make data-driven decisions for product improvements and new feature development.",
-          "Brand Monitoring: Sentiment analysis can track brand reputation by monitoring social media platforms, blogs, and news articles, allowing businesses to respond proactively to emerging trends or potential crises.",
-          "Competitor Analysis: By comparing the sentiment of customer feedback for your brand and your competitors, you can identify areas for improvement and capitalize on your competitors' weaknesses.",
-          "Market Research: Sentiment analysis can help businesses understand public opinion on specific topics or trends, enabling them to create targeted marketing campaigns and better position their products."],
-        thirdH2: "Conclusion",
-        fourthP: `Sentiment analysis, powered by AI and NLP, offers businesses valuable insights into customer emotions and opinions. 
+      thirPUl: [
+        "Customer Service: By automatically categorizing customer feedback as positive, negative, or neutral, sentiment analysis helps customer service teams identify and prioritize issues, ensuring timely and efficient resolution.",
+        "Product Development: Analyzing customer feedback helps businesses identify product strengths and weaknesses, enabling them to make data-driven decisions for product improvements and new feature development.",
+        "Brand Monitoring: Sentiment analysis can track brand reputation by monitoring social media platforms, blogs, and news articles, allowing businesses to respond proactively to emerging trends or potential crises.",
+        "Competitor Analysis: By comparing the sentiment of customer feedback for your brand and your competitors, you can identify areas for improvement and capitalize on your competitors' weaknesses.",
+        "Market Research: Sentiment analysis can help businesses understand public opinion on specific topics or trends, enabling them to create targeted marketing campaigns and better position their products.",
+      ],
+      thirdH2: "Conclusion",
+      fourthP: `Sentiment analysis, powered by AI and NLP, offers businesses valuable insights into customer emotions and opinions. 
         By implementing this technology, companies can improve customer engagement, drive product development, and craft more effective 
         marketing strategies. By following best practices and staying up-to-date with the latest advancements in sentiment analysis, 
-        businesses can unlock the full potential of this powerful tool and gain a competitive edge in the market.`
-      },
+        businesses can unlock the full potential of this powerful tool and gain a competitive edge in the market.`,
+    },
   },
 }
 export default SENTIMENT_ANALYSIS_TEXT

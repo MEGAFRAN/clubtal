@@ -1,7 +1,7 @@
 function countWordsRepetitions(string: string, words: string[]): Array<{ [key: string]: number }> {
   const wordCounts = new Map<string, number>()
   const lowerCaseString = string.toLowerCase()
-  const lowerCaseWords = words.map(word => word.toLowerCase())
+  const lowerCaseWords = words.map((word) => word.toLowerCase())
 
   // Build a single regular expression to search for all words at once
   const regex = new RegExp(`\\b(${lowerCaseWords.join("|")})\\b`, "gi")

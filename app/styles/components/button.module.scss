@@ -3,10 +3,10 @@
 @use "../abstracts/mixins";
 
 .cta_button {
-  @include mixins.cta-button-appearance ();
+  @include mixins.cta-button-appearance();
 
   &:hover {
-    @include mixins.cta-button-hover ();
+    @include mixins.cta-button-hover();
   }
 }
 
@@ -18,6 +18,6 @@
   transition: animations.$regular-transition;
 
   &:hover {
-    @include mixins.cta-button-hover ();
+    @include mixins.cta-button-hover();
   }
 }

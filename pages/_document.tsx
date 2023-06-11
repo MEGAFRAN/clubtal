@@ -4,7 +4,7 @@ import i18nextConfig from "../next-i18next.config"
 class MyDocument extends Document {
   render() {
     const currentLocale = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale
-    const lang: string | undefined = Array.isArray(currentLocale) ? undefined : currentLocale;
+    const lang: string | undefined = Array.isArray(currentLocale) ? undefined : currentLocale
     return (
       <Html lang={lang}>
         <Head />

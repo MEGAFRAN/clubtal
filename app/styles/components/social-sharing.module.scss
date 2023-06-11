@@ -1,71 +1,64 @@
 @use "../abstracts/colors";
 
 .container {
+  align-items: center;
+  border: solid 1px white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 480px;
+
+  @media (width >= 768px) {
+    max-width: 720px;
+  }
+
+  .sharing_buttons_container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 480px;
-    border: solid 1px white;
-    border-radius: 10px;
-  
-    @media (min-width: 768px) {
-      max-width: 720px;
-    }
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
 
-    .sharing_buttons_container {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-      
-      a {
-        text-decoration: none;
-        padding: 12px 0;
+    a {
+      padding: 12px 0;
+      text-decoration: none;
 
-        svg {
-
-          height: 25px;
-          fill: colors.$primary-green;
-        }
-      }
-  
-      .button {
-          display: inline-block;
-          padding: 10px 20px;
-          border-radius: 50px;
-          text-decoration: none;
-          color: #fff;
-          font-weight: bold;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        
-          &:hover,
-          &:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-          }
-        
-          &:active {
-            transform: translateY(1px);
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-          }
+      svg {
+        fill: colors.$primary-green;
+        height: 25px;
       }
     }
 
-    @media (max-width: 480px) {
-      .sharing-buttons {
-        gap: 8px;
+    .button {
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      color: #ffffff;
+      display: inline-block;
+      font-weight: bold;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
       }
-    
-      .sharing-button {
-        padding: 8px 16px;
+
+      &:active {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        transform: translateY(1px);
       }
     }
   }
-  
 
-  
-  
+  @media (width <= 480px) {
+    .sharing-buttons {
+      gap: 8px;
+    }
 
-  
+    .sharing-button {
+      padding: 8px 16px;
+    }
+  }
+}

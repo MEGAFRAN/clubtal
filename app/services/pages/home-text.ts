@@ -12,7 +12,6 @@ const HOME_TEXT = {
   },
 
   spanish: {
-
     headerTitle: ["Reduce", "costos", "con"],
 
     headerText: ["Inteligencia artificial", "para tu negocio"],
@@ -26,7 +25,7 @@ const HOME_TEXT = {
       "Quiero mi solucion",
       "Hacer solicitud",
       "Lo quiero",
-      "Inicio"
+      "Inicio",
     ],
 
     sectionsTitles: [
@@ -35,7 +34,7 @@ const HOME_TEXT = {
       "¿Como lo hacemos?",
       "Pruebame en tu sitio web",
       "Pasos a seguir",
-      "Contáctanos"
+      "Contáctanos",
     ],
 
     sectionsSubTitles: ["¿Pero te falta experiencia practica?"],
@@ -48,7 +47,7 @@ const HOME_TEXT = {
       "Mejora la toma de decisiones",
       "Mejora la productividad",
       "Multiples idiomas",
-      "Ventajas competitivas"
+      "Ventajas competitivas",
     ],
 
     communityAdvantages: [
@@ -57,14 +56,10 @@ const HOME_TEXT = {
       "Personalizacion",
       "Soporte en instalacion",
       "Documentacion",
-      "7 dias de prueba"
+      "7 dias de prueba",
     ],
 
-    followingSteps: [
-      "Contactanos",
-      "Analizamos tu requerimiento",
-      "Te entregamos tu solucion"
-    ],
+    followingSteps: ["Contactanos", "Analizamos tu requerimiento", "Te entregamos tu solucion"],
 
     formText: [
       "Cuentanos sobre ti",
@@ -74,14 +69,14 @@ const HOME_TEXT = {
       "Escribe aqui tu nombre..",
       "Mi email",
       "Escribe aqui tu email..",
-      "Enviar mi mensaje"
+      "Enviar mi mensaje",
     ],
 
     chatbotText: {
       initialMessage: "Hola! Soy Clubbot ¿Que deseas saber de nuestros servicios?",
       inputPlaceholderText: "Escribe tu mensaje ...",
-      sendButtonText: "Enviar"
-    }
+      sendButtonText: "Enviar",
+    },
   },
 
   english: {
@@ -105,7 +100,7 @@ const HOME_TEXT = {
       "I want my solution",
       "Submit request",
       "I want it",
-      "Home"
+      "Home",
     ],
 
     sectionsTitles: [
@@ -114,7 +109,7 @@ const HOME_TEXT = {
       "How do we do it?",
       "Try me on your website",
       "Steps to follow",
-      "Contact us"
+      "Contact us",
     ],
 
     sectionsSubTitles: ["But you lack practical experience?"],
@@ -127,7 +122,7 @@ const HOME_TEXT = {
       "Improves decision-making",
       "Improves productivity",
       "Multiple languages",
-      "Competitive advantages"
+      "Competitive advantages",
     ],
 
     communityAdvantages: [
@@ -136,14 +131,10 @@ const HOME_TEXT = {
       "Customization",
       "Installation support",
       "Documentation",
-      "7-day trial"
+      "7-day trial",
     ],
 
-    followingSteps: [
-      "Contact us",
-      "We analyze your requirement",
-      "We deliver your solution"
-    ],
+    followingSteps: ["Contact us", "We analyze your requirement", "We deliver your solution"],
 
     formText: [
       "Tell us about yourself",
@@ -153,14 +144,14 @@ const HOME_TEXT = {
       "Write your name here...",
       "My email",
       "Write your email here...",
-      "Send my message"
+      "Send my message",
     ],
 
     chatbotText: {
       initialMessage: "Hi! I'm Clubbot ¿What would you like to know about our services?",
       inputPlaceholderText: "Type your message ...",
-      sendButtonText: "Send"
-    }
+      sendButtonText: "Send",
+    },
   },
 }
 export default HOME_TEXT

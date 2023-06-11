@@ -8,7 +8,7 @@ const CREATE_MAGIC_LINK_ENDPOINT = "/api/create-magic-link"
 const CERTIFY_MAGIC_LINK_ENDPOINT = "/api/certify-magic-link"
 const SEND_FEEDBACK_EMAIL_ENDPOINT = "/api/send-feedback-email"
 const GET_TEXT_ANALYSIS_ENDPOINT = "/api/get-text-analysis"
-const GRAPH_QL_ENDPOINT= "/graphql"
+const GRAPH_QL_ENDPOINT = "/graphql"
 const ADD_USER_ENDPOINT = "/api/add-user"
 
 export const EMAIL_SERVICE_GENERAL = `${AZURE_SERVERLESS_API}${EMAIL_SERVICE_GENERAL_ENDPOINT}`

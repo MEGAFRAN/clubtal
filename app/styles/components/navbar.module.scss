@@ -17,10 +17,11 @@
   width: 100%;
 
   &:hover {
-    @include mixins.navbar-hover ();
+    @include mixins.navbar-hover();
   }
 
-  button, a {
+  button,
+  a {
     align-items: center;
     background: transparent;
     border: none;
@@ -39,7 +40,7 @@
     }
 
     &:hover {
-      @include mixins.cta-button-hover ();
+      @include mixins.cta-button-hover();
     }
   }
 

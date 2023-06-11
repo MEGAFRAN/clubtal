@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -29,9 +25,9 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/404.tsx",
-    ".next/types/**/*.ts"
-, "lib/redirect.js", "app/components/mdx/index.ts"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    ".next/types/**/*.ts",
+    "lib/redirect.js",
+    "app/components/mdx/index.ts"
+  ],
+  "exclude": ["node_modules"]
 }

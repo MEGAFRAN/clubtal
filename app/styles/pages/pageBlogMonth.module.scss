@@ -34,7 +34,7 @@
         transition: animations.$regular-transition;
 
         &:hover {
-          @include mixins.linkcard-post-hover ();
+          @include mixins.linkcard-post-hover();
         }
       }
     }

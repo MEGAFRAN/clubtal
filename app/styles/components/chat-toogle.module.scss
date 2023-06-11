@@ -9,13 +9,14 @@
   position: fixed;
   right: 20px;
   text-align: center;
-  @include mixins.cta-button-appearance ();
+
+  @include mixins.cta-button-appearance();
 
   &::before {
     content: "\1F916 \1F4AC";
   }
 
   &:hover {
-    @include mixins.cta-button-hover ();
+    @include mixins.cta-button-hover();
   }
 }

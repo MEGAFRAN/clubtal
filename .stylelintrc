@@ -1,53 +1,56 @@
 {
-    "plugins": ["stylelint-order","stylelint-scss" ],
-    "extends": ["stylelint-config-standard-scss"], 
-    "rules": {
-        "alpha-value-notation": "number", 
-        "block-no-empty": true, 
-        "color-function-notation": null,
-        "color-hex-length": "long",
-        "color-no-invalid-hex": true,
-        "comment-no-empty": true,
-        "declaration-block-no-duplicate-properties": true, 
-        "declaration-block-no-redundant-longhand-properties": null, 
-        "declaration-block-no-shorthand-property-overrides": true, 
-        "declaration-colon-newline-after": null, 
-        "font-family-no-duplicate-names": true, 
-        "function-calc-no-unspaced-operator": true, 
-        "function-linear-gradient-no-nonstandard-direction": true, 
-        "function-name-case": [
-        "lower", {
-        "ignoreFunctions": ["versionPath"] }
-        ],
-        "keyframe-declaration-no-important": true, 
-        "length-zero-no-unit": true, 
-        "media-feature-name-no-unknown": true, 
-        "no-descending-specificity": null,
-        "no-duplicate-at-import-rules": true, 
-        "no-duplicate-selectors": true, 
-        "no-invalid-double-slash-comments": true, 
-        "no-invalid-position-at-import-rule": null, 
-        "order/properties-alphabetical-order": true, 
-        "property-no-unknown": true, 
-        "rule-empty-line-before": [
-            "always", {
-            "ignore": ["after-comment", "first-nested"] }
-        ],
-        "scss/at-rule-no-unknown": true, 
-        "scss/at-mixin-argumentless-call-parentheses": "always", 
-        "scss/no-global-function-names": null, 
-        "selector-attribute-quotes": "always", 
-        "selector-class-pattern": "^[a-z1-9_-]+$", 
-        "selector-pseudo-class-no-unknown": true,
-        "selector-pseudo-element-colon-notation": "double", 
-        "selector-pseudo-element-no-unknown": true, 
-        "selector-type-case": "lower",
-        "selector-type-no-unknown": true, 
-        "shorthand-property-no-redundant-values": true, 
-        "string-no-newline": true,
-        "unit-no-unknown": true,
-        "value-keyword-case": "lower", 
-        "value-no-vendor-prefix": true
-    } 
+  "plugins": ["stylelint-order", "stylelint-scss"],
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "alpha-value-notation": "number",
+    "block-no-empty": true,
+    "color-function-notation": null,
+    "color-hex-length": "long",
+    "color-no-invalid-hex": true,
+    "comment-no-empty": true,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-colon-newline-after": null,
+    "font-family-no-duplicate-names": true,
+    "function-calc-no-unspaced-operator": true,
+    "function-linear-gradient-no-nonstandard-direction": true,
+    "function-name-case": [
+      "lower",
+      {
+        "ignoreFunctions": ["versionPath"]
+      }
+    ],
+    "keyframe-declaration-no-important": true,
+    "length-zero-no-unit": true,
+    "media-feature-name-no-unknown": true,
+    "no-descending-specificity": null,
+    "no-duplicate-at-import-rules": true,
+    "no-duplicate-selectors": true,
+    "no-invalid-double-slash-comments": true,
+    "no-invalid-position-at-import-rule": null,
+    "order/properties-alphabetical-order": true,
+    "property-no-unknown": true,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["after-comment", "first-nested"]
+      }
+    ],
+    "scss/at-rule-no-unknown": true,
+    "scss/at-mixin-argumentless-call-parentheses": "always",
+    "scss/no-global-function-names": null,
+    "selector-attribute-quotes": "always",
+    "selector-class-pattern": "^[a-z1-9_-]+$",
+    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-pseudo-element-no-unknown": true,
+    "selector-type-case": "lower",
+    "selector-type-no-unknown": true,
+    "shorthand-property-no-redundant-values": true,
+    "string-no-newline": true,
+    "unit-no-unknown": true,
+    "value-keyword-case": "lower",
+    "value-no-vendor-prefix": true
+  }
 }
-    

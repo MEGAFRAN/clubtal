@@ -1,11 +1,10 @@
 declare global {
   interface Window {
-    dataLayer: Array<any>;
+    dataLayer: Array<any>
   }
 }
 
 const googleTagService = {
-
   pushDataLayer(event: string, trigger: string, data: Record<string, any>): void {
     if (typeof window !== "undefined" && window.dataLayer) {
       try {

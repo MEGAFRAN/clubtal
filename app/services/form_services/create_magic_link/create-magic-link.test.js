@@ -14,7 +14,7 @@ describe("createMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.resolve({}))
     global.fetch = mockFetch
 
-    await createMagicLink(email, pageOrigin , pageLanguage)
+    await createMagicLink(email, pageOrigin, pageLanguage)
 
     expect(mockFetch).toHaveBeenCalledTimes(1)
     expect(mockFetch).toHaveBeenCalledWith(CREATE_MAGIC_LINK, {
@@ -22,7 +22,7 @@ describe("createMagicLink", () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, pageOrigin , pageLanguage }),
+      body: JSON.stringify({ email, pageOrigin, pageLanguage }),
     })
   })
 
@@ -31,7 +31,7 @@ describe("createMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.resolve(mockResponse))
     global.fetch = mockFetch
 
-    const result = await createMagicLink(email, pageOrigin , pageLanguage)
+    const result = await createMagicLink(email, pageOrigin, pageLanguage)
 
     expect(result).toEqual(mockResponse)
   })
@@ -41,6 +41,6 @@ describe("createMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.reject(mockError))
     global.fetch = mockFetch
 
-    await expect(createMagicLink(email, pageOrigin , pageLanguage)).rejects.toThrowError(mockError)
+    await expect(createMagicLink(email, pageOrigin, pageLanguage)).rejects.toThrowError(mockError)
   })
 })
