@@ -24,7 +24,7 @@ const MagicLink = () => {
         .then((response: Response) => response.json() as Promise<MagicLinkResponse>)
         .then((data: MagicLinkResponse) => {
           if (data.token) {
-            localStorage.setItem("token", data.token)
+            localStorage.setItem("clubtal_token", data.token)
             router.push("/panel")
           } else {
             setError(true)

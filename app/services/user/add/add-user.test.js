@@ -1,10 +1,8 @@
-import createMagicLink from "./create-magic-link.service"
-import { CREATE_MAGIC_LINK } from "../../api/variables"
+import addUser from "./add-user.service"
+import { ADD_USER } from "../../api/variables"
 
-describe("createMagicLink", () => {
-  const email = "test@example.com"
-  const pageOrigin = "http://localhost"
-  const pageLanguage = "es"
+describe("add user", () => {
+  const email = "email@example.com"
 
   afterEach(() => {
     jest.restoreAllMocks()
@@ -14,15 +12,16 @@ describe("createMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.resolve({}))
     global.fetch = mockFetch
 
-    await createMagicLink(email, pageOrigin , pageLanguage)
+    await addUser(email)
 
     expect(mockFetch).toHaveBeenCalledTimes(1)
-    expect(mockFetch).toHaveBeenCalledWith(CREATE_MAGIC_LINK, {
+    expect(mockFetch).toHaveBeenCalledWith(ADD_USER, {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, pageOrigin , pageLanguage }),
+      body: JSON.stringify({ email }),
     })
   })
 
@@ -31,7 +30,7 @@ describe("createMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.resolve(mockResponse))
     global.fetch = mockFetch
 
-    const result = await createMagicLink(email, pageOrigin , pageLanguage)
+    const result = await addUser(email)
 
     expect(result).toEqual(mockResponse)
   })
@@ -41,6 +40,6 @@ describe("createMagicLink", () => {
     const mockFetch = jest.fn(() => Promise.reject(mockError))
     global.fetch = mockFetch
 
-    await expect(createMagicLink(email, pageOrigin , pageLanguage)).rejects.toThrowError(mockError)
+    await expect(addUser(email)).rejects.toThrowError(mockError)
   })
 })
