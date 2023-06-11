@@ -56,7 +56,12 @@ const Navbar = ({
       )}
       {withLanguageToggle && <ButtonLocale currentLocale={currentLocale} />}
       {withLoginButton && (
-        <Button aria-label="Call to Action" text="Registro / Login" style="cta" linkTo="/login" />
+        <Button
+          aria-label="Call to Action"
+          text="Registro / Login"
+          style="cta"
+          linkTo="/register"
+        />
       )}
       {toggleMenu ? (
         <div className={styles.dropdown} onClick={handleToggle}>
