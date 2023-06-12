@@ -2,10 +2,12 @@ import { NextPage } from "next"
 import LoginForm from "../../app/components/login_form/login_form"
 import styles from "../../app/styles/pages/register.module.scss"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
+import AuthenticationGoogle from "../../app/components/authentication/google/AuthenticationGoogle"
 
 const Register: NextPage = () => (
   <section className={styles.container}>
     <LoginForm />
+    <AuthenticationGoogle clientID="415253677883-0isr6p6bn02dj5e1fenm4mmitfp52psj.apps.googleusercontent.com" />
   </section>
 )
 
