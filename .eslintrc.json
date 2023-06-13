@@ -31,13 +31,5 @@
   },
   "env": {
     "jest": true
-  },
-  "overrides": [
-    {
-      "files": ["**/*.test.js"],
-      "rules": {
-        "quotes": "off"
-      }
-    }
-  ]
+  }
 }
