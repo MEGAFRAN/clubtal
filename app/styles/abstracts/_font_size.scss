@@ -1,0 +1,25 @@
+/* stylelint-disable */
+// Typography scale
+
+$fs-base: 16;
+$_fs-9: #{9 / $fs-base}rem;
+$_fs-17: #{17 / $fs-base}rem;
+$_fs-19: #{19 / $fs-base}rem;
+$_fs-21: #{21 / $fs-base}rem;
+$_fs-24: #{24 / $fs-base}rem;
+$_fs-32: #{32 / $fs-base}rem;
+$_fs-48: #{48 / $fs-base}rem;
+
+// Typography applications
+
+/* 
+    l ---> large
+    m ---> medium
+    s ---> small
+*/
+$paragraph-s: $_fs-17;
+$paragraph-m: $_fs-19;
+$title-s: $_fs-32;
+$title-l: $_fs-48;
+$sub-title-s: $_fs-21;
+$sub-title-l: $_fs-24;

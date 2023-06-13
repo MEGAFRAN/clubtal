@@ -1,27 +1,20 @@
 @use "../abstracts/colors";
 @use "../abstracts/mixins";
 @use "../abstracts/animations";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
 
 .container {
   display: flex;
   flex-flow: column wrap;
-  gap: 24px;
   padding: 0 12px;
 
   .card_post {
-    border: 1px solid colors.$secondary-gray;
-    border-radius: 12px;
     display: flex;
     flex-flow: column wrap;
     gap: 6px;
-    margin: 0 auto;
-    max-width: 850px;
-    padding: 12px;
+    max-width: 1100px;
     transition: animations.$transition-card-post;
-
-    &:hover {
-      @include mixins.card-post-hover();
-    }
 
     section {
       align-content: center;
@@ -30,7 +23,15 @@
       flex-flow: row wrap;
       font-size: 14px;
       gap: 0 12px;
-      margin: 0 auto;
+
+      span {
+        color: colors.$secondary-black;
+        font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
+        font-weight: 400;
+        letter-spacing: 0.012em;
+        line-height: 1.4211;
+        text-transform: capitalize;
+      }
     }
 
     h2 {
@@ -48,11 +49,16 @@
 
     p {
       color: colors.$secondary-black;
+      font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
+      font-weight: 400;
+      letter-spacing: 0.012em;
+      line-height: 1.4211;
       padding: 0;
     }
 
     footer {
       a {
+        color: colors.$primary-black;
         font-weight: 600;
         transition: animations.$regular-transition;
 

@@ -1,2 +1,28 @@
+/* stylelint-disable */
 $padding-main-size: clamp(10px, 5vw, 60px);
 $gap-row-main: clamp(40px, 5vw, 120px);
+
+// spacing scale
+
+$spacing-base: 16;
+$_spacing-2: #{2 / $spacing-base}rem;
+$_spacing-4: #{4 / $spacing-base}rem;
+$_spacing-8: #{8 / $spacing-base}rem;
+$_spacing-12: #{12 / $spacing-base}rem;
+$_spacing-16: #{16 / $spacing-base}rem;
+$_spacing-24: #{24 / $spacing-base}rem;
+$_spacing-32: #{32 / $spacing-base}rem;
+$_spacing-48: #{48 / $spacing-base}rem;
+$_spacing-64: #{64 / $spacing-base}rem;
+
+// spacing applications for margin or padding
+
+$micro: $_spacing-2;
+$tiny: $_spacing-4;
+$extraSmall: $_spacing-8;
+$small: $_spacing-12;
+$medium: $_spacing-16;
+$large: $_spacing-24;
+$extraLarge: $_spacing-32;
+$huge: $_spacing-48;
+$massive: $_spacing-64;
