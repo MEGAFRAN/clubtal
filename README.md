@@ -1,37 +1,15 @@
-## What is this project?
-
-CLUBTAL is a collaborative platform where beginners of digital careers can get experience by doing features in a living and open project web site: www.clubtal.com
-
 ## Que es este proyecto?
 
-CLUBTAL es una plataforma colaborativa en la que los principiantes de las carreras digitales pueden adquirir experiencia realizando funcionalidades en un proyecto vivo y abierto sitio web: www.clubtal.com
+PEDIAGENDA es una aplicación movil que simplifica el cuidado de los hijos: www.pediagenda.com
 
-## Tech stack used - Stack tecnologico usado
+## Stack tecnologico usado
 
-- React (Functional components)
+- React (Componentes funcionales)
 - Next.js
 - Typescript
 - SCSS modules
-
-## How to start?
-
--Clone this project on your computer
-
--Type on terminal
-
-```bash
-npm i
-```
-
--Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Graph QL
+- Headless CMS
 
 ## Como empezar?
 
