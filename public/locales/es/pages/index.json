@@ -3,34 +3,33 @@
   "metatagTitle": "Recorta tus gastos con inteligencia artificial - Clubtal",
   "metatagLocale": "en_CO",
   "metatagUrl": "https://clubtal.com/es",
-  "headerTitle": ["Reduce", "costos", "con"],
-  "headerText": ["Inteligencia artificial", "para tu negocio"],
-  "headerButtons": ["Lo quiero", "Inicio", "Contacto"],
+  "headerTitle": ["Simplifica la", "salud", "de tus hijos"],
+  "headerText": ["Aplicación con herramientas", "para el cuidado de tus hijos"],
+  "headerButtons": ["Descargar", "Inicio", "Contacto"],
   "listData": ["Soluciones de inteligencia artifical para negocios"],
   "listData2": [
-    "Automatización de tareas ",
-    "Reducción de costos",
-    "Mejora la toma de decisiones",
-    "Mejora la productividad",
-    "Multiples idiomas",
-    "Ventajas competitivas"
+    "Calculadora dosis medicamentos",
+    "Guia primeros auxilios",
+    "Lista de signos de alarma",
+    "Rangos de signos vitales",
+    "Notas de recordatorio"
   ],
   "listData3": [
-    "Analisis de tus necesidades",
-    "Desarrollo",
-    "Personalizacion",
-    "Soporte en instalacion",
-    "Documentacion",
-    "7 dias de prueba"
+    "Creado por medicos",
+    "Información verificada",
+    "Gratuito",
+    "Herramientas elegidas por madres",
+    "Datos personales seguros",
+    "Con amor"
   ],
   "listData4": ["Contactanos", "Analizamos tu requerimiento", "Te entregamos tu solucion"],
 
-  "benefitsForYourBusiness": "Beneficios para tu negocio",
+  "benefitsForYourBusiness": "Herramientas para ti y tus hijos",
   "contactUs": "Contáctanos",
 
   "iWantMySolution": "quiero mi solucion",
   "requestService": "solicitar servicio",
   "sectionContact": "#section-contact",
   "stepsToFollow": "pasos a seguir",
-  "whatDoWeDo": "¿que hacemos?"
+  "whatDoWeDo": "Ventajas"
 }

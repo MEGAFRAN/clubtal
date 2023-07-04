@@ -13,9 +13,11 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
         mail={"info@clubtal.com"}
         withToogleMenu={false}
         withLanguageToggle={false}
-        withLoginButton={true}
+        withLoginButton={false}
         withContactButton={false}
-        withHomeButton={true}
+        withHomeButton={false}
+        withDownloadAndroidButton={true}
+        withDownloadIosButton={true}
         sectionToScroll={sectionToScroll}
       />
 

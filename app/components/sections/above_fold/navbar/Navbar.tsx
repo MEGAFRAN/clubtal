@@ -17,6 +17,8 @@ const Navbar = ({
   withLoginButton,
   withContactButton,
   withHomeButton,
+  withDownloadAndroidButton,
+  withDownloadIosButton,
 }: NavbarProps) => {
   const router = useRouter()
   const optionsList =
@@ -61,6 +63,22 @@ const Navbar = ({
           text="Registro / Login"
           style="cta"
           linkTo="/register"
+        />
+      )}
+      {withDownloadAndroidButton && (
+        <Button
+          aria-label="Descargar Android"
+          text="Descargar Android"
+          style="cta"
+          linkTo="https://play.google.com/store/apps"
+        />
+      )}
+      {withDownloadIosButton && (
+        <Button
+          aria-label="Descargar Iphone"
+          text="Descargar Iphone"
+          style="cta"
+          linkTo="https://www.apple.com/co/app-store/"
         />
       )}
       {toggleMenu ? (

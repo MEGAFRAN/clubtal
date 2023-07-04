@@ -9,6 +9,7 @@ import SectionContact from "../../app/components/sections/contact/SectionContact
 import SectionDottedCard from "../../app/components/sections/dotted_card/SectionDottedCard"
 import SectionUnderlineList from "../../app/components/sections/underline_list/SectionUnderlineList"
 import { getStaticPaths, makeStaticProps } from "../../lib/getStatic"
+import FeedbackForm from "../../app/components/feedback/FeedbackForm"
 
 const Home: NextPage = () => {
   const { t } = useTranslation(["pages/index"])
@@ -41,9 +42,7 @@ const Home: NextPage = () => {
         buttonText={t("requestService")}
         sectionToScroll={t("sectionContact") as string}
       />
-      <SectionContact title={t("contactUs")} />
-      <ChatBotToggle />
-      <SectionAnalytics />
+      <FeedbackForm />
     </>
   )
 }

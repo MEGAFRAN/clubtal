@@ -2,8 +2,8 @@
 @use "../base/typography";
 
 .container {
-  background-color: colors.$primary-black;
-  border: 4px solid colors.$secondary-black;
+  background-color: colors.$primary-white;
+  border: 3px solid colors.$gray9;
   border-radius: 38px;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
   padding: clamp(0px, 5vw, 40px);
 
   h2 {
-    color: colors.$primary-white;
+    color: colors.$primary-black;
     padding-bottom: 30px;
     text-align: center;
   }
@@ -32,10 +32,10 @@
 
     li {
       align-items: center;
-      background-color: colors.$primary-black;
-      border-bottom: 2px solid colors.$secondary-black;
+      background-color: colors.$primary-white;
+      border-bottom: 2px solid colors.$primary-beige;
       border-radius: 15px;
-      color: colors.$primary-white;
+      color: colors.$primary-black;
       display: flex;
       flex-direction: column;
       height: 111px;
