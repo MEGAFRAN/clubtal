@@ -5,12 +5,12 @@
 .container {
   align-items: center;
   background: colors.$primary-white;
-  box-shadow: 0 -3px 11px colors.$secondary-black;
+  box-shadow: 0 0 10px colors.$gray9;
   display: flex;
   height: 65px;
   justify-content: space-between;
   left: 0;
-  padding: 0 20px;
+  padding: 0 10px;
   position: fixed;
   top: 0;
   transition: animations.$regular-transition;
@@ -20,45 +20,29 @@
     @include mixins.navbar-hover();
   }
 
-  button,
-  a {
-    align-items: center;
-    background: transparent;
-    border: none;
-    color: colors.$primary-black;
-    display: flex;
-    flex-direction: column;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: clamp(1rem, 4vw, 1.2rem);
-    font-weight: 400;
-    text-decoration: none;
+  button {
+    @include mixins.cta-button-appearance();
 
-    &::before {
-      color: transparent;
-      font-size: 19px;
-      text-shadow: 0 0 0 colors.$primary-green;
-    }
+    animation: color-change 8s infinite;
 
     &:hover {
+      animation: none;
+
       @include mixins.cta-button-hover();
     }
-  }
 
-  button:nth-child(1) {
-    &::before {
-      content: "\1F3E0";
-    }
-  }
+    @keyframes color-change {
+      0% {
+        background-color: colors.$primary-pink;
+      }
 
-  button:nth-child(2) {
-    &::before {
-      content: "\01F4DE";
-    }
-  }
+      50% {
+        background-color: colors.$secondary-red;
+      }
 
-  button:nth-child(3) {
-    &::before {
-      content: "\01F310";
+      100% {
+        background-color: colors.$primary-pink;
+      }
     }
   }
 

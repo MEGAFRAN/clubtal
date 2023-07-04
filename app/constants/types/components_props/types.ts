@@ -128,6 +128,8 @@ export interface NavbarProps {
   withLoginButton?: boolean
   withContactButton?: boolean
   withHomeButton?: boolean
+  withDownloadAndroidButton?: boolean
+  withDownloadIosButton?: boolean
 }
 
 export interface SectionTitleListProps {

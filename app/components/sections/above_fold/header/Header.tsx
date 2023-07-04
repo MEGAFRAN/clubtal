@@ -13,9 +13,11 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
         mail={"info@clubtal.com"}
         withToogleMenu={false}
         withLanguageToggle={false}
-        withLoginButton={true}
+        withLoginButton={false}
         withContactButton={false}
-        withHomeButton={true}
+        withHomeButton={false}
+        withDownloadAndroidButton={true}
+        withDownloadIosButton={true}
         sectionToScroll={sectionToScroll}
       />
 
@@ -31,7 +33,18 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
         {withMagicLink ? (
           <LoginForm />
         ) : (
-          <Button text={buttonHero} style="cta" scrollToSection={sectionToScroll} />
+          <div className={styles.buttons}>
+            <Button
+              text="Descargar para Android"
+              style="cta"
+              linkTo="https://play.google.com/store/apps"
+            />
+            <Button
+              text="Descargar para Iphone"
+              style="cta"
+              linkTo="https://www.apple.com/co/app-store/"
+            />
+          </div>
         )}
       </div>
     </header>

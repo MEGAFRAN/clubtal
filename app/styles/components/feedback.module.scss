@@ -3,88 +3,93 @@
 @use "../abstracts/mixins";
 
 .container {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  margin: auto;
 
-  .feedback_buttons {
-    display: flex;
-    gap: 40px;
+  h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: center;
   }
 
-  .thumb_up,
-  .thumb_down {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem;
-    padding: 0;
-  }
-
-  .modal {
+  form {
     align-items: center;
-    background-color: colors.$secondary-black;
+    background-color: colors.$primary-white;
+    border: solid 2px colors.$gray9;
+    border-radius: 8px;
     display: flex;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-  }
-
-  .modal_content {
-    background-color: colors.$primary-gray;
-    border-radius: 5px;
-    max-width: 500px;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 20px;
+    max-width: calc(100vw - 40px);
     padding: 20px;
-    width: 90vw;
+    width: 340px;
 
-    input {
-      background-color: colors.$primary-white;
-      border: 1px solid colors.$secondary-gray;
-      border-bottom: 2px solid colors.$secondary-gray;
+    textarea {
+      border: 2px solid colors.$primary-black;
       border-radius: 10px;
-      box-sizing: border-box;
-      font-family: Montserrat, sans-serif;
-      height: 20vh;
-      max-height: 300px;
       padding: 10px;
-      resize: none;
       transition: animations.$regular-transition;
-      width: 100%;
 
       @include mixins.field-validation();
     }
 
-    .modal_actions {
+    label {
+      color: colors.$secondary-gray;
       display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-      margin-top: 10px;
+      flex-direction: column;
+      width: 100%;
 
-      button {
-        align-self: center;
-        border: solid colors.$secondary-black 2px;
-        border-radius: 24px;
-        color: colors.$primary-black;
-        margin-top: 20px;
-        padding: 10px 23px;
-        pointer-events: auto;
+      span {
+        padding-bottom: 10px;
+      }
+
+      input {
+        background-color: colors.$primary-white;
+        border: 0;
+        border-bottom: 2px solid colors.$secondary-gray;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-family: Montserrat, sans-serif;
+        padding: 10px;
+        resize: none;
         transition: animations.$regular-transition;
+        width: 100%;
 
-        &:hover {
-          @include mixins.cta-button-hover();
-        }
+        @include mixins.field-validation();
+      }
+    }
+
+    button {
+      align-self: center;
+      margin-top: 20px;
+
+      @include mixins.cta-button-appearance();
+
+      &:hover {
+        @include mixins.cta-button-hover();
+      }
+    }
+
+    p {
+      padding: 0;
+
+      &.response-mensaje--error {
+        border: solid 2px colors.$primary-red;
       }
 
-      .send {
-        background-color: colors.$primary-green;
+      &.response-mensaje--success {
+        border: solid 2px colors.$primary-green;
       }
+    }
 
-      .cancel {
-        background-color: colors.$primary-gray;
+    .loading {
+      background: colors.$secondary-gray;
+
+      &:hover {
+        @include mixins.cta-button-loading-hover();
       }
     }
   }

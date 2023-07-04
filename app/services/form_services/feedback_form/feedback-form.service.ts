@@ -3,7 +3,7 @@ import { handleError, handleResponse } from "../../utils/reponse/response"
 
 async function sendFeedbackMessage(
   formMessage: string,
-  isPositiveFeedback: boolean,
+  isPositiveFeedback?: boolean,
 ): Promise<Response> {
   return fetch(SEND_FEEDBACK_EMAIL, {
     method: "POST",
