@@ -25,8 +25,8 @@ const Home: NextPage = () => {
       <Header
         title={t("headerTitle", { returnObjects: true })}
         text={t("headerText", { returnObjects: true })}
-        buttonText={t("headerButtons", { returnObjects: true })}
-        sectionToScroll={t("sectionContact") as string}
+        buttonText={["jojobon"]}
+        sectionToScroll={"#section-underline-list"}
       />
       <SectionUnderlineList
         listData={t("listData2", { returnObjects: true })}

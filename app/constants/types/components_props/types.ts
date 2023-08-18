@@ -122,14 +122,12 @@ export interface NavbarProps {
   options?: homeNavbarOptions[]
   buttonText: string[]
   sectionToScroll?: string
-  mail: string
+  mail?: string
   withToogleMenu?: boolean
   withLanguageToggle?: boolean
   withLoginButton?: boolean
   withContactButton?: boolean
   withHomeButton?: boolean
-  withDownloadAndroidButton?: boolean
-  withDownloadIosButton?: boolean
 }
 
 export interface SectionTitleListProps {

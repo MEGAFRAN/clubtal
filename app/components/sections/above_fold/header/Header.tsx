@@ -8,19 +8,7 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
   const [buttonHero, ...resButton] = buttonText || []
   return (
     <header className={styles.container}>
-      <Navbar
-        buttonText={resButton}
-        mail={"info@clubtal.com"}
-        withToogleMenu={false}
-        withLanguageToggle={false}
-        withLoginButton={false}
-        withContactButton={false}
-        withHomeButton={false}
-        withDownloadAndroidButton={true}
-        withDownloadIosButton={true}
-        sectionToScroll={sectionToScroll}
-      />
-
+      <Navbar buttonText={buttonText} withHomeButton={true} />
       <h1>
         {title[0]} <em>{title[1]}</em> {title[2]}
       </h1>
@@ -34,16 +22,7 @@ const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: Hea
           <LoginForm />
         ) : (
           <div className={styles.buttons}>
-            <Button
-              text="Descargar para Android"
-              style="cta"
-              linkTo="https://play.google.com/store/apps"
-            />
-            <Button
-              text="Descargar para Iphone"
-              style="cta"
-              linkTo="https://www.apple.com/co/app-store/"
-            />
+            <Button text="Empezar" style="cta" scrollToSection={sectionToScroll} />
           </div>
         )}
       </div>

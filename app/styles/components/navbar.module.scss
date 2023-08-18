@@ -5,13 +5,12 @@
 .container {
   align-items: center;
   background: colors.$primary-white;
-  box-shadow: 0 0 10px colors.$gray9;
   display: flex;
   height: 65px;
   justify-content: space-between;
   left: 0;
   padding: 0 10px;
-  position: fixed;
+  position: absolute;
   top: 0;
   transition: animations.$regular-transition;
   width: 100%;
@@ -23,26 +22,13 @@
   button {
     @include mixins.cta-button-appearance();
 
-    animation: color-change 8s infinite;
+    background-color: transparent;
+    color: colors.$primary-cyan;
+    font-family: sans-serif;
+    font-size: 20px;
 
     &:hover {
-      animation: none;
-
       @include mixins.cta-button-hover();
-    }
-
-    @keyframes color-change {
-      0% {
-        background-color: colors.$primary-pink;
-      }
-
-      50% {
-        background-color: colors.$secondary-red;
-      }
-
-      100% {
-        background-color: colors.$primary-pink;
-      }
     }
   }
 

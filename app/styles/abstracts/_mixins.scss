@@ -2,16 +2,16 @@
 @use "./animations";
 
 @mixin cta-button-hover {
-  background: colors.$secondary-blue;
-  color: colors.$primary-black;
+  background: colors.$dark-cyan;
+  color: colors.$primary-white;
   cursor: pointer;
 }
 
 @mixin cta-button-appearance {
-  background-color: colors.$primary-pink;
+  background-color: colors.$primary-cyan;
   border: none;
   border-radius: 24px;
-  color: colors.$primary-black;
+  color: colors.$primary-white;
   padding: 10px 14px;
   pointer-events: auto;
   transition: animations.$regular-transition;
