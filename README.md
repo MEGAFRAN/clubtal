@@ -1,6 +1,6 @@
 ## Que es este proyecto?
 
-PEDIAGENDA es una aplicación movil que simplifica el cuidado de los hijos: www.pediagenda.com
+JOJOBON logra el trabajo de tus sueños: www.jojobon.com
 
 ## Stack tecnologico usado
 

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://pediagenda.com/sitemap.xml
+Sitemap: https://jojobon.com/sitemap.xml
