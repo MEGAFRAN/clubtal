@@ -19,34 +19,46 @@ export interface GetFileByLocaleAndTitle {
   title: string
 }
 
-export const getAllPathsOfPost = async (locale: LOCALES) => {
-  const language = RESULT_LANGUAGE_BY_LOCALE[locale] as LANGUAGE
-  const allPostData = await getAllPostByLanguage(language)
-  const Paths: PathsPost[] = allPostData.map((post) => {
-    const language = post.language as LANGUAGE
-    const locale = RESULT_LOCALE_BY_LANGUAGE[language] as LOCALES
-    const slug = post.slug.replace(/\//g, "")
-    return {
-      params: {
-        slug,
-        locale,
-      },
-    }
-  })
-  return Paths
-}
-
-export const getMetaDataOfPostByLocale = async (locale: LOCALES) => {
-  const language = RESULT_LANGUAGE_BY_LOCALE[locale] as LANGUAGE
-  const allPostData = await getAllPostByLanguage(language)
-  return allPostData
-}
-
 export const sortPostByDate = (posts: CardPost[]) =>
   posts.sort((currentPost, nextPost) => {
     if (currentPost.date < nextPost.date) return 1
     return -1
   })
+
+function mapPost(post: PostsEdge[]): Post {
+  const [language, category] = post[0].node.categories.edges
+  const date = String(post[0].node.date)
+  return {
+    title: post[0].node.title,
+    id: post[0].node.id,
+    nameAuthor: post[0].node.author.node.name,
+    date,
+    readingTime: post[0].node.readingTime,
+    category: category.node.name,
+    overview: post[0].node.content,
+    language: language.node.name,
+    slug: post[0].node.uri,
+    content: post[0].node.content,
+  }
+}
+
+function mapCardPost(posts: PostsEdge[]): CardPost[] {
+  return posts.map((post) => {
+    const [language, category] = post.node.categories.edges
+    const date = String(post.node.date)
+    return {
+      title: post.node.title,
+      id: post.node.id,
+      nameAuthor: post.node.author.node.name,
+      date,
+      readingTime: post.node.readingTime,
+      category: category.node.name,
+      overview: post.node.content,
+      language: language.node.name,
+      slug: post.node.uri,
+    }
+  })
+}
 
 export async function getPostByLocaleAndSlug({ locale, slug }: getPostByLocaleAndSlugParams) {
   const language = RESULT_LANGUAGE_BY_LOCALE[locale] as LANGUAGE
@@ -85,41 +97,4 @@ async function getAllPostByLanguage(language: LANGUAGE): Promise<CardPost[]> {
   const cardPostSorted = sortPostByDate(cardPosts)
 
   return cardPostSorted
-}
-
-// mapPost ---> This function was created to maintain the Post interface contract.
-function mapPost(post: PostsEdge[]): Post {
-  const [language, category] = post[0].node.categories.edges
-  const date = String(post[0].node.date)
-  return {
-    title: post[0].node.title,
-    id: post[0].node.id,
-    nameAuthor: post[0].node.author.node.name,
-    date: date,
-    readingTime: post[0].node.readingTime,
-    category: category.node.name,
-    overview: post[0].node.content,
-    language: language.node.name,
-    slug: post[0].node.uri,
-    content: post[0].node.content,
-  }
-}
-
-// mapCardPost ---> This function was created to maintain the CardPost interface contract.
-function mapCardPost(posts: PostsEdge[]): CardPost[] {
-  return posts.map((post) => {
-    const [language, category] = post.node.categories.edges
-    const date = String(post.node.date)
-    return {
-      title: post.node.title,
-      id: post.node.id,
-      nameAuthor: post.node.author.node.name,
-      date: date,
-      readingTime: post.node.readingTime,
-      category: category.node.name,
-      overview: post.node.content,
-      language: language.node.name,
-      slug: post.node.uri,
-    }
-  })
 }

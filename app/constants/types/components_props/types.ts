@@ -217,6 +217,7 @@ export interface CardPost {
   author: string
   body: string
   slug: string
+  date: string
 }
 
 export interface Post extends CardPost {
@@ -318,10 +319,6 @@ export interface HomePageProps {
   form: SectionContactProps
   chatbot: ChatbotProps
   sectionContact: string
-}
-
-export interface ButtonLocaleProps {
-  currentLocale: string | string[]
 }
 
 export interface LinkNavigationProps {

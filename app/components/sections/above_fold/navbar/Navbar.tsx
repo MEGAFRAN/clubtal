@@ -4,8 +4,6 @@ import { NavbarProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/components/navbar.module.scss"
 import Button from "../../../button/Button"
 import Link from "../../../link/Link"
-import ButtonLocale from "../../../button_locale/ButtonLocale"
-import nextI18nextConfig from "../../../../../next-i18next.config"
 
 const Navbar = ({
   options,
@@ -13,7 +11,6 @@ const Navbar = ({
   sectionToScroll,
   mail,
   withToogleMenu,
-  withLanguageToggle,
   withLoginButton,
   withContactButton,
   withHomeButton,
@@ -39,12 +36,10 @@ const Navbar = ({
       setToggleMenu(!toggleMenu)
     }
   }
-  const currentLocale = router.query.locale || nextI18nextConfig.i18n.defaultLocale
-  const hrefHome = currentLocale === "en" ? "/" : `/${currentLocale}`
   return (
     <nav tabIndex={0} className={styles.container} aria-label="Main Navigation">
       {withHomeButton && (
-        <Button aria-label="Call to Action" text={buttonHome} style="navbar" linkTo={hrefHome} />
+        <Button aria-label="Call to Action" text={buttonHome} style="navbar" linkTo={"/"} />
       )}
       {withContactButton && (
         <Button
@@ -54,7 +49,6 @@ const Navbar = ({
           scrollToSection={sectionToScroll}
         />
       )}
-      {withLanguageToggle && <ButtonLocale currentLocale={currentLocale} />}
       {withLoginButton && (
         <Button
           aria-label="Call to Action"
