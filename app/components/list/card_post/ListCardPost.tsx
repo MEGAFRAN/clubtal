@@ -1,35 +1,26 @@
-import { CardPost, LANGUAGE } from "../../../constants/types/components_props/types"
+import { CardPost } from "../../../constants/types/components_props/types"
 import useDate from "../../../hook/useDate"
 import SectionCardPost from "../../sections/card_post/SectionCardPost"
 import styles from "../../../styles/components/listCardPost.module.scss"
 
-interface ListCardPost {
-  listPost: CardPost[]
-}
-
-export default function ListCardPost({ listPost }: ListCardPost) {
+export default function ListCardPost({ listPost }: any) {
   const { transformDataToDataString, truncateText, generateEndpointCardPost } = useDate()
 
   return (
     <ul className={styles.container}>
       {listPost
-        ? listPost.map((cardPost) => {
-            const data = cardPost.date
-            const language = cardPost.language as LANGUAGE
-            const newDateString = transformDataToDataString({ data, language })
-            const newDescription = truncateText(cardPost.overview)
-            const endPoint = generateEndpointCardPost({
-              title: cardPost.title,
-            })
+        ? listPost.map((cardPost: any) => {
+            const { title, body, author } = cardPost.fields
+            const newDescription = truncateText(body)
+            const endPoint = generateEndpointCardPost({ title })
+
             return (
               <SectionCardPost
                 className={styles.card_post}
-                key={cardPost.title.concat(cardPost.date)}
-                nameAuthor={cardPost.nameAuthor}
-                datePost={newDateString}
-                readingTime={cardPost.readingTime}
+                key={title}
+                nameAuthor={author.content[0].content[0].value}
                 hrefTitle={endPoint}
-                title={cardPost.title}
+                title={title}
                 description={newDescription}
                 hrefFooter={endPoint}
               />

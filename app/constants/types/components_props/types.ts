@@ -176,8 +176,6 @@ export interface SectionGeneralProps {
 }
 export interface SectionAboutPostProps {
   nameAuthor: string
-  datePost: string
-  readingTime: string
   id?: string
   className?: string
 }
@@ -216,12 +214,8 @@ export interface ChatbotTagGroups {
 export interface CardPost {
   title: string
   id: string
-  nameAuthor: string
-  date: string
-  readingTime: string
-  category: string
-  overview: string
-  language: string
+  author: string
+  body: string
   slug: string
 }
 
