@@ -1,28 +1,35 @@
-import type { NextPage } from "next"
 import Head from "next/head"
+import { getStaticPropsIndexContent } from "../lib/pages"
 import PageHead from "../app/components/page_head/PageHead"
 import Header from "../app/components/sections/above_fold/header/Header"
 import FeedbackForm from "../app/components/feedback/FeedbackForm"
-import Footer from "../app/components/footer/Footer"
+import { IndexContent } from "../app/constants/types/content_models/types"
 
-const Home: NextPage = () => (
+const getStaticProps = getStaticPropsIndexContent
+export { getStaticProps }
+const Home = ({ data }: IndexContent) => (
   <>
     <Head>
       <PageHead
-        description={"metatagDescription"}
-        title={"metatagTitle"}
-        locale={"metatagLocale"}
-        url={"metatagUrl"}
+        description={data.metadata.description}
+        title={data.metadata.title}
+        locale={data.metadata.locale}
+        url={data.metadata.url}
       />
     </Head>
     <Header
-      title={["Consigue trabajo en tecnología"]}
-      text={["Herramientas que facilitan", "conseguir trabajo en tecnología"]}
+      title={data.content.header.title}
+      text={data.content.header.subTitle}
       buttonText={["jojobon"]}
+      callToAction={data.content.header.callToAction}
       sectionToScroll={"#section-underline-list"}
     />
-    <FeedbackForm />
-    <Footer />
+    <FeedbackForm
+      title={data.content.form.title}
+      placeholder={data.content.form.placeholder}
+      callToAction={data.content.form.callToAction}
+      invalidMessage={data.content.form.invalidMessage}
+    />
   </>
 )
 

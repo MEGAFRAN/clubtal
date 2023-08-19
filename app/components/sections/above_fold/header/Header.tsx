@@ -4,29 +4,29 @@ import LoginForm from "../../../login_form/login_form"
 import Navbar from "../navbar/Navbar"
 import Button from "../../../button/Button"
 
-const Header = ({ title, text, buttonText, sectionToScroll, withMagicLink }: HeaderProps) => {
-  const [buttonHero, ...resButton] = buttonText || []
-  return (
-    <header className={styles.container}>
-      <Navbar buttonText={buttonText} withHomeButton={true} />
-      <h1>
-        {title[0]} <em>{title[1]}</em> {title[2]}
-      </h1>
+const Header = ({
+  title,
+  text,
+  buttonText,
+  sectionToScroll,
+  withMagicLink,
+  callToAction,
+}: HeaderProps) => (
+  <header className={styles.container}>
+    <Navbar buttonText={buttonText} withHomeButton={true} />
+    <h1>{title}</h1>
 
-      <p>
-        {text[0]},<em> {text[1]}</em>
-      </p>
+    <p>{text}</p>
 
-      <div className={styles.cta_wrapper}>
-        {withMagicLink ? (
-          <LoginForm />
-        ) : (
-          <div className={styles.buttons}>
-            <Button text="Empezar" style="cta" scrollToSection={sectionToScroll} />
-          </div>
-        )}
-      </div>
-    </header>
-  )
-}
+    <div className={styles.cta_wrapper}>
+      {withMagicLink ? (
+        <LoginForm />
+      ) : (
+        <div className={styles.buttons}>
+          <Button text={callToAction} style="cta" scrollToSection={sectionToScroll} />
+        </div>
+      )}
+    </div>
+  </header>
+)
 export default Header

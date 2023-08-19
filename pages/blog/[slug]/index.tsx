@@ -1,38 +1,11 @@
 import { InferGetStaticPropsType } from "next"
-import getContentfulContent from "../../../app/services/headless/contentful/request-contentful"
 import PostBody from "../../../app/components/sections/content_post/PostBody"
 import styles from "../../../app/styles/layouts/postDetail.module.scss"
+import { getStaticPathsBlogSlug, getStaticPropsBlogSlug } from "../../../lib/blog"
 
-export const getStaticPaths = async () => {
-  const response = await getContentfulContent("blogPost")
-
-  const paths = response.items.map((item) => ({
-    params: { slug: item.fields.slug },
-  }))
-
-  return {
-    paths,
-    fallback: true,
-  }
-}
-
-export const getStaticProps = async ({ params }: any) => {
-  const { items } = await getContentfulContent("blogPost", params.slug)
-
-  if (!items.length) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    }
-  }
-
-  return {
-    props: { blogPost: items[0] },
-    revalidate: 1,
-  }
-}
+const getStaticPaths = getStaticPathsBlogSlug
+const getStaticProps = getStaticPropsBlogSlug
+export { getStaticPaths, getStaticProps }
 const DetailPost = ({ blogPost }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <div className={styles.container}>
     <header>

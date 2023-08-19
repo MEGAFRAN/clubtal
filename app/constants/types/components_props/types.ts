@@ -54,6 +54,10 @@ export type ButtonProps = {
 export type FormProps = {
   text?: string[]
   endpoint?: string
+  title: string
+  placeholder: string
+  callToAction: string
+  invalidMessage: string
 }
 
 export type HeadingProps = {
@@ -136,10 +140,6 @@ export interface SectionTitleListProps {
   id: string
 }
 
-export interface LandingPageProps extends NavbarProps, FormProps, HeadingProps {
-  textInformation: string[]
-}
-
 export interface JobDetailProps extends NavbarProps, FormProps {
   titleJob: string
   descriptionJob: string
@@ -150,11 +150,12 @@ export interface JobDetailProps extends NavbarProps, FormProps {
 
 export interface HeaderProps {
   navbarOptions?: homeNavbarOptions[]
-  title: string[]
-  text: string[]
+  title: string
+  text: string
   buttonText: string[]
   sectionToScroll?: string
   withMagicLink?: boolean
+  callToAction: string
 }
 
 export interface SectionContactProps {
