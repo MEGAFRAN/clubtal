@@ -26,10 +26,7 @@ function PostDetail({
   withLanguageToggle,
   titlePost,
   nameAuthor,
-  datePost,
-  readingTime,
   contentPost,
-  text,
 }: PostDetailProps) {
   return (
     <div className={styles.container}>
@@ -43,12 +40,7 @@ function PostDetail({
         <header>
           <Title title={titlePost} headingType="h1" />
         </header>
-        <SectionAboutPost
-          className={styles.about}
-          nameAuthor={nameAuthor}
-          datePost={datePost}
-          readingTime={readingTime}
-        />
+        <SectionAboutPost className={styles.about} nameAuthor={nameAuthor} />
         <SectionContentPost contentPost={contentPost} />
       </main>
 

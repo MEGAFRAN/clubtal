@@ -7,30 +7,34 @@ import { IndexContent } from "../app/constants/types/content_models/types"
 
 const getStaticProps = getStaticPropsIndexContent
 export { getStaticProps }
-const Home = ({ data }: IndexContent) => (
-  <>
-    <Head>
-      <PageHead
-        description={data.metadata.description}
-        title={data.metadata.title}
-        locale={data.metadata.locale}
-        url={data.metadata.url}
+const Home = ({ data }: IndexContent) => {
+  const { metadata, content } = data
+
+  return (
+    <>
+      <Head>
+        <PageHead
+          description={metadata.description}
+          title={metadata.title}
+          locale={metadata.locale}
+          url={metadata.url}
+        />
+      </Head>
+      <Header
+        title={content.header.title}
+        text={content.header.subTitle}
+        buttonText={["jojobon"]}
+        callToAction={content.header.callToAction}
+        sectionToScroll={"#section-underline-list"}
       />
-    </Head>
-    <Header
-      title={data.content.header.title}
-      text={data.content.header.subTitle}
-      buttonText={["jojobon"]}
-      callToAction={data.content.header.callToAction}
-      sectionToScroll={"#section-underline-list"}
-    />
-    <FeedbackForm
-      title={data.content.form.title}
-      placeholder={data.content.form.placeholder}
-      callToAction={data.content.form.callToAction}
-      invalidMessage={data.content.form.invalidMessage}
-    />
-  </>
-)
+      <FeedbackForm
+        title={content.form.title}
+        placeholder={content.form.placeholder}
+        callToAction={content.form.callToAction}
+        invalidMessage={content.form.invalidMessage}
+      />
+    </>
+  )
+}
 
 export default Home

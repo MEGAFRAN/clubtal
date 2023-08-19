@@ -66,7 +66,6 @@ export default function useDate() {
   const getStringMonth = ({ month, language }: GetStringMonth): string => {
     const numberMonth = month as keyof TypeMonth
     const monthString = months[language][numberMonth]
-    console.log(month, language)
     return monthString
   }
   const deleteCeroStart = (number: string): string => {

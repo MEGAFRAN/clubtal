@@ -1,11 +1,11 @@
-import { InferGetStaticPropsType } from "next"
 import styles from "../../app/styles/pages/blog.module.scss"
 import ListCardPost from "../../app/components/list/card_post/ListCardPost"
 import { getStaticPropsBlogIndex } from "../../lib/blog"
+import { BlogIndexContent } from "../../app/constants/types/content_models/types"
 
 const getStaticProps = getStaticPropsBlogIndex
 export { getStaticProps }
-const BlogPage = ({ blogPosts }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const BlogPage = ({ blogPosts }: BlogIndexContent) => (
   <div className={styles.container}>
     <header></header>
     <main>

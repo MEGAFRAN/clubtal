@@ -140,14 +140,6 @@ export interface SectionTitleListProps {
   id: string
 }
 
-export interface JobDetailProps extends NavbarProps, FormProps {
-  titleJob: string
-  descriptionJob: string
-  taskJob: SectionTitleListProps
-  requirementsJob: SectionTitleListProps
-  aboutCompany: SectionTitleListProps
-}
-
 export interface HeaderProps {
   navbarOptions?: homeNavbarOptions[]
   title: string

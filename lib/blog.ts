@@ -9,7 +9,7 @@ export const getStaticPathsBlogSlug = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   }
 }
 

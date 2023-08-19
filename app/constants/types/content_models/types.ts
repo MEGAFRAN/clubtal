@@ -21,3 +21,28 @@ export type IndexContent = {
     }
   }
 }
+export type BlogPostContent = {
+  blogPost: {
+    fields: {
+      title: string
+      slug: string
+      author: string
+      thumbnail: string
+      summary: string
+      body: { content: [] }
+    }
+  }
+}
+
+export type BlogIndexContent = {
+  blogPosts: {
+    fields: {
+      title: string
+      slug: string
+      author: string
+      thumbnail: string
+      summary: string
+      body: { content: [] }
+    }
+  }
+}
