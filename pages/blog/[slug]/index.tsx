@@ -1,5 +1,7 @@
 import { InferGetStaticPropsType } from "next"
 import getContentfulContent from "../../../app/services/headless/contentful/request-contentful"
+import PostBody from "../../../app/components/sections/content_post/PostBody"
+import styles from "../../../app/styles/layouts/postDetail.module.scss"
 
 export const getStaticPaths = async () => {
   const response = await getContentfulContent("blogPost")
@@ -31,9 +33,13 @@ export const getStaticProps = async ({ params }: any) => {
     revalidate: 1,
   }
 }
-const DetailPost = ({ blogPost }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(blogPost)
-  return <div></div>
-}
+const DetailPost = ({ blogPost }: InferGetStaticPropsType<typeof getStaticProps>) => (
+  <div className={styles.container}>
+    <header>
+      <h1>{blogPost.fields.title as string}</h1>
+    </header>
+    <PostBody content={blogPost.fields.body as string} />
+  </div>
+)
 
 export default DetailPost
