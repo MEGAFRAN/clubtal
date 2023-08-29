@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://jojobon.com
+
+# Sitemaps
 Sitemap: https://jojobon.com/sitemap.xml
