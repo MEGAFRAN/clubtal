@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { getStaticPropsIndexContent } from "../lib/pages"
 import PageHead from "../app/components/page_head/PageHead"
 import Header from "../app/components/sections/above_fold/header/Header"
@@ -12,14 +11,12 @@ const Home = ({ data }: IndexContent) => {
 
   return (
     <>
-      <Head>
-        <PageHead
-          description={metadata.description}
-          title={metadata.title}
-          locale={metadata.locale}
-          url={metadata.url}
-        />
-      </Head>
+      <PageHead
+        description={metadata.description}
+        title={metadata.title}
+        locale={metadata.locale}
+        url={metadata.url}
+      />
       <Header
         title={content.header.title}
         text={content.header.subTitle}

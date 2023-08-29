@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { pageHeadProps } from "../../constants/types/components_props/types"
 
 const PageHead = ({
@@ -9,7 +10,7 @@ const PageHead = ({
   name = "jojobon",
   themeColor = "#212121",
 }: pageHeadProps) => (
-  <>
+  <Head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -28,7 +29,7 @@ const PageHead = ({
     <link rel="apple-touch-icon" href={favicon} />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content={themeColor} />
-  </>
+  </Head>
 )
 
 export default PageHead

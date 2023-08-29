@@ -3,6 +3,11 @@ import { render } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import PageHead from "./PageHead"
 
+jest.mock("next/head", () => ({
+  __esModule: true,
+  default: ({ children }) => <>{children}</>,
+}))
+
 describe("PageHead", () => {
   const defaultProps = {
     description: "Test Description",
