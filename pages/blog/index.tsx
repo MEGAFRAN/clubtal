@@ -5,7 +5,7 @@ import { BlogIndexContent } from "../../app/constants/types/content_models/types
 
 const getStaticProps = getStaticPropsBlogIndex
 export { getStaticProps }
-const BlogPage = ({ blogPosts }: BlogIndexContent) => (
+const BlogIndexPage = ({ blogPosts }: BlogIndexContent) => (
   <div className={styles.container}>
     <header></header>
     <main>
@@ -14,4 +14,4 @@ const BlogPage = ({ blogPosts }: BlogIndexContent) => (
   </div>
 )
 
-export default BlogPage
+export default BlogIndexPage
