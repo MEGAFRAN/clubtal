@@ -1,12 +1,12 @@
 import styles from "../../app/styles/layouts/postDetail.module.scss"
-import { getStaticPathsBlogSlug, getStaticPropsBlogSlug } from "../../lib/blog"
 import PageHead from "../../app/components/page_head/PageHead"
+import { getStaticPathsCategoriesSlug, getStaticPropsCategoriesSlug } from "../../lib/categories"
 
-const getStaticProps = getStaticPropsBlogSlug
-const getStaticPaths = getStaticPathsBlogSlug
+const getStaticProps = getStaticPropsCategoriesSlug
+const getStaticPaths = getStaticPathsCategoriesSlug
 export { getStaticPaths, getStaticProps }
-const CategoryPage = ({ category }: any) => {
-  const { description, name, slug } = category
+const CityPage = ({ city }: any) => {
+  const { description, name, slug } = city.fields
   return (
     <>
       <PageHead
@@ -24,4 +24,4 @@ const CategoryPage = ({ category }: any) => {
   )
 }
 
-export default CategoryPage
+export default CityPage

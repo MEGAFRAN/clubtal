@@ -1,12 +1,15 @@
 import styles from "../../../app/styles/layouts/postDetail.module.scss"
-import { getStaticPathsBlogSlug, getStaticPropsBlogSlug } from "../../../lib/blog"
 import PageHead from "../../../app/components/page_head/PageHead"
+import {
+  getStaticPathsSubCategoriesSlug,
+  getStaticPropsSubCategoriesSlug,
+} from "../../../lib/subcategories"
 
-const getStaticProps = getStaticPropsBlogSlug
-const getStaticPaths = getStaticPathsBlogSlug
+const getStaticProps = getStaticPropsSubCategoriesSlug
+const getStaticPaths = getStaticPathsSubCategoriesSlug
 export { getStaticPaths, getStaticProps }
-const SubCategoryPage = ({ subCategory }: any) => {
-  const { description, name, slug } = subCategory
+const CategoryPage = ({ category }: any) => {
+  const { description, name, slug } = category.fields
   return (
     <>
       <PageHead
@@ -24,4 +27,4 @@ const SubCategoryPage = ({ subCategory }: any) => {
   )
 }
 
-export default SubCategoryPage
+export default CategoryPage

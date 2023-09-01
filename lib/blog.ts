@@ -3,7 +3,7 @@ import getContentfulContent from "../app/services/headless/contentful/request-co
 export const getStaticPathsBlogSlug = async () => {
   const response = await getContentfulContent("blogPost")
 
-  const paths = response.items.map((item) => ({
+  const paths: any = response.items.map((item) => ({
     params: { slug: item.fields.slug },
   }))
 
