@@ -15,7 +15,7 @@ const DetailPost = ({ blogPost }: BlogPostContent) => {
         description={summary}
         title={title}
         locale={"es"}
-        url={`https://www.jojobon.com/blog/${slug}`}
+        url={`https://www.siaki.co/blog/${slug}`}
       />
       <div className={styles.container}>
         <header>

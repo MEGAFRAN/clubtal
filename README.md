@@ -1,6 +1,6 @@
 ## Que es este proyecto?
 
-JOJOBON logra el trabajo de tus sueños: www.jojobon.com
+SIAKI encuentra lo que buscas: siaki.co
 
 ## Stack tecnologico usado
 

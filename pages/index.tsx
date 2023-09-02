@@ -20,7 +20,7 @@ const Home = ({ data }: IndexContent) => {
       <Header
         title={content.header.title}
         text={content.header.subTitle}
-        buttonText={["jojobon"]}
+        buttonText={["siaki"]}
         callToAction={content.header.callToAction}
         sectionToScroll={"#section-underline-list"}
       />

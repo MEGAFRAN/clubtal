@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://jojobon.com
+Host: https://siaki.co
 
 # Sitemaps
-Sitemap: https://jojobon.com/sitemap.xml
+Sitemap: https://siaki.co/sitemap.xml

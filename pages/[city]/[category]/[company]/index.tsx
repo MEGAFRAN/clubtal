@@ -13,7 +13,7 @@ const CompanyPage = ({ company }: any) => {
         description={description}
         title={name}
         locale={"es"}
-        url={`https://www.jojobon.com/${slug}`}
+        url={`https://www.siaki.co/${slug}`}
       />
       <div className={styles.container}>
         <header>

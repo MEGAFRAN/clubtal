@@ -7,7 +7,7 @@ const PageHead = ({
   locale,
   url,
   favicon = "/favicon.ico",
-  name = "jojobon",
+  name = "siaki",
   themeColor = "#212121",
 }: pageHeadProps) => (
   <Head>
