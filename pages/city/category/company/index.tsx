@@ -2,9 +2,9 @@ import styles from "../../../../app/styles/layouts/postDetail.module.scss"
 import { getStaticPathsBlogSlug, getStaticPropsBlogSlug } from "../../../../lib/blog"
 import PageHead from "../../../../app/components/page_head/PageHead"
 
-const getStaticProps = getStaticPropsBlogSlug
-const getStaticPaths = getStaticPathsBlogSlug
-export { getStaticPaths, getStaticProps }
+// const getStaticProps = getStaticPropsBlogSlug
+// const getStaticPaths = getStaticPathsBlogSlug
+// export { getStaticPaths, getStaticProps }
 const CompanyPage = ({ company }: any) => {
   const { description, name, slug } = company
   return (

@@ -1,13 +1,10 @@
+import React from "react"
 import styles from "../../../app/styles/layouts/postDetail.module.scss"
 import PageHead from "../../../app/components/page_head/PageHead"
-import {
-  getStaticPathsSubCategoriesSlug,
-  getStaticPropsSubCategoriesSlug,
-} from "../../../lib/subcategories"
 
-const getStaticProps = getStaticPropsSubCategoriesSlug
-const getStaticPaths = getStaticPathsSubCategoriesSlug
-export { getStaticPaths, getStaticProps }
+// const getStaticProps = getStaticPropsSubCategoriesSlug
+// const getStaticPaths = getStaticPathsSubCategoriesSlug
+// export { getStaticPaths, getStaticProps }
 const CategoryPage = ({ category }: any) => {
   const { description, name, slug } = category.fields
   return (

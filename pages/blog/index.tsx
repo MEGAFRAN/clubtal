@@ -1,17 +1,18 @@
-import styles from "../../app/styles/pages/blog.module.scss"
-import ListCardPost from "../../app/components/list/card_post/ListCardPost"
-import { getStaticPropsBlogIndex } from "../../lib/blog"
-import { BlogIndexContent } from "../../app/constants/types/content_models/types"
+import { groq } from "next-sanity"
+import type { SanityDocument } from "@sanity/client"
+import Posts from "../../app/components/posts/Posts"
+import client from "../../sanity/lib/client"
+import { getStaticPathsBlogSlug } from "../../lib/blog"
 
-const getStaticProps = getStaticPropsBlogIndex
-export { getStaticProps }
-const BlogIndexPage = ({ blogPosts }: BlogIndexContent) => (
-  <div className={styles.container}>
-    <header></header>
-    <main>
-      <ListCardPost listPost={blogPosts} />
-    </main>
-  </div>
-)
+export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
+  _id, title, slug
+}`
+export const getStaticProps = async () => {
+  const data = await client.fetch(postsQuery)
 
-export default BlogIndexPage
+  return { props: { data } }
+}
+
+export default function BlogIndexPage({ data }: { data: SanityDocument[] }) {
+  return <Posts posts={data} />
+}

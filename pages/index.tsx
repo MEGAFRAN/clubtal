@@ -1,3 +1,4 @@
+import React from "react"
 import { getStaticPropsIndexContent } from "../lib/pages"
 import PageHead from "../app/components/page_head/PageHead"
 import Header from "../app/components/sections/above_fold/header/Header"

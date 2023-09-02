@@ -1,22 +1,28 @@
-import getContentfulContent from "../app/services/headless/contentful/request-contentful"
+import { groq } from "next-sanity"
+import { GetStaticPaths, GetStaticProps } from "next"
+import client from "../sanity/lib/client"
 
-export const getStaticPathsBlogSlug = async () => {
-  const response = await getContentfulContent("blogPost")
+export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  mainImage,
+  body
+}`
 
-  const paths: any = response.items.map((item) => ({
-    params: { slug: item.fields.slug },
-  }))
+export const getStaticPathsBlogSlug: GetStaticPaths = async () => {
+  const paths = await client.fetch(
+    groq`*[_type == "post" && defined(slug.current)][]{
+      "params": { "slug": slug.current }
+    }`,
+  )
 
-  return {
-    paths,
-    fallback: "blocking",
-  }
+  return { paths, fallback: "blocking" }
 }
 
-export const getStaticPropsBlogSlug = async ({ params }: any) => {
-  const { items } = await getContentfulContent("blogPost", params.slug)
+export const getStaticPropsBlogSlug: GetStaticProps = async ({ params }: any) => {
+  const queryParams = { slug: params?.slug ?? "" }
+  const post = await client.fetch(postQuery, queryParams)
 
-  if (!items.length) {
+  if (!post) {
     return {
       redirect: {
         destination: "/",
@@ -26,18 +32,11 @@ export const getStaticPropsBlogSlug = async ({ params }: any) => {
   }
 
   return {
-    props: { blogPost: items[0] },
-    revalidate: 1,
-  }
-}
-
-export const getStaticPropsBlogIndex = async () => {
-  const response = await getContentfulContent("blogPost")
-
-  return {
     props: {
-      blogPosts: response.items,
+      data: { post },
     },
     revalidate: 1,
   }
 }
+
+export const getStaticPropsBlogIndex = async () => {}
