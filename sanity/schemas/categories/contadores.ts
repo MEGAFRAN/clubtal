@@ -25,6 +25,46 @@ export default defineType({
       type: "text",
     }),
     defineField({
+      name: "website",
+      title: "Website",
+      type: "string",
+    }),
+    defineField({
+      name: "phone",
+      title: "Phone",
+      type: "number",
+    }),
+    defineField({
+      name: "whatsapp",
+      title: "Whatsapp",
+      type: "number",
+    }),
+    defineField({
+      name: "instagram",
+      title: "Instagram",
+      type: "string",
+    }),
+    defineField({
+      name: "twitter",
+      title: "Twitter",
+      type: "string",
+    }),
+    defineField({
+      name: "facebook",
+      title: "Facebook",
+      type: "string",
+    }),
+    defineField({
+      name: "youtube",
+      title: "Youtube",
+      type: "string",
+    }),
+    defineField({
+      name: "tiktok",
+      title: "Tiktok",
+      type: "string",
+    }),
+    defineField({
       name: "category",
       title: "Category",
       type: "reference",

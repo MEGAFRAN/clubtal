@@ -3,7 +3,6 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import client from "../sanity/lib/client"
 
 export const getStaticPathsItem: GetStaticPaths = async () => {
-  // This query fetches all items of all categories
   const paths = await client.fetch(
     groq`*[_type == "category" && defined(slug.current)]{
       slug,
@@ -13,7 +12,6 @@ export const getStaticPathsItem: GetStaticPaths = async () => {
     }`,
   )
 
-  // Flatten paths to match the format Next.js expects
   const flattenedPaths = paths.flatMap((category: any) => category.items)
 
   return {
@@ -28,8 +26,17 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
 
   const itemQuery = groq`*[_type == "${categorySlug}" && slug.current == $slug][0]{
     title,
+    name,
     description,
-    slug
+    slug,
+    category,
+    phone,
+    whatsapp,
+    instagram,
+    facebook,
+    twitter,
+    youtube,
+    tiktok
   }`
 
   const item = await client.fetch(itemQuery, { slug: companySlug })

@@ -4,15 +4,10 @@ import { useRouter } from "next/router"
 import styles from "../../app/styles/layouts/postDetail.module.scss"
 import PageHead from "../../app/components/page_head/PageHead"
 import { getStaticPathsCategory, getStaticPropsCategory } from "../../lib/categories"
+import { Category, Company } from "../../app/constants/interfaces/content_models/interfaces"
 
-const getStaticProps = getStaticPropsCategory
-const getStaticPaths = getStaticPathsCategory
-export { getStaticPaths, getStaticProps }
-const CategoryPage = ({
-  data,
-}: {
-  data: { category: any; items: [{ title: string; slug: { current: string } }] }
-}) => {
+export { getStaticPropsCategory as getStaticProps, getStaticPathsCategory as getStaticPaths }
+const CategoryPage = ({ data }: { data: { category: Category; items: [Company] } }) => {
   const { description, title, slug } = data.category
   const router = useRouter()
   const currentPath = router.asPath

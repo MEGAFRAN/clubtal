@@ -1,21 +1,20 @@
 interface GeneralInformation {
   name: string
+  title: string
   id: string
-  slug: string
+  slug: { current: string }
   description: string
 }
 
-export interface IndividualCategory extends GeneralInformation {
-  subcategories: string[]
-}
+export interface Category extends GeneralInformation {}
 
 export interface Company extends GeneralInformation {
   category: string
-  subcategories: string[]
-}
-
-export interface Category {
-  categories: {
-    [category: string]: IndividualCategory
-  }
+  phone: number
+  whatsapp: number
+  instagram: string
+  facebook: string
+  twitter: string
+  youtube: string
+  tiktok: string
 }
