@@ -4,11 +4,12 @@ import PageHead from "../app/components/page_head/PageHead"
 import Header from "../app/components/sections/above_fold/header/Header"
 import FeedbackForm from "../app/components/feedback/FeedbackForm"
 import { IndexContent } from "../app/constants/types/content_models/types"
+import Search from "../app/components/search/Search"
 
 const getStaticProps = getStaticPropsIndexContent
 export { getStaticProps }
-const Home = ({ data }: IndexContent) => {
-  const { metadata, content } = data
+const Home = ({ data, categories }: IndexContent) => {
+  const { metadata } = data
 
   return (
     <>
@@ -18,19 +19,7 @@ const Home = ({ data }: IndexContent) => {
         locale={metadata.locale}
         url={metadata.url}
       />
-      <Header
-        title={content.header.title}
-        text={content.header.subTitle}
-        buttonText={["siaki"]}
-        callToAction={content.header.callToAction}
-        sectionToScroll={"#section-underline-list"}
-      />
-      <FeedbackForm
-        title={content.form.title}
-        placeholder={content.form.placeholder}
-        callToAction={content.form.callToAction}
-        invalidMessage={content.form.invalidMessage}
-      />
+      <Search options={categories} />
     </>
   )
 }

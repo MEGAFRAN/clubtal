@@ -20,6 +20,7 @@ export type IndexContent = {
       }
     }
   }
+  categories: []
 }
 export type BlogPostContent = {
   blogPost: {

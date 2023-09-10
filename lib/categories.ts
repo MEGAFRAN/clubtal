@@ -2,7 +2,7 @@ import { groq } from "next-sanity"
 import { GetStaticPaths, GetStaticProps } from "next"
 import client from "../sanity/lib/client"
 
-export const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
+const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
   title,
   description,
   slug

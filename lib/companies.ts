@@ -57,3 +57,13 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
     revalidate: 1,
   }
 }
+
+export const getCategoryList = async () => {
+  const categoryList = await client.fetch(
+    groq`*[_type == "category" && defined(slug.current)][]{
+      title
+    }`,
+  )
+
+  return categoryList.map((category: { title: string }) => category.title)
+}
