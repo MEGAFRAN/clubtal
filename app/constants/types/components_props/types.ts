@@ -124,7 +124,7 @@ type homeNavbarOptions = {
 
 export interface NavbarProps {
   options?: homeNavbarOptions[]
-  buttonText: string[]
+  buttonText?: string[]
   sectionToScroll?: string
   mail?: string
   withToogleMenu?: boolean
@@ -138,6 +138,13 @@ export interface SectionTitleListProps {
   title: string
   description: string[]
   id: string
+}
+
+export interface HeaderSearchProps {
+  title: string
+  text: string
+  buttonText: string[]
+  categories: string[]
 }
 
 export interface HeaderProps {

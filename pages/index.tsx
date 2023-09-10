@@ -1,10 +1,9 @@
 import React from "react"
 import { getStaticPropsIndexContent } from "../lib/pages"
 import PageHead from "../app/components/page_head/PageHead"
-import Header from "../app/components/sections/above_fold/header/Header"
-import FeedbackForm from "../app/components/feedback/FeedbackForm"
 import { IndexContent } from "../app/constants/types/content_models/types"
 import Search from "../app/components/search/Search"
+import HeaderSearch from "../app/components/sections/above_fold/header_search/HeaderSearch"
 
 const getStaticProps = getStaticPropsIndexContent
 export { getStaticProps }
@@ -19,7 +18,12 @@ const Home = ({ data, categories }: IndexContent) => {
         locale={metadata.locale}
         url={metadata.url}
       />
-      <Search options={categories} />
+      <HeaderSearch
+        categories={categories}
+        title="Encuentra lo que buscas"
+        text=""
+        buttonText={["siaki"]}
+      />
     </>
   )
 }
