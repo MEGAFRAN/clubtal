@@ -1,5 +1,6 @@
 import { HeaderSearchProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/sections/header.module.scss"
+import CategoryLinks from "../../../category_links/CategoryLinks"
 import Search from "../../../search/Search"
 import Navbar from "../navbar/Navbar"
 
@@ -9,6 +10,7 @@ const HeaderSearch = ({ title, text, buttonText, categories }: HeaderSearchProps
     {title && <h1>{title}</h1>}
     {text && <p>{text}</p>}
     <Search options={categories} />
+    <CategoryLinks categories={categories} />
   </header>
 )
 export default HeaderSearch

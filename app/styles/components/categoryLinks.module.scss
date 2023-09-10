@@ -1,0 +1,23 @@
+@use "../abstracts/colors";
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+
+  a {
+    color: colors.$primary-blue;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::after {
+      content: ">";
+      padding-left: 12px;
+    }
+  }
+}

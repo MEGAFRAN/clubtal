@@ -100,7 +100,7 @@ const Search: React.FC<SearchProps> = ({ options }) => {
         onFocus={handleFocus}
         onBlur={handleBlur}
         aria-label="Escribe el servicio que buscas"
-        placeholder="Escribe el servicio que buscas..."
+        placeholder="Escribe el servicio que buscas"
         aria-owns="option-list"
       />
       <ul role="listbox" id="option-list" ref={listRef}>
