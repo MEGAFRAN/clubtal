@@ -2,7 +2,6 @@ import { groq } from "next-sanity"
 import type { SanityDocument } from "@sanity/client"
 import Posts from "../../app/components/posts/Posts"
 import client from "../../sanity/lib/client"
-import { getStaticPathsBlogSlug } from "../../lib/blog"
 
 export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
   _id, title, slug
