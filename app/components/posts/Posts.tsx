@@ -2,12 +2,11 @@
 import Link from "next/link"
 import type { SanityDocument } from "@sanity/client"
 import Head from "next/head"
-import { useRouter } from "next/router"
+import useCurrentPath from "../../hook/useCurrentPath"
 
 export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
   const title = posts.length === 1 ? "1 Post" : `${posts.length} Posts`
-  const router = useRouter()
-  const currentPath = router.asPath
+  const currentPath = useCurrentPath()
 
   return (
     <>

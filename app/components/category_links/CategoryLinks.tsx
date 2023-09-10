@@ -1,10 +1,9 @@
 import Link from "next/link"
-import { useRouter } from "next/router"
 import styles from "../../styles/components/categoryLinks.module.scss"
+import useCurrentPath from "../../hook/useCurrentPath"
 
 const CategoryLinks = ({ categories }: any) => {
-  const router = useRouter()
-  const currentPath = router.asPath
+  const currentPath = useCurrentPath()
 
   return (
     <div className={styles.container}>

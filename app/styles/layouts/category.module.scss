@@ -1,0 +1,42 @@
+@use "../abstracts/colors";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
+
+.container {
+  section {
+    margin-top: 80px;
+  }
+
+  h1 {
+    font-size: clamp(font_size.$title-s, 5vw, font_size.$title-l);
+    font-weight: 700;
+    letter-spacing: -0.003em;
+    line-height: 1.0835;
+    text-transform: capitalize;
+  }
+
+  li {
+    font-size: clamp(font_size.$sub-title-s, 5vw, font_size.$sub-title-l);
+    font-weight: 700;
+    letter-spacing: -0.003em;
+    line-height: 1.0835;
+  }
+
+  p {
+    font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    line-height: 1.4211;
+    margin-bottom: spacing.$large;
+  }
+
+  > header {
+    margin: spacing.$extraLarge auto;
+    max-width: 653px;
+  }
+
+  > main {
+    margin: auto;
+    max-width: 653px;
+  }
+}

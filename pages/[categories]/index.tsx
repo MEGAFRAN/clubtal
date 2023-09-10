@@ -1,16 +1,15 @@
 import React from "react"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import styles from "../../app/styles/layouts/postDetail.module.scss"
+import styles from "../../app/styles/layouts/category.module.scss"
 import PageHead from "../../app/components/page_head/PageHead"
 import { getStaticPathsCategory, getStaticPropsCategory } from "../../lib/categories"
 import { Category, Company } from "../../app/constants/interfaces/content_models/interfaces"
+import CardList from "../../app/components/card_list/CardList"
+import Navbar from "../../app/components/sections/above_fold/navbar/Navbar"
 
 export { getStaticPropsCategory as getStaticProps, getStaticPathsCategory as getStaticPaths }
 const CategoryPage = ({ data }: { data: { category: Category; items: [Company] } }) => {
   const { description, title, slug } = data.category
-  const router = useRouter()
-  const currentPath = router.asPath
+
   return (
     <>
       <PageHead
@@ -21,18 +20,11 @@ const CategoryPage = ({ data }: { data: { category: Category; items: [Company] }
       />
       <div className={styles.container}>
         <header>
-          <h1>{title}</h1>
-          <ul>
-            {data.items.map((item) => (
-              <Link
-                key={item.title}
-                href={`${currentPath}${item.slug.current}`}
-                className="p-4 hover:bg-blue-50"
-              >
-                <h2>{item.title}</h2>
-              </Link>
-            ))}
-          </ul>
+          <Navbar buttonText={["siaki"]} withHomeButton={true} />
+          <section>
+            <h1>{title}</h1>
+            <CardList cards={data.items} />
+          </section>
         </header>
       </div>
     </>

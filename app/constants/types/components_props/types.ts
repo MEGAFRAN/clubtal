@@ -25,15 +25,6 @@ export type LinkProps = {
     | "unsafe-url"
 }
 
-export type CardProps = {
-  id?: string
-  tags?: []
-  title?: string
-  imageUrl?: string
-  description?: string
-  featured?: boolean
-}
-
 export type LanguageToogleProps = {
   mainLanguage?: "Eng"
   secondaryLanguage?: "Esp"
@@ -459,4 +450,15 @@ export interface getPostByLocaleAndSlugParams {
 export interface queryPostByLanguageAndSlug {
   language: LANGUAGE
   slug: string
+}
+
+export type CardProps = {
+  title: string
+  slug: { current: string }
+  description: string
+  features?: string[]
+}
+
+export type CardListProps = {
+  cards: CardProps[]
 }
