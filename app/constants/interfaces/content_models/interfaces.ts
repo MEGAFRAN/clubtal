@@ -9,6 +9,7 @@ interface GeneralInformation {
 export interface Category extends GeneralInformation {}
 
 export interface Company extends GeneralInformation {
+  specialities?: string[]
   category: string
   phone: number
   whatsapp: number

@@ -460,6 +460,7 @@ export type CardProps = {
   whatsapp?: number
   website?: string
   email?: string
+  style?: { display: "block" | "none" }
 }
 
 export type CardListProps = {

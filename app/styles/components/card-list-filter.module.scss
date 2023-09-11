@@ -1,0 +1,27 @@
+.container {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.label {
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: #555555;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    margin-right: 8px;
+  }
+}

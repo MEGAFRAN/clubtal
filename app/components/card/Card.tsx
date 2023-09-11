@@ -14,10 +14,11 @@ const Card: FC<CardProps> = ({
   whatsapp,
   website,
   email,
+  style,
 }) => {
   const currentPath = useCurrentPath()
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={style}>
       <Link key={title} href={`${currentPath}${slug.current}`}>
         <div className={styles.card}>
           <h2>{title}</h2>

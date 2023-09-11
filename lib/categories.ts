@@ -1,6 +1,7 @@
 import { groq } from "next-sanity"
 import { GetStaticPaths, GetStaticProps } from "next"
 import client from "../sanity/lib/client"
+import { Category, Company } from "../app/constants/interfaces/content_models/interfaces"
 
 const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
   title,
@@ -18,9 +19,9 @@ export const getStaticPathsCategory: GetStaticPaths = async () => {
   return { paths, fallback: "blocking" }
 }
 
-export const getStaticPropsCategory: GetStaticProps = async ({ params }: any) => {
+export const getStaticPropsCategory: GetStaticProps = async ({ params }) => {
   const queryParams = { slug: params?.categories ?? "" }
-  const dynamicItemQuery = (
+  const companyQuery = (
     categoryTitle: string,
   ) => groq`*[_type == "${categoryTitle}" && defined(slug.current)]{
     title,
@@ -31,8 +32,8 @@ export const getStaticPropsCategory: GetStaticProps = async ({ params }: any) =>
     website,
     specialities
   }`
-  const category = await client.fetch(categoryQuery, queryParams)
-  const items = await client.fetch(dynamicItemQuery(category.title))
+  const category: Category = await client.fetch(categoryQuery, queryParams)
+  const company: Company = await client.fetch(companyQuery(category.title))
 
   if (!category) {
     return {
@@ -47,7 +48,7 @@ export const getStaticPropsCategory: GetStaticProps = async ({ params }: any) =>
     props: {
       data: {
         category,
-        items,
+        company,
       },
     },
     revalidate: 1,
