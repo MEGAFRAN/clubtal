@@ -1,11 +1,11 @@
 // CardList.tsx
-import React, { FC, memo } from "react"
+import React, { FC } from "react"
 import Link from "next/link"
 import styles from "../../styles/components/card.module.scss"
 import { CardProps } from "../../constants/types/components_props/types"
 import useCurrentPath from "../../hook/useCurrentPath"
 
-const Card: FC<CardProps> = memo(({ title, slug, description, features }) => {
+const Card: FC<CardProps> = ({ title, slug, description, features }) => {
   const currentPath = useCurrentPath()
   return (
     <Link className={styles.container} key={title} href={`${currentPath}${slug.current}`}>
@@ -22,7 +22,6 @@ const Card: FC<CardProps> = memo(({ title, slug, description, features }) => {
       </div>
     </Link>
   )
-})
+}
 
-Card.displayName = "Card"
-export default Card
+export default React.memo(Card)

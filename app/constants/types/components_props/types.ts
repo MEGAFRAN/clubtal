@@ -134,7 +134,6 @@ export interface SectionTitleListProps {
 export interface HeaderSearchProps {
   title: string
   text: string
-  buttonText: string[]
   categories: string[]
 }
 

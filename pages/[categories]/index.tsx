@@ -5,6 +5,7 @@ import { getStaticPathsCategory, getStaticPropsCategory } from "../../lib/catego
 import { Category, Company } from "../../app/constants/interfaces/content_models/interfaces"
 import CardList from "../../app/components/card_list/CardList"
 import Navbar from "../../app/components/sections/above_fold/navbar/Navbar"
+import Breadcrumb from "../../app/components/breadcrumb/Breadcrumb"
 
 export { getStaticPropsCategory as getStaticProps, getStaticPathsCategory as getStaticPaths }
 const CategoryPage = ({ data }: { data: { category: Category; items: [Company] } }) => {
@@ -20,7 +21,7 @@ const CategoryPage = ({ data }: { data: { category: Category; items: [Company] }
       />
       <div className={styles.container}>
         <header>
-          <Navbar buttonText={["siaki"]} withHomeButton={true} />
+          <Breadcrumb />
           <section>
             <h1>{title}</h1>
             <CardList cards={data.items} />

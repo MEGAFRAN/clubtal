@@ -1,12 +1,12 @@
 import { HeaderSearchProps } from "../../../../constants/types/components_props/types"
 import styles from "../../../../styles/sections/header.module.scss"
+import Breadcrumb from "../../../breadcrumb/Breadcrumb"
 import CategoryLinks from "../../../category_links/CategoryLinks"
 import Search from "../../../search/Search"
-import Navbar from "../navbar/Navbar"
 
-const HeaderSearch = ({ title, text, buttonText, categories }: HeaderSearchProps) => (
+const HeaderSearch = ({ title, text, categories }: HeaderSearchProps) => (
   <header className={styles.container}>
-    <Navbar buttonText={buttonText} withHomeButton={true} />
+    <Breadcrumb />
     {title && <h1>{title}</h1>}
     {text && <p>{text}</p>}
     <Search options={categories} />

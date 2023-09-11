@@ -4,6 +4,7 @@ import PageHead from "../app/components/page_head/PageHead"
 import { IndexContent } from "../app/constants/types/content_models/types"
 import HeaderSearch from "../app/components/sections/above_fold/header_search/HeaderSearch"
 import CategoryLinks from "../app/components/category_links/CategoryLinks"
+import Breadcrumb from "../app/components/breadcrumb/Breadcrumb"
 
 const getStaticProps = getStaticPropsIndexContent
 export { getStaticProps }
@@ -18,12 +19,7 @@ const Home = ({ data, categories }: IndexContent) => {
         locale={metadata.locale}
         url={metadata.url}
       />
-      <HeaderSearch
-        categories={categories}
-        title="Encuentra lo que buscas"
-        text=""
-        buttonText={["siaki"]}
-      />
+      <HeaderSearch categories={categories} title="Encuentra lo que buscas" text="" />
     </>
   )
 }
