@@ -455,7 +455,7 @@ export type CardProps = {
   title: string
   slug: { current: string }
   description: string
-  features?: string[]
+  specialities?: string[]
   phone?: number
   whatsapp?: number
   website?: string

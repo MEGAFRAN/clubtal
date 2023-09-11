@@ -9,7 +9,7 @@ const Card: FC<CardProps> = ({
   title,
   slug,
   description,
-  features,
+  specialities,
   phone,
   whatsapp,
   website,
@@ -21,14 +21,14 @@ const Card: FC<CardProps> = ({
       <Link key={title} href={`${currentPath}${slug.current}`}>
         <div className={styles.card}>
           <h2>{title}</h2>
-          <p>{description}</p>
-          {features && (
+          {specialities && (
             <ul>
-              {features.map((feature, index) => (
-                <li key={index}>{feature}</li>
+              {specialities.map((speciality, index) => (
+                <li key={index}>{speciality}</li>
               ))}
             </ul>
           )}
+          <p>{description}</p>
         </div>
       </Link>
       <nav>

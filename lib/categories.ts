@@ -28,7 +28,8 @@ export const getStaticPropsCategory: GetStaticProps = async ({ params }: any) =>
     slug,
     phone,
     whatsapp,
-    website
+    website,
+    specialities
   }`
   const category = await client.fetch(categoryQuery, queryParams)
   const items = await client.fetch(dynamicItemQuery(category.title))
