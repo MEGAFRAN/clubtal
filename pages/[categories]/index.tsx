@@ -4,7 +4,6 @@ import PageHead from "../../app/components/page_head/PageHead"
 import { getStaticPathsCategory, getStaticPropsCategory } from "../../lib/categories"
 import { Category, Company } from "../../app/constants/interfaces/content_models/interfaces"
 import CardList from "../../app/components/card_list/CardList"
-import Navbar from "../../app/components/sections/above_fold/navbar/Navbar"
 import Breadcrumb from "../../app/components/breadcrumb/Breadcrumb"
 
 export { getStaticPropsCategory as getStaticProps, getStaticPathsCategory as getStaticPaths }

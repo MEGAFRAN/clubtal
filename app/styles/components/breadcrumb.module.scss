@@ -3,6 +3,7 @@
 .container {
   background-color: white;
   height: 40px;
+  left: 0;
   padding: 8px;
   position: fixed;
   top: 0;
@@ -32,6 +33,6 @@
 
   .separator {
     color: #cccccc;
-    margin: 0 5px;
+    margin: 0 10px;
   }
 }

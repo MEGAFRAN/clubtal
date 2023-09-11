@@ -456,6 +456,10 @@ export type CardProps = {
   slug: { current: string }
   description: string
   features?: string[]
+  phone?: number
+  whatsapp?: number
+  website?: string
+  email?: string
 }
 
 export type CardListProps = {

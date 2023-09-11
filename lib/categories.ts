@@ -25,7 +25,10 @@ export const getStaticPropsCategory: GetStaticProps = async ({ params }: any) =>
   ) => groq`*[_type == "${categoryTitle}" && defined(slug.current)]{
     title,
     description,
-    slug
+    slug,
+    phone,
+    whatsapp,
+    website
   }`
   const category = await client.fetch(categoryQuery, queryParams)
   const items = await client.fetch(dynamicItemQuery(category.title))
