@@ -1,27 +1,66 @@
 .container {
+  align-items: center;
   background-color: #f7f7f7;
-  border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 20px;
-}
+  position: sticky;
+  top: 0;
 
-.label {
-  cursor: pointer;
-  display: block;
-  margin-bottom: 10px;
-  transition: color 0.2s;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:hover {
-    color: #555555;
-  }
-
-  input[type="checkbox"] {
+  .filter_button {
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    margin-right: 8px;
+    padding: 10px 15px;
+  }
+
+  .scrollable_filters {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .label {
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    padding: 10px;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #eeeeee;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+  }
+
+  .dialog {
+    background-color: white;
+    border-radius: 15px 15px 0 0;
+    bottom: 0;
+    height: 70%;
+    left: 0;
+    overflow-y: auto;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+  }
+
+  .close_button {
+    align-self: center;
+    background-color: #333333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 20px 0;
+    padding: 10px 15px;
   }
 }
