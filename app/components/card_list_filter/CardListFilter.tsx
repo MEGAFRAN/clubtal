@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef, useEffect, useCallback, useMemo } from "react"
+import React, { FC, useState, useCallback, useEffect, useMemo } from "react"
 import styles from "../../styles/components/card-list-filter.module.scss"
 
 type CardListFilterProps = {
@@ -8,8 +8,7 @@ type CardListFilterProps = {
 
 const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange }) => {
   const [selectedSpecialities, setSelectedSpecialities] = useState<string[]>([])
-  const dialogRef = useRef<HTMLDialogElement>(null)
-  const filterButtonRef = useRef<HTMLButtonElement>(null)
+  const [isDialogOpen, setDialogOpen] = useState<boolean>(false)
 
   const handleCheckboxChange = useCallback(
     (speciality: string) => {
@@ -21,29 +20,6 @@ const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange 
     },
     [selectedSpecialities],
   )
-
-  const handleOutsideClick = useCallback((event: MouseEvent) => {
-    if (dialogRef.current) {
-      const rect = dialogRef.current.getBoundingClientRect()
-      const isOutside =
-        event.clientX < rect.left ||
-        event.clientX > rect.right ||
-        event.clientY < rect.top ||
-        event.clientY > rect.bottom
-
-      if (isOutside) {
-        dialogRef.current.close()
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    document.addEventListener("click", handleOutsideClick)
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick)
-    }
-  }, [handleOutsideClick])
 
   useEffect(() => {
     onFilterChange(selectedSpecialities)
@@ -69,23 +45,23 @@ const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange 
 
   return (
     <div className={styles.container}>
-      <button
-        ref={filterButtonRef}
-        onClick={() => dialogRef.current?.showModal()}
-        className={styles.filter_button}
-      >
+      <button onClick={() => setDialogOpen(true)} className={styles.filter_button}>
         Filtrar
       </button>
       <div className={styles.scrollable_filters}>{renderedSpecialities}</div>
 
-      <dialog ref={dialogRef}>
-        <div>
-          {renderedSpecialities}
-          <button onClick={() => dialogRef.current?.close()} className={styles.close_button}>
-            Cerrar
-          </button>
+      {isDialogOpen && (
+        <div className={styles.overlay} onClick={() => setDialogOpen(false)}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <div>
+              {renderedSpecialities}
+              <button onClick={() => setDialogOpen(false)} className={styles.close_button}>
+                Cerrar
+              </button>
+            </div>
+          </div>
         </div>
-      </dialog>
+      )}
     </div>
   )
 }

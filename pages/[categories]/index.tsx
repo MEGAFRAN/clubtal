@@ -27,12 +27,9 @@ const CategoryPage = ({ data }: { data: { category: Category; company: [Company]
       <div className={styles.container}>
         <header>
           <Breadcrumb />
+          <CardListFilter specialities={allSpecialities} onFilterChange={setFilteredSpecialities} />
           <section>
             <h1>{title}</h1>
-            <CardListFilter
-              specialities={allSpecialities}
-              onFilterChange={setFilteredSpecialities}
-            />
             <CardList cards={companies} filteredSpecialities={filteredSpecialities} />
           </section>
         </header>
