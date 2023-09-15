@@ -5,7 +5,7 @@ import { Category, Company } from "../app/constants/interfaces/content_models/in
 
 const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
   title,
-  description,
+  metaDescription,
   slug
 }`
 

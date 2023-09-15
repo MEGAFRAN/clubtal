@@ -4,6 +4,7 @@ interface GeneralInformation {
   id: string
   slug: { current: string }
   description: string
+  metaDescription: string
 }
 
 export interface Category extends GeneralInformation {}

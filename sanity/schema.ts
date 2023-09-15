@@ -7,9 +7,10 @@ import author from "./schemas/author"
 import abogados from "./schemas/categories/abogados"
 import medicos from "./schemas/categories/medicos"
 import contadores from "./schemas/categories/contadores"
+import home from "./schemas/pages/home"
 
 const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, author, blockContent, category, abogados, medicos, contadores],
+  types: [post, author, blockContent, category, abogados, medicos, contadores, home],
 }
 
 export default schema

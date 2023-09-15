@@ -9,7 +9,7 @@ import CardListFilter from "../../app/components/card_list_filter/CardListFilter
 
 export { getStaticPropsCategory as getStaticProps, getStaticPathsCategory as getStaticPaths }
 const CategoryPage = ({ data }: { data: { category: Category; company: [Company] } }) => {
-  const { description, title, slug } = data.category
+  const { metaDescription, title, slug } = data.category
   const companies = data.company
   const [filteredSpecialities, setFilteredSpecialities] = useState<string[]>([])
   const allSpecialities = Array.from(
@@ -19,8 +19,8 @@ const CategoryPage = ({ data }: { data: { category: Category; company: [Company]
   return (
     <>
       <PageHead
-        description={description}
-        title={title}
+        description={metaDescription}
+        title={`${title} | siaki`}
         locale={"es"}
         url={`https://www.siaki.co/${slug.current}`}
       />
