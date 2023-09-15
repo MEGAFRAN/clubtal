@@ -1,16 +1,22 @@
+@use "../abstracts/colors";
+
 .container {
   align-items: center;
-  background-color: #f7f7f7;
+  background-color: colors.$gray9;
+  border: 2px solid colors.$gray9;
+  border-radius: 12px;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
+  margin-bottom: 6px;
   padding: 20px;
   position: sticky;
   top: 0;
 
   .filter_button {
-    background-color: #333333;
+    background-color: colors.$primary-blue;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     color: white;
     cursor: pointer;
     padding: 10px 15px;
@@ -25,6 +31,7 @@
   .label {
     align-items: center;
     background-color: white;
+    border: 1px solid colors.$gray9;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -33,30 +40,35 @@
     white-space: nowrap;
 
     &:hover {
-      background-color: #eeeeee;
+      background-color: colors.$gray8;
     }
 
     input[type="checkbox"] {
-      margin-right: 5px;
+      margin-right: 8px;
     }
   }
 
-  .dialog {
+  dialog {
     background-color: white;
-    border-radius: 15px 15px 0 0;
-    bottom: 0;
-    height: 70%;
-    left: 0;
+    border-radius: 15px;
+    height: 70vh;
+    max-width: 600px;
     overflow-y: auto;
     padding: 20px;
-    position: fixed;
-    width: 100%;
+    width: 96vw;
+
+    div {
+      align-items: stretch;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .close_button {
     align-self: center;
-    background-color: #333333;
+    background-color: colors.$primary-blue;
     border: none;
+    border-radius: 6px;
     color: white;
     cursor: pointer;
     display: block;

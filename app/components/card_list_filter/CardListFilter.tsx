@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef, useEffect } from "react"
+import React, { FC, useState, useRef, useEffect, useCallback, useMemo } from "react"
 import styles from "../../styles/components/card-list-filter.module.scss"
 
 type CardListFilterProps = {
@@ -11,15 +11,18 @@ const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange 
   const dialogRef = useRef<HTMLDialogElement>(null)
   const filterButtonRef = useRef<HTMLButtonElement>(null)
 
-  const handleCheckboxChange = (speciality: string) => {
-    if (selectedSpecialities.includes(speciality)) {
-      setSelectedSpecialities((prev) => prev.filter((sp) => sp !== speciality))
-    } else {
-      setSelectedSpecialities((prev) => [...prev, speciality])
-    }
-  }
+  const handleCheckboxChange = useCallback(
+    (speciality: string) => {
+      if (selectedSpecialities.includes(speciality)) {
+        setSelectedSpecialities((prev) => prev.filter((sp) => sp !== speciality))
+      } else {
+        setSelectedSpecialities((prev) => [...prev, speciality])
+      }
+    },
+    [selectedSpecialities],
+  )
 
-  const handleOutsideClick = (event: MouseEvent) => {
+  const handleOutsideClick = useCallback((event: MouseEvent) => {
     if (dialogRef.current) {
       const rect = dialogRef.current.getBoundingClientRect()
       const isOutside =
@@ -32,7 +35,7 @@ const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange 
         dialogRef.current.close()
       }
     }
-  }
+  }, [])
 
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick)
@@ -40,11 +43,29 @@ const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange 
     return () => {
       document.removeEventListener("click", handleOutsideClick)
     }
-  }, [])
+  }, [handleOutsideClick])
 
   useEffect(() => {
     onFilterChange(selectedSpecialities)
   }, [selectedSpecialities, onFilterChange])
+
+  const renderedSpecialities = useMemo(
+    () =>
+      specialities.map(
+        (speciality, index) =>
+          speciality && (
+            <label key={index} className={styles.label}>
+              <input
+                type="checkbox"
+                checked={selectedSpecialities.includes(speciality)}
+                onChange={() => handleCheckboxChange(speciality)}
+              />
+              {speciality}
+            </label>
+          ),
+      ),
+    [specialities, selectedSpecialities, handleCheckboxChange],
+  )
 
   return (
     <div className={styles.container}>
@@ -53,44 +74,20 @@ const CardListFilter: FC<CardListFilterProps> = ({ specialities, onFilterChange 
         onClick={() => dialogRef.current?.showModal()}
         className={styles.filter_button}
       >
-        Filter
+        Filtrar
       </button>
-      <div className={styles.scrollable_filters}>
-        {specialities.map(
-          (speciality, index) =>
-            speciality && (
-              <label key={index} className={styles.label}>
-                <input
-                  type="checkbox"
-                  checked={selectedSpecialities.includes(speciality)}
-                  onChange={() => handleCheckboxChange(speciality)}
-                />
-                {speciality}
-              </label>
-            ),
-        )}
-      </div>
+      <div className={styles.scrollable_filters}>{renderedSpecialities}</div>
 
-      <dialog ref={dialogRef} className={styles.dialog}>
-        {specialities.map(
-          (speciality, index) =>
-            speciality && (
-              <label key={index} className={styles.label}>
-                <input
-                  type="checkbox"
-                  checked={selectedSpecialities.includes(speciality)}
-                  onChange={() => handleCheckboxChange(speciality)}
-                />
-                {speciality}
-              </label>
-            ),
-        )}
-        <button onClick={() => dialogRef.current?.close()} className={styles.close_button}>
-          Close
-        </button>
+      <dialog ref={dialogRef}>
+        <div>
+          {renderedSpecialities}
+          <button onClick={() => dialogRef.current?.close()} className={styles.close_button}>
+            Cerrar
+          </button>
+        </div>
       </dialog>
     </div>
   )
 }
 
-export default CardListFilter
+export default React.memo(CardListFilter)
