@@ -5,7 +5,10 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  images: { domains: ["cdn.sanity.io"] },
+  images: {
+    unoptimized: true,
+    domains: ["cdn.sanity.io"],
+  },
   webpack(config) {
     const modifiedConfig = {
       ...config,
