@@ -25,11 +25,6 @@ export type LinkProps = {
     | "unsafe-url"
 }
 
-export type LanguageToogleProps = {
-  mainLanguage?: "Eng"
-  secondaryLanguage?: "Esp"
-}
-
 export type ListProps = {
   listData: string[]
 }
@@ -99,12 +94,6 @@ export interface ChatbotSkeletonColors {
 
 export type ChatbotSkeletonProps = {
   colors: ChatbotSkeletonColors
-}
-
-export type ColorPickerProps = {
-  label?: string
-  onChange: (color: string) => void
-  initialHex: string
 }
 
 type homeNavbarOptions = {
@@ -221,14 +210,6 @@ export interface SectionCardPostProps extends SectionAboutPostProps {
   hrefFooter: string
   className?: string
 }
-export interface LanguageContextValue {
-  userLanguage: "english" | "español"
-  setUserLanguage: (userLanguage: "english" | "español") => void
-}
-
-export interface PageMonthProps {
-  listPost: Post[]
-}
 
 export type LoginFormProps = {
   onSubmit: (email: string) => Promise<void>
@@ -244,53 +225,6 @@ export type LoadingProps = {
   isLoading: boolean
   maxProgress: number
   loadingMessage: string
-}
-
-type CurrentLanguage = {
-  userLanguage: string
-}
-
-export type SocialSharingProps = CurrentLanguage
-
-export interface SentimentAnalysisState {
-  id: string
-  warnings: string[]
-  sentiment: string
-  confidenceScores: {
-    positive: number
-    neutral: number
-    negative: number
-  }
-  sentences: {
-    text: string
-    sentiment: string
-    confidenceScores: {
-      positive: number
-      neutral: number
-      negative: number
-    }
-    offset: number
-    length: number
-    opinions: any[]
-  }[]
-}
-
-export interface KeyPhrasesState {
-  id: string
-  warnings: string[]
-  keyPhrases: string[]
-}
-
-export interface EntityRecognitionState {
-  id: string
-  warnings: string[]
-  entities: {
-    text: string
-    category: string
-    offset: number
-    length: number
-    confidenceScore: number
-  }[]
 }
 
 export interface MagicLink {
@@ -311,68 +245,9 @@ export interface HomePageProps {
   sectionContact: string
 }
 
-export interface LinkNavigationProps {
-  children: React.ReactNode
-  href: string
-  locale?: any
-  skipLocaleHandling?: boolean
-}
 export type FileUploaderProps = {
   onDataUpdate: (data: string) => void
 }
-
-export type QuestionnarieProps = {
-  questions: string[]
-  options: string[]
-  quizLogic: (ratings: Record<string, string>) => string
-}
-
-export type QuestionnarieFormState = {
-  [key: string]: string
-}
-
-export type ParamsStaticProps = {
-  params: {
-    locale: string | undefined
-    slug: string | undefined
-  }
-  locales: string[] | undefined
-  locale: string | undefined
-  defaultLocale: string | undefined
-}
-export interface GetI18Props {
-  paramStatic: ParamsStaticProps
-  ns: string[]
-}
-
-export interface MakeStaticProps {
-  ns: string[]
-}
-
-export interface BlogPageProps {
-  listPost: CardPost[]
-}
-
-export type PathsPost = {
-  params: {
-    locale: string
-    slug: string
-  }
-}
-
-export type LOCALES = "en" | "es"
-
-export type LANGUAGE = "english" | "español"
-
-export const LOCALES = {
-  ENGLISH: "en",
-  SPANISH: "es",
-} as const
-
-export const LANGUAGES = {
-  ENGLISH: "english",
-  SPANISH: "español",
-} as const
 
 export type pageHeadProps = {
   description: string
@@ -382,73 +257,6 @@ export type pageHeadProps = {
   favicon?: string
   name?: string
   themeColor?: string
-}
-
-export const RESULT_LANGUAGE_BY_LOCALE = {
-  [LOCALES.ENGLISH]: LANGUAGES.ENGLISH,
-  [LOCALES.SPANISH]: LANGUAGES.SPANISH,
-}
-
-export const RESULT_LOCALE_BY_LANGUAGE = {
-  [LANGUAGES.ENGLISH]: LOCALES.ENGLISH,
-  [LANGUAGES.SPANISH]: LOCALES.SPANISH,
-}
-
-export interface AuthorNode {
-  id: string
-  name: string
-}
-export interface Author {
-  node: AuthorNode
-}
-
-export interface EdgeNode {
-  name: string
-}
-
-export interface Edge {
-  node: EdgeNode
-}
-
-export interface Categories {
-  edges: Edge[]
-}
-
-export interface PostFromGraphqlNode {
-  readingTime: string
-  id: string
-  title: string
-  content: string
-  uri: string
-  date: Date
-  author: Author
-  categories: Categories
-}
-
-export interface PostsEdge {
-  node: PostFromGraphqlNode
-}
-
-export interface Posts {
-  edges: PostsEdge[]
-}
-
-export interface DataPost {
-  posts: Posts
-}
-
-export interface PostFromGraphql {
-  data: DataPost
-}
-
-export interface getPostByLocaleAndSlugParams {
-  locale: LOCALES
-  slug: string
-}
-
-export interface queryPostByLanguageAndSlug {
-  language: LANGUAGE
-  slug: string
 }
 
 export type CardProps = {

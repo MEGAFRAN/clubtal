@@ -7,13 +7,13 @@ import HeaderSearch from "../app/components/sections/above_fold/header_search/He
 const getStaticProps = getStaticPropsIndexContent
 export { getStaticProps }
 const Home = ({ homePageData, categories }: IndexContent) => {
-  const { title, metaDescription, headerTitle } = homePageData
+  const { metaDescription, headerTitle } = homePageData
 
   return (
     <>
       <PageHead
         description={metaDescription}
-        title={title}
+        title={"siaki"}
         locale={"es"}
         url={"https://www.siaki.co"}
       />
