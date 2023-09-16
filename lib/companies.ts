@@ -1,6 +1,7 @@
 import { groq } from "next-sanity"
 import { GetStaticPaths, GetStaticProps } from "next"
 import client from "../sanity/lib/client"
+import { Company } from "../app/constants/interfaces/content_models/interfaces"
 
 export const getStaticPathsItem: GetStaticPaths = async () => {
   const paths = await client.fetch(
@@ -30,16 +31,14 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
     description,
     slug,
     category,
-    phone,
-    whatsapp,
-    instagram,
-    facebook,
-    twitter,
-    youtube,
-    tiktok
+    specialities,
+    services,
+    schedule,
+    socialMedia,
+    contact
   }`
 
-  const item = await client.fetch(itemQuery, { slug: companySlug })
+  const item: Company = await client.fetch(itemQuery, { slug: companySlug })
 
   if (!item) {
     return {

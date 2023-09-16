@@ -2,21 +2,12 @@
 import React, { FC } from "react"
 import Link from "next/link"
 import styles from "../../styles/components/card.module.scss"
-import { CardProps } from "../../constants/types/components_props/types"
 import useCurrentPath from "../../hook/useCurrentPath"
+import { CardProps } from "../../constants/interfaces/component_props/interfaces"
 
-const Card: FC<CardProps> = ({
-  title,
-  slug,
-  description,
-  specialities,
-  phone,
-  whatsapp,
-  website,
-  email,
-  style,
-}) => {
+const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, style }) => {
   const currentPath = useCurrentPath()
+  const { whatsapp, phone, website, email } = contact
   return (
     <div className={styles.container} style={style}>
       <Link key={title} href={`${currentPath}${slug.current}`}>

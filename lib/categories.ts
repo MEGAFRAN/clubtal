@@ -27,10 +27,9 @@ export const getStaticPropsCategory: GetStaticProps = async ({ params }) => {
     title,
     description,
     slug,
-    phone,
-    whatsapp,
-    website,
-    specialities
+    socialMedia,
+    specialities,
+    contact
   }`
   const category: Category = await client.fetch(categoryQuery, queryParams)
   const company: Company = await client.fetch(companyQuery(category.title))

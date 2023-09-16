@@ -258,19 +258,3 @@ export type pageHeadProps = {
   name?: string
   themeColor?: string
 }
-
-export type CardProps = {
-  title: string
-  slug: { current: string }
-  description: string
-  specialities?: string[]
-  phone?: number
-  whatsapp?: number
-  website?: string
-  email?: string
-  style?: { display: "block" | "none" }
-}
-
-export type CardListProps = {
-  cards: CardProps[]
-}

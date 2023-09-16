@@ -1,13 +1,9 @@
 import React, { FC, useCallback } from "react"
 import styles from "../../styles/components/card-list.module.scss"
 import Card from "../card/Card"
-import { CardListProps, CardProps } from "../../constants/types/components_props/types"
+import { CardListProps, CardProps } from "../../constants/interfaces/component_props/interfaces"
 
-type ExtendedCardListProps = CardListProps & {
-  filteredSpecialities?: string[]
-}
-
-const CardList: FC<ExtendedCardListProps> = ({ cards, filteredSpecialities = [] }) => {
+const CardList: FC<CardListProps> = ({ cards, filteredSpecialities = [] }) => {
   const renderCard = useCallback(
     (card: CardProps, index: number) => {
       const isVisible =

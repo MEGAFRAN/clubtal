@@ -12,14 +12,14 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
     slug,
     description,
     category,
-    phone,
-    whatsapp,
-    instagram,
-    facebook,
-    twitter,
-    youtube,
-    tiktok,
+    contact,
+    services,
+    socialMedia,
+    schedule,
+    specialities,
   } = data.item
+  const { phone, whatsapp, email } = contact
+  const { linkedin, instagram, facebook, twitter, tiktok, youtube } = socialMedia
   return (
     <>
       <PageHead
@@ -31,9 +31,37 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
       <div className={styles.container}>
         <header>
           <h1>{title}</h1>
+          {specialities && (
+            <ul>
+              {specialities.map((speciality, index) => (
+                <li key={index}>{speciality}</li>
+              ))}
+            </ul>
+          )}
+          {phone && <p>telefono: {phone}</p>}
           {description && <p>descripcion: {description}</p>}
+          {services && (
+            <ul>
+              {services.map((service, index) => (
+                <li key={index}>{service}</li>
+              ))}
+            </ul>
+          )}
+          {schedule && (
+            <ul>
+              {Object.entries(schedule).map(([day, time]) => (
+                <li key={day}>
+                  {day}:{time}
+                </li>
+              ))}
+            </ul>
+          )}
+          <h3>Contacto</h3>
           {phone && <p>telefono: {phone}</p>}
           {whatsapp && <p>whatsapp: {whatsapp}</p>}
+          {email && <p>email: {email}</p>}
+          <h3>Redes sociales</h3>
+          {linkedin && <p>linkedin: {linkedin}</p>}
           {instagram && <p>instagram: {instagram}</p>}
           {facebook && <p>facebook: {facebook}</p>}
           {twitter && <p>twitter: {twitter}</p>}
