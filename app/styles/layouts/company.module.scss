@@ -59,12 +59,21 @@
     }
   }
 
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   p {
     color: colors.$primary-black;
     font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
     font-weight: 400;
     letter-spacing: 0.012em;
     line-height: 1.4211;
+  }
+
+  a {
+    text-transform: none;
   }
 
   .summary {

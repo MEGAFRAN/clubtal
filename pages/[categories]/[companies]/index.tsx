@@ -1,7 +1,7 @@
 import styles from "../../../app/styles/layouts/company.module.scss"
 import PageHead from "../../../app/components/page_head/PageHead"
 import { getStaticPathsItem, getStaticPropsItem } from "../../../lib/companies"
-import { Company } from "../../../app/constants/interfaces/content_models/interfaces"
+import { Company, Schedule } from "../../../app/constants/interfaces/content_models/interfaces"
 
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
 const CompanyPage = ({ data }: { data: { item: Company } }) => {
@@ -18,7 +18,20 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
     schedule,
     specialities,
   } = data.item
-  const { phone } = contact
+  const { phone, whatsapp, website, email } = contact
+
+  const formatSchedule = (scheduleData: Schedule): Schedule => {
+    const daysOrder = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
+
+    const formattedSchedule = daysOrder.reduce((acc, day) => {
+      acc[day] = scheduleData[day]
+      return acc
+    }, {} as Schedule)
+
+    return formattedSchedule
+  }
+
+  const formattedSchedule = formatSchedule(schedule)
   return (
     <>
       <PageHead
@@ -27,7 +40,7 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
         locale={"es"}
         url={`https://www.siaki.co/${slug}`}
       />
-      <div className={styles.container}>
+      <main className={styles.container}>
         <header>
           <section className={styles.summary}>
             <h1>{title}</h1>
@@ -38,11 +51,10 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
                 ))}
               </ul>
             )}
-            {phone && <p className={styles.phone}>telefono: {phone}</p>}
             {description && <p className={styles.description}>{description}</p>}
           </section>
           {services && (
-            <section className={styles.services}>
+            <section>
               <h2>Servicios</h2>
               <ul className={styles.services}>
                 {services.map((service, index) => (
@@ -51,50 +63,90 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
               </ul>
             </section>
           )}
-          {schedule && (
-            <section className={styles.schedule}>
-              <h2>Horario</h2>
-              <ul>
-                {Object.entries(schedule).map(([day, time]) => (
-                  <li key={day}>
-                    {day}:{time}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
           {contact && (
             <section className={styles.contact}>
               <h2>Contacto</h2>
-              {Object.entries(contact).map(([key, value]) => {
-                if (key === "website") {
-                  return (
-                    <p key={key}>
-                      {key}: <a href={value.toString()}>{value}</a>
-                    </p>
-                  )
-                }
-                return (
-                  <p key={key}>
-                    {key}: {value}
-                  </p>
-                )
-              })}
+              <address>
+                <dl>
+                  {phone && (
+                    <>
+                      <dt>Phone Number</dt>
+                      <dd>
+                        <a href={`tel:${phone}`}>{phone}</a>
+                      </dd>
+                    </>
+                  )}
+
+                  {whatsapp && (
+                    <>
+                      <dt>WhatsApp</dt>
+                      <dd>
+                        <a
+                          href={`https://wa.me/${whatsapp}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {whatsapp}
+                        </a>
+                      </dd>
+                    </>
+                  )}
+
+                  {website && (
+                    <>
+                      <dt>Website</dt>
+                      <dd>
+                        <a href={website} target="_blank" rel="noopener noreferrer">
+                          {website}
+                        </a>
+                      </dd>
+                    </>
+                  )}
+
+                  {email && (
+                    <>
+                      <dt>Email</dt>
+                      <dd>
+                        <a href={`mailto:${email}`}>{email}</a>
+                      </dd>
+                    </>
+                  )}
+                </dl>
+              </address>
             </section>
           )}
-
+          {formattedSchedule && (
+            <section className={styles.schedule}>
+              <h2>Horario</h2>
+              <dl>
+                {Object.entries(formattedSchedule).map(([day, time]) => (
+                  <>
+                    <dt>{day}</dt>
+                    <dd>{time}</dd>
+                  </>
+                ))}
+              </dl>
+            </section>
+          )}
           {socialMedia && (
             <section className={styles.social_media}>
               <h2>Redes sociales</h2>
-              {Object.entries(socialMedia).map(([key, value]) => (
-                <p key={key}>
-                  {key}: <a href={value.toString()}>{value}</a>
-                </p>
-              ))}
+              <nav>
+                <dl>
+                  {Object.entries(socialMedia).map(([key, value]) => (
+                    <>
+                      <dt>{key}</dt>
+                      <dd>
+                        <a href={value.toString()}>{value}</a>
+                      </dd>
+                    </>
+                  ))}
+                </dl>
+              </nav>
             </section>
           )}
         </header>
-      </div>
+      </main>
     </>
   )
 }

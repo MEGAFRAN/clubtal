@@ -9,6 +9,16 @@ interface GeneralInformation {
 
 export interface Category extends GeneralInformation {}
 
+export interface Schedule {
+  lunes?: string
+  martes?: string
+  miercoles?: string
+  jueves?: string
+  viernes?: string
+  sabado?: string
+  domingo?: string
+  [key: string]: string | undefined
+}
 export interface Company extends GeneralInformation {
   specialities?: string[]
   category: string
@@ -19,15 +29,7 @@ export interface Company extends GeneralInformation {
     email: string
     website: string
   }
-  schedule: {
-    lunes: string
-    martes: string
-    miercoles: string
-    jueves: string
-    viernes: string
-    sabado: string
-    domingo: string
-  }
+  schedule: Schedule
   socialMedia: {
     linkedin: string
     instagram: string
