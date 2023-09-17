@@ -23,33 +23,55 @@ const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, 
           <p>{description}</p>
         </div>
       </Link>
-      <nav>
-        {phone && (
-          <a href={`tel:${phone}`} aria-label="Numero de telefono">
-            tel:{phone}
-          </a>
-        )}
-        {whatsapp && (
-          <a
-            href={`https://wa.me/${whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-          >
-            whatsapp:{whatsapp}
-          </a>
-        )}
-        {website && (
-          <a href={website} target="_blank" rel="noopener noreferrer" aria-label="Sitio web">
-            {website}
-          </a>
-        )}
-        {email && (
-          <a href={`mailto:${email}`} aria-label="email">
-            {email}
-          </a>
-        )}
-      </nav>
+      <address>
+        <dl>
+          {phone && (
+            <>
+              <dt>tel</dt>
+              <dd>
+                <a href={`tel:${phone}`} aria-label="Numero de telefono">
+                  {phone}
+                </a>
+              </dd>
+            </>
+          )}
+          {whatsapp && (
+            <>
+              <dt>whatsapp</dt>
+              <dd>
+                <a
+                  href={`https://wa.me/${whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  {whatsapp}
+                </a>
+              </dd>
+            </>
+          )}
+          {website && (
+            <>
+              <dt>sitio web</dt>
+              <dd>
+                <a href={website} target="_blank" rel="noopener noreferrer" aria-label="Sitio web">
+                  {website}
+                </a>
+              </dd>
+            </>
+          )}
+          {email && (
+            <>
+              <dt>email</dt>
+              <dd>
+                <a href={`mailto:${email}`} aria-label="email">
+                  {email}
+                </a>
+              </dd>
+            </>
+          )}
+        </dl>
+      </address>
     </div>
   )
 }

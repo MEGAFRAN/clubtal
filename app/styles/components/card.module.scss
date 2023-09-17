@@ -44,12 +44,13 @@
     }
   }
 
-  nav {
-    column-gap: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    row-gap: 12px;
+  address {
+    margin-top: 24px;
+
+    dl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
 
     a {
       &:hover {

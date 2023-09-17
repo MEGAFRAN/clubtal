@@ -24,8 +24,10 @@
     padding: 15px;
   }
 
-  h1 {
-    font-size: clamp(font_size.$title-s, 5vw, font_size.$title-l);
+  h1,
+  h2 {
+    color: colors.$primary-blue;
+    font-size: font_size.$title-s;
     font-weight: 700;
     letter-spacing: -0.003em;
     line-height: 1.0835;
@@ -34,12 +36,7 @@
   }
 
   h2 {
-    font-size: font_size.$title-s;
     font-weight: 500;
-    letter-spacing: -0.003em;
-    line-height: 1.0835;
-    margin-bottom: spacing.$medium;
-    text-transform: capitalize;
   }
 
   ul {
@@ -77,6 +74,8 @@
   }
 
   .summary {
+    margin-top: 20px;
+
     ul {
       font-weight: bold;
     }

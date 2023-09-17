@@ -2,6 +2,7 @@ import styles from "../../../app/styles/layouts/company.module.scss"
 import PageHead from "../../../app/components/page_head/PageHead"
 import { getStaticPathsItem, getStaticPropsItem } from "../../../lib/companies"
 import { Company, Schedule } from "../../../app/constants/interfaces/content_models/interfaces"
+import Breadcrumb from "../../../app/components/breadcrumb/Breadcrumb"
 
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
 const CompanyPage = ({ data }: { data: { item: Company } }) => {
@@ -42,6 +43,7 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
       />
       <main className={styles.container}>
         <header>
+          <Breadcrumb />
           <section className={styles.summary}>
             <h1>{title}</h1>
             {specialities && (

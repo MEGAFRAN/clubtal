@@ -24,7 +24,7 @@ const CategoryPage = ({ data }: { data: { category: Category; company: [Company]
         locale={"es"}
         url={`https://www.siaki.co/${slug.current}`}
       />
-      <div className={styles.container}>
+      <main className={styles.container}>
         <header>
           <Breadcrumb />
           <CardListFilter specialities={allSpecialities} onFilterChange={setFilteredSpecialities} />
@@ -33,7 +33,7 @@ const CategoryPage = ({ data }: { data: { category: Category; company: [Company]
             <CardList cards={companies} filteredSpecialities={filteredSpecialities} />
           </section>
         </header>
-      </div>
+      </main>
     </>
   )
 }
