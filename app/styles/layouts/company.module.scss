@@ -1,0 +1,83 @@
+@use "../abstracts/colors";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
+
+.container {
+  text-transform: capitalize;
+
+  > header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: spacing.$extraLarge auto;
+    max-width: 653px;
+  }
+
+  > main {
+    margin: auto;
+    max-width: 653px;
+  }
+
+  section {
+    border: 2px solid colors.$gray9;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: clamp(font_size.$title-s, 5vw, font_size.$title-l);
+    font-weight: 700;
+    letter-spacing: -0.003em;
+    line-height: 1.0835;
+    margin-bottom: spacing.$medium;
+    text-transform: capitalize;
+  }
+
+  h2 {
+    font-size: font_size.$title-s;
+    font-weight: 500;
+    letter-spacing: -0.003em;
+    line-height: 1.0835;
+    margin-bottom: spacing.$medium;
+    text-transform: capitalize;
+  }
+
+  ul {
+    &.specialities,
+    &.services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: clamp(font_size.$paragraph-s, 5vw, font_size.$paragraph-m);
+      letter-spacing: -0.003em;
+      line-height: 1.0835;
+    }
+  }
+
+  p {
+    color: colors.$primary-black;
+    font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    line-height: 1.4211;
+  }
+
+  .summary {
+    ul {
+      font-weight: bold;
+    }
+
+    .phone {
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      text-transform: initial;
+    }
+  }
+}
