@@ -35,7 +35,6 @@ export const getStaticPropsBlogSlug: GetStaticProps = async ({ params }: any) =>
     props: {
       data: { post },
     },
-    revalidate: 1,
   }
 }
 

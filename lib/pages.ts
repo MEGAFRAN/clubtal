@@ -19,6 +19,5 @@ export const getStaticPropsIndexContent = async () => {
       homePageData,
       categories,
     },
-    revalidate: 1,
   }
 }

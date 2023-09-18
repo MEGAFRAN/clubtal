@@ -23,6 +23,7 @@ const nextConfig = {
 
     return modifiedConfig
   },
+  output: "export",
 }
 
 module.exports = nextConfig

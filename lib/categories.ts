@@ -50,6 +50,5 @@ export const getStaticPropsCategory: GetStaticProps = async ({ params }) => {
         company,
       },
     },
-    revalidate: 1,
   }
 }
