@@ -7,7 +7,7 @@ import { CardProps } from "../../constants/interfaces/component_props/interfaces
 
 const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, style }) => {
   const currentPath = useCurrentPath()
-  const { whatsapp, phone, website, email } = contact
+  const { whatsapp, phone, website, email } = contact || {}
   return (
     <div className={styles.container} style={style}>
       <Link key={title} href={`${currentPath}${slug.current}`}>

@@ -18,10 +18,12 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
     socialMedia,
     schedule,
     specialities,
-  } = data.item
-  const { phone, whatsapp, website, email } = contact
+  } = data.item || {}
+  const { phone, whatsapp, website, email } = contact || {}
 
   const formatSchedule = (scheduleData: Schedule): Schedule => {
+    if (!scheduleData) throw new Error("Invalid schedule data provided, check Schedule interface")
+
     const daysOrder = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
 
     const formattedSchedule = daysOrder.reduce((acc, day) => {
@@ -117,7 +119,7 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
               </address>
             </section>
           )}
-          {formattedSchedule && (
+          {schedule && (
             <section className={styles.schedule}>
               <h2>Horario</h2>
               <dl>
