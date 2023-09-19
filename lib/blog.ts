@@ -1,6 +1,6 @@
 import { groq } from "next-sanity"
 import { GetStaticPaths, GetStaticProps } from "next"
-import client from "../sanity/lib/client"
+import client from "./sanity/client"
 
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
@@ -15,7 +15,7 @@ export const getStaticPathsBlogSlug: GetStaticPaths = async () => {
     }`,
   )
 
-  return { paths, fallback: "blocking" }
+  return { paths, fallback: false }
 }
 
 export const getStaticPropsBlogSlug: GetStaticProps = async ({ params }: any) => {

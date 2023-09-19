@@ -1,8 +1,8 @@
 import { groq } from "next-sanity"
 import { getCategoryList } from "./companies"
-import client from "../sanity/lib/client"
 import { IndexContent } from "../app/constants/types/content_models/types"
 import { Category } from "../app/constants/interfaces/content_models/interfaces"
+import client from "./sanity/client"
 
 /* eslint-disable import/prefer-default-export */
 

@@ -1,7 +1,7 @@
 import { groq } from "next-sanity"
 import { GetStaticPaths, GetStaticProps } from "next"
-import client from "../sanity/lib/client"
 import { Category, Company } from "../app/constants/interfaces/content_models/interfaces"
+import client from "./sanity/client"
 
 const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
   title,
@@ -16,7 +16,7 @@ export const getStaticPathsCategory: GetStaticPaths = async () => {
     }`,
   )
 
-  return { paths, fallback: "blocking" }
+  return { paths, fallback: false }
 }
 
 export const getStaticPropsCategory: GetStaticProps = async ({ params }) => {

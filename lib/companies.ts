@@ -1,7 +1,7 @@
 import { groq } from "next-sanity"
 import { GetStaticPaths, GetStaticProps } from "next"
-import client from "../sanity/lib/client"
 import { Company } from "../app/constants/interfaces/content_models/interfaces"
+import client from "./sanity/client"
 
 export const getStaticPathsItem: GetStaticPaths = async () => {
   const paths = await client.fetch(
@@ -17,7 +17,7 @@ export const getStaticPathsItem: GetStaticPaths = async () => {
 
   return {
     paths: flattenedPaths,
-    fallback: "blocking",
+    fallback: false,
   }
 }
 
