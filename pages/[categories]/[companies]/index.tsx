@@ -7,9 +7,9 @@ import Breadcrumb from "../../../app/components/breadcrumb/Breadcrumb"
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
 const CompanyPage = ({ data }: { data: { item: Company } }) => {
   const {
+    _id,
     name,
     title,
-    id,
     slug,
     description,
     category,

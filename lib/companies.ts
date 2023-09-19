@@ -26,6 +26,7 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
   const companySlug = params?.companies ?? ""
 
   const itemQuery = groq`*[_type == "${categorySlug}" && slug.current == $slug][0]{
+    _id,
     title,
     name,
     description,

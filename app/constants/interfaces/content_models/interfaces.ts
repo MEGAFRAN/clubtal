@@ -1,8 +1,9 @@
 interface GeneralInformation {
+  _id: string
+  _type: string
   name: string
   title: string
-  id: string
-  slug: { current: string }
+  slug: { current: string; _type: "slug" }
   description: string
   metaDescription: string
 }
@@ -21,7 +22,7 @@ export interface Schedule {
 }
 export interface Company extends GeneralInformation {
   specialities?: string[]
-  category: string
+  category: { _ref: string; _type: "reference" }
   services?: string[]
   contact: {
     phone: number
