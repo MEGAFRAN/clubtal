@@ -8,9 +8,9 @@ import Breadcrumb from "../../app/components/breadcrumb/Breadcrumb"
 import CardListFilter from "../../app/components/card_list_filter/CardListFilter"
 
 export { getStaticPropsCategory as getStaticProps, getStaticPathsCategory as getStaticPaths }
-const CategoryPage = ({ data }: { data: { category: Category; company: [Company] } }) => {
+const CategoryPage = ({ data }: { data: { category: Category; company: Company[] } }) => {
   const { metaDescription, title, slug } = data.category || {}
-  const companies = data.company || {}
+  const companies = data.company || []
   const [filteredSpecialities, setFilteredSpecialities] = useState<string[]>([])
   const allSpecialities = Array.from(
     new Set(companies.flatMap((company) => company.specialities || [])),

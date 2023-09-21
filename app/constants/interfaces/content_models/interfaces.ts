@@ -8,8 +8,6 @@ interface GeneralInformation {
   metaDescription: string
 }
 
-export interface Category extends GeneralInformation {}
-
 export interface Schedule {
   lunes?: string
   martes?: string
@@ -20,6 +18,7 @@ export interface Schedule {
   domingo?: string
   [key: string]: string | undefined
 }
+
 export interface Company extends GeneralInformation {
   specialities?: string[]
   category: { _ref: string; _type: "reference" }
@@ -39,4 +38,8 @@ export interface Company extends GeneralInformation {
     youtube: string
     tiktok: string
   }
+}
+
+export interface Category extends GeneralInformation {
+  companies: Company[]
 }
