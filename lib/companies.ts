@@ -5,15 +5,22 @@ import client from "./sanity/client"
 
 export const getStaticPathsItem: GetStaticPaths = async () => {
   const paths = await client.fetch(
-    groq`*[_type == "category" && defined(slug.current)]{
-      slug,
-      "items": *[_type == slug.current]{
-        "params": { "categories": slug.current, "companies": slug.current }
+    groq`
+      *[_type == "category" && defined(slug.current)]{
+        "categorySlug": slug.current,
+        "companies": companies[]->slug.current
       }
-    }`,
+    `,
   )
 
-  const flattenedPaths = paths.flatMap((category: any) => category.items)
+  const flattenedPaths = paths.flatMap((category: any) =>
+    category.companies.map((companySlug: string) => ({
+      params: {
+        categories: category.categorySlug,
+        companies: companySlug,
+      },
+    })),
+  )
 
   return {
     paths: flattenedPaths,
@@ -25,23 +32,25 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
   const categorySlug = params?.categories ?? ""
   const companySlug = params?.companies ?? ""
 
-  const itemQuery = groq`*[_type == "${categorySlug}" && slug.current == $slug][0]{
-    _id,
-    title,
-    name,
-    description,
-    slug,
-    category,
-    specialities,
-    services,
-    schedule,
-    socialMedia,
-    contact
-  }`
+  const companyQuery = groq`
+    *[_type == "company" && slug.current == $companySlug && category->slug.current == $categorySlug][0]{
+      _id,
+      title,
+      name,
+      description,
+      slug,
+      category,
+      specialities,
+      services,
+      schedule,
+      socialMedia,
+      contact
+    }
+  `
 
-  const item: Company = await client.fetch(itemQuery, { slug: companySlug })
+  const company: Company = await client.fetch(companyQuery, { companySlug, categorySlug })
 
-  if (!item) {
+  if (!company) {
     return {
       redirect: {
         destination: "/",
@@ -52,7 +61,7 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
 
   return {
     props: {
-      data: { item },
+      data: { company },
     },
   }
 }

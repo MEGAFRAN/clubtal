@@ -5,7 +5,7 @@ import { Company, Schedule } from "../../../app/constants/interfaces/content_mod
 import Breadcrumb from "../../../app/components/breadcrumb/Breadcrumb"
 
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
-const CompanyPage = ({ data }: { data: { item: Company } }) => {
+const CompanyPage = ({ data }: { data: { company: Company } }) => {
   const {
     _id,
     name,
@@ -18,7 +18,7 @@ const CompanyPage = ({ data }: { data: { item: Company } }) => {
     socialMedia,
     schedule,
     specialities,
-  } = data.item || {}
+  } = data.company || {}
   const { phone, whatsapp, website, email } = contact || {}
 
   const formatSchedule = (scheduleData: Schedule): Schedule => {
