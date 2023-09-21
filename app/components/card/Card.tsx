@@ -5,7 +5,15 @@ import styles from "../../styles/components/card.module.scss"
 import useCurrentPath from "../../hook/useCurrentPath"
 import { CardProps } from "../../constants/interfaces/component_props/interfaces"
 
-const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, style }) => {
+const Card: FC<CardProps> = ({
+  isPaidUser,
+  title,
+  slug,
+  description,
+  specialities,
+  contact,
+  style,
+}) => {
   const currentPath = useCurrentPath()
   const { whatsapp, phone, website, email } = contact || {}
   return (
@@ -25,7 +33,7 @@ const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, 
       </Link>
       <address>
         <dl>
-          {phone && (
+          {isPaidUser && phone && (
             <>
               <dt>tel</dt>
               <dd>
@@ -35,7 +43,7 @@ const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, 
               </dd>
             </>
           )}
-          {whatsapp && (
+          {isPaidUser && whatsapp && (
             <>
               <dt>whatsapp</dt>
               <dd>
@@ -50,7 +58,7 @@ const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, 
               </dd>
             </>
           )}
-          {website && (
+          {isPaidUser && website && (
             <>
               <dt>sitio web</dt>
               <dd>
@@ -60,7 +68,7 @@ const Card: FC<CardProps> = ({ title, slug, description, specialities, contact, 
               </dd>
             </>
           )}
-          {email && (
+          {isPaidUser && email && (
             <>
               <dt>email</dt>
               <dd>

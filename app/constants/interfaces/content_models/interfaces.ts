@@ -20,6 +20,7 @@ export interface Schedule {
 }
 
 export interface Company extends GeneralInformation {
+  isPaidUser: boolean
   specialities?: string[]
   category: { _ref: string; _type: "reference" }
   services?: string[]

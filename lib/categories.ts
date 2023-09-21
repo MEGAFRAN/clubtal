@@ -8,6 +8,7 @@ const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
   metaDescription,
   slug,
   companies[]->{
+    isPaidUser,
     title,
     slug,
     description,

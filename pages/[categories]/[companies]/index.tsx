@@ -7,6 +7,7 @@ import Breadcrumb from "../../../app/components/breadcrumb/Breadcrumb"
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
 const CompanyPage = ({ data }: { data: { company: Company } }) => {
   const {
+    isPaidUser,
     _id,
     name,
     title,
@@ -132,7 +133,7 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
               </dl>
             </section>
           )}
-          {socialMedia && (
+          {isPaidUser && socialMedia && (
             <section className={styles.social_media}>
               <h2>Redes sociales</h2>
               <nav>
