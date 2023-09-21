@@ -1,0 +1,53 @@
+.container {
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+
+  label {
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    font-family: "San Francisco", sans-serif; // Apple's system font
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input,
+    select {
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 5px;
+      padding: 10px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #007aff; // Apple blue
+        outline: none;
+      }
+    }
+  }
+
+  button {
+    background-color: #007aff; // Apple blue
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "San Francisco", sans-serif;
+    font-size: 14px;
+    padding: 12px 20px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #005bb5; // Darker blue for hover
+    }
+  }
+}
