@@ -1,77 +1,26 @@
-// components/SubscriptionForm.tsx
 import { useState } from "react"
-import { Company } from "../../constants/interfaces/content_models/interfaces"
-import useCurrentPath from "../../hook/useCurrentPath"
-import InputList from "../input_list/InputList"
-import styles from "../../styles/components/subscription-form.module.scss"
+import { Company } from "../../../constants/interfaces/content_models/interfaces"
+import useCurrentPath from "../../../hook/useCurrentPath"
+import InputList from "../../input_list/InputList"
+import styles from "../../../styles/components/subscription-form.module.scss"
+import subscriptionFormCompanyUtils from "./utils"
 
 interface Props {
   categoryOptions: string[]
 }
 
 const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
-  const defaultIsPaidUser = useCurrentPath() !== "/basic"
-  const [formData, setFormData] = useState<Company>({
-    _id: "",
-    _type: "company",
-    name: "",
-    title: "",
-    slug: { current: "", _type: "slug" },
-    description: "",
-    metaDescription: "",
-    isPaidUser: defaultIsPaidUser,
-    specialities: [],
-    category: { _ref: "", _type: "reference" },
-    services: [],
-    contact: {
-      phone: 0,
-      whatsapp: 0,
-      email: "",
-      website: "",
-    },
-    schedule: {},
-    socialMedia: {
-      linkedin: "",
-      instagram: "",
-      facebook: "",
-      twitter: "",
-      youtube: "",
-      tiktok: "",
-    },
-  })
+  const isPaidUser = !useCurrentPath().includes("/basico")
+  const [formData, setFormData] = useState<Company>(
+    subscriptionFormCompanyUtils.defaultCompany(isPaidUser),
+  )
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log(formData)
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    subscriptionFormCompanyUtils.handleInputChange(event, formData, setFormData)
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-
-    if (name in formData.contact) {
-      setFormData((prevState) => ({
-        ...prevState,
-        contact: { ...prevState.contact, [name]: value },
-      }))
-    } else {
-      let updatedData: Partial<Company> = { [name]: value }
-
-      if (name === "name") {
-        updatedData = {
-          ...updatedData,
-          title: value,
-          slug: { current: value.split(" ").join("-"), _type: "slug" },
-        }
-      }
-
-      if (name === "email") {
-        const leftSideOfEmail = value.split("@")[0]
-        // eslint-disable-next-line no-underscore-dangle
-        updatedData._id = leftSideOfEmail
-      }
-
-      setFormData((prevState) => ({ ...prevState, ...updatedData }))
-    }
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    subscriptionFormCompanyUtils.handleSubmit(event, formData)
   }
 
   return (
@@ -183,7 +132,6 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
           }
         />
       </label>
-      {/* Schedule fields */}
       {["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"].map((day) => (
         <label key={day}>
           {day.charAt(0).toUpperCase() + day.slice(1)}:
@@ -200,23 +148,23 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
           />
         </label>
       ))}
-      {/* Social Media fields */}
-      {["linkedin", "instagram", "facebook", "twitter", "youtube", "tiktok"].map((platform) => (
-        <label key={platform}>
-          {platform.charAt(0).toUpperCase() + platform.slice(1)}:
-          <input
-            type="text"
-            name={platform}
-            value={formData.socialMedia[platform]}
-            onChange={(e) =>
-              setFormData((prevState) => ({
-                ...prevState,
-                socialMedia: { ...prevState.socialMedia, [platform]: e.target.value },
-              }))
-            }
-          />
-        </label>
-      ))}
+      {isPaidUser &&
+        ["linkedin", "instagram", "facebook", "twitter", "youtube", "tiktok"].map((platform) => (
+          <label key={platform}>
+            {platform.charAt(0).toUpperCase() + platform.slice(1)}:
+            <input
+              type="text"
+              name={platform}
+              value={formData.socialMedia[platform]}
+              onChange={(e) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  socialMedia: { ...prevState.socialMedia, [platform]: e.target.value },
+                }))
+              }
+            />
+          </label>
+        ))}
       <button type="submit">Submit</button>
     </form>
   )

@@ -1,9 +1,14 @@
-import { Company } from "../../../app/constants/interfaces/content_models/interfaces"
+import { Category, Company } from "../../../app/constants/interfaces/content_models/interfaces"
 import client from "../client"
 
 // Creating a company
 const createCompany = async (company: Company): Promise<void> => {
   await client.create(company)
+}
+
+// Creating a category
+const createCategory = async (category: Category): Promise<void> => {
+  await client.create(category)
 }
 
 // Delete a company
@@ -12,7 +17,10 @@ const deleteDocument = async (_id: string): Promise<void> => {
 }
 
 // Setting a field only if not already present
-const setNewFieldIfNotPresent = async (_id: string, field: Record<string, any>): Promise<void> => {
+const setNewFieldIfNotPresent = async (
+  _id: string,
+  field: Record<string, unknown>,
+): Promise<void> => {
   await client.patch(_id).setIfMissing(field).commit()
 }
 
@@ -32,7 +40,7 @@ const decrementNumber = async (_id: string, field: Record<string, number>): Prom
 }
 
 // Appending/prepending elements to an array
-const addToArray = async (_id: string, fieldName: string, fieldValue: any[]): Promise<void> => {
+const addToArray = async (_id: string, fieldName: string, fieldValue: unknown[]): Promise<void> => {
   await client
     .patch(_id)
     .setIfMissing({ [fieldName]: [] })
@@ -52,6 +60,7 @@ const deleteFromArray = async (
 
 const cmsCrud = {
   createCompany,
+  createCategory,
   deleteDocument,
   setNewFieldIfNotPresent,
   removeField,

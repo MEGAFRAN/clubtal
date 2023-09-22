@@ -142,7 +142,7 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
                     <>
                       <dt>{key}</dt>
                       <dd>
-                        <a href={value.toString()}>{value}</a>
+                        <a href={value?.toString()}>{value}</a>
                       </dd>
                     </>
                   ))}

@@ -38,6 +38,7 @@ export interface Company extends GeneralInformation {
     twitter: string
     youtube: string
     tiktok: string
+    [key: string]: string | undefined
   }
 }
 
