@@ -26,8 +26,8 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
       <label>
-        Name:
-        <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+        Title:
+        <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
       </label>
       <label>
         Description:
@@ -39,19 +39,10 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
         />
       </label>
       <label>
-        Meta Description:
-        <input
-          type="text"
-          name="metaDescription"
-          value={formData.metaDescription}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label>
         Category:
         <select
           name="category"
-          // eslint-disable-next-line no-underscore-dangle
+          required
           value={formData.category._ref}
           onChange={(e) =>
             setFormData((prevState) => ({
@@ -60,6 +51,8 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
             }))
           }
         >
+          <option value="">Select an option</option>
+
           {categoryOptions.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -87,12 +80,7 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
           type="number"
           name="phone"
           value={formData.contact.phone}
-          onChange={(e) =>
-            setFormData((prevState) => ({
-              ...prevState,
-              contact: { ...prevState.contact, phone: Number(e.target.value) },
-            }))
-          }
+          onChange={handleInputChange}
         />
       </label>
       <label>
@@ -101,12 +89,7 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
           type="number"
           name="whatsapp"
           value={formData.contact.whatsapp}
-          onChange={(e) =>
-            setFormData((prevState) => ({
-              ...prevState,
-              contact: { ...prevState.contact, whatsapp: Number(e.target.value) },
-            }))
-          }
+          onChange={handleInputChange}
         />
       </label>
       <label>
@@ -139,12 +122,7 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
             type="text"
             name={day}
             value={formData.schedule[day] || ""}
-            onChange={(e) =>
-              setFormData((prevState) => ({
-                ...prevState,
-                schedule: { ...prevState.schedule, [day]: e.target.value },
-              }))
-            }
+            onChange={handleInputChange}
           />
         </label>
       ))}
@@ -156,12 +134,7 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
               type="text"
               name={platform}
               value={formData.socialMedia[platform]}
-              onChange={(e) =>
-                setFormData((prevState) => ({
-                  ...prevState,
-                  socialMedia: { ...prevState.socialMedia, [platform]: e.target.value },
-                }))
-              }
+              onChange={handleInputChange}
             />
           </label>
         ))}

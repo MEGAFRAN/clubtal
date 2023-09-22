@@ -29,7 +29,8 @@
         "tsx": "never"
       }
     ],
-    "for-direction": "off"
+    "for-direction": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_ref", "_id"] }]
   },
   "env": {
     "jest": true

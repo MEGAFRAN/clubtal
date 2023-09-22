@@ -6,11 +6,9 @@ import formatTextUtils from "../../../../lib/format/text"
 const defaultCompany = (defaultIsPaidUser: boolean): Company => ({
   _id: "",
   _type: "company",
-  name: "",
   title: "",
   slug: { current: "", _type: "slug" },
   description: "",
-  metaDescription: "",
   isPaidUser: defaultIsPaidUser,
   specialities: [],
   category: { _ref: "", _type: "reference" },
@@ -21,7 +19,15 @@ const defaultCompany = (defaultIsPaidUser: boolean): Company => ({
     email: "",
     website: "",
   },
-  schedule: {},
+  schedule: {
+    lunes: "",
+    martes: "",
+    miercoles: "",
+    jueves: "",
+    viernes: "",
+    sabado: "",
+    domingo: "",
+  },
   socialMedia: {
     linkedin: "",
     instagram: "",
@@ -34,8 +40,8 @@ const defaultCompany = (defaultIsPaidUser: boolean): Company => ({
 
 const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, formData: Company) => {
   event.preventDefault()
-  console.log(formData)
-  // await cmsCrud.createCompany(formData)
+  await cmsCrud.createCompany(formData)
+  await cmsCrud.addCompanyToCategoryReference(formData.category._ref, formData._id)
 }
 
 const handleInputChange = (
@@ -47,28 +53,61 @@ const handleInputChange = (
 
   let updatedData: Partial<Company> = { [name]: value }
 
-  if (name === "email") {
-    // eslint-disable-next-line no-underscore-dangle
-    updatedData._id = formatTextUtils.getLeftSideOfEmail(value)
-  }
-
-  if (name === "name") {
+  if (name === "title") {
     updatedData = {
       ...updatedData,
-      title: formatTextUtils.capitalizeFirstLetter(value),
+      title: value.toLowerCase(),
       slug: { current: formatTextUtils.createSlug(value), _type: "slug" },
     }
   }
 
+  if (name === "category") {
+    updatedData = {
+      ...updatedData,
+      category: { _ref: value, _type: "reference" },
+    }
+  }
+
   if (name in formData.contact) {
+    if (name === "email") {
+      setFormData((prevState: Company) => ({
+        ...prevState,
+        _id: formatTextUtils.getLeftSideOfEmail(value),
+        contact: { ...prevState.contact, [name]: value },
+      }))
+
+      return
+    }
+
+    const validatedValue = name === "whatsapp" || name === "phone" ? Number(value) : value
+
     setFormData((prevState: Company) => ({
       ...prevState,
-      ...updatedData,
-      contact: { ...prevState.contact, [name]: value },
+      contact: { ...prevState.contact, [name]: validatedValue },
     }))
-  } else {
-    setFormData((prevState: Company) => ({ ...prevState, ...updatedData }))
+
+    return
   }
+
+  if (name in formData.schedule) {
+    setFormData((prevState: Company) => ({
+      ...prevState,
+      schedule: { ...prevState.schedule, [name]: value },
+    }))
+
+    return
+  }
+
+  if (name in formData.socialMedia) {
+    setFormData((prevState: Company) => ({
+      ...prevState,
+      socialMedia: { ...prevState.socialMedia, [name]: value },
+    }))
+
+    return
+  }
+
+  setFormData((prevState: Company) => ({ ...prevState, ...updatedData }))
 }
 
 const subscriptionFormCompanyUtils = {

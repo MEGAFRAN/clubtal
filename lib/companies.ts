@@ -37,7 +37,6 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
       isPaidUser,
       _id,
       title,
-      name,
       description,
       slug,
       category,

@@ -31,7 +31,7 @@ const handleInputChange = (
     updatedData = {
       ...updatedData,
       _id: value,
-      title: formatTextUtils.capitalizeFirstLetter(value),
+      title: value.toLowerCase(),
       slug: { current: formatTextUtils.createSlug(value), _type: "slug" },
     }
   }

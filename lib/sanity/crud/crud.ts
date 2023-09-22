@@ -40,12 +40,23 @@ const decrementNumber = async (_id: string, field: Record<string, number>): Prom
 }
 
 // Appending/prepending elements to an array
-const addToArray = async (_id: string, fieldName: string, fieldValue: unknown[]): Promise<void> => {
+const addToArray = async (_id: string, fieldName: string, fieldValue: unknown): Promise<void> => {
   await client
     .patch(_id)
     .setIfMissing({ [fieldName]: [] })
     .append(fieldName, [fieldValue])
-    .commit({ autoGenerateArrayKeys: true })
+    .commit({ autoGenerateArrayKeys: false })
+}
+
+const addCompanyToCategoryReference = async (
+  categoryId: string,
+  companyId: string,
+): Promise<void> => {
+  await addToArray(categoryId, "companies", {
+    _type: "reference",
+    _ref: companyId,
+    _key: companyId,
+  })
 }
 
 // Deleting an element from an array
@@ -68,6 +79,7 @@ const cmsCrud = {
   decrementNumber,
   addToArray,
   deleteFromArray,
+  addCompanyToCategoryReference,
 }
 
 export default cmsCrud

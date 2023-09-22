@@ -12,7 +12,6 @@ const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
     title,
     slug,
     description,
-    metaDescription,
     specialities,
     category,
     services,

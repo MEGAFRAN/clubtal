@@ -9,7 +9,6 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
   const {
     isPaidUser,
     _id,
-    name,
     title,
     slug,
     description,

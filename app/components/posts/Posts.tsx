@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import Link from "next/link"
 import type { SanityDocument } from "@sanity/client"
 import Head from "next/head"

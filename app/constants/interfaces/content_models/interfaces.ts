@@ -1,11 +1,9 @@
 interface GeneralInformation {
   _id: string
   _type: string
-  name: string
   title: string
   slug: { current: string; _type: "slug" }
   description: string
-  metaDescription: string
 }
 
 export interface Schedule {
@@ -44,4 +42,6 @@ export interface Company extends GeneralInformation {
 
 export interface Category extends GeneralInformation {
   companies: Company[]
+  name: string
+  metaDescription: string
 }
