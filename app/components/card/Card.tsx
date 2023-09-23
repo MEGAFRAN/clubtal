@@ -4,9 +4,11 @@ import Link from "next/link"
 import styles from "../../styles/components/card.module.scss"
 import useCurrentPath from "../../hook/useCurrentPath"
 import { CardProps } from "../../constants/interfaces/component_props/interfaces"
+import calculationsUtils from "../../../lib/calculations"
 
 const Card: FC<CardProps> = ({
   isPaidUser,
+  reviews,
   title,
   slug,
   description,
@@ -16,6 +18,9 @@ const Card: FC<CardProps> = ({
 }) => {
   const currentPath = useCurrentPath()
   const { whatsapp, phone, website, email } = contact || {}
+  const hasReviews = reviews?.length
+  const reviewsAverage = hasReviews ? calculationsUtils.getAverageOfReviews(reviews) : undefined
+
   return (
     <div className={styles.container} style={style}>
       <Link key={title} href={`${currentPath}${slug.current}`}>
@@ -28,6 +33,7 @@ const Card: FC<CardProps> = ({
               ))}
             </ul>
           )}
+          {isPaidUser && hasReviews && <span>{reviewsAverage}</span>}
           <p>{description}</p>
         </div>
       </Link>

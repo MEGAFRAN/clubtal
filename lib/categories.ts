@@ -9,6 +9,7 @@ const categoryQuery = groq`*[_type == "category" && slug.current == $slug][0]{
   slug,
   companies[]->{
     isPaidUser,
+    reviews,
     title,
     slug,
     description,

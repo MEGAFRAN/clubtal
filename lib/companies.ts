@@ -35,6 +35,7 @@ export const getStaticPropsItem: GetStaticProps = async ({ params }: any) => {
   const companyQuery = groq`
     *[_type == "company" && slug.current == $companySlug && category->slug.current == $categorySlug][0]{
       isPaidUser,
+      reviews,
       _id,
       title,
       description,

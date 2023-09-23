@@ -19,6 +19,7 @@ export interface Schedule {
 
 export interface Company extends GeneralInformation {
   isPaidUser: boolean
+  reviews?: [{ stars: number; comment: string }]
   specialities?: string[]
   category: { _ref: string; _type: "reference" }
   services?: string[]

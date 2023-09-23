@@ -3,11 +3,13 @@ import PageHead from "../../../app/components/page_head/PageHead"
 import { getStaticPathsItem, getStaticPropsItem } from "../../../lib/companies"
 import { Company, Schedule } from "../../../app/constants/interfaces/content_models/interfaces"
 import Breadcrumb from "../../../app/components/breadcrumb/Breadcrumb"
+import calculationsUtils from "../../../lib/calculations"
 
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
 const CompanyPage = ({ data }: { data: { company: Company } }) => {
   const {
     isPaidUser,
+    reviews,
     _id,
     title,
     slug,
@@ -20,7 +22,8 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
     specialities,
   } = data.company || {}
   const { phone, whatsapp, website, email } = contact || {}
-
+  const hasReviews = reviews?.length
+  const reviewsAverage = hasReviews ? calculationsUtils.getAverageOfReviews(reviews) : undefined
   const formatSchedule = (scheduleData: Schedule): Schedule => {
     if (!scheduleData) throw new Error("Invalid schedule data provided, check Schedule interface")
 
@@ -55,6 +58,7 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
                 ))}
               </ul>
             )}
+            {hasReviews && <span>{reviewsAverage}</span>}
             {description && <p className={styles.description}>{description}</p>}
           </section>
           {services && (
@@ -119,7 +123,18 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
               </address>
             </section>
           )}
-          {schedule && (
+          {hasReviews && (
+            <section>
+              <h2>Reviews</h2>
+              {reviews.map(({ stars, comment }) => (
+                <>
+                  <p>{stars}</p>
+                  <p>{comment}</p>
+                </>
+              ))}
+            </section>
+          )}
+          {isPaidUser && schedule && (
             <section className={styles.schedule}>
               <h2>Horario</h2>
               <dl>
