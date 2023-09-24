@@ -5,6 +5,7 @@ import styles from "../../styles/components/card.module.scss"
 import useCurrentPath from "../../hook/useCurrentPath"
 import { CardProps } from "../../constants/interfaces/component_props/interfaces"
 import calculationsUtils from "../../../lib/calculations"
+import RatingStars from "../rating_stars/RatingStars"
 
 const Card: FC<CardProps> = ({
   isPaidUser,
@@ -19,7 +20,7 @@ const Card: FC<CardProps> = ({
   const currentPath = useCurrentPath()
   const { whatsapp, phone, website, email } = contact || {}
   const hasReviews = reviews?.length
-  const reviewsAverage = hasReviews ? calculationsUtils.getAverageOfReviews(reviews) : undefined
+  const reviewsAverage = hasReviews ? calculationsUtils.getAverageOfReviews(reviews) : 0
 
   return (
     <div className={styles.container} style={style}>
@@ -33,7 +34,12 @@ const Card: FC<CardProps> = ({
               ))}
             </ul>
           )}
-          {isPaidUser && hasReviews && <span>{reviewsAverage}</span>}
+          {isPaidUser && hasReviews && (
+            <>
+              <RatingStars rating={reviewsAverage} />
+              <span>{hasReviews} opiniones</span>
+            </>
+          )}
           <p>{description}</p>
         </div>
       </Link>

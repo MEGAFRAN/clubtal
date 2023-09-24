@@ -4,6 +4,8 @@ import { getStaticPathsItem, getStaticPropsItem } from "../../../lib/companies"
 import { Company, Schedule } from "../../../app/constants/interfaces/content_models/interfaces"
 import Breadcrumb from "../../../app/components/breadcrumb/Breadcrumb"
 import calculationsUtils from "../../../lib/calculations"
+import Review from "../../../app/components/review/Review"
+import RatingStars from "../../../app/components/rating_stars/RatingStars"
 
 export { getStaticPropsItem as getStaticProps, getStaticPathsItem as getStaticPaths }
 const CompanyPage = ({ data }: { data: { company: Company } }) => {
@@ -23,7 +25,7 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
   } = data.company || {}
   const { phone, whatsapp, website, email } = contact || {}
   const hasReviews = reviews?.length
-  const reviewsAverage = hasReviews ? calculationsUtils.getAverageOfReviews(reviews) : undefined
+  const reviewsAverage = hasReviews ? calculationsUtils.getAverageOfReviews(reviews) : 0
   const formatSchedule = (scheduleData: Schedule): Schedule => {
     if (!scheduleData) throw new Error("Invalid schedule data provided, check Schedule interface")
 
@@ -58,7 +60,12 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
                 ))}
               </ul>
             )}
-            {hasReviews && <span>{reviewsAverage}</span>}
+            {isPaidUser && hasReviews && (
+              <>
+                <RatingStars rating={reviewsAverage} />
+                <span>{hasReviews} opiniones</span>
+              </>
+            )}
             {description && <p className={styles.description}>{description}</p>}
           </section>
           {services && (
@@ -123,17 +130,7 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
               </address>
             </section>
           )}
-          {hasReviews && (
-            <section>
-              <h2>Reviews</h2>
-              {reviews.map(({ stars, comment }) => (
-                <>
-                  <p>{stars}</p>
-                  <p>{comment}</p>
-                </>
-              ))}
-            </section>
-          )}
+          {isPaidUser && hasReviews && <Review reviews={reviews} />}
           {isPaidUser && schedule && (
             <section className={styles.schedule}>
               <h2>Horario</h2>
