@@ -1,26 +1,24 @@
-import { useState } from "react"
+import { Dispatch, SetStateAction, useState } from "react"
 import { Company } from "../../../constants/interfaces/content_models/interfaces"
-import useCurrentPath from "../../../hook/useCurrentPath"
 import InputList from "../../input_list/InputList"
 import styles from "../../../styles/components/subscription-form.module.scss"
 import subscriptionFormCompanyUtils from "./utils"
 
 interface Props {
   categoryOptions: string[]
+  setState: Dispatch<SetStateAction<boolean>>
 }
 
-const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
-  const isPaidUser = !useCurrentPath().includes("/basico")
-  const [formData, setFormData] = useState<Company>(
-    subscriptionFormCompanyUtils.defaultCompany(isPaidUser),
-  )
+const SubscriptionForm: React.FC<Props> = ({ categoryOptions, setState }) => {
+  const [formData, setFormData] = useState<Company>(subscriptionFormCompanyUtils.defaultCompany)
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     subscriptionFormCompanyUtils.handleInputChange(event, formData, setFormData)
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    subscriptionFormCompanyUtils.handleSubmit(event, formData)
+    // subscriptionFormCompanyUtils.handleSubmit(event, formData)
+    subscriptionFormCompanyUtils.handleSubmit(event, setState)
   }
 
   return (
@@ -126,18 +124,17 @@ const SubscriptionForm: React.FC<Props> = ({ categoryOptions }) => {
           />
         </label>
       ))}
-      {isPaidUser &&
-        ["linkedin", "instagram", "facebook", "twitter", "youtube", "tiktok"].map((platform) => (
-          <label key={platform}>
-            {platform.charAt(0).toUpperCase() + platform.slice(1)}:
-            <input
-              type="text"
-              name={platform}
-              value={formData.socialMedia[platform]}
-              onChange={handleInputChange}
-            />
-          </label>
-        ))}
+      {["linkedin", "instagram", "facebook", "twitter", "youtube", "tiktok"].map((platform) => (
+        <label key={platform}>
+          {platform.charAt(0).toUpperCase() + platform.slice(1)}:
+          <input
+            type="text"
+            name={platform}
+            value={formData.socialMedia[platform]}
+            onChange={handleInputChange}
+          />
+        </label>
+      ))}
       <button type="submit">Submit</button>
     </form>
   )

@@ -3,13 +3,13 @@ import { Company } from "../../../constants/interfaces/content_models/interfaces
 import cmsCrud from "../../../../lib/sanity/crud/crud"
 import formatTextUtils from "../../../../lib/format/text"
 
-const defaultCompany = (defaultIsPaidUser: boolean): Company => ({
+const defaultCompany: Company = {
   _id: "",
   _type: "company",
   title: "",
   slug: { current: "", _type: "slug" },
   description: "",
-  isPaidUser: defaultIsPaidUser,
+  isPaidUser: false,
   specialities: [],
   category: { _ref: "", _type: "reference" },
   services: [],
@@ -36,12 +36,20 @@ const defaultCompany = (defaultIsPaidUser: boolean): Company => ({
     youtube: "",
     tiktok: "",
   },
-})
+}
 
-const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, formData: Company) => {
+/* const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, formData: Company) => {
   event.preventDefault()
   await cmsCrud.createCompany(formData)
   await cmsCrud.addCompanyToCategoryReference(formData.category._ref, formData._id)
+} */
+
+const handleSubmit = (
+  event: React.FormEvent<HTMLFormElement>,
+  setState: Dispatch<SetStateAction<boolean>>,
+): void => {
+  event.preventDefault()
+  setState(true)
 }
 
 const handleInputChange = (

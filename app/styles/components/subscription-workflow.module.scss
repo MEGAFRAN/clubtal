@@ -1,0 +1,14 @@
+.container {
+  height: 100vh;
+  position: relative;
+
+  .success {
+    display: flex;
+    font-size: clamp(30px, 5vw, 40px);
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

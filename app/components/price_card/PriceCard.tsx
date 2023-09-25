@@ -1,4 +1,3 @@
-// components/PriceCards.tsx
 import React from "react"
 import styles from "../../styles/components/price-card.module.scss"
 
@@ -21,7 +20,7 @@ const PriceCards: React.FC<Props> = ({ plans }) => (
       <div key={index} className={styles.card}>
         <h2>{plan.name}</h2>
         <p>{plan.description}</p>
-        {plan.yearlyCost ? <span>Anual: ${plan.yearlyCost}</span> : <span>Gratis</span>}
+        {plan.yearlyCost ? <span>Precio Anual: ${plan.yearlyCost}</span> : <span>Gratis</span>}
         <ol>
           {plan.features.map((feature, idx) => (
             <li key={idx}>{feature}</li>
