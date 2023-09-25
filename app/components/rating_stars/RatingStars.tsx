@@ -1,4 +1,5 @@
 import React from "react"
+import styles from "../../styles/components/rating-stars.module.scss"
 
 interface RatingStarsProps {
   rating: number
@@ -14,7 +15,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
     return STAR_FULL.repeat(fullStarsCount) + STAR_EMPTY.repeat(emptyStarsCount)
   }
 
-  return <span>{getStarsDisplay(rating)}</span>
+  return <span className={styles.container}>{getStarsDisplay(rating)}</span>
 }
 
 export default RatingStars

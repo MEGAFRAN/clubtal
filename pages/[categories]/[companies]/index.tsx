@@ -61,10 +61,10 @@ const CompanyPage = ({ data }: { data: { company: Company } }) => {
               </ul>
             )}
             {isPaidUser && hasReviews && (
-              <>
+              <div className={styles.reviews}>
                 <RatingStars rating={reviewsAverage} />
                 <span>{hasReviews} opiniones</span>
-              </>
+              </div>
             )}
             {description && <p className={styles.description}>{description}</p>}
           </section>

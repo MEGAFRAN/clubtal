@@ -35,10 +35,10 @@ const Card: FC<CardProps> = ({
             </ul>
           )}
           {isPaidUser && hasReviews && (
-            <>
+            <div className={styles.reviews}>
               <RatingStars rating={reviewsAverage} />
               <span>{hasReviews} opiniones</span>
-            </>
+            </div>
           )}
           <p>{description}</p>
         </div>
