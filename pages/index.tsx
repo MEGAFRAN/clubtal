@@ -7,23 +7,15 @@ import { Company } from "../app/constants/interfaces/content_models/interfaces"
 import cmsCrud from "../lib/sanity/crud/crud"
 import BottomBar from "../app/components/bottomBar/BottomBar"
 
-const getStaticProps = getStaticPropsIndexContent
-export { getStaticProps }
-const Home = ({ homePageData, categories }: IndexContent) => {
-  const { metaDescription, headerTitle } = homePageData || {}
+// const getStaticProps = getStaticPropsIndexContent
+// export { getStaticProps }
+const Home = ({ homePageData, categories }: IndexContent) => (
+  // const { metaDescription, headerTitle } = homePageData || {}
 
-  return (
-    <>
-      <PageHead
-        description={metaDescription}
-        title={"siaki"}
-        locale={"es"}
-        url={"https://www.siaki.co"}
-      />
-      <HeaderSearch categories={categories} title={headerTitle} text="" />
-      <BottomBar />
-    </>
-  )
-}
+  <>
+    <PageHead description={""} title={"clubtal"} locale={"es"} url={"https://www.clubtal.dev"} />
+    <span>HELLO CLUBTAL</span>
+  </>
+)
 
 export default Home

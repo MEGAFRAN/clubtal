@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://siaki.co
+Host: https://clubtal.dev
 
 # Sitemaps
-Sitemap: https://siaki.co/sitemap.xml
+Sitemap: https://clubtal.dev/sitemap.xml
