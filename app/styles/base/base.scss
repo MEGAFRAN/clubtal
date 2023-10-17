@@ -1,5 +1,9 @@
 @use "../abstracts/colors";
 @use "../base/typography";
+@use "../abstracts/mixins";
+@use "../abstracts/animations";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
 
 body {
   background-color: colors.$primary-white;
@@ -15,11 +19,16 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: Georgia, serif;
+  color: colors.$primary-blue;
+  font-family: monospace, sans-serif;
   font-size: clamp(1.2rem, 5vw, 1.8rem);
 }
 
 p {
-  color: #b2becd;
+  color: colors.$secondary-black;
+  font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
   font-weight: 400;
+  letter-spacing: 0.012em;
+  line-height: 1.4211;
+  margin-bottom: spacing.$large;
 }

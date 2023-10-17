@@ -13,7 +13,6 @@
   padding: clamp(0px, 5vw, 40px);
 
   h2 {
-    color: colors.$primary-black;
     padding-bottom: 30px;
     text-align: center;
   }
@@ -33,7 +32,7 @@
     li {
       align-items: center;
       background-color: colors.$primary-white;
-      border-bottom: 2px solid colors.$primary-beige;
+      border-bottom: 2px solid colors.$gray8;
       border-radius: 15px;
       color: colors.$primary-black;
       display: flex;

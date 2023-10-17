@@ -7,7 +7,7 @@ type BreadcrumbProps = {
   baseLabel?: string
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({ baseLabel = "siaki" }) => {
+const Breadcrumb: React.FC<BreadcrumbProps> = ({ baseLabel = "clubtal" }) => {
   const currentPath = useCurrentPath()
   const pathSegments = useMemo(() => currentPath.split("/").filter((p) => p), [currentPath])
 

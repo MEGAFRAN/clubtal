@@ -1,0 +1,52 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/animations";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin: auto;
+  max-width: 800px;
+  padding: 0 12px 40px;
+  text-align: center;
+
+  header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  span,
+  ul {
+    color: colors.$secondary-black;
+    line-height: 2.25rem;
+  }
+
+  ul {
+    color: colors.$secondary-black;
+    font-size: clamp(font_size.$paragraph-s, 4vw, font_size.$paragraph-m);
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    line-height: 1.4211;
+    margin-bottom: spacing.$large;
+    text-align: left;
+  }
+
+  section.why_join {
+    align-items: center;
+    border: dashed 4px colors.$gray9;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    h2 {
+      margin-bottom: 18px;
+    }
+  }
+}
