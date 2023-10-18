@@ -11,6 +11,7 @@ import Breadcrumb from "../app/components/breadcrumb/Breadcrumb"
 import EmailForm from "../app/components/email_form/EmailForm"
 import MagicLinkLogin from "../app/components/magic_link_login/MagicLinkLogin"
 import SectionUnderlineList from "../app/components/sections/underline_list/SectionUnderlineList"
+import downloadAsset from "../app/services/form_services/download_asset/download-asset.service"
 
 // const getStaticProps = getStaticPropsIndexContent
 // export { getStaticProps }
@@ -28,7 +29,7 @@ const Home = ({ homePageData, categories }: IndexContent) => (
         <p>*Pre-Lanzamiento</p>
         <p>
           <strong>
-            Registrate y recibe gratis: Las 10 verdades de las entrevistas de desarrollo de software
+            Registrate y recibe gratis: Las 10 verdades de las vacantes de desarrollo de software
           </strong>
         </p>
         <p>#1: Juego de probabilidades, #2: No siempre gana el mejor y 8 verdades más</p>
@@ -75,7 +76,7 @@ const Home = ({ homePageData, categories }: IndexContent) => (
         </p>
         <p>Únete a la lista de espera, y recibe gratis en tu correo:</p>
         <p>
-          <strong>Las 10 verdades de las entrevistas de desarrollo de software</strong>
+          <strong>Las 10 verdades de las vacantes de desarrollo de software</strong>
         </p>
         <EmailForm />
       </section>

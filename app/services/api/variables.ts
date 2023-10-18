@@ -1,5 +1,6 @@
 const AZURE_SERVERLESS_API = "https://post-push.azurewebsites.net"
 const CLUBTAL_SERVICES_API = "https://clubtal-web-services.azurewebsites.net"
+const CLUBTAL_ASSETS_API = "https://assetsclubtal.blob.core.windows.net"
 const WORDPRESS_API = "https://testtal.wpengine.com"
 const EMAIL_SERVICE_GENERAL_ENDPOINT = "/api/EmailService"
 const EMAIL_SERVICE_RECRUIT_ENDPOINT = "/api/EmailServiceRecruit1"
@@ -10,6 +11,7 @@ const SEND_FEEDBACK_EMAIL_ENDPOINT = "/api/send-feedback-email"
 const GET_TEXT_ANALYSIS_ENDPOINT = "/api/get-text-analysis"
 const GRAPH_QL_ENDPOINT = "/graphql"
 const ADD_USER_ENDPOINT = "/api/add-user"
+const GENERAL_ASSETS_ENPOINT = "/assets/"
 
 export const EMAIL_SERVICE_GENERAL = `${AZURE_SERVERLESS_API}${EMAIL_SERVICE_GENERAL_ENDPOINT}`
 export const EMAIL_SERVICE_RECRUIT = `${AZURE_SERVERLESS_API}${EMAIL_SERVICE_RECRUIT_ENDPOINT}`
@@ -20,3 +22,4 @@ export const GET_TEXT_ANALYSIS = `${CLUBTAL_SERVICES_API}${GET_TEXT_ANALYSIS_END
 export const SEND_FEEDBACK_EMAIL = `${AZURE_SERVERLESS_API}${SEND_FEEDBACK_EMAIL_ENDPOINT}`
 export const REQUEST_WORDPRESS_GRAPH_QL = `${WORDPRESS_API}${GRAPH_QL_ENDPOINT}`
 export const ADD_USER = `${CLUBTAL_SERVICES_API}${ADD_USER_ENDPOINT}`
+export const GET_ASSET = `${CLUBTAL_ASSETS_API}${GENERAL_ASSETS_ENPOINT}`
