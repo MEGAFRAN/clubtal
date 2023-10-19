@@ -12,6 +12,7 @@ import EmailForm from "../app/components/email_form/EmailForm"
 import MagicLinkLogin from "../app/components/magic_link_login/MagicLinkLogin"
 import SectionUnderlineList from "../app/components/sections/underline_list/SectionUnderlineList"
 import downloadAsset from "../app/services/form_services/download_asset/download-asset.service"
+import SectionAnalytics from "../app/components/sections/analytics/SectionAnalytics"
 
 // const getStaticProps = getStaticPropsIndexContent
 // export { getStaticProps }
@@ -19,7 +20,6 @@ const Home = ({ homePageData, categories }: IndexContent) => (
   // const { metaDescription, headerTitle } = homePageData || {}
   <>
     <PageHead description={""} title={"clubtal"} locale={"es"} url={"https://www.clubtal.dev"} />
-    <Breadcrumb />
     <section className={styles.container}>
       <header>
         <h1>
@@ -81,6 +81,7 @@ const Home = ({ homePageData, categories }: IndexContent) => (
         <EmailForm />
       </section>
     </section>
+    <SectionAnalytics />
   </>
 )
 
