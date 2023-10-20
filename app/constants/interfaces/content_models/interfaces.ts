@@ -1,6 +1,9 @@
-interface GeneralInformation {
-  _id: string
+interface SanityItem {
   _type: string
+  _id?: string
+}
+
+interface GeneralInformation extends SanityItem {
   title: string
   slug: { current: string; _type: "slug" }
   description: string
@@ -45,4 +48,9 @@ export interface Category extends GeneralInformation {
   companies: Company[]
   name: string
   metaDescription: string
+}
+
+export interface UserEmail extends SanityItem {
+  _type: "userEmail"
+  title: string
 }

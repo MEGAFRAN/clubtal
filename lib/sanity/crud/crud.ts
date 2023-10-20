@@ -1,5 +1,5 @@
 import { Category, Company } from "../../../app/constants/interfaces/content_models/interfaces"
-import client from "../client"
+import { client } from "../client"
 
 // Creating a company
 const createCompany = async (company: Company): Promise<void> => {

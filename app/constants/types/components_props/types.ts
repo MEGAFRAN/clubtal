@@ -114,10 +114,6 @@ export interface NavbarProps {
   withHomeButton?: boolean
 }
 
-export interface EmailFormProps {
-  service?: Promise<Response>
-}
-
 export interface SectionTitleListProps {
   title: string
   description: string[]
