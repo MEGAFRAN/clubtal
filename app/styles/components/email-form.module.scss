@@ -3,44 +3,51 @@
 @use "../abstracts/animations";
 
 .container {
-  align-items: baseline;
-  display: flex;
   max-width: 600px;
   width: 100%;
 
-  input {
-    border: 1px solid colors.$gray6;
-    border-radius: 24px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    outline: none;
-    padding: 10px 15px;
-    transition: animations.$regular-transition;
-    width: 100%;
+  form {
+    align-items: baseline;
+    display: flex;
 
-    &:hover {
-      background-color: colors.$primary-gray;
+    input {
+      border: 1px solid colors.$gray6;
+      border-radius: 24px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      outline: none;
+      padding: 10px 15px;
+      transition: animations.$regular-transition;
+      width: 100%;
+
+      &:hover {
+        background-color: colors.$primary-gray;
+      }
+
+      &:focus {
+        border-color: colors.$primary-blue;
+      }
+
+      &::placeholder {
+        color: colors.$gray6;
+      }
     }
 
-    &:focus {
-      border-color: colors.$primary-blue;
-    }
+    button {
+      @include mixins.cta-button-appearance();
 
-    &::placeholder {
-      color: colors.$gray6;
+      &:hover {
+        @include mixins.cta-button-hover();
+      }
+
+      &:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
     }
   }
 
-  button {
-    @include mixins.cta-button-appearance();
-
-    &:hover {
-      @include mixins.cta-button-hover();
-    }
-
-    &:disabled {
-      background-color: #cccccc;
-      cursor: not-allowed;
-    }
+  p {
+    color: colors.$primary-green;
   }
 }
