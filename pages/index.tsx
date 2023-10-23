@@ -13,20 +13,15 @@ const Home = ({ homePageData, categories }: IndexContent) => (
   <>
     <PageHead
       description={
-        "Mejora tu salario y calidad de vida como desarrollador de software. Aprende habilidades blandas como comunicación, resolución de problemas, negociación y mas"
+        "¿Quieres mejorar tu sueldo como desarrollador de software? Te enseñamos estrategias para aumentar tu sueldo como programador. ¡Entra y descubre cómo!"
       }
-      title={
-        "Mejora Tu Salario y Calidad de Vida como Desarrollador de Software con habilidades Blandas | Clubtal"
-      }
+      title={"Aumenta tu sueldo como desarrollador de software, Clubtal te enseña"}
       locale={"es"}
       url={"https://clubtal.dev"}
     />
     <section className={styles.container}>
       <header>
-        <h1>
-          Mejoramos tu salario y calidad de vida como desarrollador de software, enseñándote
-          habilidades blandas: (comunicación, resolución de problemas, negociación y mas)
-        </h1>
+        <h1>Aumenta tu sueldo como desarrollador de software, Clubtal te enseña</h1>
         <p>
           <strong>
             Regístrate y recibe gratis: Las 10 verdades de las vacantes de desarrollo de software
@@ -67,12 +62,12 @@ const Home = ({ homePageData, categories }: IndexContent) => (
           </strong>
         </p>
         <p>
-          Actualmente trabaja para una multinacional de USA y gana más de 11 veces el salario de su
+          Actualmente trabaja para una multinacional de USA y gana más de 11 veces el sueldo de su
           primer empleo.
         </p>
         <p>Tú puedes lograr esto y mucho más.</p>
         <p>
-          <strong>¿Quieres mejorar tu calidad de vida y salario como desarrollador?</strong>
+          <strong>¿Quieres mejorar tu calidad de vida y sueldo como desarrollador?</strong>
         </p>
         <p>Únete a la lista de espera y recibe gratis en tu correo:</p>
         <p>
