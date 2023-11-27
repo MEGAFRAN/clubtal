@@ -45,10 +45,10 @@
 
 @mixin field-validation {
   &:focus {
-    outline-color: colors.$secondary-gray;
+    outline-color: colors.$primary-blue;
 
     &:invalid {
-      outline-color: colors.$primary-pink;
+      outline-color: colors.$primary-blue;
     }
   }
 }

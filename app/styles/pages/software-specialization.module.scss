@@ -1,0 +1,29 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/animations";
+@use "../abstracts/font_size";
+@use "../abstracts/spacing";
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin: auto;
+  max-width: 800px;
+  padding: 0 12px 40px;
+  text-align: center;
+
+  header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  label {
+    color: colors.$secondary-black;
+    line-height: 2.25rem;
+  }
+}

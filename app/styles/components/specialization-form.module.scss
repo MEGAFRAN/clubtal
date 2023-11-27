@@ -1,0 +1,57 @@
+@use "../abstracts/colors";
+@use "../abstracts/animations";
+@use "../abstracts/mixins";
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  form {
+    align-items: flex-start;
+    background-color: colors.$primary-white;
+    border: solid 2px colors.$gray8;
+    border-radius: 8px;
+    box-shadow: 0 0 48px -25px grey;
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    max-width: calc(100vw - 40px);
+    padding: 20px 30px;
+    row-gap: 10px;
+    width: 340px;
+
+    textarea {
+      border-radius: 10px;
+      padding: 10px;
+      transition: animations.$regular-transition;
+      width: 100%;
+
+      @include mixins.field-validation();
+    }
+
+    label {
+      color: colors.$primary-blue;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    button {
+      align-self: center;
+
+      @include mixins.cta-button-appearance();
+
+      &:hover {
+        @include mixins.cta-button-hover();
+      }
+    }
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
